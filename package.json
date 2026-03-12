@@ -1,0 +1,25 @@
+{
+  "name": "hugolify-theme-design-system",
+  "version": "0.0.0",
+  "homepage": "https://www.hugolify.io",
+  "repository": "https://github.com/hugolify/hugolify-theme-design-system",
+  "bugs": {
+    "url": "https://github.com/hugolify/hugolify-theme-design-system/issues"
+  },
+  "author": {
+    "email": "sebousan@gmail.com",
+    "name": "Sébastien Moulène",
+    "url": "https://www.sebastienmoulene.com/"
+  },
+  "keywords": [
+    "hugolify",
+    "hugo",
+    "hugo-theme",
+    "design-system",
+    "design-tokens"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@hugolify/prettier-config": "^0.3.1"
+  }
+}
