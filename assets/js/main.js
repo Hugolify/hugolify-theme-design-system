@@ -1,44 +1,46 @@
-// Global
+{{- $params := .Site.Params }}
+
+// Globals
 import './utils/global';
 
 // Add custom vendors
 import './vendors/custom';
 
 // Features
-{{ if .Site.Params.animation }}
-    import './features/animation';
+{{ if $params.animation }}
+  import './features/animation';
 {{ end }}
-{{ if .Site.Params.carousel }}
-    import './features/carousel';
+{{ if $params.carousel }}
+  import './features/carousel';
 {{ end }}
-{{ if .Site.Params.map }}
-    import './features/map';
+{{ if $params.map }}
+  import './features/map';
 {{ end }}
-{{ if .Site.Params.parallax.enable }}
-    import './features/parallax';
+{{ if $params.parallax.enable }}
+  import './features/parallax';
 {{ end }}
-{{ if .Site.Params.search.enable }}
-    import './features/search';
+{{ if $params.search.enable }}
+  import './features/search';
 {{ end }}
-{{ if .Site.Params.vimeo }}
-    import './features/vimeo';
+{{ if $params.vimeo }}
+  import './features/vimeo';
 {{ end }}
-{{ if .Site.Params.youtube }}
-    import './features/youtube';
+{{ if $params.youtube }}
+  import './features/youtube';
 {{ end }}
 
 // Add custom features
 import './features/custom';
 
 // Blocks
-{{ with .Site.Params.admin.blocks.enable }}
-    {{ range . }}
-        {{ if fileExists (print "assets/js/blocks/" . ".js") }}
-            import './blocks/{{ . }}.js';
-        {{ end }}
+{{ with $params.admin.blocks.enable }}
+  {{ range . }}
+    {{ if fileExists (print "assets/js/blocks/" . ".js") }}
+      import './blocks/{{ . }}.js';
     {{ end }}
+  {{ end }}
 {{ else }}
-    import './blocks/index.js';
+  import './blocks/index.js';
 {{ end }}
 
 // Components
