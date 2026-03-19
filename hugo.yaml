@@ -4,3 +4,9 @@ module:
     - source: assets
       target: assets
   
+# Params
+params:
+
+  # PostCSS config
+  css:
+    postcss: "postcss/design-system"
