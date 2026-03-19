@@ -2,29 +2,31 @@
 
 Design System styling layer for [hugolify-theme](https://github.com/hugolify/hugolify-theme).
 
-This module provides the CSS (Design System + SASS) and JavaScript for hugolify-theme.
+This module provides the CSS (Design Tokens + CSS) and Vanilla JavaScript for hugolify-theme.
 
 ## Requirements
 
 - [Hugo extended](https://gohugo.io/installation/) >= 0.141.0
 - [hugolify-theme](https://github.com/hugolify/hugolify-theme)
 
-## Installation
+## Install
 
-Change style module in `config/_default/module.yaml`:
+Edit `config/_default/module.yaml`:
 
 ```yaml
-replacements: >
-  github.com/hugolify/hugolify-theme-bootstrap ->
-  github.com/hugolify/hugolify-theme-design-system
+imports:
+  - path: github.com/hugolify/hugolify-theme/v2
+  - path: github.com/hugolify/hugolify-theme-design-system
 ```
 
 ## Customization
 
-Override variables in `assets/sass/abstracts/_variables-site.sass`:
+Override variables in `assets/css/tokens/site.css`:
 
-```sass
-
+```css
+:root {
+  --color-primary: #000;
+}
 ```
 
 ## Structure
@@ -44,6 +46,19 @@ assets/
     ├── features/         # Animation, carousel, map…
     └── blocks/           # Block-specific scripts
 ```
+
+## Vendors
+
+**Import in javascript core pipe:**
+
+- Cookie consent
+- Rellax
+
+**Import in javascript features pipe:**
+
+- Leaflet
+- Splide
+- Tobii
 
 ## Documentation
 
