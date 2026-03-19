@@ -1,0 +1,17 @@
+/* tokens/semantic/spacing.css */
+@layer config {
+  :root {
+    /* Micro — internal component rhythm */
+    --space-xs: var(--space-1);
+    --space-sm: var(--space-2);
+    --space-md: var(--space-4);
+    --space-lg: var(--space-6);
+    --space-xl: var(--space-8);
+
+    /* Macro — page structure */
+    --space-section-sm: var(--space-8);
+    --space-section-md: var(--space-12);
+    --space-section-lg: var(--space-16);
+    --space-section-xl: var(--space-24);
+  }
+}

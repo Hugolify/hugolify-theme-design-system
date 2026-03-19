@@ -1,0 +1,11 @@
+/* tokens/semantic/motion.css */
+@layer config {
+  :root {
+    --duration-fast: 100ms;
+    --duration-normal: 200ms;
+    --duration-slow: 300ms;
+    --easing-default: ease-in-out;
+    --easing-in: ease-in;
+    --easing-out: ease-out;
+  }
+}

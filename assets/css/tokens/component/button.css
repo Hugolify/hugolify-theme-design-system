@@ -1,0 +1,13 @@
+/* tokens/component/button.css */
+@layer config {
+  :root {
+    --btn-border-radius: var(--radius-md);
+    --btn-font-size: var(--font-size-sm);
+    --btn-font-weight: var(--font-weight-medium);
+    --btn-gap: var(--space-sm);
+    --btn-on-surface: var(--color-text-on-brand);
+    --btn-padding-x: var(--space-md);
+    --btn-padding-y: var(--space-sm);
+    --btn-surface: var(--color-brand);
+  }
+}

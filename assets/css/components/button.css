@@ -1,0 +1,56 @@
+/* components/button.css */
+@layer components {
+  .btn {
+    align-items: center;
+    background-color: var(--btn-surface);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    color: var(--btn-on-surface);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    gap: var(--btn-gap);
+    padding: var(--btn-padding-y) var(--btn-padding-x);
+    text-decoration: none;
+    transition: opacity var(--duration-fast) var(--easing-default);
+
+    &:hover {
+      opacity: 0.85;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--btn-surface);
+      outline-offset: 2px;
+    }
+
+    &:disabled,
+    &[aria-disabled='true'] {
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
+  }
+
+  /* Variants */
+  .btn-danger {
+    --btn-on-surface: var(--color-white);
+    --btn-surface: var(--color-danger);
+  }
+
+  .btn-ghost {
+    --btn-on-surface: var(--color-text);
+    --btn-surface: transparent;
+
+    border: 1px solid currentcolor;
+  }
+
+  .btn-primary {
+    --btn-on-surface: var(--color-text-on-brand);
+    --btn-surface: var(--color-brand);
+  }
+
+  .btn-success {
+    --btn-on-surface: var(--color-white);
+    --btn-surface: var(--color-success);
+  }
+}

@@ -1,0 +1,18 @@
+/* tokens/design-system.css */
+
+/* 1. Primitives — raw values */
+@import 'primitive/color.css';
+@import 'primitive/font.css';
+@import 'primitive/radius.css';
+@import 'primitive/shadow.css';
+@import 'primitive/spacing.css';
+
+/* 2. Semantic — purposeful aliases */
+@import 'semantic/color.css';
+@import 'semantic/motion.css';
+@import 'semantic/spacing.css';
+@import 'semantic/typography.css';
+
+/* 3. Component — scoped tokens */
+@import 'component/alert.css';
+@import 'component/button.css';

@@ -1,0 +1,39 @@
+/* tokens/semantic/color.css */
+@layer config {
+  :root {
+    /* Background */
+    --color-bg: var(--color-white);
+    --color-bg-muted: var(--color-gray-100);
+    --color-bg-subtle: var(--color-gray-200);
+
+    /* Brand */
+    --color-brand: var(--color-blue-500);
+    --color-brand-muted: var(--color-blue-100);
+    --color-brand-strong: var(--color-blue-900);
+
+    /* Danger */
+    --color-danger: var(--color-red-500);
+    --color-danger-muted: var(--color-red-100);
+    --color-danger-strong: var(--color-red-900);
+
+    /* Info */
+    --color-info: var(--color-blue-500);
+    --color-info-muted: var(--color-blue-100);
+    --color-info-strong: var(--color-blue-900);
+
+    /* Success */
+    --color-success: var(--color-green-500);
+    --color-success-muted: var(--color-green-100);
+    --color-success-strong: var(--color-green-900);
+
+    /* Text */
+    --color-text: var(--color-gray-900);
+    --color-text-muted: var(--color-gray-500);
+    --color-text-on-brand: var(--color-white);
+
+    /* Warning */
+    --color-warning: var(--color-yellow-500);
+    --color-warning-muted: var(--color-yellow-100);
+    --color-warning-strong: var(--color-yellow-900);
+  }
+}
