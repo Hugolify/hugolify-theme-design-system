@@ -1,0 +1,36 @@
+/* components/items.css */
+@layer components {
+  .items {
+    display: grid;
+    grid-template-columns: repeat(var(--items-columns), 1fr);
+    gap: var(--items-gap);
+
+    & > * {
+      grid-column: span var(--items-span-mobile);
+    }
+
+    @media (--tablet) {
+      & > * {
+        grid-column: span var(--items-span-tablet);
+      }
+    }
+
+    @media (--tablet-wide) {
+      & > * {
+        grid-column: span var(--items-span-tablet-wide);
+      }
+    }
+
+    @media (--laptop) {
+      & > * {
+        grid-column: span var(--items-span-laptop);
+      }
+    }
+
+    @media (--desktop) {
+      & > * {
+        grid-column: span var(--items-span-desktop);
+      }
+    }
+  }
+}

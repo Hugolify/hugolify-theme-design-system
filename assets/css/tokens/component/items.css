@@ -1,0 +1,16 @@
+/* tokens/component/items.css */
+@layer config {
+  :root {
+
+    /* Grid */
+    --items-columns:        var(--columns);
+    --items-gap:            var(--gap);
+
+    /* Column spans */
+    --items-span-mobile:      var(--span-mobile);
+    --items-span-tablet:      var(--span-tablet);
+    --items-span-tablet-wide: var(--span-tablet-wide);
+    --items-span-laptop:      var(--span-laptop);
+    --items-span-desktop:     var(--span-desktop);
+  }
+}

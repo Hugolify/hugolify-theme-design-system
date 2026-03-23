@@ -1,0 +1,98 @@
+/* components/main-menu.css */
+/*
+ * .main-menu — mobile navigation panel (offcanvas / modal).
+ *
+ * Header bar sticky behaviour → components/header.css
+ *
+ * JS behaviour (components/menu.js) toggles classes on <html>:
+ *   html.is-menu-open          — panel is open
+ *   html.is-dropdown-menu-open — a dropdown is open
+ *
+ * Panel trigger: .js-offcanvas-toggle[data-target="#navigation"]
+ * Dropdown trigger: .js-dropdown-toggle
+ */
+@layer components {
+
+  .main-menu {
+    background-color: var(--main-menu-panel-color-bg);
+    color: var(--main-menu-panel-color-text);
+
+    & > .header {
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      padding: var(--main-menu-padding-y) var(--main-menu-padding-x);
+    }
+
+    & > .content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--main-menu-padding-y);
+      padding: var(--main-menu-padding-y) var(--main-menu-padding-x);
+    }
+
+    /* ── Nav list ──────────────────────────────────────────────────── */
+
+    & .nav {
+      display: flex;
+      flex-direction: column;
+      font-size: var(--main-menu-panel-font-size);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      a {
+        color: var(--main-menu-panel-color-text);
+        display: block;
+        padding: var(--main-menu-padding-y) 0;
+        text-decoration: none;
+
+        &:hover {
+          color: var(--main-menu-color-text-hover);
+        }
+
+        &[aria-current="page"] {
+          color: var(--main-menu-color-text-hover);
+          font-weight: var(--font-weight-heading);
+        }
+      }
+
+      ul {
+        font-size: var(--main-menu-panel-font-size-sub);
+        list-style: none;
+        margin: 0;
+        padding-inline-start: var(--main-menu-padding-x);
+      }
+    }
+
+    /* ── Dropdown ──────────────────────────────────────────────────── */
+
+    & .dropdown-menu {
+      background-color: var(--main-menu-dropdown-color-bg);
+      border-radius: var(--main-menu-dropdown-radius);
+      box-shadow: var(--main-menu-dropdown-shadow);
+      display: none;
+      list-style: none;
+      margin: 0;
+      padding: var(--main-menu-padding-y) 0;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    /* ── Highlighted nav item (CTA) ────────────────────────────────── */
+
+    & .nav-item-highlighted a {
+      background-color: var(--color-brand);
+      border-radius: var(--radius-control);
+      color: var(--color-text-on-brand);
+      padding: var(--main-menu-padding-y) var(--main-menu-padding-x);
+
+      &:hover {
+        background-color: var(--color-brand-strong);
+        color: var(--color-text-on-brand);
+      }
+    }
+  }
+}

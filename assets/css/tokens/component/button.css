@@ -1,13 +1,16 @@
 /* tokens/component/button.css */
 @layer config {
   :root {
-    --btn-border-radius: var(--radius-md);
+    --btn-border-color: var(--color-brand);
+    --btn-border-radius: var(--radius-control);
+    --btn-border-style: var(--border-style-solid);
+    --btn-border-width: var(--border-width-normal);
     --btn-font-size: var(--font-size-sm);
     --btn-font-weight: var(--font-weight-medium);
-    --btn-gap: var(--space-sm);
+    --btn-gap: var(--spacing-sm);
     --btn-on-surface: var(--color-text-on-brand);
-    --btn-padding-x: var(--space-md);
-    --btn-padding-y: var(--space-sm);
+    --btn-spacing: var(--spacing-control);
     --btn-surface: var(--color-brand);
+    --btn-transition: opacity var(--duration-fast) var(--easing-default);
   }
 }

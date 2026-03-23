@@ -1,0 +1,22 @@
+/* tokens/component/header.css */
+@layer config {
+  :root {
+    /* Colors */
+    --header-color-bg:     var(--color-bg);
+    --header-color-text:   var(--color-text);
+    --header-color-border: var(--color-border);
+
+    /* Layout */
+    --header-padding-x:   var(--spacing-sm);
+    --header-padding-y:   var(--spacing-sm);
+    --header-gap:         var(--spacing-sm);
+    --header-z-index:     100;
+
+    /* Logo */
+    --header-logo-max-width: 85%;
+
+    /* Sticky transition */
+    --header-transition-duration: var(--duration-slow);
+    --header-transition-easing:   var(--easing-out);
+  }
+}

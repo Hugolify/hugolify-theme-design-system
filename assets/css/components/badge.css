@@ -1,0 +1,22 @@
+/* components/badge.css */
+@layer components {
+  .badge {
+    background-color: var(--badge-color-bg);
+    border-radius: var(--badge-border-radius);
+    color: var(--badge-color-text);
+    display: inline-flex;
+    font-size: var(--badge-font-size);
+    font-weight: var(--badge-font-weight);
+    padding: var(--badge-padding-y) var(--badge-padding-x);
+  }
+
+  /* Variants */
+  .badge-danger    { --badge-color-bg: var(--color-danger-muted);    --badge-color-text: var(--color-danger-strong); }
+  .badge-dark      { --badge-color-bg: var(--color-dark-muted);      --badge-color-text: var(--color-dark-strong); }
+  .badge-info      { --badge-color-bg: var(--color-info-muted);      --badge-color-text: var(--color-info-strong); }
+  .badge-light     { --badge-color-bg: var(--color-light-muted);     --badge-color-text: var(--color-light-strong); }
+  .badge-primary   { --badge-color-bg: var(--color-primary-muted);   --badge-color-text: var(--color-primary-strong); }
+  .badge-secondary { --badge-color-bg: var(--color-secondary-muted); --badge-color-text: var(--color-secondary-strong); }
+  .badge-success   { --badge-color-bg: var(--color-success-muted);   --badge-color-text: var(--color-success-strong); }
+  .badge-warning   { --badge-color-bg: var(--color-warning-muted);   --badge-color-text: var(--color-warning-strong); }
+}

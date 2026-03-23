@@ -1,0 +1,43 @@
+/* components/breadcrumb.css */
+@layer components {
+  .breadcrumb-wrapper {
+    border-bottom: var(--breadcrumb-border-width) solid var(--breadcrumb-border-color);
+    border-top: var(--breadcrumb-border-width) solid var(--breadcrumb-border-color);
+    padding-block: var(--breadcrumb-spacing);
+
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      font-size: var(--breadcrumb-font-size);
+      gap: var(--breadcrumb-gap);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      align-items: center;
+      color: var(--breadcrumb-color);
+      display: flex;
+      gap: var(--breadcrumb-gap);
+      margin: 0;
+
+      a {
+        color: inherit;
+      }
+
+      &::before {
+        color: var(--breadcrumb-color-separator);
+        content: var(--breadcrumb-separator);
+      }
+
+      &:first-child::before {
+        display: none;
+      }
+
+      &[aria-current="page"] {
+        color: var(--breadcrumb-color-active);
+      }
+    }
+  }
+}

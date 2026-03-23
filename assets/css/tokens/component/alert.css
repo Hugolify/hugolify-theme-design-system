@@ -1,10 +1,9 @@
 /* tokens/component/alert.css */
 @layer config {
   :root {
-    --alert-border-radius: var(--radius-md);
+    --alert-border-radius: var(--radius-none);
     --alert-font-size: var(--font-size-body);
-    --alert-gap: var(--space-sm);
-    --alert-padding-x: var(--space-md);
-    --alert-padding-y: var(--space-3);
+    --alert-gap: var(--spacing-sm);
+    --alert-padding: var(--spacing-md);
   }
 }

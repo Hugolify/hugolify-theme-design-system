@@ -1,17 +1,20 @@
 /* tokens/semantic/spacing.css */
 @layer config {
   :root {
-    /* Micro — internal component rhythm */
-    --space-xs: var(--space-1);
-    --space-sm: var(--space-2);
-    --space-md: var(--space-4);
-    --space-lg: var(--space-6);
-    --space-xl: var(--space-8);
 
-    /* Macro — page structure */
-    --space-section-sm: var(--space-8);
-    --space-section-md: var(--space-12);
-    --space-section-lg: var(--space-16);
-    --space-section-xl: var(--space-24);
+    /* T-shirt scale */
+    --spacing-xs: var(--size-10);
+    --spacing-sm: var(--size-20);
+    --spacing-md: var(--size-30);
+    --spacing-lg: var(--size-40);
+    --spacing-xl: var(--size-60);
+    --spacing-2xl: var(--size-80);
+
+    /* Typography */
+    --spacing-control:    var(--spacing-xs);
+    --spacing-heading:    var(--spacing-sm);
+    --spacing-surface:    var(--spacing-sm);
+    --spacing-typography: var(--spacing-xs);
+
   }
 }

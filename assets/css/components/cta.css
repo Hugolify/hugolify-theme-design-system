@@ -1,0 +1,14 @@
+/* components/cta.css */
+@layer components {
+  .cta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  @media (--tablet) {
+    .cta {
+      flex-direction: row;
+    }
+  }
+}

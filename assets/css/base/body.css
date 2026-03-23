@@ -1,0 +1,6 @@
+/* base/body.css */
+@layer base {
+  body {
+    font-size: var(--font-size-body);
+  }
+}

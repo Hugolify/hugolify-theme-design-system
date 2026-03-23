@@ -1,0 +1,10 @@
+/* tokens/component/badge.css */
+@layer config {
+  :root {
+    --badge-border-radius: var(--radius-pill);
+    --badge-font-size: var(--font-size-body-sm);
+    --badge-font-weight: var(--font-weight-medium);
+    --badge-padding-x: var(--spacing-sm);
+    --badge-padding-y: var(--spacing-xs);
+  }
+}

@@ -1,0 +1,58 @@
+/* components/card.css */
+/*
+ * .item — structural base for all card-like components.
+ * Use alongside a content-type class: <article class="item page">
+ *
+ * Content-type classes (.page, .post, .project…) override --card-* tokens only.
+ * No structure duplication needed in content-type modules.
+ */
+@layer components {
+  .item {
+    background-color: var(--item-color-bg);
+    border: var(--item-border-width) solid var(--item-color-border);
+    border-radius: var(--item-border-radius);
+    box-shadow: var(--item-shadow);
+    color: var(--item-color-text);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    & .content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: var(--item-gap);
+      padding: var(--item-padding);
+      text-decoration: none;
+
+      > * {
+        margin-block: 0;
+      }
+    }
+
+    & .description {
+      color: var(--item-color-text-muted);
+    }
+
+    & .name {
+      color: var(--item-color-title);
+      font-size: var(--item-font-size-title);
+      font-weight: var(--item-font-weight-title);
+      line-height: var(--item-line-height-title);
+    }
+
+    & .media {
+      aspect-ratio: var(--item-media-ratio);
+      background-color: var(--item-color-bg-media);
+      order: -1;
+      overflow: hidden;
+
+      picture,
+      img {
+        height: 100%;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+  }
+}

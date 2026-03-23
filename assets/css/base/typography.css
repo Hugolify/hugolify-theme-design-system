@@ -1,0 +1,10 @@
+/* base/typography.css */
+/*
+ * font-size for body text uses --font-size-body → --font-size-sm (tokens/semantic/typography.css).
+ * Responsive scaling of --font-size-sm is handled by base/type-scale.css — not here.
+ */
+@layer base {
+  p {
+    margin-block: var(--spacing-typography);
+  }
+}

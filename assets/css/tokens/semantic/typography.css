@@ -1,20 +1,36 @@
 /* tokens/semantic/typography.css */
 @layer config {
   :root {
-    --font-body: var(--font-family-sans);
-    --font-code: var(--font-family-mono);
+
+    /* Font families */
+    --font-body:    var(--font-family-sans);
+    --font-code:    var(--font-family-mono);
     --font-heading: var(--font-family-sans);
-    --font-size-body: var(--font-size-md);
-    --font-size-body-sm: var(--font-size-sm);
-    --font-size-heading-2xl: var(--font-size-4xl);
-    --font-size-heading-lg: var(--font-size-2xl);
-    --font-size-heading-md: var(--font-size-xl);
-    --font-size-heading-sm: var(--font-size-lg);
-    --font-size-heading-xl: var(--font-size-3xl);
-    --font-size-heading-xs: var(--font-size-md);
-    --font-weight-body: var(--font-weight-normal);
+
+    /* Font weights */
+    --font-weight-body:    var(--font-weight-normal);
     --font-weight-heading: var(--font-weight-bold);
-    --line-height-body: var(--line-height-normal);
+
+    /* Line heights */
+    --line-height-body:    var(--line-height-normal);
     --line-height-heading: var(--line-height-tight);
+
+    /* Font sizes — T-shirt scale */
+    --font-size-xs: var(--size-12);
+    --font-size-sm: var(--size-16);
+    --font-size-md: var(--size-18);
+    --font-size-lg: var(--size-24);
+    --font-size-xl: var(--size-40);
+
+    /* Body */
+    --font-size-body: var(--font-size-sm);
+
+    /* Headings — no breakpoint suffixes, scale via T-shirt tokens */
+    --font-size-heading-01: var(--font-size-xl);
+    --font-size-heading-02: var(--font-size-lg);
+    --font-size-heading-03: var(--font-size-md);
+    --font-size-heading-04: var(--font-size-sm);
+    --font-size-heading-05: var(--font-size-sm);
+    --font-size-heading-06: var(--font-size-sm);
   }
 }

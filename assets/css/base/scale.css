@@ -1,0 +1,54 @@
+/* base/scale.css */
+/*
+ * Responsive type/spacing scale — overrides semantic tokens at breakpoints.
+ * Values reference primitive/size.css tokens, never hardcoded.
+ * @media here is intentional: base/ layer, NOT token files.
+ */
+@layer base {
+  @media (--tablet) {
+    :root {
+      --font-size-md: var(--size-20);
+      --font-size-lg: var(--size-26);
+      --font-size-xl: var(--size-52);
+    }
+  }
+
+  @media (--tablet-wide) {
+    :root {
+      /* Font size */
+      --font-size-md: var(--size-20);
+      --font-size-lg: var(--size-26);
+      --font-size-xl: var(--size-52);
+
+      /* Spacing */
+      --spacing-control: var(--spacing-sm);
+      --spacing-surface: var(--spacing-md);
+    }
+  }
+
+  @media (--laptop) {
+    :root {
+      /* Font size */
+      --font-size-md: var(--size-22);
+      --font-size-lg: var(--size-32);
+      --font-size-xl: var(--size-68);
+
+      /* Spacing */
+      --spacing-control: var(--spacing-sm);
+      --spacing-surface: var(--spacing-lg) var(--spacing-md);
+    }
+  }
+
+  @media (--desktop) {
+    :root {
+      /* Font size */
+      --font-size-md: var(--size-24);
+      --font-size-lg: var(--size-40);
+      --font-size-xl: var(--size-88);
+
+      /* Spacing */
+      --spacing-control: var(--spacing-sm) var(--spacing-md);
+      --spacing-surface: var(--spacing-lg);
+    }
+  }
+}

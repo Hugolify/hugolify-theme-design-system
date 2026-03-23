@@ -1,0 +1,113 @@
+/* components/header.css */
+/*
+ * header[role="banner"] — sticky site header.
+ *
+ * JS behaviour (components/menu.js) toggles:
+ *   header.is-sticky          — scrolled past header height
+ *   html.is-scrolling-down    — user scrolling downward
+ *   html.is-menu-open         — mobile panel open
+ *   html.is-dropdown-menu-open — a dropdown is open
+ *
+ * Expected HTML structure:
+ *   <header role="banner">
+ *     <nav role="navigation">
+ *       <div class="container">
+ *         <a class="logo">...</a>
+ *         <button class="btn-search">...</button>
+ *         <button class="btn-menu">...</button>
+ *         <div class="main-menu">...</div>
+ *       </div>
+ *     </nav>
+ *   </header>
+ */
+@layer components {
+  header[role="banner"] {
+    background-color: var(--header-color-bg);
+    color: var(--header-color-text);
+    position: sticky;
+    top: 0;
+    z-index: var(--header-z-index);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: top var(--header-transition-duration) var(--header-transition-easing),
+                  box-shadow var(--header-transition-duration) var(--header-transition-easing);
+    }
+
+    /* Auto-hide on scroll down — desktop pointer devices only */
+    @media (hover: hover) and (pointer: fine) {
+      html:not(.is-dropdown-menu-open).is-scrolling-down &:not(:hover) {
+        top: calc(var(--header-height, 0px) * -1);
+      }
+    }
+
+    /* Shadow when sticky */
+    &.is-sticky {
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── Inner nav ───────────────────────────────────────────────── */
+
+    & .container {
+      align-items: center;
+      display: flex;
+      gap: var(--header-gap);
+      justify-content: space-between;
+      padding-block: var(--header-padding-y);
+      padding-inline: var(--header-padding-x);
+    }
+
+    /* ── Logo ────────────────────────────────────────────────────── */
+
+    & .logo {
+      color: var(--header-color-text);
+      margin-inline-end: auto;
+      max-width: var(--header-logo-max-width);
+      text-decoration: none;
+    }
+
+    /* ── Main menu (inline at large breakpoints) ─────────────────── */
+
+    & .main-menu {
+      flex-grow: 1;
+
+      @media (--tablet) {
+        & .nav {
+          flex-direction: row;
+          font-size: var(--main-menu-font-size);
+
+          a {
+            color: var(--header-color-text);
+            padding: var(--header-padding-y) var(--header-gap);
+          }
+        }
+      }
+    }
+
+    /* ── Search button ───────────────────────────────────────────── */
+
+    & .btn-search {
+      --btn-surface: var(--header-color-bg);
+      --btn-on-surface: var(--header-color-text);
+      --btn-border-color: transparent;
+      margin-left: auto;
+
+      /* Push menu button to the right when search is present */
+      & ~ .btn-menu {
+        margin-left: 0;
+      }
+    }
+
+    /* ── Menu toggle button (hamburger) ──────────────────────────── */
+
+    & .btn-menu {
+      --btn-surface: transparent;
+      --btn-on-surface: var(--header-color-text);
+      --btn-border-color: transparent;
+      margin-left: auto;
+
+      @media (--tablet) {
+        display: none;
+      }
+    }
+  }
+}

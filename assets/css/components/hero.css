@@ -1,0 +1,192 @@
+/* components/hero.css */
+/*
+ * .hero — page header with optional cover, side media, and alignment variants.
+ *
+ * Modifier classes (set by Hugo template):
+ *   .hero-center          — centered content
+ *   .hero-end             — right-aligned (content on right)
+ *   .hero-with-cover      — background media (image or video)
+ *   .hero-with-cover-image
+ *   .hero-with-cover-video
+ *   .hero-cover-darken    — brightness filter on cover
+ *   .hero-with-image      — side image (not cover)
+ *   .hero-with-video      — side video (not cover)
+ *
+ * Expected HTML structure:
+ *   <header class="hero [modifiers]">
+ *     <div class="hero-cover">...</div>       ← optional, absolute
+ *     <div class="container">
+ *       <div class="row">
+ *         <div class="hero-content">...</div>
+ *         <div class="hero-media">...</div>   ← optional
+ *       </div>
+ *     </div>
+ *   </header>
+ */
+@layer components {
+  .hero {
+    background-color: var(--hero-color-bg);
+    color: var(--hero-color-text);
+    position: relative;
+
+    a:not(.btn) {
+      color: var(--hero-color-link);
+    }
+
+    .container {
+      display: flex;
+      min-height: var(--hero-min-height-mobile);
+      position: relative;
+
+      @media (--tablet) {
+        min-height: var(--hero-min-height);
+      }
+    }
+
+    .row {
+      align-items: center;
+    }
+  }
+
+  /* ── Content ─────────────────────────────────────────────────── */
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+
+    .surtitle {
+      margin-block: 0;
+    }
+
+    h1 {
+      color: var(--hero-color-title);
+      font-size: var(--hero-font-size-title);
+      margin-block-start: 0;
+      margin-block-end: var(--hero-gap);
+      text-wrap: balance;
+    }
+
+    .description {
+      text-wrap: balance;
+    }
+
+    p {
+      margin-block-start: 0;
+      margin-block-end: var(--hero-gap);
+    }
+
+    /* ── Buttons — first = primary, second = outline ─────────────── */
+
+    .btn {
+      --btn-surface: var(--color-brand);
+      --btn-on-surface: var(--color-text-on-brand);
+      --btn-border-color: var(--color-brand);
+    }
+
+    .btn + .btn {
+      --btn-surface: transparent;
+      --btn-on-surface: var(--color-brand);
+    }
+
+    &.hero-cover-darken {
+      & .btn + .btn {
+        --btn-on-surface: var(--color-dark-strong);
+        --btn-border-color: var(--color-dark-strong);
+      }
+    }
+  }
+
+  /* Hero without side media: constrain content width */
+  &:not(.hero-with-image):not(.hero-with-video) {
+    & .hero-content {
+      max-width: var(--hero-content-max-width);
+    }
+
+    &.hero-center .hero-content {
+      margin-inline: auto;
+      text-align: center;
+
+      .cta {
+        justify-content: center;
+      }
+    }
+  }
+
+  /* ── Media ───────────────────────────────────────────────────── */
+
+  .hero-media {
+    img,
+    video {
+      height: auto;
+      width: 100%;
+    }
+  }
+
+  /* ── Alignment variants ──────────────────────────────────────── */
+
+  .hero-center {
+    @media (--tablet) {
+      .row {
+        margin-inline: auto;
+        text-align: center;
+      }
+    }
+  }
+
+  .hero-end {
+    @media (--tablet) {
+      .hero-content {
+        margin-left: auto;
+      }
+    }
+  }
+
+  /* ── Cover (background media) ────────────────────────────────── */
+
+  .hero-with-cover {
+    overflow: hidden;
+  }
+
+  .hero-cover {
+    height: 100%;
+    inset: 0;
+    position: absolute;
+    width: 100%;
+
+    img,
+    video {
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      width: 100%;
+    }
+
+    iframe {
+      aspect-ratio: var(--ratio-16-9);
+      height: 100%;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+
+      @media (orientation: landscape) {
+        height: auto;
+        width: 100vw;
+      }
+    }
+  }
+
+  .hero-cover-darken {
+    & .hero-cover img,
+    & .hero-cover video {
+      filter: brightness(var(--hero-cover-brightness));
+    }
+
+    /* Light text over darkened cover */
+    color: var(--color-dark-strong);
+    --hero-color-title: var(--color-dark-strong);
+    --hero-color-link: var(--color-dark-strong);
+  }
+
+}

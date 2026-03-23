@@ -1,0 +1,25 @@
+/* tokens/component/container.css */
+@layer config {
+  :root {
+
+    /* Container */
+    --container-max-width-mobile:      100%;
+    --container-max-width-tablet:      var(--size-tablet);
+    --container-max-width-tablet-wide: var(--size-tablet-wide);
+    --container-max-width-laptop:      var(--size-laptop);
+    --container-max-width-desktop:     var(--size-desktop);
+    
+    /* Grid */
+    --columns:                         12;
+    --gap:                             var(--spacing-sm);
+    --gutter:                          var(--spacing-md);
+
+    /* Spans */
+    --span-mobile:                     var(--columns);
+    --span-tablet:                     calc(var(--columns) / 2);
+    --span-tablet-wide:                calc(var(--columns) / 3);
+    --span-laptop:                     calc(var(--columns) / 4);
+    --span-desktop:                    calc(var(--columns) / 4);
+
+  }
+}

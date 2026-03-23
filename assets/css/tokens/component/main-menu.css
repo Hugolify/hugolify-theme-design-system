@@ -1,0 +1,29 @@
+/* tokens/component/main-menu.css */
+@layer config {
+  :root {
+    /* Header bar */
+    --main-menu-color-bg:          var(--color-bg);
+    --main-menu-color-border:      var(--color-border);
+    --main-menu-border-width:      var(--border-width-normal);
+    --main-menu-padding-x:         var(--spacing-sm);
+    --main-menu-padding-y:         var(--spacing-sm);
+    --main-menu-shadow:            var(--shadow-sm);
+    --main-menu-z-index:           100;
+
+    /* Nav links (in header) */
+    --main-menu-color-text:        var(--color-text);
+    --main-menu-color-text-hover:  var(--color-brand);
+    --main-menu-font-size:         var(--font-size-body);
+
+    /* Mobile panel (offcanvas / modal) */
+    --main-menu-panel-color-bg:    var(--color-bg);
+    --main-menu-panel-color-text:  var(--color-text);
+    --main-menu-panel-font-size:   var(--font-size-md);
+    --main-menu-panel-font-size-sub: var(--font-size-sm);
+
+    /* Dropdown */
+    --main-menu-dropdown-color-bg: var(--color-bg-muted);
+    --main-menu-dropdown-radius:   var(--radius-surface);
+    --main-menu-dropdown-shadow:   var(--shadow-sm);
+  }
+}

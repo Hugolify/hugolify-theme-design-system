@@ -1,0 +1,6 @@
+/* components/page.css */
+/*
+ * .page overrides --item-* tokens via --page-* to customize the item base.
+ * Only add properties that diverge from the default item tokens.
+ * Usage: <article class="item page">
+ */

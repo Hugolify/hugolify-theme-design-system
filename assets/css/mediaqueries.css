@@ -9,8 +9,8 @@
 /* 1024px */
 @custom-media --tablet-wide (width >= 64rem);
 
-/* 1280px */
-@custom-media --laptop (width >= 80rem);
-
 /* 1440px */
-@custom-media --desktop (width >= 90rem);
+@custom-media --laptop (width >= 90rem);
+
+/* 1920px */
+@custom-media --desktop (width >= 120rem);

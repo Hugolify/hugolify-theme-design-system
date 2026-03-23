@@ -1,0 +1,15 @@
+/* tokens/semantic/border.css */
+@layer config {
+  :root {
+
+    /* Styles */
+    --border-style-dotted: dotted;
+    --border-style-dashed: dashed;
+    --border-style-solid:  solid;
+
+    /* Widths */
+    --border-width-none:   0px;
+    --border-width-normal: 1px;
+    --border-width-large:  2px;
+  }
+}

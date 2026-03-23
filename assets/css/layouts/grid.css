@@ -1,0 +1,36 @@
+/* layouts/grid.css */
+@layer layouts {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: var(--gap);
+
+    & > * {
+      grid-column: span var(--span-mobile);
+    }
+
+    @media (--tablet) {
+      & > * {
+        grid-column: span var(--span-tablet);
+      }
+    }
+
+    @media (--tablet-wide) {
+      & > * {
+        grid-column: span var(--span-tablet-wide);
+      }
+    }
+
+    @media (--laptop) {
+      & > * {
+        grid-column: span var(--span-laptop);
+      }
+    }
+
+    @media (--desktop) {
+      & > * {
+        grid-column: span var(--span-desktop);
+      }
+    }
+  }
+}

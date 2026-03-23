@@ -1,0 +1,19 @@
+/* tokens/component/page.css */
+@layer config {
+  :root {
+    --page-border-radius:     var(--item-border-radius);
+    --page-border-width:      var(--item-border-width);
+    --page-color-bg:          var(--item-color-bg);
+    --page-color-bg-media:    var(--item-color-bg-media);
+    --page-color-border:      var(--item-color-border);
+    --page-color-text:        var(--item-color-text);
+    --page-color-title:       var(--item-color-title);
+    --page-font-size-title:   var(--item-font-size-title);
+    --page-font-weight-title: var(--item-font-weight-title);
+    --page-gap:               var(--item-gap);
+    --page-line-height-title: var(--item-line-height-title);
+    --page-media-ratio:       var(--item-media-ratio);
+    --page-padding:           var(--item-padding);
+    --page-shadow:            var(--item-shadow);
+  }
+}

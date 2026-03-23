@@ -1,21 +1,18 @@
 /* tokens/primitive/font.css */
 @layer config {
   :root {
+    /* families */
     --font-family-mono: ui-monospace, monospace;
     --font-family-sans: system-ui, sans-serif;
     --font-family-serif: Georgia, serif;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
-    --font-size-lg: 1.125rem;
-    --font-size-md: 1rem;
-    --font-size-sm: 0.875rem;
-    --font-size-xl: 1.25rem;
-    --font-size-xs: 0.75rem;
+
+    /* weights */
     --font-weight-bold: 700;
     --font-weight-medium: 500;
     --font-weight-normal: 400;
     --font-weight-semibold: 600;
+
+    /* line heights */
     --line-height-normal: 1.5;
     --line-height-relaxed: 1.75;
     --line-height-snug: 1.25;

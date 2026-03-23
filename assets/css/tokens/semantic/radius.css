@@ -1,0 +1,18 @@
+/* tokens/semantic/radius.css */
+@layer config {
+  :root {
+    /* T-shirt scale */
+    --radius-xs: var(--size-4);
+    --radius-sm: var(--size-8);
+    --radius-md: var(--size-12);
+    --radius-lg: var(--size-16);
+    --radius-xl: var(--size-24);
+    --radius-2xl: var(--size-32);
+
+    /* Purposeful tokens */
+    --radius-none:    0;                 /* no rounding */
+    --radius-control: var(--radius-sm);  /* button, input, select */
+    --radius-pill:    9999px;            /* badge, tag */
+    --radius-surface: var(--radius-md);  /* card, modal, panel */
+  }
+}

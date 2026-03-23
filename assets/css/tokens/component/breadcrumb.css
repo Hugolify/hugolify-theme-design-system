@@ -1,0 +1,14 @@
+/* tokens/component/breadcrumb.css */
+@layer config {
+  :root {
+    --breadcrumb-border-color: var(--color-border);
+    --breadcrumb-border-width: var(--border-width-normal);
+    --breadcrumb-color: var(--color-text-muted);
+    --breadcrumb-color-active: var(--color-text);
+    --breadcrumb-color-separator: var(--color-text-muted);
+    --breadcrumb-font-size: var(--font-size-body-sm);
+    --breadcrumb-gap: var(--spacing-xs);
+    --breadcrumb-separator: "/";
+    --breadcrumb-spacing: var(--spacing-xs);
+  }
+}

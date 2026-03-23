@@ -1,0 +1,20 @@
+/* tokens/component/item.css */
+@layer config {
+  :root {
+    --item-border-radius:     var(--radius-surface);
+    --item-border-width:      var(--border-width-normal);
+    --item-color-bg:          var(--color-bg);
+    --item-color-bg-media:    var(--color-bg-media);
+    --item-color-border:      var(--color-border);
+    --item-color-text:        var(--color-text);
+    --item-color-text-muted:  var(--color-text-muted);
+    --item-color-title:       var(--color-text);
+    --item-font-size-title:   var(--font-size-md);
+    --item-font-weight-title: var(--font-weight-heading);
+    --item-gap:               var(--spacing-sm);
+    --item-line-height-title: var(--line-height-heading);
+    --item-media-ratio:       var(--ratio-16-9);
+    --item-padding:           var(--spacing-surface);
+    --item-shadow:            var(--shadow-sm);
+  }
+}

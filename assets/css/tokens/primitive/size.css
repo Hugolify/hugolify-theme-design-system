@@ -1,0 +1,50 @@
+/* tokens/primitive/size.css */
+@layer config {
+  :root {
+    /* px value as name */
+    --size-1: 0.0625rem;
+    --size-2: 0.125rem;
+    --size-3: 0.1875rem;
+    --size-4: 0.25rem;
+    --size-5: 0.3125rem;
+    --size-6: 0.375rem;
+    --size-7: 0.4375rem;
+    --size-8: 0.5rem;
+    --size-9: 0.5625rem;
+    --size-10: 0.625rem;
+    --size-11: 0.6875rem;
+    --size-12: 0.75rem;
+    --size-13: 0.8125rem;
+    --size-14: 0.875rem;
+    --size-15: 0.9375rem;
+    --size-16: 1rem;
+    --size-17: 1.0625rem;
+    --size-18: 1.125rem;
+    --size-19: 1.1875rem;
+    --size-20: 1.25rem;
+    --size-22: 1.375rem;
+    --size-24: 1.5rem;
+    --size-25: 1.5625rem;
+    --size-26: 1.625rem;
+    --size-28: 1.75rem;
+    --size-30: 1.875rem;
+    --size-32: 2rem;
+    --size-40: 2.5rem;
+    --size-48: 3rem;
+    --size-52: 3.25rem;
+    --size-56: 3.5rem;
+    --size-64: 4rem;
+    --size-68: 4.25rem;
+    --size-72: 4.5rem;
+    --size-80: 5rem;
+    --size-88: 5.5rem;
+    --size-96: 6rem;
+    --size-100: 6.25rem;
+
+    /* Layout / screen widths */
+    --size-768:  48rem;
+    --size-1024: 64rem;
+    --size-1440: 90rem;
+    --size-1920: 120rem;
+  }
+}

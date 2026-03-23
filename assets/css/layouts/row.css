@@ -1,0 +1,24 @@
+/* layouts/row.css */
+@layer layouts {
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--gap);
+  }
+  .row > * {
+    flex: 1 1 100%;
+  }
+
+  @media (--tablet) {
+    .row > * {
+      flex: 1 1 calc(50% - var(--gap));
+    }
+  }
+
+  @media (--laptop) {
+    .row > * {
+      flex: 1 1 calc(25% - var(--gap));
+    }
+  }
+}

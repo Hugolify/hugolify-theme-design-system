@@ -1,12 +1,14 @@
 /* components/alert.css */
 @layer components {
   .alert {
+    background-color: var(--alert-color-bg);
     border-radius: var(--alert-border-radius);
+    color: var(--alert-color-text);
     display: flex;
     flex-direction: column;
     font-size: var(--alert-font-size);
     gap: var(--alert-gap);
-    padding: var(--alert-padding-y) var(--alert-padding-x);
+    padding: var(--alert-padding);
 
     > * {
       margin: 0;
@@ -26,23 +28,12 @@
   }
 
   /* Variants */
-  .alert-danger {
-    background-color: var(--color-danger-muted);
-    color: var(--color-danger-strong);
-  }
-
-  .alert-info {
-    background-color: var(--color-info-muted);
-    color: var(--color-info-strong);
-  }
-
-  .alert-success {
-    background-color: var(--color-success-muted);
-    color: var(--color-success-strong);
-  }
-
-  .alert-warning {
-    background-color: var(--color-warning-muted);
-    color: var(--color-warning-strong);
-  }
+  .alert-danger    { --alert-color-bg: var(--color-danger-muted);    --alert-color-text: var(--color-danger-strong); }
+  .alert-dark      { --alert-color-bg: var(--color-dark-muted);      --alert-color-text: var(--color-dark-strong); }
+  .alert-info      { --alert-color-bg: var(--color-info-muted);      --alert-color-text: var(--color-info-strong); }
+  .alert-light     { --alert-color-bg: var(--color-light-muted);     --alert-color-text: var(--color-light-strong); }
+  .alert-primary   { --alert-color-bg: var(--color-primary-muted);   --alert-color-text: var(--color-primary-strong); }
+  .alert-secondary { --alert-color-bg: var(--color-secondary-muted); --alert-color-text: var(--color-secondary-strong); }
+  .alert-success   { --alert-color-bg: var(--color-success-muted);   --alert-color-text: var(--color-success-strong); }
+  .alert-warning   { --alert-color-bg: var(--color-warning-muted);   --alert-color-text: var(--color-warning-strong); }
 }
