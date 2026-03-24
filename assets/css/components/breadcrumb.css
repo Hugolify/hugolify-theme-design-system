@@ -3,7 +3,7 @@
   .breadcrumb-wrapper {
     border-bottom: var(--breadcrumb-border-width) solid var(--breadcrumb-border-color);
     border-top: var(--breadcrumb-border-width) solid var(--breadcrumb-border-color);
-    padding-block: var(--breadcrumb-spacing);
+    padding-block: var(--breadcrumb-padding);
 
     ol {
       display: flex;
@@ -17,7 +17,7 @@
 
     li {
       align-items: center;
-      color: var(--breadcrumb-color);
+      color: var(--breadcrumb-color-text);
       display: flex;
       gap: var(--breadcrumb-gap);
       margin: 0;
@@ -36,7 +36,7 @@
       }
 
       &[aria-current="page"] {
-        color: var(--breadcrumb-color-active);
+        color: var(--breadcrumb-color-text-active);
       }
     }
   }

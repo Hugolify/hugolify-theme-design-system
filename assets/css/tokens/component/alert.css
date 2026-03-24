@@ -4,6 +4,6 @@
     --alert-border-radius: var(--radius-none);
     --alert-font-size: var(--font-size-body);
     --alert-gap: var(--spacing-sm);
-    --alert-padding: var(--spacing-md);
+    --alert-spacing: var(--spacing-sm);
   }
 }

@@ -1,0 +1,40 @@
+/* components/media.css */
+/*
+ * .media — structural base for all media components.
+ * .media-logo — logo media component.
+ * .media-icon — icon media component.
+ */
+@layer components {
+
+  .media {
+    aspect-ratio: var(--media-ratio);
+    background-color: var(--media-color-bg);
+    overflow: hidden;
+
+    picture,
+    img {
+      height: 100%;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+
+  .media-logo {
+    picture {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    img {
+      max-height: 70%;
+      max-width: 60%;
+      object-fit: contain;
+    }
+  }
+
+  .media-icon {
+    --media-ratio: none;
+    --media-color-bg: transparent;
+  }
+
+}

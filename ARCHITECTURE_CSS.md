@@ -140,6 +140,22 @@ This file is the only place that knows about the token folder structure.
 
 ---
 
+## Color palette generation
+
+Color primitives (`--color-blue-500`, `--color-gray-900`…) need a coherent scale before becoming tokens. [Kigen](https://kigen.design/color) is a generator that produces an 11-step palette (50 → 950) from a single base color, following the Tailwind naming convention.
+
+Key features useful for this DS:
+
+- **Algorithm choice** — different generation methods (perceptual, linear…)
+- **Contrast shift** — fine-tune luminosity spread across the scale
+- **OKLCH export** — modern color space, perceptually uniform
+- **CSS / Tokens export** — drops directly into `tokens/primitive/color.css`
+- **Figma plugin** — keeps designer and developer scales in sync
+
+Workflow: generate the palette in Kigen → export as CSS → paste into `tokens/primitive/color.css` → wire to semantic tokens in `tokens/semantic/color.css`.
+
+---
+
 ## The three token layers
 
 ### 1. `tokens/primitive/` — raw values
@@ -160,15 +176,12 @@ Named after their physical content, with no contextual meaning.
 ```
 
 ```css
-/* tokens/primitive/spacing.css */
-/* Scale in multiples of 4px (0.25rem) — number = px value ÷ 4 */
-/* --space-1 = 4px, --space-2 = 8px, --space-4 = 16px, --space-8 = 32px */
+/* tokens/primitive/size.css */
 :root {
-  --space-1: 0.25rem;
-  --space-2: 0.5rem;
-  --space-4: 1rem;
-  --space-8: 2rem;
-  --space-16: 4rem;
+  --size-8: 0.5rem;
+  --size-16: 1rem;
+  --size-32: 2rem;
+  --size-64: 4rem;
 }
 ```
 
@@ -196,7 +209,7 @@ Tokens that carry intent. They **always reference primitives**, never raw values
 | Category | Primitive | Semantic | Reason |
 | --- | --- | --- | --- |
 | Color | `--color-blue-500` | `--color-brand`, `--color-text` | Palette → intent |
-| Size | `--size-4`, `--size-16` | `--space-xs`, `--space-md` | Raw scale → T-shirt spacing |
+| Size | `--size-8`, `--size-16` | `--spacing-xs`, `--spacing-md` | Raw scale → T-shirt spacing |
 | Font | `--font-family-sans`, `--font-weight-bold` | `--font-body`, `--font-weight-heading` | Catalog → role |
 | Radius | — | `--radius-control`, `--radius-pill` | References `--size-*` directly — no primitive needed |
 | Shadow | `--shadow-sm`, `--shadow-lg` | — | Composite value, cannot derive from `--size-*` |
@@ -226,61 +239,6 @@ Optional on small projects.
 ```
 
 ---
-
-## Fluid typography
-
-Heading font sizes use **CSS `clamp()`** for fluid scaling — no media queries needed. The font size scales continuously between a minimum (mobile) and a maximum (desktop) value based on the viewport width.
-
-```css
-/* tokens/semantic/typography.css */
---font-size-heading-2xl: clamp(1.75rem, 4vw + 1rem, 3rem);
---font-size-heading-xl:  clamp(1.5rem,  3vw + 1rem, 2.25rem);
---font-size-heading-lg:  clamp(1.25rem, 2vw + 1rem, 1.75rem);
-```
-
-The `base/headings.css` file stays unchanged — only the token value changes.
-
-### The clamp formula
-
-```css
-clamp(min, calc(min + (max - min) * ((100vw - min-vw) / (max-vw - min-vw))), max)
-```
-
-Example for a heading that goes from `1.75rem` (mobile at 320px) to `3rem` (desktop at 1280px):
-
-```
-min-size = 1.75rem
-max-size = 3rem
-min-vw   = 20rem  (320px)
-max-vw   = 80rem  (1280px)
-
-→ clamp(1.75rem, calc(1.75rem + 1.25 * ((100vw - 20rem) / 60)), 3rem)
-→ simplified: clamp(1.75rem, 4vw + 1rem, 3rem)
-```
-
-### Automation with `postcss-utopia`
-
-[`postcss-utopia`](https://www.npmjs.com/package/postcss-utopia) generates `clamp()` values from a simple `px` syntax. Min/max viewports are configured once in `postcss.config.js`.
-
-```js
-// postcss/design-system/postcss.config.js
-module.exports = {
-  plugins: {
-    'postcss-utopia': { minWidth: 320, maxWidth: 1440 },
-    'postcss-custom-media': {},
-    autoprefixer: {},
-  }
-};
-```
-
-```css
-/* tokens/semantic/typography.css */
---font-size-heading-2xl: utopia.clamp(28, 48); /* px values → generates clamp() */
---font-size-heading-xl:  utopia.clamp(24, 36);
---font-size-heading-lg:  utopia.clamp(20, 28);
-```
-
-> Token files become dependent on the PostCSS build — `utopia.clamp()` is not valid CSS without the plugin. The compiled output is standard `clamp()` readable by any browser.
 
 ## Responsive tokens
 
@@ -447,3 +405,60 @@ The architecture stays identical — Style Dictionary is **not required** to app
 | `layout/` | Grid, containers | Dev |
 | `components/` | UI components | Dev |
 | `utilities/` | Utility classes | Dev |
+
+## Future
+
+### Fluid typography
+
+Heading font sizes use **CSS `clamp()`** for fluid scaling — no media queries needed. The font size scales continuously between a minimum (mobile) and a maximum (desktop) value based on the viewport width.
+
+```css
+/* tokens/semantic/typography.css */
+--font-size-heading-2xl: clamp(1.75rem, 4vw + 1rem, 3rem);
+--font-size-heading-xl:  clamp(1.5rem,  3vw + 1rem, 2.25rem);
+--font-size-heading-lg:  clamp(1.25rem, 2vw + 1rem, 1.75rem);
+```
+
+The `base/headings.css` file stays unchanged — only the token value changes.
+
+#### The clamp formula
+
+```css
+clamp(min, calc(min + (max - min) * ((100vw - min-vw) / (max-vw - min-vw))), max)
+```
+
+Example for a heading that goes from `1.75rem` (mobile at 320px) to `3rem` (desktop at 1280px):
+
+```
+min-size = 1.75rem
+max-size = 3rem
+min-vw   = 20rem  (320px)
+max-vw   = 80rem  (1280px)
+
+→ clamp(1.75rem, calc(1.75rem + 1.25 * ((100vw - 20rem) / 60)), 3rem)
+→ simplified: clamp(1.75rem, 4vw + 1rem, 3rem)
+```
+
+#### Automation with `postcss-utopia`
+
+[`postcss-utopia`](https://www.npmjs.com/package/postcss-utopia) generates `clamp()` values from a simple `px` syntax. Min/max viewports are configured once in `postcss.config.js`.
+
+```js
+// postcss/design-system/postcss.config.js
+module.exports = {
+  plugins: {
+    'postcss-utopia': { minWidth: 320, maxWidth: 1440 },
+    'postcss-custom-media': {},
+    autoprefixer: {},
+  }
+};
+```
+
+```css
+/* tokens/semantic/typography.css */
+--font-size-heading-2xl: utopia.clamp(28, 48); /* px values → generates clamp() */
+--font-size-heading-xl:  utopia.clamp(24, 36);
+--font-size-heading-lg:  utopia.clamp(20, 28);
+```
+
+> Token files become dependent on the PostCSS build — `utopia.clamp()` is not valid CSS without the plugin. The compiled output is standard `clamp()` readable by any browser.

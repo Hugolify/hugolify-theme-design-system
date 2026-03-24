@@ -1,0 +1,147 @@
+/* components/offcanvas.css */
+/*
+ * .offcanvas — slide-in panel, vanilla JS driven.
+ *
+ * JS (components/offcanvas.js) manages:
+ *   .showing  — panel becoming visible (open transition)
+ *   .show     — panel fully open
+ *   .hiding   — panel becoming hidden (close transition)
+ *   aria-hidden="true" when closed
+ *   body.offcanvas-open when panel is open
+ *
+ * Triggers: .js-offcanvas-toggle[data-target="#id"]
+ * Close:    .js-offcanvas-close (inside panel)
+ *
+ * Position variants: .offcanvas-start | .offcanvas-end | .offcanvas-top | .offcanvas-bottom
+ *
+ * Expected HTML:
+ *   <div id="navigation" class="offcanvas offcanvas-start" role="dialog" aria-modal="true" aria-hidden="true">
+ *     <div class="header">
+ *       <span class="title">...</span>
+ *       <button class="js-offcanvas-close btn">...</button>
+ *     </div>
+ *     <div class="content">...</div>
+ *   </div>
+ */
+@layer components {
+
+  /* ── Panel ───────────────────────────────────────────────────────── */
+
+  .offcanvas {
+    background-color: var(--offcanvas-color-bg);
+    box-shadow: var(--offcanvas-shadow);
+    color: var(--offcanvas-color-text);
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    overflow: hidden;
+    position: fixed;
+    transition-duration: var(--offcanvas-transition-duration);
+    transition-property: transform, visibility;
+    transition-timing-function: var(--offcanvas-transition-easing);
+    visibility: hidden;
+    z-index: var(--offcanvas-z-index);
+
+    /* Visible during transitions and when open */
+    &.show,
+    &.showing,
+    &.hiding {
+      visibility: visible;
+    }
+
+    /* Fully open — remove transform */
+    &.show {
+      transform: none;
+    }
+
+    /* ── Header ────────────────────────────────────────────────────── */
+
+    & > .header {
+      align-items: center;
+      border-bottom: 1px solid var(--offcanvas-color-border);
+      display: flex;
+      flex-shrink: 0;
+      justify-content: space-between;
+      padding: var(--offcanvas-padding);
+
+      & .title {
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-heading);
+        margin: 0;
+      }
+    }
+
+    /* ── Body ──────────────────────────────────────────────────────── */
+
+    & > .content {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding: var(--offcanvas-padding);
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
+
+    & > .footer {
+      flex-shrink: 0;
+      padding: var(--offcanvas-padding);
+    }
+  }
+
+  /* ── Position variants ───────────────────────────────────────────── */
+
+  .offcanvas-start {
+    bottom: 0;
+    left: 0;
+    top: 0;
+    transform: translateX(-100%);
+    width: var(--offcanvas-width);
+  }
+
+  .offcanvas-end {
+    bottom: 0;
+    right: 0;
+    top: 0;
+    transform: translateX(100%);
+    width: var(--offcanvas-width);
+  }
+
+  .offcanvas-top {
+    height: var(--offcanvas-height);
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-100%);
+  }
+
+  .offcanvas-bottom {
+    bottom: 0;
+    height: var(--offcanvas-height);
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+  }
+
+  /* ── Backdrop ────────────────────────────────────────────────────── */
+
+  .offcanvas-backdrop {
+    background-color: var(--offcanvas-backdrop-color);
+    inset: 0;
+    position: fixed;
+    z-index: calc(var(--offcanvas-z-index) - 1);
+
+    &.fade {
+      opacity: 0;
+      transition: opacity var(--offcanvas-transition-duration) var(--offcanvas-transition-easing);
+    }
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  /* ── Body scroll lock ────────────────────────────────────────────── */
+
+  body.offcanvas-open {
+    overflow: hidden;
+  }
+}

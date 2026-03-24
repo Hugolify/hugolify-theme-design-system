@@ -1,0 +1,12 @@
+/* base/link.css */
+@layer base {
+  a {
+    color: var(--color-link);
+    text-underline-offset: 0.25rem;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover {
+    text-decoration-color: transparent;
+  }
+}

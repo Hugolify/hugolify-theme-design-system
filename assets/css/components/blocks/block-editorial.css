@@ -1,0 +1,64 @@
+/* components/blocks/block-editorial.css */
+/*
+ * .block-editorial — text + media side-by-side block.
+ *
+ * Structure:
+ *   section.block-editorial[.block-editorial-rtl][.block-bg]
+ *     .heading
+ *     .container
+ *       .row
+ *         .content   — text, CTAs
+ *         .media     — image / screenshot
+ *     .footing
+ *
+ * Variants:
+ *   .block-editorial-rtl  — reverses content/media order
+ */
+@layer components {
+  .block-editorial {
+    .row {
+      align-items: center;
+    }
+
+    .content,
+    .media {
+      flex: 0 0 calc(50% - var(--gap));
+    }
+
+    .media {
+      --media-ratio: none;
+    }
+
+    /* ── Content text ─────────────────────────────────────────── */
+
+    figure {
+      display: block;
+      margin-block: 0;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+
+    /* ── Mobile: media full-bleed, above content ──────────────── */
+
+    @media (--mobile-only) {
+      .media {
+        margin-inline: calc(-1 * var(--container-padding-x));
+        max-width: none;
+        order: -1;
+        width: calc(100% + 2 * var(--container-padding-x));
+      }
+    }
+  }
+
+  /* ── RTL variant: reverse column order ──────────────────────── */
+
+  .block-editorial-rtl {
+    .row {
+      flex-direction: row-reverse;
+    }
+  }
+}

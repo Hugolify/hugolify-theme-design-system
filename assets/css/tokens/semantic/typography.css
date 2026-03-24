@@ -9,18 +9,26 @@
 
     /* Font weights */
     --font-weight-body:    var(--font-weight-normal);
+    --font-weight-control: var(--font-weight-medium);
     --font-weight-heading: var(--font-weight-bold);
+
+    /* Letter spacing */
+    --letter-spacing-normal: 0;
+    --letter-spacing-medium: 0.025em;
+    --letter-spacing-large:  0.05em;
 
     /* Line heights */
     --line-height-body:    var(--line-height-normal);
     --line-height-heading: var(--line-height-tight);
 
     /* Font sizes — T-shirt scale */
-    --font-size-xs: var(--size-12);
+    --font-size-2xs: var(--size-12);
+    --font-size-xs: var(--size-14);
     --font-size-sm: var(--size-16);
     --font-size-md: var(--size-18);
     --font-size-lg: var(--size-24);
     --font-size-xl: var(--size-40);
+    --font-size-2xl: var(--size-64);
 
     /* Body */
     --font-size-body: var(--font-size-sm);

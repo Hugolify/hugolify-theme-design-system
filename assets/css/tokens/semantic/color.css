@@ -8,8 +8,12 @@
 
     /* Border */
     --color-border: var(--color-gray-200);
+    --color-focus: var(--color-brand);
 
     /* Text */
+    --color-active: var(--color-brand);
+    --color-heading: var(--color-black);
+    --color-link: var(--color-black);
     --color-text: var(--color-gray-900);
     --color-text-muted: var(--color-gray-500);
     --color-text-disabled: var(--color-gray-300);
@@ -18,9 +22,10 @@
     /* Variants */
 
     /* Brand */
-    --color-brand: var(--color-blue-500);
-    --color-brand-muted: var(--color-blue-100);
-    --color-brand-strong: var(--color-blue-900);
+    --color-brand: var(--color-claret-600);
+    --color-brand-muted: var(--color-claret-100);
+    --color-brand-hover: var(--color-claret-700);
+    --color-brand-strong: var(--color-claret-900);
 
     /* Dark */
     --color-dark: var(--color-gray-900);

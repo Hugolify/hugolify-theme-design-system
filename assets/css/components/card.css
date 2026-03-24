@@ -14,7 +14,7 @@
     flex-direction: column;
     overflow: hidden;
 
-    & > .content {
+    .content {
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -23,29 +23,21 @@
       text-decoration: none;
     }
 
-    & .description {
+    .description {
       color: var(--card-color-text-muted);
     }
 
-    & .name {
+    .name {
       color: var(--card-color-title);
       font-size: var(--card-font-size-title);
       font-weight: var(--card-font-weight-title);
       line-height: var(--card-line-height-title);
     }
 
-    & > .media {
-      aspect-ratio: var(--card-media-ratio);
-      background-color: var(--card-color-bg-media);
+    .media {
+      --media-ratio: var(--card-media-ratio);
+      --media-color-bg: var(--card-media-color-bg);
       order: -1;
-      overflow: hidden;
-
-      picture,
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-      }
     }
   }
 }

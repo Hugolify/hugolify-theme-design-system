@@ -2,6 +2,7 @@
 @layer components {
   .btn {
     align-items: center;
+    appearance: none;
     background-color: var(--btn-surface);
     border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
     border-radius: var(--btn-border-radius);
@@ -11,17 +12,12 @@
     font-size: var(--btn-font-size);
     font-weight: var(--btn-font-weight);
     gap: var(--btn-gap);
-    padding: var(--btn-spacing);
+    padding: var(--btn-padding);
     text-decoration: var(--btn-text-decoration);
     text-transform: var(--btn-text-transform);
-    transition: var(--btn-transition);
-
-    &:hover {
-      opacity: 0.85;
-    }
 
     &:focus-visible {
-      outline: 2px solid var(--btn-border-color);
+      outline: 2px solid var(--color-focus);
       outline-offset: 2px;
     }
 
@@ -29,6 +25,17 @@
     &[aria-disabled='true'] {
       cursor: not-allowed;
       opacity: 0.5;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: var(--btn-surface-hover);
+        color: var(--btn-on-surface-hover);
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: var(--btn-transition);
     }
   }
 
@@ -61,26 +68,26 @@
   /* Sizes */
   .btn-xs {
     --btn-font-size: var(--font-size-xs);
-    --btn-spacing: var(--spacing-xs);
+    --btn-padding: var(--spacing-xs);
   }
 
   .btn-sm {
     --btn-font-size: var(--font-size-sm);
-    --btn-spacing: var(--spacing-sm);
+    --btn-padding: var(--spacing-sm);
   }
 
   .btn-md {
     --btn-font-size: var(--font-size-md);
-    --btn-spacing: var(--spacing-md);
+    --btn-padding: var(--spacing-md);
   }
 
   .btn-lg {
     --btn-font-size: var(--font-size-lg);
-    --btn-spacing: var(--spacing-lg);
+    --btn-padding: var(--spacing-lg);
   }
 
   .btn-xl {
     --btn-font-size: var(--font-size-xl);
-    --btn-spacing: var(--spacing-xl);
+    --btn-padding: var(--spacing-xl);
   }
 }

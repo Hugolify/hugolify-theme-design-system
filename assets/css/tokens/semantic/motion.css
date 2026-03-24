@@ -1,11 +1,19 @@
 /* tokens/semantic/motion.css */
 @layer config {
   :root {
-    --duration-fast: 100ms;
-    --duration-normal: 200ms;
-    --duration-slow: 300ms;
+    /* Duration */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 600ms;
+
+    /* Easing */
     --easing-default: ease-in-out;
     --easing-in: ease-in;
     --easing-out: ease-out;
+
+    /* Transition */
+    --transition-default: all var(--duration-normal) var(--easing-default);
+    --transition-fast: all var(--duration-fast) var(--easing-default);
+    --transition-slow: all var(--duration-slow) var(--easing-default);
   }
 }

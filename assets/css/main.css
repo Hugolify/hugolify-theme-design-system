@@ -13,26 +13,45 @@
 /* Base */
 @import 'base/body.css';
 @import 'base/headings.css';
+@import 'base/link.css';
 @import 'base/scale.css';
 @import 'base/typography.css';
 
 /* Layouts */
 @import 'layouts/container.css';
+@import 'layouts/footer.css';
 @import 'layouts/grid.css';
+@import 'layouts/header.css';
+@import 'layouts/main.css';
 @import 'layouts/row.css';
 
 /* Components */
 @import 'components/alert.css';
+@import 'components/banner.css';
+@import 'components/block.css';
+@import 'components/block-bg.css';
 @import 'components/badge.css';
 @import 'components/breadcrumb.css';
+@import 'components/btn-menu.css';
 @import 'components/button.css';
 @import 'components/card.css';
 @import 'components/cta.css';
-@import 'components/header.css';
+@import 'components/dropdown.css';
+@import 'components/heading.css';
 @import 'components/hero.css';
 @import 'components/item.css';
 @import 'components/items.css';
+@import 'components/logo.css';
 @import 'components/main-menu.css';
+@import 'components/media.css';
+@import 'components/nav.css';
+@import 'components/nav-accessibility.css';
+@import 'components/offcanvas.css';
+@import 'components/screenshot.css';
+@import 'components/surtitle.css';
+
+/* Blocks */
+@import 'components/blocks/block-editorial.css';
 
 /* sections */
 @import 'sections/pages.css';

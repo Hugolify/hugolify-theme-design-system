@@ -8,16 +8,24 @@
  */
 @layer components {
   .item {
+
+    --btn-surface: var(--item-btn-surface);
+    --btn-border-width: var(--item-btn-border-width);
+    --btn-on-surface: var(--item-btn-on-surface);
+    --btn-padding: var(--item-btn-padding);
+
     background-color: var(--item-color-bg);
-    border: var(--item-border-width) solid var(--item-color-border);
+    border: var(--item-border-width) var(--item-border-style) var(--item-color-border);
     border-radius: var(--item-border-radius);
     box-shadow: var(--item-shadow);
     color: var(--item-color-text);
     display: flex;
     flex-direction: column;
+    height: 100%;
     overflow: hidden;
+    position: relative;
 
-    & .content {
+    .content {
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -30,29 +38,53 @@
       }
     }
 
-    & .description {
+    a.content {
+      &::before {
+        content: '';
+        inset: 0;
+        position: absolute;
+      }
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    .description {
       color: var(--item-color-text-muted);
     }
 
-    & .name {
+    .name {
       color: var(--item-color-title);
       font-size: var(--item-font-size-title);
       font-weight: var(--item-font-weight-title);
       line-height: var(--item-line-height-title);
     }
 
-    & .media {
-      aspect-ratio: var(--item-media-ratio);
-      background-color: var(--item-color-bg-media);
-      order: -1;
-      overflow: hidden;
+    .btn {
+      margin-top: auto;
+    }
 
-      picture,
-      img {
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
+    .media {
+      --media-ratio: var(--item-media-ratio);
+      --media-color-bg: var(--item-media-color-bg);
+      order: -1;
+    }
+
+    /* Focus */
+    &:has(a.content:focus-visible) {
+      outline: 2px solid var(--color-focus);
+      outline-offset: 2px;
+    }
+
+    /* Hover */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --item-shadow: var(--item-shadow-hover);
       }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: var(--item-transition);
     }
   }
 }

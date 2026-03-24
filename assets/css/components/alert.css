@@ -8,7 +8,7 @@
     flex-direction: column;
     font-size: var(--alert-font-size);
     gap: var(--alert-gap);
-    padding: var(--alert-padding);
+    padding: var(--alert-spacing);
 
     > * {
       margin: 0;

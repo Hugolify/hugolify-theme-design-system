@@ -7,7 +7,6 @@
 @layer base {
   @media (--tablet) {
     :root {
-      --font-size-md: var(--size-20);
       --font-size-lg: var(--size-26);
       --font-size-xl: var(--size-52);
     }
@@ -21,7 +20,6 @@
       --font-size-xl: var(--size-52);
 
       /* Spacing */
-      --spacing-control: var(--spacing-sm);
       --spacing-surface: var(--spacing-md);
     }
   }

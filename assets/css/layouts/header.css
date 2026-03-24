@@ -1,0 +1,105 @@
+/* layouts/header.css */
+/*
+ * header[role="banner"] — sticky site header.
+ *
+ * JS behaviour (components/menu.js) toggles:
+ *   header.is-sticky          — scrolled past header height
+ *   html.is-scrolling-down    — user scrolling downward
+ *   html.is-menu-open         — mobile panel open
+ *   html.is-dropdown-menu-open — a dropdown is open
+ *
+ * Expected HTML structure:
+ *   <header role="banner">
+ *     <nav role="navigation">
+ *       <div class="container">
+ *         <a class="logo">...</a>
+ *         <button class="btn-search">...</button>
+ *         <button class="btn-menu">...</button>
+ *         <div class="main-menu">...</div>
+ *       </div>
+ *     </nav>
+ *   </header>
+ */
+@layer components {
+  header[role="banner"] {
+    --color-link: var(--header-color-link);
+    --color-text: var(--header-color-text);
+    background-color: var(--header-color-bg);
+    padding: var(--header-spacing);
+    position: sticky;
+    top: 0;
+    z-index: var(--header-z-index);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: top var(--header-transition-duration) var(--header-transition-easing),
+                  box-shadow var(--header-transition-duration) var(--header-transition-easing);
+    }
+
+    /* Auto-hide on scroll down */
+    html:not(.is-dropdown-menu-open).is-scrolling-down &:not(:hover) {
+      top: calc(var(--header-height, 0px) * -1);
+    }
+
+    /* Shadow when sticky */
+    &.is-sticky {
+      box-shadow: var(--header-shadow);
+    }
+
+    /* ── Inner nav ───────────────────────────────────────────────── */
+
+    .container {
+      align-items: center;
+      display: flex;
+      gap: var(--header-gap);
+      justify-content: space-between;
+    }
+
+    /* ── Logo ────────────────────────────────────────────────────── */
+
+    .logo {
+      margin-inline-end: auto;
+      text-decoration: none;
+      img {
+        max-width: var(--header-logo-max-width);
+      }
+    }
+
+    /* ── Expand ──────────────────────────── */
+
+    @media (--header-expand) {
+      .btn-menu {
+        display: none;
+      }
+
+      /* Not expanded: hidden until opened as offcanvas/modal (managed by JS)  */
+      /* Expanded: inline flex nav inside the header  */
+      .main-menu {
+        --offcanvas-color-bg: transparent;
+        --offcanvas-color-text: inherit;
+        --offcanvas-shadow: none;
+        --offcanvas-padding: 0;
+        --offcanvas-width: auto;
+        display: flex;
+        overflow: visible;
+        position: static;
+        transform: none;
+        visibility: visible;
+
+        .nav {
+          align-items: baseline;
+          flex-direction: row;
+        }
+
+        /* Hide header from offcanvas/modal when displayed inline */
+        .header {
+          display: none;
+        }
+
+        .content {
+          overflow: visible;
+        }
+      }
+    }
+
+  }
+}

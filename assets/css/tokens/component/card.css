@@ -2,20 +2,38 @@
 /* Aliases for backwards compatibility — canonical tokens are --item-* */
 @layer config {
   :root {
+
+    /* Border */
     --card-border-radius:     var(--item-border-radius);
+    --card-border-style:      var(--item-border-style);
     --card-border-width:      var(--item-border-width);
+
+    /* Button */
+    --card-btn-surface:       var(--item-btn-surface);
+    --card-btn-border-width:  var(--item-btn-border-width);
+    --card-btn-on-surface:    var(--item-btn-on-surface);
+
+    /* Color */
     --card-color-bg:          var(--item-color-bg);
-    --card-color-bg-media:    var(--item-color-bg-media);
     --card-color-border:      var(--item-color-border);
     --card-color-text:        var(--item-color-text);
     --card-color-text-muted:  var(--item-color-text-muted);
     --card-color-title:       var(--item-color-title);
+
+    /* Font */
     --card-font-size-title:   var(--item-font-size-title);
     --card-font-weight-title: var(--item-font-weight-title);
-    --card-gap:               var(--item-gap);
     --card-line-height-title: var(--item-line-height-title);
-    --card-media-ratio:       var(--item-media-ratio);
+
+    /* Spacing */
+    --card-gap:               var(--item-gap);
     --card-padding:           var(--item-padding);
+
+    /* Media */
+    --card-media-color-bg:    var(--item-media-color-bg);
+    --card-media-ratio:       var(--item-media-ratio);
+
+    /* Shadow */
     --card-shadow:            var(--item-shadow);
   }
 }

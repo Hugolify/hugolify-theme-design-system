@@ -13,6 +13,13 @@
       & > * {
         grid-column: span var(--span-tablet);
       }
+      > .content {
+        grid-column: span var(--span-two-thirds);
+      }
+      > .sidebar,
+      > .toc {
+        grid-column: span var(--span-third);
+      }
     }
 
     @media (--tablet-wide) {

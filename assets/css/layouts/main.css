@@ -1,0 +1,6 @@
+/* base/main.css */
+@layer base {
+  main:not(:has([class*="block-"])) {
+    padding-block: var(--spacing-section);
+  }
+}

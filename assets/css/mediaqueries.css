@@ -14,3 +14,7 @@
 
 /* 1920px */
 @custom-media --desktop (width >= 120rem);
+
+
+/* Header expand — configurable via params.header.expand in hugo.yaml */
+@custom-media --header-expand (width >= 64rem);

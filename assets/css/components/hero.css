@@ -35,11 +35,11 @@
 
     .container {
       display: flex;
-      min-height: var(--hero-min-height-mobile);
+      min-height: var(--hero-min-height);
       position: relative;
 
       @media (--tablet) {
-        min-height: var(--hero-min-height);
+        min-height: var(--hero-min-height-tablet);
       }
     }
 

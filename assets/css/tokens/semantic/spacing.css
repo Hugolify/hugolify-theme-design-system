@@ -3,16 +3,18 @@
   :root {
 
     /* T-shirt scale */
+    --spacing-2xs: var(--size-5);
     --spacing-xs: var(--size-10);
     --spacing-sm: var(--size-20);
     --spacing-md: var(--size-30);
     --spacing-lg: var(--size-40);
     --spacing-xl: var(--size-60);
-    --spacing-2xl: var(--size-80);
+    --spacing-2xl: var(--size-100);
 
     /* Typography */
     --spacing-control:    var(--spacing-xs);
     --spacing-heading:    var(--spacing-sm);
+    --spacing-section:    var(--spacing-2xl);
     --spacing-surface:    var(--spacing-sm);
     --spacing-typography: var(--spacing-xs);
 

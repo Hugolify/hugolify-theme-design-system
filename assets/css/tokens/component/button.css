@@ -1,16 +1,28 @@
 /* tokens/component/button.css */
 @layer config {
   :root {
+    
+    /* Border */
     --btn-border-color: var(--color-brand);
     --btn-border-radius: var(--radius-control);
     --btn-border-style: var(--border-style-solid);
     --btn-border-width: var(--border-width-normal);
+
+    /* Typography */
     --btn-font-size: var(--font-size-sm);
-    --btn-font-weight: var(--font-weight-medium);
+    --btn-font-weight: var(--font-weight-control);
+    
+    /* Spacing */
     --btn-gap: var(--spacing-sm);
+    --btn-padding: var(--spacing-control);
+
+    /* Surface */
     --btn-on-surface: var(--color-text-on-brand);
-    --btn-spacing: var(--spacing-control);
     --btn-surface: var(--color-brand);
-    --btn-transition: opacity var(--duration-fast) var(--easing-default);
+    --btn-surface-hover: var(--color-brand-hover);
+    --btn-on-surface-hover: var(--color-text-on-brand);
+
+    /* States */
+    --btn-transition: background-color var(--duration-normal) var(--easing-default), color var(--duration-normal) var(--easing-default);
   }
 }

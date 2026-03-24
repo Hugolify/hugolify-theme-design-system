@@ -1,0 +1,17 @@
+/* tokens/component/footer.css */
+@layer config {
+  :root {
+    /* Colors */
+    --footer-color-bg:          var(--color-bg-muted);
+    --footer-color-text:        var(--color-text);
+    --footer-color-text-muted:  var(--color-text-muted);
+    --footer-color-border:      var(--color-border);
+
+    /* Layout */
+    --footer-gap:           var(--spacing-lg);
+    --footer-padding-y:     var(--spacing-xl);
+
+    /* Logo */
+    --footer-logo-height:   var(--logo-height);
+  }
+}

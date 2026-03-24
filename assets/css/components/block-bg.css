@@ -1,0 +1,22 @@
+/* components/block-bg.css */
+/*
+ * .block-bg — background variant for block sections.
+ *
+ * Applied alongside a block class: <section class="block-editorial block-bg">
+ * When last child of <main>, absorbs main's bottom padding
+ * and extends its own to double the standard block padding.
+ */
+@layer components {
+  .block-bg {
+    background-color: var(--block-bg-color);
+
+    /* When last in <main>: absorb main's bottom padding */
+    /* main:has(> &:last-child) {
+      padding-bottom: 0;
+    }
+
+    &:last-child {
+      padding-bottom: var(--block-bg-padding-bottom);
+    } */
+  }
+}

@@ -1,0 +1,7 @@
+/* tokens/component/media.css */
+@layer config {
+  :root {
+    --media-color-bg:    var(--color-bg-media);
+    --media-ratio:       var(--ratio-16-9);
+  }
+}

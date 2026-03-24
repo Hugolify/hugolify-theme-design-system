@@ -8,6 +8,7 @@
     --size-desktop: var(--size-1920);
 
     /* T-shirt scale */
+    --size-2xs: var(--size-5);
     --size-xs: var(--size-10);
     --size-sm: var(--size-20);
     --size-md: var(--size-40);

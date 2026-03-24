@@ -1,0 +1,124 @@
+/* layouts/footer.css */
+/*
+ * footer[role="contentinfo"] — site footer.
+ *
+ * Expected HTML (partials/footer/footer.html):
+ *   <footer role="contentinfo" id="footer">
+ *     <div class="container">
+ *       <div class="top">
+ *         logo, description, information, nav columns
+ *       </div>
+ *       <div class="bottom">
+ *         nav legal, credit, nav social
+ *       </div>
+ *     </div>
+ *   </footer>
+ */
+@layer components {
+  footer[role="contentinfo"] {
+    background-color: var(--footer-color-bg);
+    color: var(--footer-color-text);
+    padding-block: var(--footer-padding-y);
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: var(--footer-gap);
+    }
+
+    /* ── Logo ────────────────────────────────────────────────────── */
+
+    .logo img {
+      height: var(--footer-logo-height);
+    }
+
+    /* ── Top — grid of columns ───────────────────────────────────── */
+
+    .top {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+
+      @media (--tablet) {
+        display: grid;
+        grid-template-columns: repeat(var(--columns), 1fr);
+
+        .logo,
+        .description,
+        & > div {
+          grid-column: span var(--span-third);
+        }
+        .logo {
+          grid-row: 1;
+        }
+        .description {
+          grid-row: 2;
+        }
+        & > div    { 
+          grid-row: 1 / 4; 
+        }
+      }
+      @media (--tablet-wide) {
+        .logo,
+        .description{
+          grid-column: span var(--span-half);
+        }
+        & > div {
+          grid-column: span var(--span-quarter);
+        }
+      }
+
+
+
+    }
+
+    /* ── Bottom — legal + credit + social ────────────────────────── */
+
+    .bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--gap);
+      justify-content: space-between;
+
+      @media not (--tablet) {
+        flex-direction: column;
+      }
+    }
+
+    /* ── Information block ───────────────────────────────────────── */
+
+    .information {
+    }
+
+    /* ── Footer title (mirrors .nav-title) ───────────────────────── */
+
+    .footer-title {
+      font-size: var(--nav-font-size-title);
+      font-weight: var(--nav-font-weight-title);
+    }
+
+    /* ── Nav legal and social ───────────────────────────────────────── */
+
+    .nav-legal,
+    .nav-social {
+      flex-direction: row;
+    }
+
+    /* ── Credits ───────────────────────────────────────── */
+
+    .hugolify {
+      color: var(--footer-color-text-muted);
+      font-size: var(--font-size-2xs);
+      margin-block: 0;
+      text-align: center;
+
+      &::before {
+        background-color: var(--footer-color-border);
+        content: "";
+        display: block;
+        height: var(--border-width-normal);
+        margin-bottom: var(--footer-gap);
+      }
+    }
+  }
+}

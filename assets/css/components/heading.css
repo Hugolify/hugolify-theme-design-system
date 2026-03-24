@@ -1,0 +1,55 @@
+/* components/heading.css */
+/*
+ * .heading — section header block (surtitle + title + text + CTAs).
+ *
+ * Expected HTML (blocks/heading.html):
+ *   <header class="heading">
+ *     <div class="container">           optional
+ *       <p class="surtitle">…</p>       optional
+ *       <h2>…</h2>
+ *       <div class="text">…</div>       optional
+ *       <div class="cta">…</div>        optional
+ *     </div>
+ *   </header>
+ *
+ * Variants:
+ *   .heading-filter — row layout for list pages with a filter alongside the title
+ */
+@layer components {
+  .heading {
+    margin-bottom: var(--heading-margin-bottom);
+
+    &,
+    & > .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: var(--heading-gap);
+    }
+
+    h1, h2, h3, p {
+      margin-block: 0;
+      text-wrap: balance;
+    }
+
+    @media (--tablet) {
+      h1, h2 { max-width: var(--heading-title-max-width); }
+    }
+
+    @media (--tablet) { margin-bottom: var(--heading-margin-bottom-tablet); }
+    @media (--laptop) { margin-bottom: var(--heading-margin-bottom-laptop); }
+    @media (--desktop) { margin-bottom: var(--heading-margin-bottom-desktop); }
+  }
+
+  /* ── Filter variant ──────────────────────────────────────────────── */
+
+  .heading-filter {
+    align-items: baseline;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .surtitle {
+      flex-basis: 100%;
+    }
+  }
+}

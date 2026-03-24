@@ -1,0 +1,65 @@
+/* components/block.css */
+/*
+ * [class*="block-"] — generic wrapper for all page content blocks.
+ *
+ * Each block section (block-editorial, block-pushes, block-latest…)
+ * gets consistent vertical rhythm, plus centered heading/footing at laptop+.
+ *
+ * Inner structure:
+ *   .heading  — section header (surtitle + title + text)
+ *   .footing  — section footer (text + CTAs)
+ *   .content  — main block content
+ */
+@layer components {
+  [class*="block-"] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--block-gap);
+    padding-block: var(--block-padding-y);
+
+    /* ── Heading & footing — left-aligned by default ─────────────── */
+
+    .heading,
+    .footing {
+      align-items: flex-start;
+      flex-direction: column;
+      margin-bottom: 0;
+
+      & > .container {
+        align-items: flex-start;
+      }
+    }
+
+    .footing {
+      margin-top: var(--block-footing-margin-top);
+    }
+
+    /* ── Laptop+ — centered, constrained width ───────────────────── */
+
+    @media (--laptop) {
+      .heading,
+      .footing {
+        align-items: center;
+        margin-inline: auto;
+        max-width: var(--block-heading-max-width);
+        text-align: center;
+
+        & > .container {
+          align-items: center;
+        }
+      }
+
+      .footing .cta {
+        justify-content: center;
+      }
+
+      /* Inside a column: remove width constraint */
+      [class*="col-"] {
+        .heading,
+        .footing {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

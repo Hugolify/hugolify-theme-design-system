@@ -1,20 +1,42 @@
 /* tokens/component/item.css */
 @layer config {
   :root {
+    
+    /* Border */
     --item-border-radius:     var(--radius-surface);
+    --item-border-style:      var(--border-style-solid);
     --item-border-width:      var(--border-width-normal);
+
+    /* Button */
+    --item-btn-surface:       transparent;
+    --item-btn-border-width:  0;
+    --item-btn-on-surface:    var(--color-brand);
+    --item-btn-padding:       0;
+    
+    /* Color */
     --item-color-bg:          var(--color-bg);
-    --item-color-bg-media:    var(--color-bg-media);
     --item-color-border:      var(--color-border);
     --item-color-text:        var(--color-text);
     --item-color-text-muted:  var(--color-text-muted);
     --item-color-title:       var(--color-text);
+
+    /* Font */
     --item-font-size-title:   var(--font-size-md);
     --item-font-weight-title: var(--font-weight-heading);
-    --item-gap:               var(--spacing-sm);
     --item-line-height-title: var(--line-height-heading);
-    --item-media-ratio:       var(--ratio-16-9);
+
+    /* Spacing */
+    --item-gap:               var(--spacing-sm);
     --item-padding:           var(--spacing-surface);
+
+    /* Media */
+    --item-media-color-bg:    var(--media-color-bg);
+    --item-media-ratio:       var(--media-ratio);
+
+    /* Shadow */
     --item-shadow:            var(--shadow-sm);
+    --item-shadow-hover:      var(--shadow-md);
+
+    --item-transition: box-shadow var(--duration-normal) var(--easing-default)
   }
 }

@@ -1,0 +1,22 @@
+/* components/btn-menu.css */
+/* Menu toggle button (hamburger)
+ */
+@layer components {
+  .btn-menu {
+    align-items: center;
+    appearance: none;
+    background-color: var(--btn-surface);
+    border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+    border-radius: var(--btn-border-radius);
+    color: var(--btn-on-surface);
+    cursor: pointer;
+    display: inline-flex;
+    font-size: var(--btn-font-size);
+    font-weight: var(--btn-font-weight);
+    gap: var(--btn-gap);
+    padding: var(--btn-spacing);
+    text-decoration: var(--btn-text-decoration);
+    text-transform: var(--btn-text-transform);
+    transition: var(--btn-transition);
+  }
+}

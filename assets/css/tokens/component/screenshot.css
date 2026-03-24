@@ -1,0 +1,15 @@
+/* tokens/component/screenshot.css */
+@layer config {
+  :root {
+    --screenshot-border-radius:     var(--radius-sm);
+    --screenshot-bar-color-bg:      #D9D9D9;
+    --screenshot-bar-height:        1.25rem;
+    --screenshot-dot-size:          0.5rem;
+    --screenshot-dot-offset-top:    0.375rem;
+    --screenshot-dot-color-red:     #EE0E00;
+    --screenshot-dot-color-yellow:  #EEAB00;
+    --screenshot-dot-color-green:   #0EB000;
+    --screenshot-shadow:            var(--shadow-md);
+    --screenshot-figcaption-padding-top: var(--spacing-xs);
+  }
+}

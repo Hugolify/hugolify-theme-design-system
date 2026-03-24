@@ -1,0 +1,72 @@
+/* components/nav.css */
+/*
+ * .nav — base navigation list, vertical by default.
+ *
+ * Variants:
+ *   .nav-title     — bold group heading (not a link)
+ *   .nav-social    — icon-only social links
+ *   .nav-language  — compact language switcher
+ *
+ * Dropdown: .js-dropdown-toggle + .dropdown-menu (managed by components/dropdown.js)
+ *
+ * Direction is set by context (e.g. header sets flex-direction: row).
+ */
+@layer components {
+  .nav {
+    display: flex;
+    /* font-size: var(--nav-font-size); */
+    flex-direction: column;
+    gap: var(--nav-gap);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    /* ── Nav item ────────────────────────────────────────────────── */
+
+    li {
+      position: relative;
+    }
+
+    /* ── Links ───────────────────────────────────────────────────── */
+
+    a {
+      display: block;
+      padding: var(--nav-padding-y) var(--nav-padding-x);
+    }
+
+    a:not(.btn) {
+      color: var(--nav-color-text);
+      &.active {
+        --nav-color-text: var(--nav-color-text-active);
+      }
+    }
+
+    /* Non-link items (current page rendered as span) */
+    li > span {
+      color: var(--nav-color-text);
+      display: block;
+      padding-block: var(--nav-padding-y);
+      padding-inline-start: var(--nav-padding-x);
+    }
+  }
+
+  /* ── Nav title ───────────────────────────────────────────────────── */
+
+  .nav-title {
+    font-size: var(--nav-font-size-title);
+    font-weight: var(--nav-font-weight-title);
+    margin: 0;
+    padding: var(--nav-padding-y) var(--nav-padding-x);
+  }
+
+  .nav-item-highlighted {
+    line-height: 1.2;
+    margin-inline: var(--nav-padding-x);
+    &:first-child {
+      margin-inline-start: 0;
+    }
+    &:last-child {
+      margin-inline-end: 0;
+    }
+  }
+}

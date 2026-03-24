@@ -1,6 +1,14 @@
 /* base/body.css */
 @layer base {
   body {
+    /* antialiased */
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font-size: var(--font-size-body);
+    font-variant-ligatures: common-ligatures;
+    text-rendering: optimizelegibility;
   }
 }

@@ -1,0 +1,10 @@
+/* tokens/component/heading.css */
+@layer config {
+  :root {
+    --heading-gap:            0.25em;
+    --heading-margin-bottom:  var(--spacing-md);
+    --heading-margin-bottom-laptop:  var(--spacing-lg);
+    --heading-margin-bottom-desktop:  var(--spacing-xl);
+    --heading-title-max-width: 80%;
+  }
+}

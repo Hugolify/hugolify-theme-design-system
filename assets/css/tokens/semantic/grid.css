@@ -1,0 +1,14 @@
+/* tokens/semantic/grid.css */
+@layer config {
+  :root {
+
+    /* Spans */
+    --span-full:                     var(--columns);
+    --span-two-thirds:               calc(var(--columns) / 1.5); 
+    --span-half:                     calc(var(--columns) / 2); 
+    --span-third:                    calc(var(--columns) / 3);
+    --span-quarter:                  calc(var(--columns) / 4);
+    --span-sixth:                    calc(var(--columns) / 6);
+
+  }
+}

@@ -15,11 +15,11 @@
     --gutter:                          var(--spacing-md);
 
     /* Spans */
-    --span-mobile:                     var(--columns);
-    --span-tablet:                     calc(var(--columns) / 2);
-    --span-tablet-wide:                calc(var(--columns) / 3);
-    --span-laptop:                     calc(var(--columns) / 4);
-    --span-desktop:                    calc(var(--columns) / 4);
+    --span-mobile:                     var(--span-full);
+    --span-tablet:                     var(--span-half);
+    --span-tablet-wide:                var(--span-third);
+    --span-laptop:                     var(--span-quarter);
+    --span-desktop:                    var(--span-quarter);
 
   }
 }

@@ -8,8 +8,11 @@
     --hero-color-link:    var(--color-text);
 
     /* Layout */
-    --hero-min-height-mobile: 400px;
-    --hero-min-height:        600px;
+    --hero-min-height:         400px;
+    --hero-min-height-tablet:  600px;
+    --hero-min-height-desktop: 800px;
+
+    /* Spacing */
     --hero-gap:               var(--spacing-sm);
     --hero-spacing:           var(--spacing-xl);
 

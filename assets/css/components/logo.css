@@ -1,0 +1,32 @@
+/* components/logo.css */
+/*
+ * .logo — site logo, image or text fallback.
+ *
+ * Expected HTML (commons/logo.html):
+ *   <a class="logo" href="/" aria-label="…">
+ *     <img src="…" alt="" role="presentation" width="…" height="…">
+ *     OR site.Title (text fallback)
+ *   </a>
+ */
+@layer components {
+  .logo {
+    display: inline-flex;
+    font-family: var(--logo-font-family);
+    font-size: var(--logo-font-size);
+    font-weight: var(--logo-font-weight);
+    letter-spacing: var(--logo-letter-spacing);
+    line-height: 1;
+    text-decoration: none;
+
+    img {
+      display: block;
+      height: var(--logo-height);
+      width: auto;
+    }
+
+    @media (--tablet) { --logo-height: var(--logo-height-tablet); }
+    @media (--tablet-wide) { --logo-height: var(--logo-height-tablet-wide); }
+    @media (--laptop) { --logo-height: var(--logo-height-laptop); }
+    @media (--desktop) { --logo-height: var(--logo-height-desktop); }
+  }
+}

@@ -2,9 +2,21 @@
 @layer config {
   :root {
     --color-black: #000000;
+
     --color-blue-100: #dbeafe;
     --color-blue-500: #3b82f6;
     --color-blue-900: #1e3a8a;
+
+    --color-caribbean-green-100: #e4fef3;
+    --color-caribbean-green-200: #cbfae7;
+    --color-caribbean-green-300: #a6f1d4;
+    --color-caribbean-green-400: #93dec1;
+    --color-caribbean-green-500: #00d1a0;
+    --color-caribbean-green-600: #00ac7f;
+    --color-caribbean-green-700: #008d67;
+    --color-caribbean-green-800: #006849;
+    --color-caribbean-green-900: #00472f;
+
     --color-gray-100: #f3f4f6;
     --color-gray-200: #e5e7eb;
     --color-gray-300: #d1d5db;
@@ -14,16 +26,62 @@
     --color-gray-700: #374151;
     --color-gray-800: #1f2937;
     --color-gray-900: #111827;
+    
     --color-green-100: #dcfce7;
     --color-green-500: #22c55e;
     --color-green-900: #14532d;
+    
+    --color-indigo-100: #e0e7ff;
+    --color-indigo-500: #4f46e5;
+    --color-indigo-900: #2e1065;
+
     --color-orange-100: #ffedd5;
     --color-orange-500: #f97316;
     --color-orange-900: #431407;
-    --color-red-100: #fee2e2;
+
+    --color-claret-100: #ffcfd6;
+    --color-claret-200: #ffa0ae;
+    --color-claret-300: #ff6e8a;
+    --color-claret-400: #ff1f65;
+    --color-claret-500: #d80050;
+    --color-claret-600: #ae003f;
+    --color-claret-700: #87002f;
+    --color-claret-800: #690023;
+    --color-claret-900: #420013;
+
+    --color-puerto-rico-100: #79f1c8;
+    --color-puerto-rico-200: #66cdaa;
+    --color-puerto-rico-300: #5cbb9b;
+    --color-puerto-rico-400: #4fa286;
+    --color-puerto-rico-500: #41866f;
+    --color-puerto-rico-600: #316a57;
+    --color-puerto-rico-700: #224d3e;
+    --color-puerto-rico-800: #133026;
+    --color-puerto-rico-900: #05140e;
+
+    --color-purple-heart-100: #dbdafb;
+    --color-purple-heart-200: #bab8f7;
+    --color-purple-heart-300: #9d9af3;
+    --color-purple-heart-400: #827ef0;
+    --color-purple-heart-500: #6962eb;
+    --color-purple-heart-600: #4f46e5;
+    --color-purple-heart-700: #3528d3;
+    --color-purple-heart-800: #20178c;
+    --color-purple-heart-900: #090540;
+    
+    --color-red-50: #fceded;
+    --color-red-100: #f9d7d7;
+    --color-red-200: #f5b4b4;
+    --color-red-300: #f29393;
+    --color-red-400: #f06f6f;
     --color-red-500: #ef4444;
-    --color-red-900: #7f1d1d;
+    --color-red-600: #cf2e2e;
+    --color-red-700: #9a1f1f;
+    --color-red-800: #621010;
+    --color-red-900: #290303;
+    
     --color-white: #ffffff;
+    
     --color-yellow-100: #fef9c3;
     --color-yellow-500: #eab308;
     --color-yellow-900: #713f12;

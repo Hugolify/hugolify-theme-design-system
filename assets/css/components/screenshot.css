@@ -1,0 +1,82 @@
+/* components/screenshot.css */
+/*
+ * .screenshot — browser-chrome wrapper for images/videos.
+ *
+ * Structure:
+ *   .screenshot
+ *     > span            — top bar (macOS traffic-light dots)
+ *     > figure
+ *         picture / img / video
+ *         figcaption
+ */
+@layer components {
+  .screenshot {
+    position: relative;
+
+    /* ── Top bar ──────────────────────────────────────────────── */
+
+    > span {
+      background-color: var(--screenshot-bar-color-bg);
+      border-start-start-radius: var(--screenshot-border-radius);
+      border-start-end-radius: var(--screenshot-border-radius);
+      display: block;
+      height: var(--screenshot-bar-height);
+    }
+
+    /* ── Traffic-light dots ───────────────────────────────────── */
+
+    &::before,
+    &::after,
+    > span::before {
+      border-radius: 50%;
+      content: '';
+      height: var(--screenshot-dot-size);
+      position: absolute;
+      top: var(--screenshot-dot-offset-top);
+      width: var(--screenshot-dot-size);
+      z-index: 1;
+    }
+
+    &::before {
+      background-color: var(--screenshot-dot-color-red);
+      left: 1rem;
+    }
+
+    &::after {
+      background-color: var(--screenshot-dot-color-yellow);
+      left: calc(1rem + var(--screenshot-dot-size) + 0.5rem);
+    }
+
+    > span::before {
+      background-color: var(--screenshot-dot-color-green);
+      left: calc(1rem + (var(--screenshot-dot-size) + 0.5rem) * 2);
+    }
+
+    /* ── Figure ───────────────────────────────────────────────── */
+
+    figure {
+      margin-block: 0;
+    }
+
+    figcaption {
+      padding-top: var(--screenshot-figcaption-padding-top);
+    }
+
+    /* ── Media ────────────────────────────────────────────────── */
+
+    video,
+    picture {
+      border-end-start-radius: var(--screenshot-border-radius);
+      border-end-end-radius: var(--screenshot-border-radius);
+      box-shadow: var(--screenshot-shadow);
+      overflow: hidden;
+    }
+
+    video,
+    img {
+      display: block;
+      height: auto;
+      width: 100%;
+    }
+  }
+}

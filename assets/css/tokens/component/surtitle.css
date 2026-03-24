@@ -1,0 +1,10 @@
+/* tokens/component/surtitle.css */
+@layer config {
+  :root {
+    --surtitle-color:          var(--color-text-muted);
+    --surtitle-font-size:      var(--font-size-xs);
+    --surtitle-font-weight:    var(--font-weight-bold);
+    --surtitle-letter-spacing: var(--letter-spacing-large);
+    --surtitle-text-transform: uppercase;
+  }
+}

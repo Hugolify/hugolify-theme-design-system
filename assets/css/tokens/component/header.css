@@ -3,14 +3,16 @@
   :root {
     /* Colors */
     --header-color-bg:     var(--color-bg);
+    --header-color-link:   var(--color-link);
     --header-color-text:   var(--color-text);
     --header-color-border: var(--color-border);
+    --header-shadow:       var(--shadow-sm);
 
     /* Layout */
-    --header-padding-x:   var(--spacing-sm);
-    --header-padding-y:   var(--spacing-sm);
-    --header-gap:         var(--spacing-sm);
-    --header-z-index:     100;
+    --header-gap:          var(--spacing-sm);
+    --header-height:       84px;
+    --header-spacing:      var(--spacing-sm) 0;
+    --header-z-index:      100;
 
     /* Logo */
     --header-logo-max-width: 85%;
