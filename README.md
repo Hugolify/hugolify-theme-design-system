@@ -7,7 +7,7 @@ This module provides the CSS (Design Tokens + CSS) and Vanilla JavaScript for hu
 ## Requirements
 
 - [Hugo extended](https://gohugo.io/installation/) >= 0.141.0
-- [hugolify-theme](https://github.com/hugolify/hugolify-theme)
+- [hugolify-theme](https://github.com/hugolify/hugolify-theme) >= 2.0.0
 
 ## Install
 
@@ -19,46 +19,10 @@ imports:
   - path: github.com/hugolify/hugolify-theme-design-system
 ```
 
-## Customization
+## Architectures
 
-Override variables in `assets/css/tokens/site.css`:
-
-```css
-:root {
-  --color-primary: #000;
-}
-```
-
-## Structure
-
-```
-assets/
-├── sass/
-│   ├── main-theme.sass
-│   ├── abstracts/        # Variables, mixins, functions
-│   ├── base/             # Element styles
-│   ├── layout/           # Header, footer, grid, sidebar
-│   ├── components/       # UI components
-│   ├── pages/            # Page-specific styles
-│   └── vendors/          # Bootstrap, Splide, Leaflet…
-└── js/
-    ├── components/       # Menu, TOC, video…
-    ├── features/         # Animation, carousel, map…
-    └── blocks/           # Block-specific scripts
-```
-
-## Vendors
-
-**Import in javascript core pipe:**
-
-- Cookie consent
-- Rellax
-
-**Import in javascript features pipe:**
-
-- Leaflet
-- Splide
-- Tobii
+- [CSS](./docs/CSS.md)
+- [JavaScript](./docs/JS.md)
 
 ## Documentation
 
