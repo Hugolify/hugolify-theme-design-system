@@ -6,38 +6,13 @@
     gap: var(--gap);
 
     & > * {
-      grid-column: span var(--span-mobile);
+      grid-column: var(--grid-column);
     }
 
-    @media (--tablet) {
-      & > * {
-        grid-column: span var(--span-tablet);
-      }
-      > .content {
-        grid-column: span var(--span-two-thirds);
-      }
-      > .sidebar,
-      > .toc {
-        grid-column: span var(--span-third);
-      }
-    }
+    @media (--tablet) { --grid-column: var(--grid-column-tablet); }
+    @media (--tablet-wide) { --grid-column: var(--grid-column-tablet-wide); }
+    @media (--laptop) { --grid-column: var(--grid-column-laptop); }
+    @media (--desktop) { --grid-column: var(--grid-column-desktop); }
 
-    @media (--tablet-wide) {
-      & > * {
-        grid-column: span var(--span-tablet-wide);
-      }
-    }
-
-    @media (--laptop) {
-      & > * {
-        grid-column: span var(--span-laptop);
-      }
-    }
-
-    @media (--desktop) {
-      & > * {
-        grid-column: span var(--span-desktop);
-      }
-    }
   }
 }

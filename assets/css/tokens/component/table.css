@@ -1,0 +1,11 @@
+/* tokens/component/table.css */
+@layer config {
+  :root {
+    --table-cell-padding-x:    var(--spacing-sm);
+    --table-cell-padding-y:    var(--spacing-xs);
+    --table-color-border:      var(--color-border);
+    --table-color-bg-header:   var(--color-bg-muted);
+    --table-color-bg-striped:  var(--color-bg-muted);
+    --table-font-size:         var(--font-size-sm);
+  }
+}

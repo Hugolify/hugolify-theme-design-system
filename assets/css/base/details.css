@@ -1,0 +1,46 @@
+/* base/details.css */
+@layer base {
+  details {
+    background-color: var(--details-color-bg);
+    border: var(--details-border);
+    border-radius: var(--details-border-radius);
+    box-shadow: var(--details-box-shadow);
+    color: var(--details-color-text);
+    
+    @media (prefers-reduced-motion: no-preference) {
+      transition: var(--transition-default);
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        --details-box-shadow: var(--details-box-shadow-hover);
+      }
+    }
+
+    &[open] {
+      border-color: var(--details-color-border-open);
+    }
+
+    & + details {
+      margin-top: var(--details-padding);
+    }
+  }
+
+  summary {
+    cursor: pointer;
+    font-family: var(--details-summary-font-family);
+    font-size: var(--details-summary-font-size);
+    font-weight: var(--details-summary-font-weight);
+    list-style: none;
+    padding: var(--details-padding);
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  summary + div {
+    font-size: var(--details-content-font-size);
+    padding: var(--details-padding);
+  }
+}

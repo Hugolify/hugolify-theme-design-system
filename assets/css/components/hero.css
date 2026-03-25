@@ -78,19 +78,19 @@
     /* ── Buttons — first = primary, second = outline ─────────────── */
 
     .btn {
-      --btn-surface: var(--color-brand);
-      --btn-on-surface: var(--color-text-on-brand);
+      --btn-color-bg: var(--color-brand);
+      --btn-color-text: var(--color-text-on-brand);
       --btn-border-color: var(--color-brand);
     }
 
     .btn + .btn {
-      --btn-surface: transparent;
-      --btn-on-surface: var(--color-brand);
+      --btn-color-bg: transparent;
+      --btn-color-text: var(--color-brand);
     }
 
     &.hero-cover-darken {
       & .btn + .btn {
-        --btn-on-surface: var(--color-dark-strong);
+        --btn-color-text: var(--color-dark-strong);
         --btn-border-color: var(--color-dark-strong);
       }
     }

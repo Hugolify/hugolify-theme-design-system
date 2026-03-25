@@ -9,9 +9,9 @@
     --card-border-width:      var(--item-border-width);
 
     /* Button */
-    --card-btn-surface:       var(--item-btn-surface);
+    --card-btn-color-bg:      var(--item-btn-color-bg);
     --card-btn-border-width:  var(--item-btn-border-width);
-    --card-btn-on-surface:    var(--item-btn-on-surface);
+    --card-btn-color-text:    var(--item-btn-color-text);
 
     /* Color */
     --card-color-bg:          var(--item-color-bg);

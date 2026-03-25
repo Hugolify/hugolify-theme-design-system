@@ -1,0 +1,6 @@
+/* base/sup.css */
+@layer base {
+  sup {
+    margin-inline: 0.1em;
+  }
+}

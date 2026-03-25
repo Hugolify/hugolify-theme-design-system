@@ -5,10 +5,10 @@
   .btn-menu {
     align-items: center;
     appearance: none;
-    background-color: var(--btn-surface);
+    background-color: var(--btn-color-bg);
     border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
     border-radius: var(--btn-border-radius);
-    color: var(--btn-on-surface);
+    color: var(--btn-color-text);
     cursor: pointer;
     display: inline-flex;
     font-size: var(--btn-font-size);

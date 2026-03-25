@@ -3,15 +3,16 @@
   .btn {
     align-items: center;
     appearance: none;
-    background-color: var(--btn-surface);
+    background-color: var(--btn-color-bg);
     border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
     border-radius: var(--btn-border-radius);
-    color: var(--btn-on-surface);
+    color: var(--btn-color-text);
     cursor: pointer;
     display: inline-flex;
     font-size: var(--btn-font-size);
     font-weight: var(--btn-font-weight);
     gap: var(--btn-gap);
+    justify-content: center;
     padding: var(--btn-padding);
     text-decoration: var(--btn-text-decoration);
     text-transform: var(--btn-text-transform);
@@ -29,8 +30,8 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: var(--btn-surface-hover);
-        color: var(--btn-on-surface-hover);
+        background-color: var(--btn-color-bg-hover);
+        color: var(--btn-color-text-hover);
       }
     }
 
@@ -41,28 +42,28 @@
 
   /* Variants */
   .btn-danger {
-    --btn-on-surface: var(--color-white);
-    --btn-surface: var(--color-danger);
+    --btn-color-bg: var(--color-danger);
+    --btn-color-text: var(--color-white);
   }
 
   .btn-ghost {
-    --btn-on-surface: var(--color-text);
-    --btn-surface: transparent;
+    --btn-color-bg: transparent;
+    --btn-color-text: var(--color-text);
   }
 
   .btn-primary {
-    --btn-on-surface: var(--color-text-on-brand);
-    --btn-surface: var(--color-brand);
+    --btn-color-bg: var(--color-brand);
+    --btn-color-text: var(--color-text-on-brand);
   }
 
   .btn-secondary {
-    --btn-on-surface: var(--color-text);
-    --btn-surface: var(--color-secondary);
+    --btn-color-bg: var(--color-secondary);
+    --btn-color-text: var(--color-text);
   }
 
   .btn-success {
-    --btn-on-surface: var(--color-white);
-    --btn-surface: var(--color-success);
+    --btn-color-bg: var(--color-success);
+    --btn-color-text: var(--color-white);
   }
 
   /* Sizes */

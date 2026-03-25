@@ -13,7 +13,7 @@
     /* Nav links (in header) */
     --main-menu-color-text:        var(--color-text);
     --main-menu-color-text-hover:  var(--color-brand);
-    --main-menu-font-size:         var(--font-size-body);
+    --main-menu-font-size:         var(--font-size-text);
 
     /* Mobile panel (offcanvas / modal) */
     --main-menu-panel-color-bg:    var(--color-bg);

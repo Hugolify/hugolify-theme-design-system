@@ -1,0 +1,107 @@
+/* components/blocks/block-comparison.css */
+/*
+ * .block-comparison — pricing / feature comparison block.
+ *
+ * Structure:
+ *   section.block-comparison[.block-bg]
+ *     .heading
+ *     .container
+ *       .items.items-{2-6}
+ *         div
+ *           .item[.item-highlighted]
+ *             header
+ *               .badge         (optional)
+ *               h2 | h3
+ *               p              (subtitle)
+ *               .pricing       (price display)
+ *                 + p          (billing period)
+ *             .content
+ *               ul > li        (feature list)
+ *             footer
+ *               .btn           (CTA)
+ *     .footing
+ *
+ * Column variants: .items-2 through .items-6
+ * (set via `column` in content config, default 3)
+ */
+@layer components {
+  .block-comparison {
+
+    /* ── Grid ──────────────────────────────────────────────────── */
+
+    .items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* ── Item card ─────────────────────────────────────────────── */
+
+    .item {
+      --item-color-bg: var(--comparison-item-color-bg);
+
+      header {
+        padding: var(--comparison-item-padding);
+      }
+
+      footer {
+        margin-top: auto;
+        padding: var(--comparison-item-padding);
+      }
+
+      .badge {
+        --badge-color-bg: var(--color-bg-accent);
+        --badge-color-text: var(--color-text-on-accent);
+        float: inline-end;
+      }
+    }
+
+    .item-highlighted {
+      --item-color-bg: var(--comparison-item-color-bg-highlighted);
+      --item-shadow: var(--comparison-item-box-shadow-highlighted);
+    }
+
+    /* ── Pricing ───────────────────────────────────────────────── */
+
+    .pricing {
+      font-size: var(--comparison-pricing-font-size);
+      font-weight: var(--comparison-pricing-font-weight);
+
+      & + p {
+        color: var(--comparison-pricing-sub-color-text);
+        font-size: var(--comparison-pricing-sub-font-size);
+        margin-top: 0;
+      }
+    }
+
+    /* ── Feature list ──────────────────────────────────────────── */
+
+    .content {
+      ul {
+        border-bottom: var(--border-width-normal) var(--border-style-solid) var(--comparison-list-color-border);
+        list-style: none;
+        margin-block: 0;
+        padding-inline-start: 0;
+      }
+
+      li {
+        border-top: var(--border-width-normal) var(--border-style-solid) var(--comparison-list-color-border);
+        padding-block: var(--comparison-list-item-padding-y);
+      }
+    }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+
+    .btn {
+      width: 100%;
+    }
+
+    /* ── Background variants ───────────────────────────────────── */
+
+    &.block-bg {
+      .item {
+        --item-color-bg: var(--comparison-item-color-bg-on-block-bg);
+      }
+    }
+  }
+}

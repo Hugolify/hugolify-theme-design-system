@@ -2,6 +2,14 @@
 @layer config {
   :root {
 
+    /* Flex */
+    --flex-full:                     100%;
+    --flex-two-thirds:               66.6666666667%;
+    --flex-half:                     50%;
+    --flex-third:                    33.3333333333%;
+    --flex-quarter:                  25%;
+    --flex-sixth:                    16.6666666667%;
+    
     /* Spans */
     --span-full:                     var(--columns);
     --span-two-thirds:               calc(var(--columns) / 1.5); 

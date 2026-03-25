@@ -32,10 +32,6 @@
       text-wrap: balance;
     }
 
-    @media (--tablet) {
-      h1, h2 { max-width: var(--heading-title-max-width); }
-    }
-
     @media (--tablet) { margin-bottom: var(--heading-margin-bottom-tablet); }
     @media (--laptop) { margin-bottom: var(--heading-margin-bottom-laptop); }
     @media (--desktop) { margin-bottom: var(--heading-margin-bottom-desktop); }

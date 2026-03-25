@@ -19,13 +19,18 @@
 
 /* 3. Component — scoped tokens */
 @import 'component/alert.css';
+@import 'component/alt-description.css';
+@import 'component/details.css';
+@import 'component/audio.css';
 @import 'component/block.css';
+@import 'component/comparison.css';
 @import 'component/badge.css';
 @import 'component/breadcrumb.css';
 @import 'component/button.css';
 @import 'component/card.css';
 @import 'component/container.css';
 @import 'component/dropdown.css';
+@import 'component/figure.css';
 @import 'component/footer.css';
 @import 'component/header.css';
 @import 'component/heading.css';
@@ -36,6 +41,9 @@
 @import 'component/main-menu.css';
 @import 'component/media.css';
 @import 'component/nav.css';
+@import 'component/quote.css';
 @import 'component/offcanvas.css';
 @import 'component/screenshot.css';
 @import 'component/surtitle.css';
+@import 'component/table.css';
+@import 'component/transcription.css';

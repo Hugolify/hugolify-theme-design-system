@@ -1,0 +1,8 @@
+/* tokens/component/figure.css */
+@layer config {
+  :root {
+    --figure-gap:                  var(--spacing-xs);
+    --figure-figcaption-gap:       var(--spacing-xs);
+    --figure-figcaption-font-size: var(--font-size-xs);
+  }
+}

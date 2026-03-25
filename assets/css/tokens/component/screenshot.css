@@ -9,7 +9,7 @@
     --screenshot-dot-color-red:     #EE0E00;
     --screenshot-dot-color-yellow:  #EEAB00;
     --screenshot-dot-color-green:   #0EB000;
-    --screenshot-shadow:            var(--shadow-md);
+    --screenshot-shadow:            var(--shadow-center-md);
     --screenshot-figcaption-padding-top: var(--spacing-xs);
   }
 }

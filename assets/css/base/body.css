@@ -7,7 +7,10 @@
     
     background-color: var(--color-bg);
     color: var(--color-text);
-    font-size: var(--font-size-body);
+    font-family: var(--font-family-text);
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weight-text);
+    line-height: var(--line-height-text);
     font-variant-ligatures: common-ligatures;
     text-rendering: optimizelegibility;
   }

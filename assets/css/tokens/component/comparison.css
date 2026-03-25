@@ -1,0 +1,22 @@
+/* tokens/component/comparison.css */
+@layer config {
+  :root {
+    /* Item */
+    --comparison-item-box-shadow-highlighted: var(--shadow-lg);
+    --comparison-item-color-bg:               var(--color-bg-muted);
+    --comparison-item-max-width:              22rem;
+    --comparison-item-color-bg-on-block-bg:   var(--color-bg);
+    --comparison-item-color-bg-highlighted:   var(--color-bg-muted);
+    --comparison-item-padding:                var(--spacing-sm);
+
+    /* Pricing */
+    --comparison-pricing-font-size:         var(--font-size-lg);
+    --comparison-pricing-font-weight:       var(--font-weight-bold);
+    --comparison-pricing-sub-font-size:     var(--font-size-xs);
+    --comparison-pricing-sub-color-text:    var(--color-text-muted);
+
+    /* Feature list */
+    --comparison-list-color-border:         var(--color-border);
+    --comparison-list-item-padding-y:       var(--spacing-xs);
+  }
+}

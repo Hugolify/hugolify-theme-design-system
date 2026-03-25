@@ -8,12 +8,6 @@
  */
 @layer components {
   .item {
-
-    --btn-surface: var(--item-btn-surface);
-    --btn-border-width: var(--item-btn-border-width);
-    --btn-on-surface: var(--item-btn-on-surface);
-    --btn-padding: var(--item-btn-padding);
-
     background-color: var(--item-color-bg);
     border: var(--item-border-width) var(--item-border-style) var(--item-color-border);
     border-radius: var(--item-border-radius);

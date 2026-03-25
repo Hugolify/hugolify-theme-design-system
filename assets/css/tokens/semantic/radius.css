@@ -12,7 +12,7 @@
     /* Purposeful tokens */
     --radius-none:    0;                 /* no rounding */
     --radius-control: var(--radius-sm);  /* button, input, select */
-    --radius-pill:    9999px;            /* badge, tag */
+    --radius-pill:    9999px;            /* badge, circle, tag */
     --radius-surface: var(--radius-md);  /* card, modal, panel */
   }
 }

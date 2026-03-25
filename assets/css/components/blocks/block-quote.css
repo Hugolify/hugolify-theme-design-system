@@ -1,0 +1,25 @@
+/* components/blocks/block-quote.css */
+/*
+ * .block-quote — full-width block section wrapping a .quote.
+ *
+ * Structure:
+ *   section.block-quote[.block-bg]
+ *     .heading
+ *     .container
+ *       .row
+ *         div
+ *           figure.quote
+ *     .footing
+ */
+@layer components {
+  .block-quote {
+    .container > .row > div {
+      margin-inline: auto;
+      max-width: var(--block-heading-max-width);
+    }
+
+    .quote {
+      margin-block: 0;
+    }
+  }
+}

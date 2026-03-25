@@ -1,12 +1,17 @@
 /* tokens/component/block.css */
 @layer config {
   :root {
-    /* Vertical padding for each block section */
-    --block-gap:            var(--spacing-xl);
-    --block-padding-y:      var(--spacing-2xl);
 
-    /* Heading/footing centered width at laptop+ */
-    --block-heading-max-width: 66%;
+    /* Vertical gap for each element in a section */
+    --block-gap:            var(--spacing-md);
+    --block-gap-tablet:     var(--spacing-lg);
+    --block-gap-laptop:     var(--spacing-xl);
+    --block-gap-desktop:    var(--spacing-xl);
+
+    /* Vertical padding between sections */
+    --block-padding-y:          var(--spacing-lg);
+    --block-padding-y-tablet:   var(--spacing-xl);
+    --block-padding-y-laptop:   var(--spacing-2xl);
 
     /* Background variant */
     --block-bg-color:          var(--color-bg-muted);

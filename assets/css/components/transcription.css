@@ -1,0 +1,25 @@
+/* components/transcription.css */
+/*
+ * .transcription — collapsible transcript via <details>/<summary>.
+ *
+ * Structure:
+ *   div.transcription
+ *     details
+ *       summary
+ *       div | p  (transcript content)
+ */
+@layer components {
+  .transcription {
+    --details-color-bg: transparent;
+    --details-color-text: var(--transcription-color-text);
+    --details-border: none;
+    --details-border-radius: 0;
+    --details-box-shadow: none;
+    --details-box-shadow-hover: none;
+    --details-margin: var(--transcription-margin);
+    --details-padding: var(--transcription-padding);
+    --details-content-font-size: var(--transcription-font-size);
+    --details-summary-font-size:  var(--transcription-summary-font-size);
+    --details-summary-font-weight: var(--transcription-summary-font-weight);
+  }
+}

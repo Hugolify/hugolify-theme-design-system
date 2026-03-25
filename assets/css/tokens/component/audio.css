@@ -1,0 +1,6 @@
+/* tokens/component/audio.css */
+@layer config {
+  :root {
+    --audio-width: 100%;
+  }
+}

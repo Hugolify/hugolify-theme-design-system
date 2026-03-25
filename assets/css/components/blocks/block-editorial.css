@@ -58,7 +58,9 @@
 
   .block-editorial-rtl {
     .row {
-      flex-direction: row-reverse;
+      @media (--tablet) {
+        flex-direction: row-reverse;
+      }
     }
   }
 }

@@ -1,0 +1,6 @@
+/* base/picture.css */
+@layer base {
+  picture {
+    display: inline-block;
+  }
+}

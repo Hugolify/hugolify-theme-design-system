@@ -1,36 +1,28 @@
 /* components/items.css */
 @layer components {
   .items {
-    display: grid;
+    display: grid; /* TODO: use flexbox too */
     grid-template-columns: repeat(var(--items-columns), 1fr);
     gap: var(--items-gap);
 
     & > * {
-      grid-column: span var(--items-span-mobile);
+      flex-basis: calc(var(--items-flex-column) - var(--items-gap));
+      grid-column: var(--items-grid-column);
     }
 
-    @media (--tablet) {
-      & > * {
-        grid-column: span var(--items-span-tablet);
-      }
-    }
-
-    @media (--tablet-wide) {
-      & > * {
-        grid-column: span var(--items-span-tablet-wide);
-      }
-    }
-
-    @media (--laptop) {
-      & > * {
-        grid-column: span var(--items-span-laptop);
-      }
-    }
-
-    @media (--desktop) {
-      & > * {
-        grid-column: span var(--items-span-desktop);
-      }
-    }
+    @media (--tablet) { --items-flex-column: var(--flex-half); --items-grid-column: var(--items-grid-column-tablet); }
+    @media (--tablet-wide) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-tablet-wide); }
+    @media (--laptop) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-laptop); }
+    @media (--desktop) { --items-flex-column: var(--flex-quarter); --items-grid-column: var(--items-grid-column-desktop); }
   }
+
+  /* ── Column grid — n items per row at tablet-wide+ ──────────────── */
+  @media (--tablet-wide) {
+    .items-2 { --items-flex-column: var(--flex-half); --items-grid-column: span var(--span-half); }
+    .items-3 { --items-flex-column: var(--flex-third); --items-grid-column: span var(--span-third); }
+    .items-4 { --items-flex-column: var(--flex-quarter); --items-grid-column: span var(--span-quarter); }
+    .items-5 { --items-flex-column: var(--flex-fifth); --items-grid-column: span var(--span-fifth); }
+    .items-6 { --items-flex-column: var(--flex-sixth); --items-grid-column: span var(--span-sixth); }
+  }
+  
 }

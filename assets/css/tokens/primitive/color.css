@@ -4,7 +4,13 @@
     --color-black: #000000;
 
     --color-blue-100: #dbeafe;
+    --color-blue-200: #bfdbfe;
+    --color-blue-300: #93c5fd;
+    --color-blue-400: #60a5fa;
     --color-blue-500: #3b82f6;
+    --color-blue-600: #2563eb;
+    --color-blue-700: #1d4ed8;
+    --color-blue-800: #1e40af;
     --color-blue-900: #1e3a8a;
 
     --color-caribbean-green-100: #e4fef3;
@@ -17,7 +23,7 @@
     --color-caribbean-green-800: #006849;
     --color-caribbean-green-900: #00472f;
 
-    --color-gray-100: #f3f4f6;
+    --color-gray-100: #f8f9fa;
     --color-gray-200: #e5e7eb;
     --color-gray-300: #d1d5db;
     --color-gray-400: #9ca3af;
@@ -28,15 +34,33 @@
     --color-gray-900: #111827;
     
     --color-green-100: #dcfce7;
+    --color-green-200: #bbf7d0;
+    --color-green-300: #86efac;
+    --color-green-400: #4ade80;
     --color-green-500: #22c55e;
+    --color-green-600: #16a34a;
+    --color-green-700: #15803d;
+    --color-green-800: #166534;
     --color-green-900: #14532d;
     
     --color-indigo-100: #e0e7ff;
+    --color-indigo-200: #c7d2fe;
+    --color-indigo-300: #a5b4fc;
+    --color-indigo-400: #818cf8;
     --color-indigo-500: #4f46e5;
+    --color-indigo-600: #4338ca;
+    --color-indigo-700: #3730a3;
+    --color-indigo-800: #312e81;
     --color-indigo-900: #2e1065;
 
     --color-orange-100: #ffedd5;
+    --color-orange-200: #fed7aa;
+    --color-orange-300: #fdba74;
+    --color-orange-400: #fb923c;
     --color-orange-500: #f97316;
+    --color-orange-600: #ea580c;
+    --color-orange-700: #c2410c;
+    --color-orange-800: #9a3412;
     --color-orange-900: #431407;
 
     --color-claret-100: #ffcfd6;
@@ -82,8 +106,14 @@
     
     --color-white: #ffffff;
     
-    --color-yellow-100: #fef9c3;
-    --color-yellow-500: #eab308;
-    --color-yellow-900: #713f12;
+    --color-yellow-100: #fffde0;
+    --color-yellow-200: #fff9b3;
+    --color-yellow-300: #fff480;
+    --color-yellow-400: #ffee4d;
+    --color-yellow-500: #ffe920;
+    --color-yellow-600: #d4be00;
+    --color-yellow-700: #a89400;
+    --color-yellow-800: #7a6a00;
+    --color-yellow-900: #4c4200;
   }
 }

@@ -1,0 +1,78 @@
+/* components/quote.css */
+/*
+ * .quote — standalone quote widget.
+ *
+ * Structure:
+ *   figure.quote
+ *     blockquote
+ *       p
+ *     figcaption
+ *       picture          (optional — author avatar)
+ *       div
+ *         cite           (author name)
+ *         a | span       (author role / link)
+ */
+@layer components {
+  .quote {
+    blockquote {
+      font-size:   var(--quote-font-size);
+      font-style:  var(--quote-font-style);
+      font-weight: var(--quote-font-weight);
+      line-height: var(--quote-line-height);
+      margin-block: 0;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    p {
+      margin-block: 0;
+    }
+
+    figcaption {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: var(--quote-figcaption-gap);
+      justify-content: center;
+      margin-block: 0;
+      margin-top: var(--quote-figcaption-margin-top);
+
+      /* Avatar */
+      picture {
+        align-items: center;
+        aspect-ratio: 1;
+        background-color: var(--quote-avatar-color-bg);
+        border-radius: var(--quote-avatar-border-radius);
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        overflow: hidden;
+        width: var(--quote-avatar-size);
+
+        img {
+          display: block;
+          height: auto;
+          width: 100%;
+        }
+      }
+
+      /* Author block */
+      div {
+        color: var(--quote-author-color-text);
+        line-height: var(--quote-author-line-height);
+        text-align: center;
+      }
+
+      /* When avatar present: author text aligns left */
+      picture + div {
+        text-align: left;
+      }
+
+      cite {
+        color: var(--quote-cite-color-text);
+        font-style: var(--quote-cite-font-style);
+        font-weight: var(--quote-cite-font-weight);
+      }
+    }
+  }
+}

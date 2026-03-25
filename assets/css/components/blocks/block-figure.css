@@ -1,0 +1,81 @@
+/* components/blocks/block-figure.css */
+/*
+ * .block-figure — full-width image/figure block.
+ *
+ * Structure:
+ *   section.block-figure[.block-figure-{variant}][.block-bg]
+ *     .heading
+ *     figure
+ *       picture / img
+ *       figcaption
+ *     .footing
+ *
+ * Variants (set via .grid / .offset in content config):
+ *   .block-figure-start     — heading left-aligned at tablet+
+ *   .block-figure-end       — heading right-aligned at tablet+
+ *   .block-figure-full      — figure full viewport width, figcaption padded
+ *   .block-figure-large     — figure full bleed on mobile
+ *   .block-figure-container — figure full bleed on mobile (same as large)
+ */
+@layer components {
+  .block-figure {
+    figure {
+      margin-block: 0;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    .screenshot {
+      margin-block: 0;
+      figure {
+        margin-inline: 0;
+      }
+
+      figcaption {
+        padding-inline: 0;
+      }
+    }
+  }
+
+  /* ── Alignment variants — tablet+ ────────────────────────── */
+
+  /* Full bleed: figcaption indented to match container gutter */
+  .block-figure-full {
+    figcaption {
+      padding-inline: var(--gutter);
+    }
+  }
+
+  @media (--tablet) {
+    .block-figure-start {
+      .heading {
+        align-items: flex-start;
+        margin-inline-start: 0;
+        text-align: left;
+      }
+    }
+
+    .block-figure-end {
+      .heading {
+        align-items: flex-end;
+        margin-inline-end: 0;
+        text-align: right;
+      }
+    }
+  }
+
+  /* ── Full-bleed variants — mobile only ───────────────────── */
+
+  @media (--mobile-only) {
+    .block-figure-container {
+      figure {
+        margin-inline: calc(-1 * var(--gutter));
+      }
+      figcaption {
+        padding-inline: var(--gutter);
+      }
+    }
+  }
+}

@@ -5,12 +5,13 @@
     /* Grid */
     --items-columns:        var(--columns);
     --items-gap:            var(--gap);
+    --items-grid-column:    var(--grid-column-mobile);
 
     /* Column spans */
-    --items-span-mobile:      var(--span-mobile);
-    --items-span-tablet:      var(--span-tablet);
-    --items-span-tablet-wide: var(--span-tablet-wide);
-    --items-span-laptop:      var(--span-laptop);
-    --items-span-desktop:     var(--span-desktop);
+    --items-grid-column-mobile:      var(--grid-column-mobile);
+    --items-grid-column-tablet:      var(--grid-column-tablet);
+    --items-grid-column-tablet-wide: var(--grid-column-tablet-wide);
+    --items-grid-column-laptop:      var(--grid-column-laptop);
+    --items-grid-column-desktop:     var(--grid-column-desktop);
   }
 }

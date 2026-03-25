@@ -13,7 +13,7 @@
     --nav-padding-y:         var(--spacing-xs);
 
     /* Typography */
-    --nav-font-size:         var(--font-size-body);
+    --nav-font-size:         var(--font-size-text);
     --nav-font-size-title:   var(--font-size-md);
     --nav-font-weight-title: var(--font-weight-heading);
   }

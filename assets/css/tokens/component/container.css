@@ -13,13 +13,14 @@
     --columns:                         12;
     --gap:                             var(--spacing-sm);
     --gutter:                          var(--spacing-md);
+    --grid-column:                     var(--grid-column-mobile);
 
-    /* Spans */
-    --span-mobile:                     var(--span-full);
-    --span-tablet:                     var(--span-half);
-    --span-tablet-wide:                var(--span-third);
-    --span-laptop:                     var(--span-quarter);
-    --span-desktop:                    var(--span-quarter);
+    /* Grid spans */
+    --grid-column-mobile:              span var(--span-full);
+    --grid-column-tablet:              span var(--span-half);
+    --grid-column-tablet-wide:         span var(--span-third);
+    --grid-column-laptop:              span var(--span-quarter);
+    --grid-column-desktop:             span var(--span-quarter);
 
   }
 }

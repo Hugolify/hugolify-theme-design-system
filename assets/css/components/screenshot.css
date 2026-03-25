@@ -52,16 +52,6 @@
       left: calc(1rem + (var(--screenshot-dot-size) + 0.5rem) * 2);
     }
 
-    /* ── Figure ───────────────────────────────────────────────── */
-
-    figure {
-      margin-block: 0;
-    }
-
-    figcaption {
-      padding-top: var(--screenshot-figcaption-padding-top);
-    }
-
     /* ── Media ────────────────────────────────────────────────── */
 
     video,

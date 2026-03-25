@@ -1,0 +1,15 @@
+/* tokens/component/details.css */
+@layer config {
+  :root {
+    --details-color-bg:            var(--color-bg);
+    --details-color-border:        var(--color-border);
+    --details-border:              var(--border-width-normal) var(--border-style-solid) var(--details-color-border);
+    --details-border-radius:       var(--radius-surface);
+    --details-box-shadow:          var(--shadow-sm);
+    --details-box-shadow-hover:    var(--shadow-center-md);
+    --details-padding:             var(--spacing-sm);
+    --details-summary-font-size:   var(--font-size-md);
+    --details-summary-font-weight: var(--font-weight-heading);
+    --details-color-border-open:   var(--color-active);
+  }
+}

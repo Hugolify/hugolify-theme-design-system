@@ -1,0 +1,25 @@
+/* tokens/component/quote.css */
+@layer config {
+  :root {
+    /* Quote text */
+    --quote-font-size:        var(--font-size-md);
+    --quote-font-style:       var(--font-style-italic);
+    --quote-font-weight:      var(--font-weight-normal);
+    --quote-line-height:      var(--line-height-normal);
+    --quote-color-text:       var(--color-text);
+
+    /* Figcaption / author */
+    --quote-figcaption-gap:        var(--spacing-xs);
+    --quote-figcaption-margin-top: var(--spacing-sm);
+    --quote-cite-font-weight:      var(--font-weight-bold);
+    --quote-cite-font-style:       var(--font-style-normal);
+    --quote-cite-color-text:       var(--color-text);
+    --quote-author-color-text:     var(--color-text-muted);
+    --quote-author-line-height:    var(--line-height-normal);
+
+    /* Author avatar */
+    --quote-avatar-size:           3rem;
+    --quote-avatar-color-bg:       var(--color-bg-muted);
+    --quote-avatar-border-radius:  var(--radius-pill);
+  }
+}

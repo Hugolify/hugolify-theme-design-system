@@ -1,0 +1,27 @@
+/* base/table.css */
+@layer base {
+  table {
+    border-collapse: collapse;
+    font-size: var(--table-font-size);
+    width: 100%;
+  }
+
+  th,
+  td {
+    border-bottom: var(--border-width-normal) var(--border-style-solid) var(--table-color-border);
+    padding-block: var(--table-cell-padding-y);
+    padding-inline: var(--table-cell-padding-x);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  thead th {
+    background-color: var(--table-color-bg-header);
+    font-weight: var(--font-weight-bold);
+  }
+
+  tbody tr:last-child td,
+  tbody tr:last-child th {
+    border-bottom: none;
+  }
+}

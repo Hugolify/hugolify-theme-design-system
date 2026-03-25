@@ -1,0 +1,21 @@
+/* components/blocks/block-audio.css */
+/*
+ * .block-audio — full-width block section wrapping an audio player.
+ *
+ * Structure:
+ *   section.block-audio[.block-bg]
+ *     .heading
+ *     .container
+ *       audio.js-audio
+ *       div.transcription
+ *     .footing
+ */
+@layer components {
+  .block-audio {
+    audio {
+      @media (--tablet-wide) {
+        margin-inline: auto;
+      }
+    }
+  }
+}

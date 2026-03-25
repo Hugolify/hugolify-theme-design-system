@@ -11,11 +11,20 @@
 @import 'mediaqueries.css';
 
 /* Base */
+@import 'base/abbr.css';
+@import 'base/address.css';
 @import 'base/body.css';
+@import 'base/details.css';
+@import 'base/figure.css';
 @import 'base/headings.css';
 @import 'base/link.css';
+@import 'base/picture.css';
 @import 'base/scale.css';
+@import 'base/sup.css';
+@import 'base/table.css';
+@import 'base/time.css';
 @import 'base/typography.css';
+@import 'base/video.css';
 
 /* Layouts */
 @import 'layouts/container.css';
@@ -27,6 +36,8 @@
 
 /* Components */
 @import 'components/alert.css';
+@import 'components/alt-description.css';
+@import 'components/audio.css';
 @import 'components/banner.css';
 @import 'components/block.css';
 @import 'components/block-bg.css';
@@ -35,6 +46,7 @@
 @import 'components/btn-menu.css';
 @import 'components/button.css';
 @import 'components/card.css';
+@import 'components/credit.css';
 @import 'components/cta.css';
 @import 'components/dropdown.css';
 @import 'components/heading.css';
@@ -47,11 +59,18 @@
 @import 'components/nav.css';
 @import 'components/nav-accessibility.css';
 @import 'components/offcanvas.css';
+@import 'components/quote.css';
 @import 'components/screenshot.css';
 @import 'components/surtitle.css';
+@import 'components/transcription.css';
 
 /* Blocks */
+@import 'components/blocks/block-audio.css';
+@import 'components/blocks/block-comparison.css';
+@import 'components/blocks/block-cta.css';
 @import 'components/blocks/block-editorial.css';
+@import 'components/blocks/block-figure.css';
+@import 'components/blocks/block-quote.css';
 
 /* sections */
 @import 'sections/pages.css';

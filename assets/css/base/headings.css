@@ -13,6 +13,7 @@
     font-weight: var(--font-weight-heading);
     line-height: var(--line-height-heading);
     margin-block: var(--spacing-heading);
+    max-width: var(--max-width-heading);
   }
 
   h1 { font-size: var(--font-size-heading-01); }

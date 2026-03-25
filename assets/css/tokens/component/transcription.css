@@ -1,0 +1,11 @@
+/* tokens/component/transcription.css */
+@layer config {
+  :root {
+    --transcription-color-text:          var(--color-text-muted);
+    --transcription-font-size:           var(--font-size-xs);
+    --transcription-margin:              var(--spacing-xs) 0 0;
+    --transcription-padding:             var(--spacing-xs);
+    --transcription-summary-font-size:   var(--font-size-xs);
+    --transcription-summary-font-weight: var(--font-weight-normal);
+  }
+}

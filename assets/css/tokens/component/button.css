@@ -16,11 +16,11 @@
     --btn-gap: var(--spacing-sm);
     --btn-padding: var(--spacing-control);
 
-    /* Surface */
-    --btn-on-surface: var(--color-text-on-brand);
-    --btn-surface: var(--color-brand);
-    --btn-surface-hover: var(--color-brand-hover);
-    --btn-on-surface-hover: var(--color-text-on-brand);
+    /* Color */
+    --btn-color-bg: var(--color-brand);
+    --btn-color-bg-hover: var(--color-brand-hover);
+    --btn-color-text: var(--color-text-on-brand);
+    --btn-color-text-hover: var(--color-text-on-brand);
 
     /* States */
     --btn-transition: background-color var(--duration-normal) var(--easing-default), color var(--duration-normal) var(--easing-default);

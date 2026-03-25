@@ -34,9 +34,9 @@
       margin-top: var(--block-footing-margin-top);
     }
 
-    /* ── Laptop+ — centered, constrained width ───────────────────── */
+    /* ── Tablet-wide+ — centered, constrained width ───────────────────── */
 
-    @media (--laptop) {
+    @media (--tablet-wide) {
       .heading,
       .footing {
         align-items: center;
@@ -61,5 +61,9 @@
         }
       }
     }
+
+    @media (--tablet) { --block-gap: var(--block-gap-tablet); --block-padding-y: var(--block-padding-y-tablet); }
+    @media (--laptop) { --block-gap: var(--block-gap-laptop); --block-padding-y: var(--block-padding-y-laptop); }
+    @media (--desktop) { --block-gap: var(--block-gap-desktop); --block-padding-y: var(--block-padding-y-desktop); }
   }
 }

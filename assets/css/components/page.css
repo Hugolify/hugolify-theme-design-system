@@ -4,3 +4,11 @@
  * Only add properties that diverge from the default item tokens.
  * Usage: <article class="item page">
  */
+@layer components {
+  .page {
+    --btn-color-bg: var(--item-btn-color-bg);
+    --btn-border-width: var(--item-btn-border-width);
+    --btn-color-text: var(--item-btn-color-text);
+    --btn-padding: var(--item-btn-padding);
+  }
+}

@@ -1,0 +1,7 @@
+/* components/credit.css */
+@layer components {
+  .credit {
+    --color-link: var(--color-credit);
+    color: var(--color-credit);
+  }
+}

@@ -1,0 +1,43 @@
+/* base/figure.css */
+@layer base {
+  figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--figure-gap);
+
+    picture {
+      display: block;
+    }
+
+    figcaption {
+      display: flex;
+      flex-direction: column;
+      font-size: var(--figure-figcaption-font-size);
+      gap: var(--figure-figcaption-gap);
+    }
+
+    p {
+      font-size: var(--figure-figcaption-font-size);
+      margin-block: 0;
+    }
+
+    picture + figcaption {
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    img {
+      height: auto;
+      max-width: 100%;
+    }
+
+    @media (--tablet) {
+      figcaption {
+        flex-direction: row;
+      }
+      .credit {
+        margin-inline-start: auto;
+      }
+    }
+  }
+}

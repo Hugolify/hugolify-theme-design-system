@@ -15,7 +15,7 @@
 @layer layouts {
   .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: var(--gap);
   }
@@ -25,6 +25,9 @@
   } */
 
   @media (--tablet) {
+    .row {
+      flex-direction: row;
+    }
     /* .row > * {
       flex: 1 1 calc(50% - var(--gap));
     } */

@@ -1,0 +1,12 @@
+/* components/audio.css */
+/*
+ * audio — native audio player, block-level, centered.
+ *
+ * Structure:
+ *   audio.js-audio
+ */
+@layer components {
+  audio {
+    display: block;
+  }
+}

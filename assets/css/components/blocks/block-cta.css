@@ -1,0 +1,23 @@
+/* components/blocks/block-cta.css */
+/*
+ * .block-cta — call-to-action block, centered at tablet-wide+.
+ *
+ * Structure:
+ *   section.block-cta[.block-bg]
+ *     .heading
+ *     .container
+ *       .cta
+ *         a.btn  (primary)
+ *         a.btn  (secondary, optional)
+ *     .footing
+ */
+@layer components {
+  .block-cta {
+    /* Laptop+: center heading and CTAs */
+    @media (--tablet-wide) {
+      .cta {
+        justify-content: center;
+      }
+    }
+  }
+}
