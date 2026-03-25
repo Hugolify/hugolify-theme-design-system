@@ -1,6 +1,27 @@
 # CSS Architecture — Design Tokens & Vanilla CSS
 
-> An opinionated guide for writing sane, maintainable and scalable vanilla CSS with design tokens.  
+> An opinionated guide for writing sane, maintainable and scalable vanilla CSS with design tokens.
+
+---
+
+## Table of contents
+
+- [Philosophy](#philosophy)
+- [Folder structure](#folder-structure)
+- [Alphabetical property order](#alphabetical-property-order)
+- [Cascade layers](#cascade-layers)
+- [Tokens](#tokens)
+  - [`tokens.css` — entry point](#tokenscss--the-token-entry-point)
+  - [Color palette generation](#color-palette-generation)
+  - [The three token layers](#the-three-token-layers)
+  - [Responsive tokens](#responsive-tokens)
+  - [Naming conventions](#naming-conventions)
+  - [False friends](#nomenclature--false-friends)
+- [Future](#future)
+  - [Fluid typography](#fluid-typography)
+  - [Style Dictionary — source vs. output](#style-dictionary--source-vs-output)
+
+---
 
 ## Philosophy
 
@@ -64,6 +85,43 @@ assets/css/
 
 ---
 
+## Alphabetical property order
+
+All CSS properties are written in **alphabetical order** within a declaration block.  
+This removes all debate about ordering, makes diffs cleaner, and speeds up scanning.
+
+```css
+/* ✅ Correct */
+.button {
+  background-color: var(--btn-bg);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  color: var(--btn-color);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: var(--btn-font-size);
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  text-decoration: none;
+}
+
+/* ❌ Avoid */
+.button {
+  display: inline-flex;
+  padding: var(--btn-padding-y) var(--btn-padding-x);
+  background-color: var(--btn-bg);
+  color: var(--btn-color);
+  border: none;
+  border-radius: var(--btn-border-radius);
+  font-size: var(--btn-font-size);
+  text-decoration: none;
+  cursor: pointer;
+}
+```
+
+> Custom properties inside `:root {}` blocks also follow alphabetical order.
+
+---
+
 ## Cascade Layers
 
 Layers are declared **once** at the top of `main.css`, in order of precedence (lowest to highest).  
@@ -105,7 +163,9 @@ Each layer maps directly to a folder.
 
 ---
 
-## `tokens.css` — the token entry point
+## Tokens
+
+### `tokens.css` — the token entry point
 
 All token files are imported through a single `tokens.css` file, in layer order.  
 This file is the only place that knows about the token folder structure.
@@ -140,7 +200,7 @@ This file is the only place that knows about the token folder structure.
 
 ---
 
-## Color palette generation
+### Color palette generation
 
 Color primitives (`--color-blue-500`, `--color-gray-900`…) need a coherent scale before becoming tokens. [Kigen](https://kigen.design/color) is a generator that produces an 11-step palette (50 → 950) from a single base color, following the Tailwind naming convention.
 
@@ -156,9 +216,9 @@ Workflow: generate the palette in Kigen → export as CSS → paste into `tokens
 
 ---
 
-## The three token layers
+### The three token layers
 
-### 1. `tokens/primitive/` — raw values
+#### 1. `tokens/primitive/` — raw values
 
 Named after their physical content, with no contextual meaning.
 
@@ -185,7 +245,7 @@ Named after their physical content, with no contextual meaning.
 }
 ```
 
-### 2. `tokens/semantic/` — purpose and meaning
+#### 2. `tokens/semantic/` — purpose and meaning
 
 Tokens that carry intent. They **always reference primitives**, never raw values.
 
@@ -204,13 +264,13 @@ Tokens that carry intent. They **always reference primitives**, never raw values
 > **Golden rule:** a semantic token always points to a primitive.
 > A primitive never points to another token.
 
-### Token type classification
+#### Token type classification
 
 | Category | Primitive | Semantic | Reason |
 | --- | --- | --- | --- |
 | Color | `--color-blue-500` | `--color-brand`, `--color-text` | Palette → intent |
 | Size | `--size-8`, `--size-16` | `--spacing-xs`, `--spacing-md` | Raw scale → T-shirt spacing |
-| Font | `--font-family-sans`, `--font-weight-bold` | `--font-body`, `--font-weight-heading` | Catalog → role |
+| Font | `--font-family-sans`, `--font-weight-bold` | `--font-site-text`, `--font-weight-heading` | Catalog → role |
 | Radius | — | `--radius-control`, `--radius-pill` | References `--size-*` directly — no primitive needed |
 | Shadow | `--shadow-sm`, `--shadow-lg` | — | Composite value, cannot derive from `--size-*` |
 | Border | — | `--border-width-normal` | Absolute px values, no primitive needed |
@@ -221,7 +281,7 @@ Tokens that carry intent. They **always reference primitives**, never raw values
 
 **Why shadow stays primitive:** box-shadow is a composite value with offsets, blur, spread, and color — it cannot be decomposed into `--size-*` tokens meaningfully.
 
-### 3. `tokens/component/` — component tokens
+#### 3. `tokens/component/` — component tokens
 
 Scoped to a single component. Reference semantic tokens.  
 Optional on small projects.
@@ -240,7 +300,7 @@ Optional on small projects.
 
 ---
 
-## Responsive tokens
+### Responsive tokens
 
 When a token value changes at a breakpoint, the **responsive logic lives in the component CSS**, not in the token file. Token files hold only static named values.
 
@@ -262,149 +322,110 @@ When a token value changes at a breakpoint, the **responsive logic lives in the 
 
 Breakpoint names in tokens follow the viewport they activate — not a size scale — to avoid ambiguity (`tablet` = active from tablet up, not the tablet size itself).
 
-## Naming conventions
+### Naming conventions
 
-### Folders and files
+#### Folders and files
 
 - `kebab-case` for everything
 - Plural for folders (`components/`, `tokens/`)
 - Singular for files (`button.css`, `color.css`)
 - No underscores
 
-### Custom properties
+#### Custom properties
 
-Pattern: `--[prefix]-[category]-[variant]`
+Pattern: `--[component]-[element]-[property]-[state]`
 
 ```
---color-brand-primary
---color-text-muted
---font-size-lg
---radius-sm
---shadow-card
---space-md
+--btn-color-bg            → background color of btn (default state)
+--btn-color-bg-hover      → background color of btn on hover
+--btn-color-text          → text color of btn
+--comparison-item-color-bg-on-block-bg  → bg of item when placed inside a block-bg section
+--hero-color-title        → color of the hero title
+--item-border-radius      → border-radius of item
+--font-size-lg            → semantic size token (no component prefix)
+--spacing-surface         → semantic spacing role token (no component prefix)
 ```
 
-## Alphabetical property order
+**Segment rules:**
 
-All CSS properties are written in **alphabetical order** within a declaration block.  
-This removes all debate about ordering, makes diffs cleaner, and speeds up scanning.
+| Segment | Values | Notes |
+| --- | --- | --- |
+| `component` | `btn`, `item`, `hero`, `comparison`… | Always first |
+| `element` | `color`, `border`, `font-size`, `padding`… | CSS property category |
+| `property` | `bg`, `text`, `border`, `radius`… | What it styles |
+| `state` | `hover`, `focus`, `active`, `disabled` | Interaction state only — optional |
+
+A placement context (inside a block, on a colored section) is **not a state** — use a descriptive suffix such as `on-block-bg` instead.
+
+---
+
+#### Nomenclature — false friends
+
+Terms borrowed from other design systems that have different meanings here, or that are outright forbidden.
+
+#### ❌ `surface` / `on-surface` as a color pair
+
+**Origin:** Material Design 3 (`--md-sys-color-surface`, `--md-sys-color-on-surface`).
+**Problem:** `surface` is not a CSS property. It conflates two distinct concepts — `background-color` and `color` — into an abstract metaphor that is not self-explanatory.
 
 ```css
-/* ✅ Correct */
-.button {
-  background-color: var(--btn-bg);
-  border: none;
-  border-radius: var(--btn-border-radius);
-  color: var(--btn-color);
-  cursor: pointer;
-  display: inline-flex;
-  font-size: var(--btn-font-size);
-  padding: var(--btn-padding-y) var(--btn-padding-x);
-  text-decoration: none;
+/* ❌ avoid */
+--btn-surface: var(--color-brand);
+--btn-on-surface: var(--color-text-on-brand);
+
+/* ✅ correct */
+--btn-color-bg: var(--color-brand);
+--btn-color-text: var(--color-text-on-brand);
+```
+
+`--radius-surface` and `--spacing-surface` are **fine** — `surface` here names a semantic role (the rounded/padded surface of a card or panel), not a color pair.
+
+#### ❌ `on-surface` as a placement context modifier
+
+**Origin:** Material Design / Tailwind (`text-on-surface`).
+**Problem:** `on-surface` is not a DTCG interaction state (`hover`, `active`, `focus`, `disabled`). Using it as a token suffix creates confusion about what triggers the value change.
+
+```css
+/* ❌ avoid — "on-surface" looks like a state */
+--comparison-item-color-bg-on-surface: var(--color-bg);
+
+/* ✅ correct — explicit placement context */
+--comparison-item-color-bg-on-block-bg: var(--color-bg);
+```
+
+#### ❌ `&-modifier` nesting in native CSS
+
+**Origin:** Sass/SCSS `&` string concatenation.
+**Problem:** Native CSS nesting does **not** support `&` concatenation. `&-rtl` is only valid in Sass.
+
+```css
+/* ❌ does not work in native CSS */
+.block-editorial {
+  &-rtl { … }
 }
 
-/* ❌ Avoid */
-.button {
-  display: inline-flex;
-  padding: var(--btn-padding-y) var(--btn-padding-x);
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
-  border: none;
-  border-radius: var(--btn-border-radius);
-  font-size: var(--btn-font-size);
-  text-decoration: none;
-  cursor: pointer;
-}
-```
-
-> Custom properties inside `:root {}` blocks also follow alphabetical order.
-
-## Style Dictionary — source vs. output
-
-[Style Dictionary](https://styledictionary.com) is an optional build tool that transforms tokens defined in JSON into CSS files (or other formats: JS, iOS, Android…).
-
-### How it works
-
-The JSON token files can be **written by hand or exported from Figma** (via plugins or the native Figma Variables export). Style Dictionary reads those JSON files and generates the CSS output for each target platform.
-
-```
-tokens/                    ← JSON source files — hand-written or exported from Figma
-├── primitive/
-│   ├── color.json
-│   └── spacing.json
-└── semantic/
-    └── color.json
-         ↓
-    Style Dictionary
-         ↓
-assets/css/tokens/         ← generated CSS output — never edit manually
-├── primitive/
-│   └── color.css
-└── semantic/
-    └── color.css
-```
-
-> Style Dictionary generates **one or more CSS files** depending on the `config.json` setup.  
-> You can output a single `tokens.css`, one file per layer, or one per platform.  
-> Files in `assets/css/tokens/` are **never edited by hand** when using Style Dictionary — regenerate instead.
-
-### Figma → JSON → CSS workflow
-
-```
-Figma Variables / Tokens Studio
-        ↓  export .json
-tokens/ (source, versioned in git)
-        ↓  style-dictionary build
-assets/css/tokens/ (output, imported by tokens.css)
-```
-
-This setup makes Figma the single source of truth for all design decisions.  
-Any change made in Figma flows automatically into CSS after running the build.
-
-### Example config
-
-```json
-{
-  "source": ["tokens/**/*.json"],
-  "platforms": {
-    "css": {
-      "transformGroup": "css",
-      "buildPath": "assets/css/tokens/",
-      "files": [
-        {
-          "destination": "primitive/color.css",
-          "format": "css/variables",
-          "filter": { "attributes": { "category": "primitive" } }
-        },
-        {
-          "destination": "semantic/color.css",
-          "format": "css/variables",
-          "filter": { "attributes": { "category": "semantic" } }
-        }
-      ]
-    }
-  }
+/* ✅ flat rule in the same @layer block */
+@layer components {
+  .block-editorial { … }
+  .block-editorial-rtl { … }
 }
 ```
 
-### Without Style Dictionary
+#### ❌ `@media` inside token files
 
-If the project has no build step and no Figma token export,  
-tokens are written directly as CSS files in `assets/css/tokens/primitive/` and `assets/css/tokens/semantic/`.  
-The architecture stays identical — Style Dictionary is **not required** to apply this structure.
+Token files (`tokens/primitive/`, `tokens/semantic/`, `tokens/component/`) contain **static named values only**. Responsive logic belongs in component CSS files.
 
-## Summary
+```css
+/* ❌ avoid in tokens/component/container.css */
+:root {
+  @media (--tablet) { --container-max-width: 45rem; }
+}
 
-| Path | Contents | Who edits |
-|---|---|---|
-| `tokens/primitive/` | Raw values (colors, sizes…) | Designer / dev |
-| `tokens/semantic/` | Meaning and usage | Designer / dev |
-| `tokens/component/` | Per-component variables | Designer / dev |
-| `tokens.css` | Imports all token files | Dev |
-| `base/` | Reset, HTML elements | Dev |
-| `layout/` | Grid, containers | Dev |
-| `components/` | UI components | Dev |
-| `utilities/` | Utility classes | Dev |
+/* ✅ in components/container.css */
+.container {
+  @media (--tablet) { max-width: var(--container-max-width-tablet); }
+}
+```
 
 ## Future
 
@@ -462,3 +483,77 @@ module.exports = {
 ```
 
 > Token files become dependent on the PostCSS build — `utopia.clamp()` is not valid CSS without the plugin. The compiled output is standard `clamp()` readable by any browser.
+
+### Style Dictionary — source vs. output
+
+[Style Dictionary](https://styledictionary.com) is an optional build tool that transforms tokens defined in JSON into CSS files (or other formats: JS, iOS, Android…).
+
+#### How it works
+
+The JSON token files can be **written by hand or exported from Figma** (via plugins or the native Figma Variables export). Style Dictionary reads those JSON files and generates the CSS output for each target platform.
+
+```
+tokens/                    ← JSON source files — hand-written or exported from Figma
+├── primitive/
+│   ├── color.json
+│   └── spacing.json
+└── semantic/
+    └── color.json
+         ↓
+    Style Dictionary
+         ↓
+assets/css/tokens/         ← generated CSS output — never edit manually
+├── primitive/
+│   └── color.css
+└── semantic/
+    └── color.css
+```
+
+> Style Dictionary generates **one or more CSS files** depending on the `config.json` setup.  
+> You can output a single `tokens.css`, one file per layer, or one per platform.  
+> Files in `assets/css/tokens/` are **never edited by hand** when using Style Dictionary — regenerate instead.
+
+#### Figma → JSON → CSS workflow
+
+```
+Figma Variables / Tokens Studio
+        ↓  export .json
+tokens/ (source, versioned in git)
+        ↓  style-dictionary build
+assets/css/tokens/ (output, imported by tokens.css)
+```
+
+This setup makes Figma the single source of truth for all design decisions.  
+Any change made in Figma flows automatically into CSS after running the build.
+
+#### Example config
+
+```json
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "css": {
+      "transformGroup": "css",
+      "buildPath": "assets/css/tokens/",
+      "files": [
+        {
+          "destination": "primitive/color.css",
+          "format": "css/variables",
+          "filter": { "attributes": { "category": "primitive" } }
+        },
+        {
+          "destination": "semantic/color.css",
+          "format": "css/variables",
+          "filter": { "attributes": { "category": "semantic" } }
+        }
+      ]
+    }
+  }
+}
+```
+
+#### Without Style Dictionary
+
+If the project has no build step and no Figma token export,  
+tokens are written directly as CSS files in `assets/css/tokens/primitive/` and `assets/css/tokens/semantic/`.  
+The architecture stays identical — Style Dictionary is **not required** to apply this structure.
