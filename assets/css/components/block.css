@@ -12,12 +12,18 @@
  */
 @layer components {
   [class*="block-"] {
-    display: flex;
-    flex-direction: column;
-    gap: var(--block-gap);
     padding-block: var(--block-padding-y);
 
-    /* ── Heading & footing — left-aligned by default ─────────────── */
+    /* ── Container ─────────────── */
+
+    > .container,
+    &:not(:has(> .container)) {
+      display: flex;
+      flex-direction: column;
+      gap: var(--block-gap);
+    }
+
+    /* ── Heading & footing — start-aligned by default ─────────────── */
 
     .heading,
     .footing {

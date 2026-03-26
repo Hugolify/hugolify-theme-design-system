@@ -10,5 +10,13 @@
     --btn-border-width: var(--item-btn-border-width);
     --btn-color-text: var(--item-btn-color-text);
     --btn-padding: var(--item-btn-padding);
+    --btn-color-text-decoration: transparent;
+
+    /* Hover */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --btn-color-text-decoration: initial;
+      }
+    }
   }
 }

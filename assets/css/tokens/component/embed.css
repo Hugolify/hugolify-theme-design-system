@@ -1,0 +1,12 @@
+/* tokens/component/embed.css */
+@layer config {
+  :root {
+    --embed-ratio:         var(--ratio-16-9);
+    --embed-color-border:  var(--color-border);
+    --embed-border-radius: var(--radius-none);
+    --embed-border-style:  var(--border-style-solid);
+    --embed-border-width:  0;
+    --embed-box-shadow:    none;
+    --embed-max-width:     100%;
+  }
+}

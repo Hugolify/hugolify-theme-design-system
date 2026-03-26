@@ -8,6 +8,7 @@
     --flex-half:                     50%;
     --flex-third:                    33.3333333333%;
     --flex-quarter:                  25%;
+    --flex-fifth:                    20%;
     --flex-sixth:                    16.6666666667%;
     
     /* Spans */
@@ -16,6 +17,7 @@
     --span-half:                     calc(var(--columns) / 2); 
     --span-third:                    calc(var(--columns) / 3);
     --span-quarter:                  calc(var(--columns) / 4);
+    --span-fifth:                    calc(var(--columns) / 5);
     --span-sixth:                    calc(var(--columns) / 6);
 
   }

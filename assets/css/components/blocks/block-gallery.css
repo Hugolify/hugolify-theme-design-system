@@ -1,0 +1,13 @@
+/* components/blocks/block-gallery.css */
+/*
+ * .block-gallery — gallery block with optional heading and footing.
+ *
+ * Structure:
+ *   section.block-gallery[.block-bg]
+ *     .heading
+ *     .container
+ *       .gallery[.js-gallery]
+ *         a[href][data-type="image"][data-caption]
+ *           img | picture
+ *     .footing
+ */

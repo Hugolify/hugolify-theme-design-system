@@ -1,0 +1,20 @@
+/* vendors/splide.css */
+@layer vendors {
+  .splide {
+    .splide__list {
+      display: flex;
+      gap: var(--items-gap);
+      list-style: none;
+      margin-bottom: 0;
+      padding-inline-start: 0;
+    }
+    .splide__slide {
+      flex-shrink: 0;
+    }
+    .splide__pagination__page {
+      &.is-active {
+        background: var(--color-active);
+      }
+    }
+  }
+}

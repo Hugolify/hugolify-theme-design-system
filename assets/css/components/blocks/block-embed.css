@@ -1,0 +1,20 @@
+/* components/blocks/block-embed.css */
+/*
+ * .block-embed — block section wrapping a third-party embed.
+ *
+ * Structure:
+ *   section.block-embed[.block-bg]
+ *     .heading
+ *     .container
+ *       .embed
+ *         iframe | video | embed | object
+ *     .footing
+ */
+@layer components {
+  .block-embed {
+    .embed {
+      margin-inline: auto;
+      max-width: var(--embed-max-width);
+    }
+  }
+}

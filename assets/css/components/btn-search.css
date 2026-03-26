@@ -6,7 +6,7 @@
     align-items: center;
     appearance: none;
     background-color: var(--btn-color-bg);
-    border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+    border: var(--btn-border-width) var(--btn-border-style) var(--btn-color-border);
     border-radius: var(--btn-border-radius);
     color: var(--btn-color-text);
     cursor: pointer;

@@ -1,0 +1,45 @@
+/* components/pricing.css */
+/*
+ * .pricing — price display element.
+ *
+ * Structure:
+ *   p.pricing
+ *     del                  (optional — original price)
+ *     span                 (optional — discount badge)
+ *     [text node]          (current price)
+ *     i                    (optional — frequency, e.g. "/ month")
+ */
+@layer components {
+  .pricing {
+    align-items: baseline;
+    color: var(--pricing-color-text);
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--pricing-font-size);
+    font-weight: var(--pricing-font-weight);
+    gap: var(--spacing-xs);
+    margin-block: 0;
+
+    del {
+      color: var(--pricing-original-color-text);
+      font-size: var(--pricing-original-font-size);
+      font-weight: var(--font-weight-normal);
+    }
+
+    span {
+      background-color: var(--pricing-discount-color-bg);
+      border-radius: var(--pricing-discount-border-radius);
+      color: var(--pricing-discount-color-text);
+      font-size: var(--pricing-discount-font-size);
+      font-weight: var(--font-weight-normal);
+      padding: var(--pricing-discount-padding);
+    }
+
+    i {
+      color: var(--pricing-frequency-color-text);
+      font-size: var(--pricing-frequency-font-size);
+      font-style: var(--pricing-frequency-font-style);
+      font-weight: var(--font-weight-normal);
+    }
+  }
+}

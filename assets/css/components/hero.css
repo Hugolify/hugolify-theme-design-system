@@ -80,7 +80,7 @@
     .btn {
       --btn-color-bg: var(--color-brand);
       --btn-color-text: var(--color-text-on-brand);
-      --btn-border-color: var(--color-brand);
+      --btn-color-border: var(--color-brand);
     }
 
     .btn + .btn {
@@ -91,7 +91,7 @@
     &.hero-cover-darken {
       & .btn + .btn {
         --btn-color-text: var(--color-dark-strong);
-        --btn-border-color: var(--color-dark-strong);
+        --btn-color-border: var(--color-dark-strong);
       }
     }
   }

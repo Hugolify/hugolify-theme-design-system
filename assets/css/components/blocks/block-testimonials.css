@@ -1,0 +1,72 @@
+/* components/blocks/block-testimonials.css */
+/*
+ * .block-testimonials — block section displaying a collection of .quote items.
+ *
+ * Layouts (modifier on section):
+ *   .block-testimonials-grid      (default) — multi-column grid, quote as card
+ *   .block-testimonials-carousel  — horizontal carousel via Splide, quote as card
+ *   .block-testimonials-list      — 2-col layout (heading | list), quote inline
+ *
+ * Structure — grid / carousel:
+ *   section.block-testimonials.block-testimonials-grid[.block-bg]
+ *     .heading
+ *     .container
+ *       .testimonials
+ *         div
+ *           figure.quote
+ *     .footing
+ *
+ * Structure — list:
+ *   section.block-testimonials.block-testimonials-list[.block-bg]
+ *     .container
+ *       .heading
+ *       ol.items
+ *         li
+ *           figure.quote
+ *     .footing
+ */
+@layer components {
+
+  /* ── Base ─────────────────────────────────────────────────────────── */
+  .block-testimonials {
+    .quote {
+      --quote-color-bg:     var(--block-testimonials-quote-color-bg);
+      --quote-color-border: var(--block-testimonials-quote-color-border);
+      --quote-border-radius: var(--block-testimonials-quote-border-radius);
+      --quote-border-style: var(--block-testimonials-quote-border-style);
+      --quote-border-width: var(--block-testimonials-quote-border-width);
+      --quote-padding: var(--block-testimonials-quote-padding);
+      height: 100%;
+
+      figcaption {
+        margin-top: auto;
+      }
+    }
+  }
+
+  /* ── Grid ─────────────────────────────────────────────────────────── */
+  .block-testimonials-grid {
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(var(--items-columns), 1fr);
+      gap: var(--items-gap);
+
+      & > * {
+        flex-basis: calc(var(--items-flex-column) - var(--items-gap));
+        grid-column: var(--items-grid-column);
+      }
+
+      @media (--tablet) { --items-flex-column: var(--flex-half); --items-grid-column: var(--items-grid-column-tablet); }
+      @media (--tablet-wide) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-tablet-wide); }
+      @media (--laptop) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-laptop); }
+      @media (--desktop) { --items-flex-column: var(--flex-quarter); --items-grid-column: var(--items-grid-column-desktop); }
+    }
+  }
+
+  /* ── Carousel ─────────────────────────────────────────────────────────── */
+  .block-testimonials-carousel {
+    .splide__pagination {
+      bottom: -2rem;
+    }
+  } 
+}

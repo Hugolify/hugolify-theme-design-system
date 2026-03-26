@@ -1,0 +1,32 @@
+/* tokens/component/pagination-between.css */
+@layer config {
+  :root {
+    /* Block */
+    --pagination-between-color-border: var(--color-border);
+    --pagination-between-border-style: var(--border-style-solid);
+    --pagination-between-border-width: var(--border-width-normal);
+    --pagination-between-font-size:  var(--font-size-lg);
+    --pagination-between-font-weight:  var(--font-weight-bold);
+    --pagination-between-margin-top:   var(--spacing-lg);
+    --pagination-between-padding-y:  var(--spacing-lg);
+
+    /* Item */
+    --pagination-between-item-padding: 0;
+
+    /* Link */
+    --pagination-between-link-color-bg: transparent;
+    --pagination-between-link-color-border: var(--color-border);
+    --pagination-between-link-border-style: var(--border-style-solid);
+    --pagination-between-link-border-width: 0;
+    --pagination-between-link-border-radius: var(--radius-control);
+    --pagination-between-link-shadow: var(--shadow-none);
+    --pagination-between-link-gap: 0;
+    --pagination-between-link-padding: var(--spacing-sm);
+    --pagination-between-link-color-text-decoration: transparent;
+
+    /* Link — hover */
+    --pagination-between-link-color-bg-hover: var(--color-bg-muted);
+    --pagination-between-link-shadow-hover: var(--shadow-sm);
+    --pagination-between-link-color-text-decoration-hover: transparent;
+  }
+}

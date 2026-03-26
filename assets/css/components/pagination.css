@@ -1,0 +1,75 @@
+/* components/pagination.css */
+/*
+ * .pagination — page navigation list.
+ *
+ * Structure:
+ *   nav[role="navigation"]
+ *     ul.pagination
+ *       li[.disabled]
+ *         a.first | a.previous | a.next | a.last   (nav controls)
+ *       li.item[.item-adjacent][.active]
+ *         a                                         (page number)
+ *
+ * Icon glyphs for .first, .last, .previous, .next are defined by the theme
+ * via a::before / a::after content.
+ */
+@layer components {
+  .pagination {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--pagination-gap);
+    list-style: none;
+    margin-block: 0;
+    padding-inline-start: 0;
+
+    li {
+      margin-block: 0;
+    }
+
+    a {
+      align-items: center;
+      background-color: var(--pagination-item-color-bg);
+      border-radius: var(--pagination-item-border-radius);
+      color: var(--pagination-item-color-text);
+      display: flex;
+      font-size: var(--pagination-item-font-size);
+      font-weight: var(--pagination-item-font-weight);
+      height: var(--pagination-item-size);
+      justify-content: center;
+      min-width: var(--pagination-item-size);
+      padding-inline: var(--spacing-2xs);
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--pagination-item-color-bg-hover);
+        color: var(--pagination-item-color-text-hover);
+      }
+    }
+
+    /* Active page */
+    .active a {
+      --pagination-item-color-bg:   var(--pagination-item-color-bg-active);
+      --pagination-item-color-text: var(--pagination-item-color-text-active);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* Disabled nav control */
+    .disabled a {
+      opacity: var(--pagination-disabled-opacity);
+      pointer-events: none;
+    }
+
+    /* On small screens: hide first/last controls and non-adjacent page numbers */
+    @media (--mobile-only) {
+      .first,
+      .last,
+      li:has(.first),
+      li:has(.last),
+      .item:not(.item-adjacent):not(.active) {
+        display: none;
+      }
+    }
+  }
+}

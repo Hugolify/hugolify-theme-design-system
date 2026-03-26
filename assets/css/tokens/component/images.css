@@ -1,0 +1,6 @@
+/* tokens/component/images.css */
+@layer config {
+  :root {
+    --images-gap: var(--gap);
+  }
+}

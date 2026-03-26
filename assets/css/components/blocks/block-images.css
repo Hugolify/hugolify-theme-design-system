@@ -1,0 +1,14 @@
+/* components/blocks/block-images.css */
+/*
+ * .block-images — block section wrapping a collection of figures.
+ *
+ * Structure:
+ *   section.block-images[.block-bg]
+ *     .heading
+ *     .container
+ *       .images
+ *         figure[.half]
+ *           picture | img
+ *           figcaption
+ *     .footing
+ */

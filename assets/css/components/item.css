@@ -55,6 +55,7 @@
     }
 
     .btn {
+      margin-inline-end: auto;
       margin-top: auto;
     }
 

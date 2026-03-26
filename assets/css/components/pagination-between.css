@@ -1,0 +1,128 @@
+/* components/pagination-between.css */
+/*
+ * .pagination-between — prev/next navigation with top-border separator.
+ *   Page numbers are hidden; only .previous and .next are shown.
+ *   Icon glyphs (::before / ::after) are defined by the theme.
+ *
+ * Variants:
+ *   .pagination-between-with-title   — large card-style areas with article title
+ *   .pagination-between-with-image   — same layout with an image thumbnail
+ *
+ * Structure:
+ *   ul.pagination-between
+ *     li[.disabled]
+ *       a.previous
+ *         p.surtitle        (optional — e.g. "Previous")
+ *         span              (optional — article title)
+ *     li[.disabled]
+ *       a.next
+ *         p.surtitle        (optional — e.g. "Next")
+ *         span              (optional — article title)
+ */
+@layer components {
+  .pagination-between {
+    --color-link: var(--pagination-between-color-text);
+    --color-link-hover: var(--pagination-between-color-text-hover);
+    --link-color-text-decoration: var(--pagination-between-link-color-text-decoration);
+    --font-size-text: var(--pagination-between-font-size);
+    --font-weight-text: var(--pagination-between-font-weight);
+
+    border-top: var(--pagination-between-border-width) var(--pagination-between-border-style) var(--pagination-between-color-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style: none;
+    margin-top: var(--pagination-between-margin-top);
+    padding-inline-start: 0;
+    padding-block: var(--pagination-between-padding-y);
+
+    li {
+      font-size: var(--font-size-text);
+      font-weight: var(--font-weight-text);
+      padding: var(--pagination-between-item-padding);
+      position: relative;
+    }
+
+    a {
+      align-items: flex-start;
+      background: var(--pagination-between-link-color-bg);
+      border: var(--pagination-between-link-border-width) var(--pagination-between-link-border-style) var(--pagination-between-link-color-border);
+      border-radius: var(--pagination-between-link-border-radius);
+      box-shadow: var(--pagination-between-link-shadow);
+      display: inline-flex;
+      flex-direction: column;
+      gap: var(--pagination-between-link-gap);
+      padding: var(--pagination-between-link-padding);
+
+      &::after {
+        content: '';
+        inset: 0;
+        position: absolute;
+      }
+
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          --link-color-text-decoration: var(--pagination-between-link-color-text-decoration-hover);
+          --pagination-between-link-color-bg: var(--pagination-between-link-color-bg-hover);
+          --pagination-between-link-shadow: var(--pagination-between-link-shadow-hover);
+        }
+      }
+    }
+
+    .next {
+      margin-left: auto;
+      text-align: right;
+
+      a {
+        align-items: flex-end;
+      }
+    }
+
+    @media (--tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      li {
+        width: 50%;
+      }
+    }
+
+  }
+
+  /* ── with-image ──────────────────────────────────────────── */
+  /* .pagination-between-with-image {
+    a {
+      font-size: var(--font-size-lg);
+      line-height: var(--line-height-tight);
+      padding: 0;
+      text-decoration: none;
+
+      &::before,
+      &::after {
+        content: none;
+      }
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    img {
+      display: block;
+      height: auto;
+      margin-top: var(--spacing-sm);
+      max-width: 100%;
+    }
+
+    .next {
+      margin-left: auto;
+
+      @media (--tablet) {
+        text-align: right;
+
+        img {
+          margin-left: auto;
+        }
+      }
+    } 
+  }*/
+}

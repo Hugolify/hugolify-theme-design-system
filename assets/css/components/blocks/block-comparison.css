@@ -50,8 +50,8 @@
       }
 
       .badge {
-        --badge-color-bg: var(--color-bg-accent);
-        --badge-color-text: var(--color-text-on-accent);
+        --badge-color-bg: var(--comparison-badge-color-bg);
+        --badge-color-text: var(--comparison-badge-color-text);
         float: inline-end;
       }
     }

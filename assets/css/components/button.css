@@ -4,7 +4,7 @@
     align-items: center;
     appearance: none;
     background-color: var(--btn-color-bg);
-    border: var(--btn-border-width) var(--btn-border-style) var(--btn-border-color);
+    border: var(--btn-border-width) var(--btn-border-style) var(--btn-color-border);
     border-radius: var(--btn-border-radius);
     color: var(--btn-color-text);
     cursor: pointer;
@@ -14,8 +14,11 @@
     gap: var(--btn-gap);
     justify-content: center;
     padding: var(--btn-padding);
-    text-decoration: var(--btn-text-decoration);
+    text-decoration-color: var(--btn-color-text-decoration);
+    text-decoration-line: var(--btn-text-decoration-line);
+    text-decoration-thickness: var(--text-decoration-thickness);
     text-transform: var(--btn-text-transform);
+    text-underline-offset: var(--text-underline-offset);
 
     &:focus-visible {
       outline: 2px solid var(--color-focus);
@@ -32,6 +35,7 @@
       &:hover {
         background-color: var(--btn-color-bg-hover);
         color: var(--btn-color-text-hover);
+        text-decoration-color: var(--btn-color-text-decoration-hover);
       }
     }
 

@@ -14,18 +14,28 @@
  */
 @layer components {
   .quote {
+    background-color: var(--quote-color-bg);
+    border: var(--quote-border-width) var(--quote-border-style) var(--quote-color-border);
+    border-radius: var(--quote-border-radius);
+    display: flex;
+    flex-direction: var(--quote-flex-direction);
+    gap: var(--quote-gap);
+    padding: var(--quote-padding);
+
     blockquote {
       font-size:   var(--quote-font-size);
       font-style:  var(--quote-font-style);
       font-weight: var(--quote-font-weight);
       line-height: var(--quote-line-height);
       margin-block: 0;
+      margin-inline: 0;
       text-align: center;
       text-wrap: balance;
     }
 
     p {
       margin-block: 0;
+      margin-inline: auto;
     }
 
     figcaption {
@@ -35,7 +45,6 @@
       gap: var(--quote-figcaption-gap);
       justify-content: center;
       margin-block: 0;
-      margin-top: var(--quote-figcaption-margin-top);
 
       /* Avatar */
       picture {

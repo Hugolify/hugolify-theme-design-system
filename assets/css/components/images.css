@@ -1,0 +1,32 @@
+/* components/images.css */
+/*
+ * .images — layout container for a collection of figures.
+ * Figures stack on mobile, wrap on tablet+.
+ * .half on a figure makes it share the row with another .half figure.
+ *
+ * Structure:
+ *   .images
+ *     figure[.half]
+ *       picture | img
+ *       figcaption
+ */
+@layer components {
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: var(--images-gap);
+
+    @media (--tablet) {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      figure {
+        flex: 1 1 100%;
+      }
+
+      figure.half {
+        flex: 1 1 calc(50% - var(--images-gap) / 2);
+      }
+    }
+  }
+}

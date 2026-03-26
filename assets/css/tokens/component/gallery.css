@@ -1,0 +1,12 @@
+/* tokens/component/gallery.css */
+@layer config {
+  :root {
+    /* Grid */
+    --gallery-gap:              var(--gap);
+
+    /* Item */
+    --gallery-item-ratio:       var(--ratio-1-1);
+    --gallery-item-radius:      var(--radius-none);
+    --gallery-item-color-bg:    var(--color-bg-media);
+  }
+}

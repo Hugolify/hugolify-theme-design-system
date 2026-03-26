@@ -1,5 +1,5 @@
 /* css/main.css */
-@layer config, base, layouts, components, utilities;
+@layer config, base, layouts, vendors, components;
 
 /* Tokens */
 @import 'tokens/design-system.css';
@@ -9,6 +9,9 @@
 /* Config */
 @import 'reset.css';
 @import 'mediaqueries.css';
+
+/* Vendors */
+@import 'vendors/splide.css';
 
 /* Base */
 @import 'base/abbr.css';
@@ -36,7 +39,6 @@
 
 /* Components */
 @import 'components/alert.css';
-@import 'components/alt-description.css';
 @import 'components/audio.css';
 @import 'components/banner.css';
 @import 'components/block.css';
@@ -49,6 +51,9 @@
 @import 'components/credit.css';
 @import 'components/cta.css';
 @import 'components/dropdown.css';
+@import 'components/embed.css';
+@import 'components/gallery.css';
+@import 'components/images.css';
 @import 'components/heading.css';
 @import 'components/hero.css';
 @import 'components/item.css';
@@ -59,9 +64,14 @@
 @import 'components/nav.css';
 @import 'components/nav-accessibility.css';
 @import 'components/offcanvas.css';
+@import 'components/pagination.css';
+@import 'components/pagination-between.css';
+@import 'components/press.css';
+@import 'components/pricing.css';
 @import 'components/quote.css';
 @import 'components/screenshot.css';
 @import 'components/surtitle.css';
+@import 'components/timeline.css';
 @import 'components/transcription.css';
 
 /* Blocks */
@@ -70,7 +80,12 @@
 @import 'components/blocks/block-cta.css';
 @import 'components/blocks/block-editorial.css';
 @import 'components/blocks/block-figure.css';
+@import 'components/blocks/block-embed.css';
+@import 'components/blocks/block-gallery.css';
+@import 'components/blocks/block-images.css';
 @import 'components/blocks/block-quote.css';
+@import 'components/blocks/block-testimonials.css';
+@import 'components/blocks/block-timeline.css';
 
 /* sections */
 @import 'sections/pages.css';

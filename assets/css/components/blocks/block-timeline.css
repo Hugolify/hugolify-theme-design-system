@@ -1,0 +1,25 @@
+/* components/blocks/block-timeline.css */
+/*
+ * .block-timeline — full-width section wrapping a .timeline.
+ *
+ * Structure:
+ *   section.block-timeline[.block-bg]
+ *     .heading
+ *     .container
+ *       .row
+ *         div
+ *           ol.timeline
+ *     .footing
+ */
+@layer components {
+  .block-timeline {
+    .timeline {
+      margin-block: 0;
+    }
+    @media (--tablet-wide) {
+      .row > div {
+        margin-inline: auto;
+      }
+    }
+  }
+}

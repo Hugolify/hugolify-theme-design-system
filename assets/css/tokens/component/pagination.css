@@ -1,0 +1,24 @@
+/* tokens/component/pagination.css */
+@layer config {
+  :root {
+    /* Layout */
+    --pagination-gap:             var(--spacing-3xs);
+
+    /* Item (page number) */
+    --pagination-item-size:          2.25rem;
+    --pagination-item-font-size:     var(--font-size-sm);
+    --pagination-item-font-weight:   var(--font-weight-normal);
+    --pagination-item-border-radius: var(--radius-sm);
+    --pagination-item-color-bg:      transparent;
+    --pagination-item-color-text:    var(--color-text);
+    --pagination-item-color-bg-hover:   var(--color-bg-muted);
+    --pagination-item-color-text-hover: var(--color-text);
+
+    /* Active item */
+    --pagination-item-color-bg-active:   var(--color-brand);
+    --pagination-item-color-text-active: var(--color-text-on-brand);
+
+    /* Disabled (nav controls) */
+    --pagination-disabled-opacity: 0.35;
+  }
+}

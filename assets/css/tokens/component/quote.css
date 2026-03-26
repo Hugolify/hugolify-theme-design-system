@@ -1,6 +1,17 @@
 /* tokens/component/quote.css */
 @layer config {
   :root {
+
+    /* Blockquote */
+    --quote-border-radius: 0;
+    --quote-border-style: none;
+    --quote-border-width: 0;
+    --quote-color-bg: transparent;
+    --quote-color-border: transparent;
+    --quote-flex-direction: column;
+    --quote-gap: var(--spacing-xs);
+    --quote-padding: var(--spacing-xs);
+
     /* Quote text */
     --quote-font-size:        var(--font-size-md);
     --quote-font-style:       var(--font-style-italic);
@@ -10,7 +21,6 @@
 
     /* Figcaption / author */
     --quote-figcaption-gap:        var(--spacing-xs);
-    --quote-figcaption-margin-top: var(--spacing-sm);
     --quote-cite-font-weight:      var(--font-weight-bold);
     --quote-cite-font-style:       var(--font-style-normal);
     --quote-cite-color-text:       var(--color-text);

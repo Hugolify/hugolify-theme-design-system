@@ -10,3 +10,15 @@ params:
   # PostCSS config
   css:
     postcss: "postcss/design-system"
+
+  # Load JS
+  animation: false # Load js and add data attributes
+  carousel: true # Load splidejs
+  map: true # Load leaflet
+  parallax:
+    enable: false # Load js and add data attributes
+    cover: -2
+    heading: -0.25
+    percentage: 0.5
+  vimeo: false
+  youtube: false

@@ -2,6 +2,7 @@
 @layer components {
   .badge {
     background-color: var(--badge-color-bg);
+    border: var(--badge-border-width) var(--badge-border-style) var(--badge-color-border);
     border-radius: var(--badge-border-radius);
     color: var(--badge-color-text);
     display: inline-flex;

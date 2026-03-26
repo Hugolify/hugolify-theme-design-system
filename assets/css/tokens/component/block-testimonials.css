@@ -1,0 +1,18 @@
+/* tokens/component/block-testimonials.css */
+@layer config {
+  :root {
+    /* Grid layout */
+    --block-testimonials-columns:       3;
+    --block-testimonials-gap:           var(--gap);
+
+    /* Quote card (grid / carousel layouts) */
+    --block-testimonials-quote-color-bg:     var(--color-bg-muted);
+    --block-testimonials-quote-color-border: transparent;
+    --block-testimonials-quote-border-width: 0;
+    --block-testimonials-quote-border-radius: var(--radius-md);
+    --block-testimonials-quote-padding:      var(--spacing-lg);
+
+    /* List layout */
+    --block-testimonials-list-gap: var(--spacing-sm);
+  }
+}

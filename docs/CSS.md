@@ -336,9 +336,11 @@ Breakpoint names in tokens follow the viewport they activate — not a size scal
 Pattern: `--[component]-[element]-[property]-[state]`
 
 ```
---btn-color-bg            → background color of btn (default state)
---btn-color-bg-hover      → background color of btn on hover
---btn-color-text          → text color of btn
+--btn-color-bg              → background color of btn (default state)
+--btn-color-bg-hover        → background color of btn on hover
+--btn-color-border          → border color of btn
+--btn-color-text            → text color of btn
+--btn-color-text-decoration → text-decoration color of btn
 --comparison-item-color-bg-on-block-bg  → bg of item when placed inside a block-bg section
 --hero-color-title        → color of the hero title
 --item-border-radius      → border-radius of item
@@ -352,8 +354,20 @@ Pattern: `--[component]-[element]-[property]-[state]`
 | --- | --- | --- |
 | `component` | `btn`, `item`, `hero`, `comparison`… | Always first |
 | `element` | `color`, `border`, `font-size`, `padding`… | CSS property category |
-| `property` | `bg`, `text`, `border`, `radius`… | What it styles |
+| `property` | `bg`, `text`, `border`, `radius`, `width`… | What it styles |
 | `state` | `hover`, `focus`, `active`, `disabled` | Interaction state only — optional |
+
+**Color tokens always use `color-*`:**
+
+All color values — background, text, border — live under the `color-*` family. `border` appears in two places: as an element (`border-width`, `border-style`, `border-radius`) and as a property under `color-*` (`color-border`).
+
+| CSS property | Token property |
+| --- | --- |
+| `background-color` | `color-bg` |
+| `color` (text) | `color-text` |
+| `border-color` | `color-border` |
+
+This follows the same convention as Shopify Polaris — one `color-*` family for all color tokens, `border-*` reserved for structural border properties only.
 
 A placement context (inside a block, on a colored section) is **not a state** — use a descriptive suffix such as `on-block-bg` instead.
 
@@ -392,6 +406,21 @@ Terms borrowed from other design systems that have different meanings here, or t
 /* ✅ correct — explicit placement context */
 --comparison-item-color-bg-on-block-bg: var(--color-bg);
 ```
+
+#### ❌ `border-color` as a token suffix
+
+**Origin:** CSS property name (`border-color`).
+**Problem:** Puts border color in the `border-*` family, separate from `color-bg` and `color-text`. All color tokens should live under `color-*` for consistency and to make theming predictable.
+
+```css
+/* ❌ avoid */
+--btn-border-color: var(--color-brand);
+
+/* ✅ correct — all colors under color-* */
+--btn-color-border: var(--color-brand);
+```
+
+`border-width`, `border-style`, `border-radius` remain in the `border-*` family — they are structural, not color values.
 
 #### ❌ `&-modifier` nesting in native CSS
 

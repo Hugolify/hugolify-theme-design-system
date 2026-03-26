@@ -12,6 +12,8 @@
     --item-btn-border-width:  0;
     --item-btn-color-text:    var(--color-brand);
     --item-btn-padding:       0;
+    --item-btn-text-decoration: var(--text-decoration-none);
+    --item-btn-text-decoration-hover: var(--text-decoration-underline);
     
     /* Color */
     --item-color-bg:          var(--color-bg);

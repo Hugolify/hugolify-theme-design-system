@@ -1,10 +1,13 @@
 /* tokens/component/comparison.css */
 @layer config {
   :root {
+    /* Badge */
+    --comparison-badge-color-bg:              var(--color-primary-muted);
+    --comparison-badge-color-text:            var(--color-primary-strong);
+
     /* Item */
     --comparison-item-box-shadow-highlighted: var(--shadow-lg);
     --comparison-item-color-bg:               var(--color-bg-muted);
-    --comparison-item-max-width:              22rem;
     --comparison-item-color-bg-on-block-bg:   var(--color-bg);
     --comparison-item-color-bg-highlighted:   var(--color-bg-muted);
     --comparison-item-padding:                var(--spacing-sm);

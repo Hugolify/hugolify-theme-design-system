@@ -17,5 +17,11 @@
     --line-height-relaxed: 1.75;
     --line-height-snug: 1.25;
     --line-height-tight: 1.1;
+
+    /* text decoration */
+    --text-decoration-none: none;
+    --text-decoration-underline: underline;
+    --text-decoration-thickness: 1px;
+    --text-underline-offset: 0.25rem;
   }
 }

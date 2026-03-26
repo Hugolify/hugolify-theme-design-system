@@ -1,0 +1,76 @@
+/* components/timeline.css */
+/*
+ * .timeline — ordered list of chronological steps.
+ *
+ * Structure:
+ *   ol.timeline
+ *     li
+ *       article.step
+ *         p.surtitle        (optional — step number / label)
+ *         p.title
+ *         [p | div]         (optional — body text)
+ */
+@layer components {
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--timeline-gap);
+    list-style: none;
+    margin-block: 0;
+    padding-inline-start: 0;
+    position: relative;
+
+    /* Vertical connector line */
+    &::before {
+      background-color: var(--timeline-connector-color);
+      bottom: 0;
+      content: '';
+      left: calc(var(--timeline-marker-size) / 2);
+      position: absolute;
+      top: 0;
+      width: var(--timeline-connector-width);
+    }
+
+    li {
+      padding-inline-start: calc(var(--timeline-marker-size) + var(--timeline-step-gap));
+      position: relative;
+    }
+
+    /* Step marker (number from counter or CSS) */
+    li::before {
+      align-items: center;
+      background-color: var(--timeline-marker-color-bg);
+      border-radius: var(--timeline-marker-border-radius);
+      color: var(--timeline-marker-color-text);
+      content: counter(timeline-counter);
+      counter-increment: timeline-counter;
+      display: flex;
+      font-size: var(--timeline-marker-font-size);
+      font-weight: var(--timeline-marker-font-weight);
+      height: var(--timeline-marker-size);
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: var(--timeline-marker-size);
+    }
+  }
+
+  ol.timeline {
+    counter-reset: timeline-counter;
+  }
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-2xs);
+
+    p {
+      margin-block: 0;
+    }
+
+    .title {
+      font-weight: var(--font-weight-heading);
+    }
+  }
+}

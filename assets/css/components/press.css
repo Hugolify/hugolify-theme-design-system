@@ -1,0 +1,23 @@
+/* components/press.css */
+/*
+ * .press — press mention card (publication logo + name + link).
+ *
+ * Structure:
+ *   div.press
+ *     div.content
+ *       picture            (optional — publication logo)
+ *       h3.name
+ *       [p | ul]           (optional — metas: date, category…)
+ *       a.btn              (optional — link to article)
+ */
+@layer components {
+  .press {
+    padding: var(--press-padding);
+
+    .name {
+      font-size:   var(--press-name-font-size);
+      font-weight: var(--press-name-font-weight);
+      margin-block: 0;
+    }
+  }
+}

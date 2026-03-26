@@ -15,10 +15,10 @@
 @layer components {
   .nav-accessibility {
     flex-direction: row;
+    font-size: var(--font-size-xs);
     left: 0;
     overflow: hidden;
     position: absolute;
-    right: 0;
     transform: translateY(-100%);
     transition: transform var(--duration-fast) var(--easing-out);
     z-index: 300;
@@ -27,8 +27,13 @@
       transform: translateY(0);
     }
 
-    li {
+    a {
       background: var(--color-bg);
+      &:focus {
+        background: var(--color-text);
+        color: var(--color-bg);
+        outline: none;
+      }
     }
   }
 }

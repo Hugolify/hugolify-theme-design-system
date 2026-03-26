@@ -1,7 +1,7 @@
 /* tokens/component/breadcrumb.css */
 @layer config {
   :root {
-    --breadcrumb-border-color: var(--color-border);
+    --breadcrumb-color-border: var(--color-border);
     --breadcrumb-border-width: var(--border-width-normal);
     --breadcrumb-color-text: var(--color-text-muted);
     --breadcrumb-color-text-active: var(--color-text);

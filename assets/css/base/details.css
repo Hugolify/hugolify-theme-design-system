@@ -8,7 +8,7 @@
     color: var(--details-color-text);
     
     @media (prefers-reduced-motion: no-preference) {
-      transition: var(--transition-default);
+      transition: var(--transition-normal);
     }
 
     @media (hover: hover) {

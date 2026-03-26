@@ -1,0 +1,25 @@
+/* tokens/component/pricing.css */
+@layer config {
+  :root {
+    /* Current price */
+    --pricing-font-size:         var(--font-size-xl);
+    --pricing-font-weight:       var(--font-weight-heading);
+    --pricing-color-text:        var(--color-text);
+
+    /* Original price (del) */
+    --pricing-original-font-size:   var(--font-size-sm);
+    --pricing-original-color-text:  var(--color-text-muted);
+
+    /* Discount badge (span) */
+    --pricing-discount-font-size:   var(--font-size-sm);
+    --pricing-discount-color-text:  var(--color-text-on-brand);
+    --pricing-discount-color-bg:    var(--color-brand);
+    --pricing-discount-border-radius: var(--radius-sm);
+    --pricing-discount-padding:     var(--spacing-3xs) var(--spacing-xs);
+
+    /* Frequency label (i) */
+    --pricing-frequency-font-size:  var(--font-size-sm);
+    --pricing-frequency-font-style: var(--font-style-normal);
+    --pricing-frequency-color-text: var(--color-text-muted);
+  }
+}

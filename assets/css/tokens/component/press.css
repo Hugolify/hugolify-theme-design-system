@@ -1,0 +1,11 @@
+/* tokens/component/press.css */
+@layer config {
+  :root {
+    /* Layout */
+    --press-padding:          var(--spacing-surface);
+
+    /* Name */
+    --press-name-font-size:   var(--font-size-md);
+    --press-name-font-weight: var(--font-weight-heading);
+  }
+}

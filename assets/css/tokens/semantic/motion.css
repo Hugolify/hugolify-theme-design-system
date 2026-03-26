@@ -12,7 +12,7 @@
     --easing-out: ease-out;
 
     /* Transition */
-    --transition-default: all var(--duration-normal) var(--easing-default);
+    --transition-normal: all var(--duration-normal) var(--easing-default);
     --transition-fast: all var(--duration-fast) var(--easing-default);
     --transition-slow: all var(--duration-slow) var(--easing-default);
   }
