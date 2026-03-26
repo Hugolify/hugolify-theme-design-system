@@ -1,4 +1,8 @@
-# hugolify-theme-design-system
+# Hugolify theme Design System
+
+<img width="1280" height="640" alt="share-hugolify-theme-design-system" src="https://github.com/user-attachments/assets/e49e6a6c-46d3-4094-b899-4afce93cc00d" />
+
+## Overview
 
 Design System styling layer for [hugolify-theme](https://github.com/hugolify/hugolify-theme).
 
