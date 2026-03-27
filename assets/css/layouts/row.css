@@ -39,6 +39,26 @@
     .col-medium { flex: 0 0 calc(66.666% - var(--gap)); }
     .col-large  { flex: 0 0 calc(83.333% - var(--gap)); }
 
+    /* ── Layouts ────────────────────────────────────────────────── */
+
+    .content {
+      flex-basis: var(--flex-two-thirds);
+    }
+    .sidebar {
+      flex-basis: var(--flex-third);
+    }
+
+  }
+
+  @media (--tablet-wide) {
+    .sidebar + div,
+    .content {
+      flex-basis: var(--flex-three-quarters);
+    }
+    .sidebar {
+      flex-basis: var(--flex-quarter);
+    }
+
     /* ── Offsets ────────────────────────────────────────────────── */
 
     .offset-center { margin-inline: auto; }

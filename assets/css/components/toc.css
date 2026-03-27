@@ -1,0 +1,125 @@
+/* components/toc.css */
+/*
+ * .toc — table of contents, sticky sidebar on laptop+, offcanvas on mobile.
+ *
+ * Structure:
+ *   div.toc
+ *     div                      (sticky wrapper)
+ *       p                      (label — laptop+ only)
+ *       button.js-offcanvas    (toggle — mobile only)
+ *       div.offcanvas
+ *         div.header
+ *           p.title
+ *           button.js-offcanvas-close
+ *         div.content
+ *           nav#TableOfContents
+ *             ul | ol
+ *               li > a
+ */
+@layer components {
+  .toc {
+    /* ── Sticky wrapper (laptop+) ───────────────────────────── */
+    @media (--laptop) {
+      > div {
+        position: sticky;
+        top: var(--toc-sticky-top);
+
+        @media (prefers-reduced-motion: no-preference) {
+          transition: top var(--duration-slow) var(--easing-out);
+        }
+
+        html.is-scrolling-down & {
+          top: var(--spacing-md);
+        }
+      }
+    }
+
+    /* ── Label ──────────────────────────────────────────────── */
+    > div > p {
+      color: var(--toc-label-color);
+      display: none;
+      font-family: var(--toc-label-font-family);
+      font-size: var(--toc-label-font-size);
+      font-weight: var(--toc-label-font-weight);
+      line-height: var(--toc-label-line-height);
+      margin-bottom: var(--toc-label-margin-bottom);
+
+      @media (--laptop) {
+        display: block;
+      }
+    }
+
+    /* ── Toggle button (mobile only) ───────────────────────── */
+    > div > button {
+      @media (--laptop) {
+        display: none;
+      }
+    }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      width: 100%;
+
+      ol,
+      ul {
+        padding-inline-start: var(--toc-nav-indent);
+      }
+
+      li {
+        font-size: var(--toc-nav-font-size);
+
+        &:not(:last-child) {
+          margin-bottom: var(--toc-nav-item-gap);
+        }
+      }
+
+      ol ol {
+        list-style-type: circle;
+        margin-top: var(--toc-nav-item-gap);
+      }
+
+      a {
+        text-decoration-color: var(--toc-nav-link-color-text-decoration);
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            text-decoration-color: var(--toc-nav-link-color-text-decoration-hover);
+          }
+        }
+      }
+    }
+
+    /* ── Offcanvas — static on laptop+ ─────────────────────── */
+    .offcanvas {
+      @media (--laptop) {
+        box-shadow: none;
+        overflow: visible;
+        position: static;
+        transform: none;
+        transition: none;
+        visibility: visible;
+        width: auto;
+        z-index: auto;
+
+        > .header,
+        > .footer {
+          display: none;
+        }
+
+        > .content {
+          flex-grow: unset;
+          overflow-y: unset;
+          padding: 0;
+        }
+      }
+    }
+
+    /* ── Title (offcanvas header) ───────────────────────────── */
+    .title {
+      color: var(--toc-label-color);
+      font-family: var(--toc-label-font-family);
+      font-size: var(--toc-label-font-size);
+      font-weight: var(--toc-label-font-weight);
+    }
+  }
+}

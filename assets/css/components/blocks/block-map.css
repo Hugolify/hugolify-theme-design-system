@@ -1,0 +1,26 @@
+/* components/blocks/block-map.css */
+/*
+ * .block-map — block section wrapping a .map.
+ *
+ * Structure — with grid (map inside container):
+ *   section.block-map.block-map-{grid}[.block-bg]
+ *     .heading
+ *     .container
+ *       .row
+ *         div
+ *           div.map.js-map
+ *     .footing
+ *
+ * Structure — full-width (map direct child):
+ *   section.block-map[.block-bg]
+ *     .heading
+ *     div.map.js-map
+ *     .footing
+ */
+@layer components {
+  .block-map {
+    .map {
+      margin-block: 0;
+    }
+  }
+}

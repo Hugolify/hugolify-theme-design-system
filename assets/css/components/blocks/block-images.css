@@ -12,3 +12,10 @@
  *           figcaption
  *     .footing
  */
+@layer components {
+  .block-images {
+    img {
+      width: 100%;
+    }
+  }
+}

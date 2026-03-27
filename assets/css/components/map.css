@@ -1,0 +1,22 @@
+/* components/map.css */
+/*
+ * .map — map container, Leaflet-powered via js-map.
+ *
+ * Structure:
+ *   div.map.js-map[data-markers][data-zoom][data-tile][data-marker-hidden]
+ */
+@layer components {
+  .map {
+    aspect-ratio: var(--map-ratio);
+    background-color: var(--map-color-bg);
+    margin-block: var(--map-margin-block);
+    overflow: hidden;
+
+    @media (--mobile-only) {
+      --map-ratio: var(--map-ratio-mobile);
+      .container & {
+        margin-inline: calc(-1 * var(--gutter));
+      }
+    }
+  }
+}

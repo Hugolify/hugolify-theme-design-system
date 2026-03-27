@@ -121,6 +121,34 @@
     transform: translateY(100%);
   }
 
+  /* ── Responsive variants (static above breakpoint) ──────────────── */
+
+  .offcanvas-tablet {
+    @media (--tablet) {
+      box-shadow: none;
+      overflow: visible;
+      position: static;
+      transform: none;
+      transition: none;
+      visibility: visible;
+      width: auto;
+      z-index: auto;
+    }
+  }
+
+  .offcanvas-laptop {
+    @media (--laptop) {
+      box-shadow: none;
+      overflow: visible;
+      position: static;
+      transform: none;
+      transition: none;
+      visibility: visible;
+      width: auto;
+      z-index: auto;
+    }
+  }
+
   /* ── Backdrop ────────────────────────────────────────────────────── */
 
   .offcanvas-backdrop {

@@ -1,28 +1,28 @@
 /* components/items.css */
 @layer components {
   .items {
-    display: grid; /* TODO: use flexbox too */
-    grid-template-columns: repeat(var(--items-columns), 1fr);
+    display: grid; /* FYI: use flexbox too */
+    flex-wrap: wrap; /* FYI: for flexbox */
+    grid-template-columns: repeat(var(--items-cols), 1fr);
     gap: var(--items-gap);
 
     & > * {
-      flex-basis: calc(var(--items-flex-column) - var(--items-gap));
-      grid-column: var(--items-grid-column);
+      flex-basis: calc(100% / var(--items-cols) - var(--items-gap) / var(--items-cols) * (var(--items-cols) - 1)); /* FYI: for flexbox */
+      grid-column: var(--items-grid-column, auto);
     }
 
-    @media (--tablet) { --items-flex-column: var(--flex-half); --items-grid-column: var(--items-grid-column-tablet); }
-    @media (--tablet-wide) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-tablet-wide); }
-    @media (--laptop) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-laptop); }
-    @media (--desktop) { --items-flex-column: var(--flex-quarter); --items-grid-column: var(--items-grid-column-desktop); }
+    @media (--tablet)      { --items-cols: 2; }
+    @media (--tablet-wide) { --items-cols: 3; }
+    @media (--laptop)      { --items-cols: 3; }
+    @media (--desktop)     { --items-cols: 4; }
   }
 
   /* ── Column grid — n items per row at tablet-wide+ ──────────────── */
   @media (--tablet-wide) {
-    .items-2 { --items-flex-column: var(--flex-half); --items-grid-column: span var(--span-half); }
-    .items-3 { --items-flex-column: var(--flex-third); --items-grid-column: span var(--span-third); }
-    .items-4 { --items-flex-column: var(--flex-quarter); --items-grid-column: span var(--span-quarter); }
-    .items-5 { --items-flex-column: var(--flex-fifth); --items-grid-column: span var(--span-fifth); }
-    .items-6 { --items-flex-column: var(--flex-sixth); --items-grid-column: span var(--span-sixth); }
+    .items-2 { --items-cols: 2; }
+    .items-3 { --items-cols: 3; }
+    .items-4 { --items-cols: 4; }
+    .items-5 { --items-cols: 5; }
+    .items-6 { --items-cols: 6; }
   }
-  
 }

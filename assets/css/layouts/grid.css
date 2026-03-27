@@ -14,5 +14,15 @@
     @media (--laptop) { --grid-column: var(--grid-column-laptop); }
     @media (--desktop) { --grid-column: var(--grid-column-desktop); }
 
+
+    @media (--tablet) {
+      .content {
+        grid-column: var(--span-two-thirds);
+      }
+      .sidebar {
+        grid-column: var(--span-third);
+      }
+    }
+
   }
 }

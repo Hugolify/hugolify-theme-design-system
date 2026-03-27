@@ -16,11 +16,11 @@
     --grid-column:                     var(--grid-column-mobile);
 
     /* Grid spans */
-    --grid-column-mobile:              span var(--span-full);
-    --grid-column-tablet:              span var(--span-half);
-    --grid-column-tablet-wide:         span var(--span-third);
-    --grid-column-laptop:              span var(--span-quarter);
-    --grid-column-desktop:             span var(--span-quarter);
+    --grid-column-mobile:              var(--span-full);
+    --grid-column-tablet:              var(--span-half);
+    --grid-column-tablet-wide:         var(--span-third);
+    --grid-column-laptop:              var(--span-quarter);
+    --grid-column-desktop:             var(--span-quarter);
 
   }
 }

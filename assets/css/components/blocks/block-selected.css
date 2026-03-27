@@ -1,0 +1,69 @@
+/* components/blocks/block-selected.css */
+/*
+ * .block-selected — block section displaying a selection of content items.
+ *
+ * Layouts (modifier on section):
+ *   .block-selected-grid  (default) — items grid, uses commons/items partial
+ *   .block-selected-list  — 2-col layout (heading | list), items as plain links
+ *
+ * Structure — grid:
+ *   section.block-selected.block-selected-grid.block-selected-{section}[.block-bg]
+ *     .container
+ *       .heading
+ *       .items
+ *         div
+ *           [item card]
+ *       .footing
+ *
+ * Structure — list:
+ *   section.block-selected.block-selected-list.block-selected-{section}[.block-bg]
+ *     .container
+ *       .heading
+ *       ol.list
+ *         li
+ *           a
+ *       .footing
+ */
+@layer components {
+
+  /* ── Grid ─────────────────────────────────────────────────────────── */
+  .block-selected-grid {
+    .items {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  /* ── List ─────────────────────────────────────────────────────────── */
+  .block-selected-list {
+    .container {
+      @media (--tablet) {
+        display: grid;
+        gap: var(--block-selected-gap);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .heading {
+      @media (--tablet) {
+        align-items: flex-start;
+        margin-bottom: 0;
+        margin-inline-start: 0;
+        max-width: none;
+        text-align: start;
+      }
+    }
+
+    .footing {
+      @media (--tablet) {
+        grid-column: 1 / 3;
+      }
+    }
+
+    ol.list {
+      @media (--tablet) {
+        margin-top: var(--block-selected-list-items-margin-top);
+      }
+    }
+  }
+}

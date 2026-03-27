@@ -16,8 +16,8 @@
 
     /* ── Container ─────────────── */
 
-    > .container,
-    &:not(:has(> .container)) {
+    > .container:first-child,
+    &:not(:has(> .container:first-child)) {
       display: flex;
       flex-direction: column;
       gap: var(--block-gap);

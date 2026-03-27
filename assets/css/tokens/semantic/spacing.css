@@ -10,6 +10,7 @@
     --spacing-lg: var(--size-40);
     --spacing-xl: var(--size-60);
     --spacing-2xl: var(--size-100);
+    --spacing-3xl: var(--size-150);
 
     /* Typography */
     --spacing-control:    var(--spacing-xs);

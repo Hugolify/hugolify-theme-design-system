@@ -9,9 +9,11 @@
     --block-gap-desktop:    var(--spacing-xl);
 
     /* Vertical padding between sections */
-    --block-padding-y:          var(--spacing-lg);
-    --block-padding-y-tablet:   var(--spacing-xl);
-    --block-padding-y-laptop:   var(--spacing-2xl);
+    --block-padding-y:              var(--spacing-lg);
+    --block-padding-y-tablet:       var(--spacing-xl);
+    --block-padding-y-tablet-wide:  var(--spacing-xl);
+    --block-padding-y-laptop:       var(--spacing-2xl);
+    --block-padding-y-desktop:      var(--spacing-3xl);
 
     /* Background variant */
     --block-bg-color:          var(--color-bg-muted);

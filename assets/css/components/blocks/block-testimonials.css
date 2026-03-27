@@ -48,18 +48,13 @@
   .block-testimonials-grid {
     .testimonials {
       display: grid;
-      grid-template-columns: repeat(var(--items-columns), 1fr);
+      grid-template-columns: repeat(var(--items-cols), 1fr);
       gap: var(--items-gap);
 
-      & > * {
-        flex-basis: calc(var(--items-flex-column) - var(--items-gap));
-        grid-column: var(--items-grid-column);
-      }
-
-      @media (--tablet) { --items-flex-column: var(--flex-half); --items-grid-column: var(--items-grid-column-tablet); }
-      @media (--tablet-wide) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-tablet-wide); }
-      @media (--laptop) { --items-flex-column: var(--flex-third); --items-grid-column: var(--items-grid-column-laptop); }
-      @media (--desktop) { --items-flex-column: var(--flex-quarter); --items-grid-column: var(--items-grid-column-desktop); }
+      @media (--tablet)      { --items-cols: 2; }
+      @media (--tablet-wide) { --items-cols: 3; }
+      @media (--laptop)      { --items-cols: 3; }
+      @media (--desktop)     { --items-cols: 4; }
     }
   }
 

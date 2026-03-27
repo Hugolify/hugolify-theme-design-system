@@ -46,7 +46,7 @@
         .logo,
         .description,
         & > div {
-          grid-column: span var(--span-third);
+          grid-column: var(--span-third);
         }
         .logo {
           grid-row: 1;
@@ -61,10 +61,10 @@
       @media (--tablet-wide) {
         .logo,
         .description{
-          grid-column: span var(--span-half);
+          grid-column: var(--span-half);
         }
         & > div {
-          grid-column: span var(--span-quarter);
+          grid-column: var(--span-quarter);
         }
       }
 

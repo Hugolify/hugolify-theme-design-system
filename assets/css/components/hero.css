@@ -97,20 +97,11 @@
   }
 
   /* Hero without side media: constrain content width */
-  &:not(.hero-with-image):not(.hero-with-video) {
+  /* &:not(.hero-with-image):not(.hero-with-video) {
     & .hero-content {
       max-width: var(--hero-content-max-width);
     }
-
-    &.hero-center .hero-content {
-      margin-inline: auto;
-      text-align: center;
-
-      .cta {
-        justify-content: center;
-      }
-    }
-  }
+  } */
 
   /* ── Media ───────────────────────────────────────────────────── */
 
@@ -125,10 +116,12 @@
   /* ── Alignment variants ──────────────────────────────────────── */
 
   .hero-center {
-    @media (--tablet) {
-      .row {
-        margin-inline: auto;
-        text-align: center;
+    .hero-content {
+      margin-inline: auto;
+      text-align: center;
+
+      .cta {
+        justify-content: center;
       }
     }
   }

@@ -1,0 +1,36 @@
+/* components/list.css */
+/*
+ * .list — compact labelled list with dash markers.
+ *
+ * Structure:
+ *   div.list
+ *     p              (optional label)
+ *     ul | ol
+ *       li
+ */
+@layer components {
+  .list {
+    p {
+      font-weight: var(--list-label-font-weight);
+      margin-bottom: var(--list-label-margin-bottom);
+    }
+
+    &,
+    ul,
+    ol {
+      list-style: none;
+      margin-bottom: 0;
+      padding-inline-start: 0;
+    }
+
+    li {
+      font-size: var(--list-item-font-size);
+      margin-block: var(--list-item-gap);
+
+      &::before {
+        content: var(--list-item-marker);
+        margin-inline-end: var(--list-item-marker-gap);
+      }
+    }
+  }
+}

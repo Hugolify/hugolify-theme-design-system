@@ -24,6 +24,7 @@
 @import 'component/block.css';
 @import 'component/comparison.css';
 @import 'component/badge.css';
+@import 'component/block-selected.css';
 @import 'component/block-testimonials.css';
 @import 'component/breadcrumb.css';
 @import 'component/button.css';
@@ -43,7 +44,9 @@
 @import 'component/link.css';
 @import 'component/logo.css';
 @import 'component/main-menu.css';
+@import 'component/map.css';
 @import 'component/media.css';
+@import 'component/list.css';
 @import 'component/nav.css';
 @import 'component/quote.css';
 @import 'component/offcanvas.css';
@@ -55,4 +58,5 @@
 @import 'component/surtitle.css';
 @import 'component/table.css';
 @import 'component/timeline.css';
+@import 'component/toc.css';
 @import 'component/transcription.css';

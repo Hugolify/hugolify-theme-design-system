@@ -1,0 +1,15 @@
+/* tokens/component/list.css */
+@layer config {
+  :root {
+
+    /* Label */
+    --list-label-font-weight:    var(--font-weight-bold);
+    --list-label-margin-bottom:  var(--spacing-2xs);
+
+    /* Item */
+    --list-item-font-size:       var(--font-size-sm);
+    --list-item-gap:             var(--spacing-2xs);
+    --list-item-marker:          '-';
+    --list-item-marker-gap:      var(--spacing-2xs);
+  }
+}

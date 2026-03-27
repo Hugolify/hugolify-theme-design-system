@@ -14,7 +14,7 @@
     gap: var(--gallery-gap);
 
     & > * {
-      flex-basis: calc(var(--items-flex-column) - var(--items-gap));
+      flex-basis: calc(100% / var(--items-cols) - var(--gallery-gap) / var(--items-cols) * (var(--items-cols) - 1));
     }
 
     a {
@@ -35,10 +35,10 @@
 
   /* ── Column grid — n items per row at tablet-wide+ ──────────────── */
   @media (--tablet-wide) {
-    .gallery-2 { --items-flex-column: var(--flex-half); }
-    .gallery-3 { --items-flex-column: var(--flex-third); }
-    .gallery-4 { --items-flex-column: var(--flex-quarter); }
-    .gallery-5 { --items-flex-column: var(--flex-fifth); }
-    .gallery-6 { --items-flex-column: var(--flex-sixth); }
+    .gallery-2 { --items-cols: 2; }
+    .gallery-3 { --items-cols: 3; }
+    .gallery-4 { --items-cols: 4; }
+    .gallery-5 { --items-cols: 5; }
+    .gallery-6 { --items-cols: 6; }
   }
 }
