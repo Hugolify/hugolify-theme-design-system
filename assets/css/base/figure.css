@@ -4,9 +4,15 @@
     display: flex;
     flex-direction: column;
     gap: var(--figure-gap);
+    margin-block: var(--figure-margin-block);
 
     picture {
       display: block;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
     }
 
     figcaption {
@@ -24,11 +30,6 @@
     picture + figcaption {
       align-items: baseline;
       justify-content: space-between;
-    }
-
-    img {
-      height: auto;
-      max-width: 100%;
     }
 
     @media (--tablet) {

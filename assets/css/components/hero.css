@@ -25,23 +25,24 @@
  */
 @layer components {
   .hero {
-    background-color: var(--hero-color-bg);
-    color: var(--hero-color-text);
-    position: relative;
+    --color-heading: var(--hero-color-title);
+    --color-link: var(--hero-color-link);
+    --color-text: var(--hero-color-text);
+    --font-size-heading: var(--hero-font-size-title);
 
-    a:not(.btn) {
-      color: var(--hero-color-link);
-    }
+    background-color: var(--hero-color-bg);
+    position: relative;
 
     .container {
       position: relative;
     }
 
     .row {
-      align-items: center;
+      justify-content: center;
       min-height: var(--hero-min-height);
 
       @media (--tablet) {
+        align-items: center;
         min-height: var(--hero-min-height-tablet);
       }
     }
@@ -52,26 +53,27 @@
   .hero-content {
     display: flex;
     flex-direction: column;
+    gap: var(--hero-gap);
+    padding-block: var(--hero-gap);
 
     .surtitle {
-      margin-block: 0;
+      margin-block-end: calc(-1 * var(--hero-gap));
     }
 
     h1 {
-      color: var(--hero-color-title);
-      font-size: var(--hero-font-size-title);
-      margin-block-start: 0;
-      margin-block-end: var(--hero-gap);
-      text-wrap: balance;
+      margin-block: 0;
     }
 
+    h1,
     .description {
       text-wrap: balance;
     }
 
     p {
-      margin-block-start: 0;
-      margin-block-end: var(--hero-gap);
+      margin-block: 0;
+    }
+    p + p {
+      margin-block-start: var(--spacing-typography);
     }
 
     /* ── Buttons — first = primary, second = outline ─────────────── */
