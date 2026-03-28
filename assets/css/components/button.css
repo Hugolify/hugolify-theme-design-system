@@ -47,27 +47,32 @@
   /* Variants */
   .btn-danger {
     --btn-color-bg: var(--color-danger);
-    --btn-color-text: var(--color-white);
+    --btn-color-border: var(--color-danger);
+    --btn-color-text: var(--color-text-on-danger);
   }
 
   .btn-ghost {
     --btn-color-bg: transparent;
+    --btn-color-border: transparent;
     --btn-color-text: var(--color-text);
   }
 
   .btn-primary {
     --btn-color-bg: var(--color-brand);
+    --btn-color-border: var(--color-brand);
     --btn-color-text: var(--color-text-on-brand);
   }
 
   .btn-secondary {
     --btn-color-bg: var(--color-secondary);
-    --btn-color-text: var(--color-text);
+    --btn-color-border: var(--color-secondary);
+    --btn-color-text: var(--color-text-on-secondary);
   }
 
   .btn-success {
     --btn-color-bg: var(--color-success);
-    --btn-color-text: var(--color-white);
+    --btn-color-border: var(--color-success);
+    --btn-color-text: var(--color-text-on-success);
   }
 
   /* Sizes */

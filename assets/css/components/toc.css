@@ -89,8 +89,12 @@
       }
     }
 
-    /* ── Offcanvas — static on laptop+ ─────────────────────── */
+    /* ── Offcanvas — side panel on mobile, static on laptop+ ── */
     .offcanvas {
+      --offcanvas-end:          var(--toc-offcanvas-end);
+      --offcanvas-start:        var(--toc-offcanvas-start);
+      --offcanvas-translate:    var(--toc-offcanvas-translate);
+
       @media (--laptop) {
         box-shadow: none;
         overflow: visible;

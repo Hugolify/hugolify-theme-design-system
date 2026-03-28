@@ -17,6 +17,9 @@
       .container & {
         margin-inline: calc(-1 * var(--gutter));
       }
+      .row {
+        display: block;
+      }
     }
   }
 }

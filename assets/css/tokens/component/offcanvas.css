@@ -9,15 +9,22 @@
     /* Backdrop */
     --offcanvas-backdrop-color: rgb(0 0 0 / 0.5);
 
+    /* Position */
+    --offcanvas-bottom: 0;
+    --offcanvas-end: 0;
+    --offcanvas-start: auto;
+    --offcanvas-top: 0;
+    --offcanvas-translate: translateX(100%);
+
     /* Layout */
     --offcanvas-width:    320px;
     --offcanvas-height:   50vh;
     --offcanvas-padding:  var(--spacing-surface);
-    --offcanvas-z-index:  200;
     --offcanvas-shadow:   var(--shadow-sm);
+    --offcanvas-z-index:  200;
 
     /* Transition — read by JS via getComputedStyle */
     --offcanvas-transition-duration: var(--duration-slow);
-    --offcanvas-transition-easing:   var(--easing-out);
+    --offcanvas-transition-easing:   var(--easing-bounce);
   }
 }

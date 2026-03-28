@@ -14,13 +14,25 @@
     @media (--laptop) { --grid-column: var(--grid-column-laptop); }
     @media (--desktop) { --grid-column: var(--grid-column-desktop); }
 
+    /* Layouts */
+    .toc {
+      order: -1;
+    }
 
     @media (--tablet) {
       .content {
         grid-column: var(--span-two-thirds);
       }
-      .sidebar {
+      .sidebar,
+      .toc {
         grid-column: var(--span-third);
+      }
+    }
+
+    @media (--laptop) {
+      .sidebar,
+      .toc {
+        grid-column: var(--span-quarter) / -1;
       }
     }
 

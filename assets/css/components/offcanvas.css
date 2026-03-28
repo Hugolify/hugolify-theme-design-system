@@ -29,17 +29,23 @@
 
   .offcanvas {
     background-color: var(--offcanvas-color-bg);
+    bottom: var(--offcanvas-bottom, 0);
     box-shadow: var(--offcanvas-shadow);
     color: var(--offcanvas-color-text);
     display: flex;
     flex-direction: column;
+    inset-inline-start: var(--offcanvas-start);
+    inset-inline-end: var(--offcanvas-end);
     max-width: 100%;
     overflow: hidden;
     position: fixed;
+    top: var(--offcanvas-top, 0);
+    transform: var(--offcanvas-translate);
     transition-duration: var(--offcanvas-transition-duration);
     transition-property: transform, visibility;
     transition-timing-function: var(--offcanvas-transition-easing);
     visibility: hidden;
+    width: var(--offcanvas-width);
     z-index: var(--offcanvas-z-index);
 
     /* Visible during transitions and when open */
@@ -90,35 +96,31 @@
   /* ── Position variants ───────────────────────────────────────────── */
 
   .offcanvas-start {
-    bottom: 0;
-    left: 0;
-    top: 0;
-    transform: translateX(-100%);
-    width: var(--offcanvas-width);
+    --offcanvas-end: auto;
+    --offcanvas-start: 0;
+    --offcanvas-translate: translateX(-100%);
   }
 
   .offcanvas-end {
-    bottom: 0;
-    right: 0;
-    top: 0;
-    transform: translateX(100%);
-    width: var(--offcanvas-width);
+    --offcanvas-start: auto;
+    --offcanvas-end: 0;
+    --offcanvas-translate: translateX(100%);
   }
 
   .offcanvas-top {
+    --offcanvas-end: 0;
+    --offcanvas-start: 0;
+    --offcanvas-top: 0;
+    --offcanvas-translate: translateY(-100%);
     height: var(--offcanvas-height);
-    left: 0;
-    right: 0;
-    top: 0;
-    transform: translateY(-100%);
   }
 
   .offcanvas-bottom {
-    bottom: 0;
+    --offcanvas-end: 0;
+    --offcanvas-start: 0;
+    --offcanvas-bottom: 0;
+    --offcanvas-translate: translateY(100%);
     height: var(--offcanvas-height);
-    left: 0;
-    right: 0;
-    transform: translateY(100%);
   }
 
   /* ── Responsive variants (static above breakpoint) ──────────────── */

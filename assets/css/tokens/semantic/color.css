@@ -21,6 +21,10 @@
     --color-text-disabled: var(--color-gray-300);
     --color-text-on-accent: var(--color-white);
     --color-text-on-brand: var(--color-white);
+    --color-text-on-danger: var(--color-white);
+    --color-text-on-secondary: var(--color-white);
+    --color-text-on-success: var(--color-white);
+    --color-text-on-warning: var(--color-white);
 
     /* Variants */
 

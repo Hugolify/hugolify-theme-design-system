@@ -12,9 +12,14 @@
     --toc-label-color:          var(--color-heading);
     --toc-label-margin-bottom:  var(--spacing-sm);
 
+    /* Offcanvas placement (mobile) — override to switch side */
+    --toc-offcanvas-end:          auto;
+    --toc-offcanvas-start:        0;
+    --toc-offcanvas-translate:    translateX(-100%);  /* start = left */
+
     /* Nav */
-    --toc-nav-indent:           var(--spacing-md);
-    --toc-nav-font-size:        var(--font-size-sm);
+    --toc-nav-indent:           var(--size-16);
+    --toc-nav-font-size:        var(--font-size-xs);
     --toc-nav-item-gap:         var(--spacing-2xs);
     --toc-nav-link-color-text-decoration:       transparent;
     --toc-nav-link-color-text-decoration-hover: var(--color-link);
