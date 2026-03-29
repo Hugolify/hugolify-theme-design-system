@@ -32,9 +32,10 @@
       text-wrap: balance;
     }
 
-    @media (--tablet) { margin-bottom: var(--heading-margin-bottom-tablet); }
-    @media (--laptop) { margin-bottom: var(--heading-margin-bottom-laptop); }
-    @media (--desktop) { margin-bottom: var(--heading-margin-bottom-desktop); }
+    @media (--tablet) { --heading-margin-bottom: var(--heading-margin-bottom-tablet); }
+    @media (--tablet-wide) { --heading-margin-bottom: var(--heading-margin-bottom-tablet-wide); }
+    @media (--laptop) { --heading-margin-bottom: var(--heading-margin-bottom-laptop); }
+    @media (--desktop) { --heading-margin-bottom: var(--heading-margin-bottom-desktop); }
   }
 
   /* ── Filter variant ──────────────────────────────────────────────── */

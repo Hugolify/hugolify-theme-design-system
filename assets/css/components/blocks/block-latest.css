@@ -1,0 +1,69 @@
+/* components/blocks/block-latest.css */
+/*
+ * .block-latest — block section displaying the latest content items.
+ *
+ * Layouts (modifier on section):
+ *   .block-latest-grid  (default) — items grid, uses commons/items partial
+ *   .block-latest-list  — 2-col layout (heading | list), items as plain links
+ *
+ * Structure — grid:
+ *   section.block-latest.block-latest-grid.block-latest-{section}[.block-bg]
+ *     .container
+ *       .heading
+ *       .items
+ *         div
+ *           [item card]
+ *       .footing
+ *
+ * Structure — list:
+ *   section.block-latest.block-latest-list.block-latest-{section}[.block-bg]
+ *     .container
+ *       .heading
+ *       ol.list
+ *         li
+ *           a
+ *       .footing
+ */
+@layer components {
+
+  /* ── Grid ─────────────────────────────────────────────────────────── */
+  .block-latest-grid {
+    .items {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  /* ── List ─────────────────────────────────────────────────────────── */
+  .block-latest-list {
+    .container {
+      @media (--tablet) {
+        display: grid;
+        gap: var(--block-latest-gap);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .heading {
+      @media (--tablet) {
+        align-items: flex-start;
+        margin-bottom: 0;
+        margin-inline-start: 0;
+        max-width: none;
+        text-align: start;
+      }
+    }
+
+    .footing {
+      @media (--tablet) {
+        grid-column: 1 / 3;
+      }
+    }
+
+    ol.list {
+      @media (--tablet) {
+        margin-top: var(--block-latest-list-items-margin-top);
+      }
+    }
+  }
+}

@@ -3,6 +3,8 @@
   :root {
     --heading-gap:            var(--spacing-xs);
     --heading-margin-bottom:  var(--spacing-md);
+    --heading-margin-bottom-tablet:  var(--spacing-md);
+    --heading-margin-bottom-tablet-wide:  var(--spacing-md);
     --heading-margin-bottom-laptop:  var(--spacing-lg);
     --heading-margin-bottom-desktop:  var(--spacing-xl);
   }

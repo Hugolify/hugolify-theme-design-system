@@ -1,0 +1,30 @@
+/* tokens/component/sidebarmenu.css */
+@layer config {
+  :root {
+    /* Sticky */
+    --sidebarmenu-sticky-top:    calc(var(--header-height) + var(--spacing-md));
+    --sidebarmenu-max-height:    calc(100vh - var(--sidebarmenu-sticky-top));
+
+    /* Label (tablet+ heading) */
+    --sidebarmenu-label-font-size:     var(--font-size-h5);
+    --sidebarmenu-label-font-weight:   var(--font-weight-heading);
+    --sidebarmenu-label-font-family:   var(--font-family-heading);
+    --sidebarmenu-label-line-height:   var(--line-height-heading);
+    --sidebarmenu-label-color:         var(--color-heading);
+    --sidebarmenu-label-margin-bottom: var(--spacing-sm);
+
+    /* Offcanvas placement (mobile) — override to switch side */
+    --sidebarmenu-offcanvas-translate:    translateX(-100%);  /* start = left */
+    --sidebarmenu-offcanvas-start:        0;
+    --sidebarmenu-offcanvas-end:          auto;
+
+    /* Nav */
+    --sidebarmenu-nav-link-padding-x:   var(--spacing-2xs);
+    --sidebarmenu-nav-link-padding-y:   var(--spacing-2xs);
+    --sidebarmenu-nav-link-font-size:   var(--font-size-sm);
+    --sidebarmenu-nav-sub-font-size:    var(--font-size-xs);
+    --sidebarmenu-nav-sub-indent:       var(--spacing-md);
+    --sidebarmenu-nav-link-color:       var(--color-text);
+    --sidebarmenu-nav-link-color-active: var(--color-brand);
+  }
+}

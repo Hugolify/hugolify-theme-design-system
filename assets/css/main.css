@@ -74,10 +74,12 @@
 @import 'components/screenshot.css';
 @import 'components/surtitle.css';
 @import 'components/timeline.css';
+@import 'components/sidebarmenu.css';
 @import 'components/toc.css';
 @import 'components/transcription.css';
 
 /* Blocks */
+@import 'components/blocks/block-alert.css';
 @import 'components/blocks/block-audio.css';
 @import 'components/blocks/block-comparison.css';
 @import 'components/blocks/block-cta.css';
@@ -85,12 +87,17 @@
 @import 'components/blocks/block-figure.css';
 @import 'components/blocks/block-embed.css';
 @import 'components/blocks/block-gallery.css';
+@import 'components/blocks/block-instagram.css';
+@import 'components/blocks/block-latest.css';
 @import 'components/blocks/block-images.css';
+@import 'components/blocks/block-logos.css';
 @import 'components/blocks/block-map.css';
 @import 'components/blocks/block-quote.css';
 @import 'components/blocks/block-selected.css';
 @import 'components/blocks/block-testimonials.css';
 @import 'components/blocks/block-timeline.css';
+@import 'components/blocks/block-title.css';
+@import 'components/blocks/block-video.css';
 
 /* sections */
 @import 'sections/pages.css';

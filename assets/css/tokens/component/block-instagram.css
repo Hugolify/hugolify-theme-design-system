@@ -1,0 +1,6 @@
+/* tokens/component/block-instagram.css */
+@layer config {
+  :root {
+    --block-instagram-item-max-width: calc(300px - var(--items-gap));
+  }
+}

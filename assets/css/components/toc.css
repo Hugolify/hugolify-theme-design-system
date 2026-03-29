@@ -18,8 +18,8 @@
  */
 @layer components {
   .toc {
-    /* ── Sticky wrapper (laptop+) ───────────────────────────── */
-    @media (--laptop) {
+    /* ── Sticky wrapper (tablet-wide+) ───────────────────────────── */
+    @media (--tablet-wide) {
       > div {
         position: sticky;
         top: var(--toc-sticky-top);
@@ -44,14 +44,14 @@
       line-height: var(--toc-label-line-height);
       margin-bottom: var(--toc-label-margin-bottom);
 
-      @media (--laptop) {
+      @media (--tablet-wide) {
         display: block;
       }
     }
 
-    /* ── Toggle button (mobile only) ───────────────────────── */
+    /* ── Toggle button (tablet-wide-) ───────────────────────── */
     > div > button {
-      @media (--laptop) {
+      @media (--tablet-wide) {
         display: none;
       }
     }
@@ -89,13 +89,13 @@
       }
     }
 
-    /* ── Offcanvas — side panel on mobile, static on laptop+ ── */
+    /* ── Offcanvas — side panel on mobile, static on tablet-wide+ ── */
     .offcanvas {
       --offcanvas-end:          var(--toc-offcanvas-end);
       --offcanvas-start:        var(--toc-offcanvas-start);
       --offcanvas-translate:    var(--toc-offcanvas-translate);
 
-      @media (--laptop) {
+      @media (--tablet-wide) {
         box-shadow: none;
         overflow: visible;
         position: static;

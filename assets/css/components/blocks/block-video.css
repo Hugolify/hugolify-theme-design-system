@@ -1,0 +1,12 @@
+/* components/blocks/block-video.css */
+/*
+ * .block-video — block section displaying a video with optional transcription.
+ *
+ * Structure:
+ *   section.block-video[.block-bg]
+ *     .heading
+ *     .container > .row > .col
+ *       figure
+ *       .transcription
+ *     .footing
+ */

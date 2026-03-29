@@ -1,0 +1,129 @@
+/* components/sidebarmenu.css */
+/*
+ * .sidebarmenu — section navigation, sticky sidebar on tablet+, offcanvas on mobile.
+ *
+ * Structure:
+ *   aside.sidebarmenu
+ *     div                      (sticky wrapper)
+ *       p                      (label — tablet+ only)
+ *       button.js-offcanvas    (toggle — mobile only)
+ *       div.offcanvas
+ *         div.header
+ *           p.title
+ *           button.js-offcanvas-close
+ *         div.content
+ *           nav
+ *             ul.nav
+ *               li > a[.active]
+ *                 ul > li > a[.active]
+ */
+@layer components {
+  .sidebarmenu {
+    /* ── Sticky wrapper (tablet-wide+) ───────────────────────────── */
+    @media (--tablet-wide) {
+      overflow-y: auto;
+
+      max-height: var(--sidebarmenu-max-height);
+      position: sticky;
+      top: var(--sidebarmenu-sticky-top);
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: max-height var(--duration-slow) var(--easing-out),
+                    top        var(--duration-slow) var(--easing-out);
+      }
+
+      html.is-scrolling-down & {
+        max-height: calc(100vh - var(--spacing-md));
+        top: var(--spacing-md);
+      }
+    }
+
+    /* ── Label ──────────────────────────────────────────────── */
+    > div > p {
+      color: var(--sidebarmenu-label-color);
+      display: none;
+      font-family: var(--sidebarmenu-label-font-family);
+      font-size: var(--sidebarmenu-label-font-size);
+      font-weight: var(--sidebarmenu-label-font-weight);
+      line-height: var(--sidebarmenu-label-line-height);
+      margin-bottom: var(--sidebarmenu-label-margin-bottom);
+
+      @media (--tablet-wide) {
+        display: block;
+      }
+    }
+
+    /* ── Toggle button (tablet-wide-) ───────────────────────── */
+    > div > button {
+      @media (--tablet-wide) {
+        display: none;
+      }
+    }
+
+    /* ── Nav ────────────────────────────────────────────────── */
+    nav {
+      ul {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul ul {
+        font-size: var(--sidebarmenu-nav-sub-font-size);
+        padding-inline-start: var(--sidebarmenu-nav-sub-indent);
+      }
+
+      a {
+        color: var(--sidebarmenu-nav-link-color);
+        display: block;
+        font-size: var(--sidebarmenu-nav-link-font-size);
+        padding-block: var(--sidebarmenu-nav-link-padding-y);
+        padding-inline: var(--sidebarmenu-nav-link-padding-x);
+
+        &.active {
+          color: var(--sidebarmenu-nav-link-color-active);
+        }
+      }
+    }
+
+    /* ── Offcanvas — side panel on mobile, static on tablet-wide+ ── */
+    .offcanvas {
+      --offcanvas-end:          var(--sidebarmenu-offcanvas-end);
+      --offcanvas-start:        var(--sidebarmenu-offcanvas-start);
+      --offcanvas-translate:    var(--sidebarmenu-offcanvas-translate);
+
+      @media (--tablet-wide) {
+        box-shadow: none;
+        overflow: visible;
+        position: static;
+        transform: none;
+        transition: none;
+        visibility: visible;
+        width: auto;
+        z-index: auto;
+
+        > .header,
+        > .footer {
+          display: none;
+        }
+
+        > .content {
+          flex-grow: unset;
+          overflow-y: unset;
+          padding: 0;
+        }
+      }
+    }
+
+    /* ── Title (offcanvas header) ───────────────────────────── */
+    .title {
+      color: var(--sidebarmenu-label-color);
+      font-family: var(--sidebarmenu-label-font-family);
+      font-size: var(--sidebarmenu-label-font-size);
+      font-weight: var(--sidebarmenu-label-font-weight);
+    }
+  }
+}

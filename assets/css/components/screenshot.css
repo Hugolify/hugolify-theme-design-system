@@ -55,7 +55,7 @@
     /* ── Figure ────────────────────────────────────────────────── */
 
     figure {
-      margin-inline: 0;
+      margin: 0;
     }
     figcaption {
       padding-inline: 0;

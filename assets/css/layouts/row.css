@@ -20,54 +20,25 @@
     gap: var(--gap);
   }
 
-  /* .row > * {
-    flex: 1 1 100%;
-  } */
-
   @media (--tablet) {
     .row {
       flex-direction: row;
     }
-    /* .row > * {
-      flex: 1 1 calc(50% - var(--gap));
-    } */
 
     /* ── Semantic column widths ─────────────────────────────────── */
 
-    .col-xsmall { flex: 0 0 calc(33.333% - var(--gap)); }
-    .col-small  { flex: 0 0 calc(50% - var(--gap)); }
-    .col-medium { flex: 0 0 calc(66.666% - var(--gap)); }
-    .col-large  { flex: 0 0 calc(83.333% - var(--gap)); }
-
-    /* ── Layouts ────────────────────────────────────────────────── */
-
-    .content {
-      flex-basis: var(--flex-two-thirds);
-    }
-    .sidebar {
-      flex-basis: var(--flex-third);
-    }
+    .col-xsmall { flex: 0 0 calc(var(--flex-third) - var(--gap)); }
+    .col-small  { flex: 0 0 calc(var(--flex-half) - var(--gap)); }
+    .col-medium { flex: 0 0 calc(var(--flex-two-thirds) - var(--gap)); }
+    .col-large  { flex: 0 0 calc(var(--flex-five-sixths) - var(--gap)); }
 
   }
 
   @media (--tablet-wide) {
-    .sidebar + div,
-    .content {
-      flex-basis: var(--flex-three-quarters);
-    }
-    .sidebar {
-      flex-basis: var(--flex-quarter);
-    }
 
     /* ── Offsets ────────────────────────────────────────────────── */
 
     .offset-center { margin-inline: auto; }
     .offset-end    { margin-inline-start: auto; }
   }
-
-  /* @media (--laptop) {
-    .row > * {
-      flex: 1 1 calc(25% - var(--gap));
-    }
-  } */
 }

@@ -20,20 +20,41 @@
     }
 
     @media (--tablet) {
+      .content,
+      .sidebar + div,
+      .sidebar,
+      .toc {
+        --grid-column: var(--span-full);
+      }
+    }
+
+    @media (--tablet-wide) {
+
+      /* ── Content ────────────────────────────────────────────── */
       .content {
-        grid-column: var(--span-two-thirds);
+        --grid-column: var(--span-two-thirds);
+      }
+      .content:first-child:last-child {
+        --grid-column: var(--span-full);
+      }
+      .sidebar--menu + div {
+        --grid-column: var(--span-five-sixths);
+      }
+
+      /* ── Sidebar ────────────────────────────────────────────── */
+      .toc {
+        order: initial;
       }
       .sidebar,
       .toc {
-        grid-column: var(--span-third);
+        --grid-column: var(--span-quarter) / -1;
+      }
+      .sidebar--menu {
+        --grid-column: var(--span-sixth);
       }
     }
 
     @media (--laptop) {
-      .sidebar,
-      .toc {
-        grid-column: var(--span-quarter) / -1;
-      }
     }
 
   }

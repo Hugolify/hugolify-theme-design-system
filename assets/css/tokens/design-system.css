@@ -24,6 +24,11 @@
 @import 'component/block.css';
 @import 'component/comparison.css';
 @import 'component/badge.css';
+@import 'component/block-instagram.css';
+@import 'component/block-latest.css';
+@import 'component/block-title.css';
+@import 'component/block-video.css';
+@import 'component/block-logos.css';
 @import 'component/block-selected.css';
 @import 'component/block-testimonials.css';
 @import 'component/breadcrumb.css';
@@ -58,5 +63,6 @@
 @import 'component/surtitle.css';
 @import 'component/table.css';
 @import 'component/timeline.css';
+@import 'component/sidebarmenu.css';
 @import 'component/toc.css';
 @import 'component/transcription.css';

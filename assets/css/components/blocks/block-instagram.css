@@ -1,0 +1,43 @@
+/* components/blocks/block-instagram.css */
+/*
+ * .block-instagram — block section displaying an Instagram feed.
+ *
+ * Structure:
+ *   section.block-instagram[.block-bg]
+ *     .heading
+ *     .container
+ *       div.instagram.js-instagram[data-limit][data-token]
+ *         div > a > img    (injected by JS)
+ *       .cta-group
+ *     .footing
+ */
+@layer components {
+  .block-instagram {
+    text-align: center;
+
+    .instagram {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--items-gap);
+      justify-content: center;
+
+      div {
+        flex: 1;
+        max-width: var(--block-instagram-item-max-width);
+      }
+
+      a {
+        display: block;
+
+        &::after {
+          content: none;
+        }
+      }
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}

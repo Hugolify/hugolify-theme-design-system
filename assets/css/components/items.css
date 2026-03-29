@@ -24,5 +24,11 @@
     .items-4 { --items-cols: 4; }
     .items-5 { --items-cols: 5; }
     .items-6 { --items-cols: 6; }
+    .items-7 { --items-cols: 7; }
+    .items-8 { --items-cols: 8; }
+    .items-9 { --items-cols: 9; }
+    .items-10 { --items-cols: 10; }
+    .items-11 { --items-cols: 11; }
+    .items-12 { --items-cols: 12; }
   }
 }

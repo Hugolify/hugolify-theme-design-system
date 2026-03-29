@@ -1,0 +1,53 @@
+/* components/blocks/block-logos.css */
+/*
+ * .block-logos — block section displaying a grid or carousel of logos.
+ *
+ * Layouts:
+ *   grid (default) — uses .items.items-{n} for columns
+ *   carousel       — Splide carousel
+ *
+ * Structure — grid:
+ *   section.block-logos[.block-bg]
+ *     .heading
+ *     .container
+ *       .logos.items.items-{n}
+ *         div
+ *           picture | span | a > picture
+ *     .footing
+ */
+@layer components {
+  .block-logos {
+    /* ── Logo item ───────────────────────────────────────────── */
+    .logos > div {
+      aspect-ratio: var(--block-logos-item-ratio);
+    }
+
+    picture,
+    span {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: center;
+    }
+
+    span {
+      font-weight: var(--font-weight-bold);
+    }
+
+    img {
+      height: 100%;
+      max-height: var(--block-logos-item-img-max-height);
+      max-width: var(--block-logos-item-img-max-width);
+      object-fit: contain;
+      width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}

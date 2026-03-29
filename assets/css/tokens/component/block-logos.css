@@ -1,0 +1,8 @@
+/* tokens/component/block-logos.css */
+@layer config {
+  :root {
+    --block-logos-item-ratio:      1;
+    --block-logos-item-img-max-height: 60%;
+    --block-logos-item-img-max-width:  70%;
+  }
+}

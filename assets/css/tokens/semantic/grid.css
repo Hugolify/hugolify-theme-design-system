@@ -16,6 +16,7 @@
     
     /* Spans */
     --span-full:                     span var(--columns);
+    --span-five-sixths:              span calc(var(--columns) / 1.2); 
     --span-two-thirds:               span calc(var(--columns) / 1.5); 
     --span-half:                     span calc(var(--columns) / 2); 
     --span-third:                    span calc(var(--columns) / 3);

@@ -1,0 +1,9 @@
+/* components/blocks/block-alert.css */
+/*
+ * .block-alert — block section displaying an alert message.
+ *
+ * Structure:
+ *   section.block-alert[.block-bg]
+ *     .container
+ *       .alert[.alert-{variant}]
+ */
