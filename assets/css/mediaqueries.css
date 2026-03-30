@@ -1,7 +1,15 @@
 /* https://www.npmjs.com/package/postcss-custom-media */
 
+/* ── DOWN ──────────────────────────────────────────────── */
+
 /* < 768px */
 @custom-media --mobile-only (width < 48rem);
+
+/* < 1024px */
+@custom-media --mobile-tablet-only (width < 64rem);
+
+
+/* ── UP ──────────────────────────────────────────────── */
 
 /* 768px */
 @custom-media --tablet (width >= 48rem);
@@ -16,5 +24,13 @@
 @custom-media --desktop (width >= 120rem);
 
 
-/* Header expand — configurable via params.header.expand in hugo.yaml */
+/* ── OTHER ──────────────────────────────────────────────── */
+
+/* Header expand */
 @custom-media --header-expand (width >= 64rem);
+
+/* Sidebar menu expand */
+@custom-media --sidebarmenu-expand (width >= 64rem);
+
+/* TOC expand */
+@custom-media --toc-expand (width >= 64rem);

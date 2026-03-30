@@ -22,6 +22,17 @@
       aspect-ratio: var(--block-logos-item-ratio);
     }
 
+    @media (--mobile-tablet-only) {
+      .logos {
+        --items-cols: 3;
+      }
+    }
+    @media (--mobile-only) {
+      .logos {
+        --items-cols: 2;
+      }
+    }
+
     picture,
     span {
       align-items: center;

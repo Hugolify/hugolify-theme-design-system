@@ -20,7 +20,7 @@
 @layer components {
   .sidebarmenu {
     /* ── Sticky wrapper (tablet-wide+) ───────────────────────────── */
-    @media (--tablet-wide) {
+    @media (--sidebarmenu-expand) {
       overflow-y: auto;
 
       max-height: var(--sidebarmenu-max-height);
@@ -48,14 +48,14 @@
       line-height: var(--sidebarmenu-label-line-height);
       margin-bottom: var(--sidebarmenu-label-margin-bottom);
 
-      @media (--tablet-wide) {
+      @media (--sidebarmenu-expand) {
         display: block;
       }
     }
 
     /* ── Toggle button (tablet-wide-) ───────────────────────── */
     > div > button {
-      @media (--tablet-wide) {
+      @media (--sidebarmenu-expand) {
         display: none;
       }
     }
@@ -95,7 +95,7 @@
       --offcanvas-start:        var(--sidebarmenu-offcanvas-start);
       --offcanvas-translate:    var(--sidebarmenu-offcanvas-translate);
 
-      @media (--tablet-wide) {
+      @media (--sidebarmenu-expand) {
         box-shadow: none;
         overflow: visible;
         position: static;

@@ -19,7 +19,7 @@
 @layer components {
   .toc {
     /* ── Sticky wrapper (tablet-wide+) ───────────────────────────── */
-    @media (--tablet-wide) {
+    @media (--toc-expand) {
       > div {
         position: sticky;
         top: var(--toc-sticky-top);
@@ -44,14 +44,14 @@
       line-height: var(--toc-label-line-height);
       margin-bottom: var(--toc-label-margin-bottom);
 
-      @media (--tablet-wide) {
+      @media (--toc-expand) {
         display: block;
       }
     }
 
     /* ── Toggle button (tablet-wide-) ───────────────────────── */
     > div > button {
-      @media (--tablet-wide) {
+      @media (--toc-expand) {
         display: none;
       }
     }
@@ -95,7 +95,7 @@
       --offcanvas-start:        var(--toc-offcanvas-start);
       --offcanvas-translate:    var(--toc-offcanvas-translate);
 
-      @media (--tablet-wide) {
+      @media (--toc-expand) {
         box-shadow: none;
         overflow: visible;
         position: static;
