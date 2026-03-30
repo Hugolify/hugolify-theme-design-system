@@ -9,6 +9,7 @@
 /* 2. Semantic — purposeful aliases */
 @import 'semantic/border.css';
 @import 'semantic/color.css';
+@import 'semantic/form.css';
 @import 'semantic/grid.css';
 @import 'semantic/motion.css';
 @import 'semantic/radius.css';
