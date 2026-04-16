@@ -4,6 +4,9 @@
 
 ## Overview
 
+> [!NOTE]
+> This project is in development.
+
 Design System styling layer for [hugolify-theme](https://github.com/hugolify/hugolify-theme).
 
 This module provides the CSS (Design Tokens + CSS) and Vanilla JavaScript for hugolify-theme.
