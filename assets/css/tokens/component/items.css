@@ -1,7 +1,0 @@
-/* tokens/component/items.css */
-@layer config {
-  :root {
-    --items-cols:    1;
-    --items-gap:     var(--gap);
-  }
-}

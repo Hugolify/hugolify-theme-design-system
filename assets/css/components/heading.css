@@ -29,7 +29,6 @@
 
     h1, h2, h3, p {
       margin-block: 0;
-      text-wrap: balance;
     }
 
     @media (--tablet) { --heading-margin-bottom: var(--heading-margin-bottom-tablet); }

@@ -32,13 +32,13 @@
 
       /* ── Content ────────────────────────────────────────────── */
       .content {
-        --grid-column: var(--span-two-thirds);
+        --grid-column: var(--span-8);
       }
       .content:first-child:last-child {
         --grid-column: var(--span-full);
       }
       .sidebar--menu + div {
-        --grid-column: var(--span-five-sixths);
+        --grid-column: var(--span-10);
       }
 
       /* ── Sidebar ────────────────────────────────────────────── */
@@ -47,10 +47,10 @@
       }
       .sidebar,
       .toc {
-        --grid-column: var(--span-quarter) / -1;
+        --grid-column: var(--span-3) / -1;
       }
       .sidebar--menu {
-        --grid-column: var(--span-sixth);
+        --grid-column: var(--span-2);
       }
     }
 

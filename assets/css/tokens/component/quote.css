@@ -14,7 +14,7 @@
 
     /* Quote text */
     --quote-font-size:        var(--font-size-md);
-    --quote-font-style:       var(--font-style-italic);
+    --quote-font-style:       italic;
     --quote-font-weight:      var(--font-weight-normal);
     --quote-line-height:      var(--line-height-normal);
     --quote-color-text:       var(--color-text);

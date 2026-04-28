@@ -1,8 +1,0 @@
-/* base/abbr.css */
-@layer base {
-  abbr[title] {
-    text-decoration-line: dotted;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 0.3rem;
-  }
-}

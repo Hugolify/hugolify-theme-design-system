@@ -70,7 +70,7 @@
     }
 
     .next {
-      margin-left: auto;
+      margin-inline-start: auto;
       text-align: right;
 
       a {
@@ -114,13 +114,13 @@
     }
 
     .next {
-      margin-left: auto;
+      margin-inline-start: auto;
 
       @media (--tablet) {
         text-align: right;
 
         img {
-          margin-left: auto;
+          margin-inline-start: auto;
         }
       }
     } 

@@ -1,73 +1,47 @@
 /* css/main.css */
 @layer config, base, layouts, vendors, components;
 
+/* Un Cinq base */
+@import '@uncinq/css-base';
+@import '@uncinq/css-components';
+
 /* Tokens */
 @import 'tokens/design-system.css';
 @import 'tokens/theme.css';
 @import 'tokens/site.css';
 
 /* Config */
-@import 'reset.css';
 @import 'mediaqueries.css';
 
 /* Vendors */
 @import 'vendors/splide.css';
 
 /* Base */
-@import 'base/abbr.css';
-@import 'base/address.css';
-@import 'base/body.css';
-@import 'base/details.css';
-@import 'base/figure.css';
-@import 'base/form.css';
-@import 'base/headings.css';
-@import 'base/link.css';
-@import 'base/picture.css';
-@import 'base/scale.css';
-@import 'base/sup.css';
-@import 'base/table.css';
-@import 'base/time.css';
-@import 'base/typography.css';
-@import 'base/video.css';
+/* @import 'base/scale.css'; */
 
 /* Layouts */
-@import 'layouts/container.css';
 @import 'layouts/footer.css';
 @import 'layouts/grid.css';
 @import 'layouts/header.css';
 @import 'layouts/main.css';
-@import 'layouts/row.css';
 
-/* Components */
-@import 'components/alert.css';
+/* Components — generic */
+@import '@uncinq/css-components';
+
+/* Components — Hugolify-specific */
 @import 'components/audio.css';
-@import 'components/banner.css';
 @import 'components/block.css';
 @import 'components/block-bg.css';
-@import 'components/badge.css';
-@import 'components/breadcrumb.css';
-@import 'components/btn-menu.css';
-@import 'components/button.css';
-@import 'components/card.css';
 @import 'components/credit.css';
 @import 'components/cta.css';
-@import 'components/dropdown.css';
-@import 'components/embed.css';
 @import 'components/gallery.css';
 @import 'components/images.css';
 @import 'components/heading.css';
 @import 'components/hero.css';
 @import 'components/item.css';
 @import 'components/items.css';
-@import 'components/list.css';
 @import 'components/logo.css';
-@import 'components/map.css';
 @import 'components/main-menu.css';
-@import 'components/media.css';
-@import 'components/nav.css';
-@import 'components/nav-accessibility.css';
-@import 'components/offcanvas.css';
-@import 'components/pagination.css';
 @import 'components/pagination-between.css';
 @import 'components/press.css';
 @import 'components/pricing.css';

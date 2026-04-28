@@ -89,11 +89,11 @@
       }
     }
 
-    /* ── Offcanvas — side panel on mobile, static on tablet-wide+ ── */
-    .offcanvas {
-      --offcanvas-end:          var(--toc-offcanvas-end);
-      --offcanvas-start:        var(--toc-offcanvas-start);
-      --offcanvas-translate:    var(--toc-offcanvas-translate);
+    /* ── Drawer — side panel on mobile, static on tablet-wide+ ── */
+    .drawer {
+      --drawer-end:          var(--toc-drawer-end);
+      --drawer-start:        var(--toc-drawer-start);
+      --drawer-translate:    var(--toc-drawer-translate);
 
       @media (--toc-expand) {
         box-shadow: none;

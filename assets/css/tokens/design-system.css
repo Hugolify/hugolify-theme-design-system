@@ -1,30 +1,31 @@
 /* tokens/design-system.css */
 
-/* 1. Primitives — raw values */
-@import 'primitive/color.css';
-@import 'primitive/font.css';
-@import 'primitive/shadow.css';
-@import 'primitive/size.css';
+/* 1. Design tokens — primitive + semantic */
+@import '@uncinq/design-tokens';
 
-/* 2. Semantic — purposeful aliases */
-@import 'semantic/border.css';
-@import 'semantic/color.css';
-@import 'semantic/form.css';
-@import 'semantic/grid.css';
-@import 'semantic/motion.css';
-@import 'semantic/radius.css';
-@import 'semantic/ratio.css';
-@import 'semantic/size.css';
-@import 'semantic/spacing.css';
-@import 'semantic/typography.css';
+/* 2. Component tokens — generic */
+@import '@uncinq/component-tokens';
 
-/* 3. Component — scoped tokens */
-@import 'component/alert.css';
-@import 'component/details.css';
+/* 3. Component tokens — Hugolify-specific */
 @import 'component/audio.css';
 @import 'component/block.css';
 @import 'component/comparison.css';
-@import 'component/badge.css';
+@import 'component/footer.css';
+@import 'component/gallery.css';
+@import 'component/header.css';
+@import 'component/images.css';
+@import 'component/main-menu.css';
+@import 'component/pagination-between.css';
+@import 'component/press.css';
+@import 'component/pricing.css';
+@import 'component/quote.css';
+@import 'component/screenshot.css';
+@import 'component/sidebarmenu.css';
+@import 'component/timeline.css';
+@import 'component/toc.css';
+@import 'component/transcription.css';
+
+/* Blocks */
 @import 'component/block-instagram.css';
 @import 'component/block-latest.css';
 @import 'component/block-title.css';
@@ -32,38 +33,3 @@
 @import 'component/block-logos.css';
 @import 'component/block-selected.css';
 @import 'component/block-testimonials.css';
-@import 'component/breadcrumb.css';
-@import 'component/button.css';
-@import 'component/card.css';
-@import 'component/container.css';
-@import 'component/dropdown.css';
-@import 'component/embed.css';
-@import 'component/figure.css';
-@import 'component/footer.css';
-@import 'component/gallery.css';
-@import 'component/header.css';
-@import 'component/heading.css';
-@import 'component/hero.css';
-@import 'component/images.css';
-@import 'component/item.css';
-@import 'component/items.css';
-@import 'component/link.css';
-@import 'component/logo.css';
-@import 'component/main-menu.css';
-@import 'component/map.css';
-@import 'component/media.css';
-@import 'component/list.css';
-@import 'component/nav.css';
-@import 'component/quote.css';
-@import 'component/offcanvas.css';
-@import 'component/pagination.css';
-@import 'component/pagination-between.css';
-@import 'component/press.css';
-@import 'component/pricing.css';
-@import 'component/screenshot.css';
-@import 'component/surtitle.css';
-@import 'component/table.css';
-@import 'component/timeline.css';
-@import 'component/sidebarmenu.css';
-@import 'component/toc.css';
-@import 'component/transcription.css';

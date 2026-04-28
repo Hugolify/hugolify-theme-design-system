@@ -7,19 +7,18 @@
 ## Table of contents
 
 - [Philosophy](#philosophy)
+- [Stack overview](#stack-overview)
 - [Folder structure](#folder-structure)
 - [Alphabetical property order](#alphabetical-property-order)
 - [Cascade layers](#cascade-layers)
 - [Tokens](#tokens)
-  - [`tokens.css` — entry point](#tokenscss--the-token-entry-point)
+  - [`design-system.css` — entry point](#design-systemcss--the-token-entry-point)
   - [Color palette generation](#color-palette-generation)
   - [The three token layers](#the-three-token-layers)
   - [Responsive tokens](#responsive-tokens)
   - [Naming conventions](#naming-conventions)
   - [False friends](#nomenclature--false-friends)
-- [Future](#future)
-  - [Fluid typography](#fluid-typography)
-  - [Style Dictionary — source vs. output](#style-dictionary--source-vs-output)
+- [Style Dictionary — source vs. output](#style-dictionary--source-vs-output)
 
 ---
 
@@ -32,62 +31,73 @@
 
 ---
 
+## Stack overview
+
+The CSS stack is split across four shared npm packages and a local layer:
+
+```text
+@uncinq/design-tokens      ← primitive + semantic CSS custom properties  (@layer config)
+@uncinq/component-tokens   ← component-scoped CSS custom properties      (@layer config)
+@uncinq/css-base           ← reset, native element styles, layouts       (@layer base, layouts)
+@uncinq/css-components     ← generic UI components                       (@layer components)
+hugolify-theme-design-system ← hugolify-specific tokens + components     (all layers)
+```
+
+Each layer is strictly additive — no package reaches into a lower layer.
+
+---
+
 ## Folder structure
 
-```
+```text
 assets/css/
 │
-├── tokens/                  # Design tokens — CSS custom properties
-│   ├── primitive/           # Raw values, no context
-│   │   ├── color.css        # Color palette (blue-500, gray-900…)
-│   │   ├── font.css         # Font families, weights, line-heights
-│   │   ├── shadow.css       # Box-shadow values (composite — cannot derive from size)
-│   │   └── size.css         # Numeric scale in rem (size-4, size-6, size-8…)
-│   ├── semantic/            # Purposeful tokens, reference primitives
-│   │   ├── border.css       # Border widths
-│   │   ├── color.css        # Intent (brand, bg, text, muted…)
-│   │   ├── motion.css       # Duration, easing
-│   │   ├── radius.css       # Purpose (control, pill, surface)
-│   │   ├── ratio.css        # Aspect ratios (16-9, 4-3…)
-│   │   ├── spacing.css      # T-shirt scale (space-xs → space-2xl) + typography spacing
-│   │   └── typography.css   # Font roles (body, heading), sizes, weights
-│   └── component/           # Component-scoped tokens
-│       ├── alert.css
-│       ├── badge.css
-│       ├── breadcrumb.css
-│       ├── button.css
-│       ├── card.css
-│       ├── container.css
-│       └── page.css
+├── tokens/
+│   ├── design-system.css    ← entry point: @uncinq/design-tokens
+│   │                            + @uncinq/component-tokens
+│   │                            + hugolify component tokens
+│   ├── component/           ← hugolify-specific component tokens only
+│   │   ├── audio.css
+│   │   ├── block.css
+│   │   ├── comparison.css
+│   │   ├── footer.css
+│   │   ├── gallery.css
+│   │   ├── header.css
+│   │   ├── images.css
+│   │   ├── main-menu.css
+│   │   ├── pagination-between.css
+│   │   ├── press.css
+│   │   ├── pricing.css
+│   │   ├── quote.css
+│   │   ├── screenshot.css
+│   │   ├── sidebarmenu.css
+│   │   ├── timeline.css
+│   │   ├── toc.css
+│   │   └── transcription.css
+│   ├── theme.css            ← project-level token overrides (@layer config)
+│   └── site.css             ← site-specific token overrides (@layer config)
 │
-├── base/                    # Reset and native HTML element styles
-│   ├── body.css
-│   ├── headings.css
-│   ├── type-scale.css
-│   └── typography.css
+├── layouts/                 ← hugolify layout overrides (@layer layouts)
+│   ├── footer.css
+│   ├── grid.css
+│   ├── header.css
+│   └── main.css
 │
-├── layout/                  # Page structure and grid
-│   ├── container.css
-│   └── grid.css
+├── components/              ← hugolify-specific components (@layer components)
+│   ├── audio.css
+│   ├── block.css
+│   ├── main-menu.css
+│   └── … (blocks/, sections/)
 │
-├── components/              # Self-contained UI components
-│   ├── button.css
-│   ├── card.css
-│   └── nav.css
-│
-├── utilities/               # Single-purpose utility classes
-│   └── helpers.css
-│
-├── tokens.css               # Imports all token layers in order
-├── reset.css                # Reset
-└── main.css                 # Entry point — declares @layer, imports everything
+├── mediaqueries.css         ← @custom-media definitions
+└── main.css                 ← entry point — @layer + all imports
 ```
 
 ---
 
 ## Alphabetical property order
 
-All CSS properties are written in **alphabetical order** within a declaration block.  
+All CSS properties are written in **alphabetical order** within a declaration block.
 This removes all debate about ordering, makes diffs cleaner, and speeds up scanning.
 
 ```css
@@ -124,79 +134,93 @@ This removes all debate about ordering, makes diffs cleaner, and speeds up scann
 
 ## Cascade Layers
 
-Layers are declared **once** at the top of `main.css`, in order of precedence (lowest to highest).  
-Each layer maps directly to a folder.
+Layers are declared **once** at the top of `main.css`, in order of precedence (lowest to highest).
 
 ```css
-/* main.css */
-
-@layer config, base, layouts, components, utilities;
-
-@import "tokens.css";
-@import "reset.css";
-
-@import "base/body.css";
-@import "base/typography.css";
-
-@import "layouts/container.css";
-@import "layouts/grid.css";
-
-@import "components/button.css";
-@import "components/card.css";
-@import "components/nav.css";
-
-@import "utilities/helpers.css";
+@layer config, base, layouts, vendors, components;
 ```
-
-> Tokens are not assigned to a layer — custom properties declared on `:root` are global  
-> and do not need to participate in the cascade.
 
 ### Layer responsibilities
 
 | Layer | Contents | Overrides |
-|---|---|---|
-| `config` | Reserved for future global configuration (e.g. `@font-face`, custom media) | — |
+| --- | --- | --- |
+| `config` | Design tokens — CSS custom properties, `@custom-media` | Nothing |
 | `base` | Reset, native HTML element styles | Nothing |
-| `layouts` | Layout structures and UI components | `base` |
-| `components` | Layout structures and UI components | `base` |
-| `utilities` | Single-purpose classes | `components` |
+| `layouts` | Layout structures (container, grid, row) | `base` |
+| `vendors` | Third-party libraries (Splide…) | `layouts` |
+| `components` | UI components | `vendors` |
+
+### `main.css` — actual entry point
+
+```css
+/* css/main.css */
+@layer config, base, layouts, vendors, components;
+
+/* Un Cinq base — reset + elements + layouts */
+@import '@uncinq/css-base';
+
+/* Tokens */
+@import 'tokens/design-system.css';
+@import 'tokens/theme.css';
+@import 'tokens/site.css';
+
+/* Config */
+@import 'mediaqueries.css';
+
+/* Vendors */
+@import 'vendors/splide.css';
+
+/* Layouts */
+@import 'layouts/footer.css';
+@import 'layouts/grid.css';
+@import 'layouts/header.css';
+@import 'layouts/main.css';
+
+/* Components — generic */
+@import '@uncinq/css-components';
+
+/* Components — Hugolify-specific */
+@import 'components/audio.css';
+@import 'components/block.css';
+/* … */
+
+/* Blocks */
+@import 'components/blocks/block-cta.css';
+/* … */
+
+/* Sections */
+@import 'sections/pages.css';
+```
+
+> **Important:** `@import '@uncinq/css-base'` must come **before** any `@import` that inlines CSS content. `postcss-import` resolves npm package imports only when they appear before inlined CSS in the same file.
 
 ---
 
 ## Tokens
 
-### `tokens.css` — the token entry point
+### `design-system.css` — the token entry point
 
-All token files are imported through a single `tokens.css` file, in layer order.  
-This file is the only place that knows about the token folder structure.
+All token files are imported through a single `tokens/design-system.css` file, in layer order.
 
 ```css
-/* tokens.css */
+/* tokens/design-system.css */
 
-/* 1. Primitives — raw values */
-@import "tokens/primitive/color.css";
-@import "tokens/primitive/font.css";
-@import "tokens/primitive/shadow.css";
-@import "tokens/primitive/size.css";
+/* 1. Design tokens — primitive + semantic */
+@import '@uncinq/design-tokens';
 
-/* 2. Semantic — purposeful aliases */
-@import "tokens/semantic/border.css";
-@import "tokens/semantic/color.css";
-@import "tokens/semantic/motion.css";
-@import "tokens/semantic/radius.css";
-@import "tokens/semantic/ratio.css";
-@import "tokens/semantic/spacing.css";
-@import "tokens/semantic/typography.css";
+/* 2. Component tokens — generic */
+@import '@uncinq/component-tokens';
 
-/* 3. Component — scoped tokens */
-@import "tokens/component/alert.css";
-@import "tokens/component/badge.css";
-@import "tokens/component/breadcrumb.css";
-@import "tokens/component/button.css";
-@import "tokens/component/card.css";
-@import "tokens/component/container.css";
-@import "tokens/component/page.css";
+/* 3. Component tokens — Hugolify-specific */
+@import 'component/audio.css';
+@import 'component/block.css';
+@import 'component/footer.css';
+@import 'component/header.css';
+@import 'component/main-menu.css';
+/* … */
 ```
+
+The project then overrides tokens in `tokens/theme.css` (brand, typography…) and `tokens/site.css` (site-specific values), both in `@layer config`.
 
 ---
 
@@ -283,20 +307,21 @@ Tokens that carry intent. They **always reference primitives**, never raw values
 
 #### 3. `tokens/component/` — component tokens
 
-Scoped to a single component. Reference semantic tokens.  
-Optional on small projects.
+Scoped to a single component. Reference semantic tokens.
 
 ```css
 /* tokens/component/button.css */
 :root {
-  --btn-bg: var(--color-brand);
-  --btn-border-radius: var(--radius-md);
-  --btn-color: var(--color-white);
-  --btn-font-size: var(--font-size-sm);
-  --btn-padding-x: var(--space-4);
-  --btn-padding-y: var(--space-2);
+  --btn-border-radius: var(--radius-control);
+  --btn-color-bg:      var(--color-brand);
+  --btn-color-text:    var(--color-text-on-brand);
+  --btn-font-size:     var(--font-size-sm);
+  --btn-gap:           var(--spacing-sm);
+  --btn-padding:       var(--spacing-control);
 }
 ```
+
+Generic component tokens are provided by `@uncinq/component-tokens`. Hugolify-specific ones live in `assets/css/tokens/component/`.
 
 ---
 
@@ -322,6 +347,24 @@ When a token value changes at a breakpoint, the **responsive logic lives in the 
 
 Breakpoint names in tokens follow the viewport they activate — not a size scale — to avoid ambiguity (`tablet` = active from tablet up, not the tablet size itself).
 
+### Fluid tokens
+
+Heading and spacing tokens use **CSS `clamp()`** for fluid scaling — no media queries needed. The value scales continuously between a minimum (mobile) and a maximum (desktop) based on viewport width. These are defined in `@uncinq/design-tokens/tokens/semantic/fluid.css`:
+
+```css
+/* Fluid text scale */
+--fluid-text-sm:  clamp(1.125rem, 1rem + 0.5556vw, 1.5rem);   /* 18 → 24px */
+--fluid-text-md:  clamp(1.5rem, 1.25rem + 1.1111vw, 2.25rem);  /* 24 → 36px */
+--fluid-text-lg:  clamp(2.25rem, 2rem + 1.1111vw, 3rem);       /* 36 → 48px */
+
+/* Fluid spacing scale */
+--fluid-spacing-sm: clamp(1.25rem, 0.8333rem + 1.8519vw, 2.5rem);   /* 20 → 40px */
+--fluid-spacing-md: clamp(1.875rem, 1.25rem + 2.7778vw, 3.75rem);   /* 30 → 60px */
+--fluid-spacing-lg: clamp(2.5rem, 1.6667rem + 3.7037vw, 5rem);      /* 40 → 80px */
+```
+
+Viewport range: 360px → 1440px.
+
 ### Naming conventions
 
 #### Folders and files
@@ -335,7 +378,7 @@ Breakpoint names in tokens follow the viewport they activate — not a size scal
 
 Pattern: `--[component]-[element]-[property]-[state]`
 
-```
+```text
 --btn-color-bg              → background color of btn (default state)
 --btn-color-bg-hover        → background color of btn on hover
 --btn-color-border          → border color of btn
@@ -456,72 +499,17 @@ Token files (`tokens/primitive/`, `tokens/semantic/`, `tokens/component/`) conta
 }
 ```
 
-## Future
+---
 
-### Fluid typography
-
-Heading font sizes use **CSS `clamp()`** for fluid scaling — no media queries needed. The font size scales continuously between a minimum (mobile) and a maximum (desktop) value based on the viewport width.
-
-```css
-/* tokens/semantic/typography.css */
---font-size-heading-2xl: clamp(1.75rem, 4vw + 1rem, 3rem);
---font-size-heading-xl:  clamp(1.5rem,  3vw + 1rem, 2.25rem);
---font-size-heading-lg:  clamp(1.25rem, 2vw + 1rem, 1.75rem);
-```
-
-The `base/headings.css` file stays unchanged — only the token value changes.
-
-#### The clamp formula
-
-```css
-clamp(min, calc(min + (max - min) * ((100vw - min-vw) / (max-vw - min-vw))), max)
-```
-
-Example for a heading that goes from `1.75rem` (mobile at 320px) to `3rem` (desktop at 1280px):
-
-```
-min-size = 1.75rem
-max-size = 3rem
-min-vw   = 20rem  (320px)
-max-vw   = 80rem  (1280px)
-
-→ clamp(1.75rem, calc(1.75rem + 1.25 * ((100vw - 20rem) / 60)), 3rem)
-→ simplified: clamp(1.75rem, 4vw + 1rem, 3rem)
-```
-
-#### Automation with `postcss-utopia`
-
-[`postcss-utopia`](https://www.npmjs.com/package/postcss-utopia) generates `clamp()` values from a simple `px` syntax. Min/max viewports are configured once in `postcss.config.js`.
-
-```js
-// postcss/design-system/postcss.config.js
-module.exports = {
-  plugins: {
-    'postcss-utopia': { minWidth: 320, maxWidth: 1440 },
-    'postcss-custom-media': {},
-    autoprefixer: {},
-  }
-};
-```
-
-```css
-/* tokens/semantic/typography.css */
---font-size-heading-2xl: utopia.clamp(28, 48); /* px values → generates clamp() */
---font-size-heading-xl:  utopia.clamp(24, 36);
---font-size-heading-lg:  utopia.clamp(20, 28);
-```
-
-> Token files become dependent on the PostCSS build — `utopia.clamp()` is not valid CSS without the plugin. The compiled output is standard `clamp()` readable by any browser.
-
-### Style Dictionary — source vs. output
+## Style Dictionary — source vs. output
 
 [Style Dictionary](https://styledictionary.com) is an optional build tool that transforms tokens defined in JSON into CSS files (or other formats: JS, iOS, Android…).
 
-#### How it works
+### How it works
 
 The JSON token files can be **written by hand or exported from Figma** (via plugins or the native Figma Variables export). Style Dictionary reads those JSON files and generates the CSS output for each target platform.
 
-```
+```text
 tokens/                    ← JSON source files — hand-written or exported from Figma
 ├── primitive/
 │   ├── color.json
@@ -538,24 +526,24 @@ assets/css/tokens/         ← generated CSS output — never edit manually
     └── color.css
 ```
 
-> Style Dictionary generates **one or more CSS files** depending on the `config.json` setup.  
-> You can output a single `tokens.css`, one file per layer, or one per platform.  
+> Style Dictionary generates **one or more CSS files** depending on the `config.json` setup.
+> You can output a single `tokens.css`, one file per layer, or one per platform.
 > Files in `assets/css/tokens/` are **never edited by hand** when using Style Dictionary — regenerate instead.
 
-#### Figma → JSON → CSS workflow
+### Figma → JSON → CSS workflow
 
-```
+```text
 Figma Variables / Tokens Studio
         ↓  export .json
 tokens/ (source, versioned in git)
         ↓  style-dictionary build
-assets/css/tokens/ (output, imported by tokens.css)
+assets/css/tokens/ (output, imported by design-system.css)
 ```
 
-This setup makes Figma the single source of truth for all design decisions.  
+This setup makes Figma the single source of truth for all design decisions.
 Any change made in Figma flows automatically into CSS after running the build.
 
-#### Example config
+### Example config
 
 ```json
 {
@@ -581,8 +569,8 @@ Any change made in Figma flows automatically into CSS after running the build.
 }
 ```
 
-#### Without Style Dictionary
+### Without Style Dictionary
 
-If the project has no build step and no Figma token export,  
-tokens are written directly as CSS files in `assets/css/tokens/primitive/` and `assets/css/tokens/semantic/`.  
+If the project has no build step and no Figma token export,
+tokens are written directly as CSS files in `assets/css/tokens/primitive/` and `assets/css/tokens/semantic/`.
 The architecture stays identical — Style Dictionary is **not required** to apply this structure.

@@ -46,7 +46,7 @@
         .logo,
         .description,
         & > div {
-          grid-column: var(--span-third);
+          grid-column: var(--span-4);
         }
         .logo {
           grid-row: 1;
@@ -61,10 +61,10 @@
       @media (--tablet-wide) {
         .logo,
         .description{
-          grid-column: var(--span-half);
+          grid-column: var(--span-6);
         }
         & > div {
-          grid-column: var(--span-quarter);
+          grid-column: var(--span-3);
         }
       }
 
@@ -110,6 +110,7 @@
       color: var(--footer-color-text-muted);
       font-size: var(--font-size-2xs);
       margin-block: 0;
+      max-width: none;
       text-align: center;
 
       &::before {

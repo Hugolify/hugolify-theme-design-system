@@ -1,9 +1,0 @@
-/* tokens/component/map.css */
-@layer config {
-  :root {
-    --map-ratio:          var(--ratio-21-9);
-    --map-ratio-mobile:   var(--ratio-4-3);
-    --map-color-bg:       var(--color-bg-muted);
-    --map-margin-block:   var(--spacing-md);
-  }
-}

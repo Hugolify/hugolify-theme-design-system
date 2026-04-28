@@ -1,7 +1,0 @@
-/* base/video.css */
-@layer base {
-  video {
-    height: auto;
-    max-width: 100%;
-  }
-}

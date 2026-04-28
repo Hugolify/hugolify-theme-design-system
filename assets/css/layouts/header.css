@@ -64,6 +64,18 @@
       }
     }
 
+    /* ── Menu button ────────────────────────────────────────────── */
+
+    .btn-menu span {
+      display: none;
+    }
+
+    /* ── Main menu ────────────────────────────────────────────── */
+
+    .main-menu .nav {
+      margin-inline: calc(var(--nav-padding-x) * -1);
+    }
+
     /* ── Expand ──────────────────────────── */
 
     @media (--header-expand) {
@@ -74,11 +86,11 @@
       /* Not expanded: hidden until opened as offcanvas/modal (managed by JS)  */
       /* Expanded: inline flex nav inside the header  */
       .main-menu {
-        --offcanvas-color-bg: transparent;
-        --offcanvas-color-text: inherit;
-        --offcanvas-shadow: none;
-        --offcanvas-padding: 0;
-        --offcanvas-width: auto;
+        --drawer-color-bg: transparent;
+        --drawer-color-text: inherit;
+        --drawer-shadow: none;
+        --drawer-padding: 0;
+        --drawer-width: auto;
         display: flex;
         overflow: visible;
         position: static;
@@ -88,6 +100,16 @@
         .nav {
           align-items: baseline;
           flex-direction: row;
+          margin-inline: 0;
+        }
+
+        .nav-item-highlighted {
+          &:first-child {
+            margin-inline-start: 0;
+          }
+          &:last-child {
+            margin-inline-end: 0;
+          }
         }
 
         /* Hide header from offcanvas/modal when displayed inline */

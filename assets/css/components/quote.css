@@ -23,14 +23,15 @@
     padding: var(--quote-padding);
 
     blockquote {
+      border-inline-start: 0;
       font-size:   var(--quote-font-size);
       font-style:  var(--quote-font-style);
       font-weight: var(--quote-font-weight);
       line-height: var(--quote-line-height);
       margin-block: 0;
       margin-inline: 0;
+      padding-inline-start: 0;
       text-align: center;
-      text-wrap: balance;
     }
 
     p {

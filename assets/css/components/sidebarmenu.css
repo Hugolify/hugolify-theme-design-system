@@ -91,9 +91,9 @@
 
     /* ── Offcanvas — side panel on mobile, static on tablet-wide+ ── */
     .offcanvas {
-      --offcanvas-end:          var(--sidebarmenu-offcanvas-end);
-      --offcanvas-start:        var(--sidebarmenu-offcanvas-start);
-      --offcanvas-translate:    var(--sidebarmenu-offcanvas-translate);
+      --drawer-end:          var(--sidebarmenu-drawer-end);
+      --drawer-start:        var(--sidebarmenu-drawer-start);
+      --drawer-translate:    var(--sidebarmenu-drawer-translate);
 
       @media (--sidebarmenu-expand) {
         box-shadow: none;
