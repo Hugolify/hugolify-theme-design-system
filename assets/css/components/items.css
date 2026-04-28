@@ -11,6 +11,10 @@
       grid-column: var(--items-grid-column, auto);
     }
 
+    & + nav {
+      margin-block-start: var(--items-margin-nav);
+    }
+
     @media (--tablet)      { --items-cols: 2; }
     @media (--tablet-wide) { --items-cols: 3; }
     @media (--laptop)      { --items-cols: 3; }

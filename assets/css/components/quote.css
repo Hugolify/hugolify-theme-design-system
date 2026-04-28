@@ -43,6 +43,7 @@
       align-items: center;
       display: flex;
       flex-direction: row;
+      font-size: var(--quote-figcaption-font-size);
       gap: var(--quote-figcaption-gap);
       justify-content: center;
       margin-block: 0;

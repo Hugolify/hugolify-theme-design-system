@@ -13,13 +13,14 @@
     --quote-padding: var(--spacing-xs);
 
     /* Quote text */
-    --quote-font-size:        var(--font-size-md);
+    --quote-font-size:        var(--font-size-fluid-lg);
     --quote-font-style:       italic;
     --quote-font-weight:      var(--font-weight-normal);
     --quote-line-height:      var(--line-height-normal);
     --quote-color-text:       var(--color-text);
 
     /* Figcaption / author */
+    --quote-figcaption-font-size:  var(--font-size-small);
     --quote-figcaption-gap:        var(--spacing-xs);
     --quote-cite-font-weight:      var(--font-weight-bold);
     --quote-cite-font-style:       var(--font-style-normal);

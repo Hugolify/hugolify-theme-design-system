@@ -89,8 +89,8 @@
       }
     }
 
-    /* ── Offcanvas — side panel on mobile, static on tablet-wide+ ── */
-    .offcanvas {
+    /* ── Drawer — side panel on mobile, static on tablet-wide+ ── */
+    .drawer {
       --drawer-end:          var(--sidebarmenu-drawer-end);
       --drawer-start:        var(--sidebarmenu-drawer-start);
       --drawer-translate:    var(--sidebarmenu-drawer-translate);
@@ -118,7 +118,7 @@
       }
     }
 
-    /* ── Title (offcanvas header) ───────────────────────────── */
+    /* ── Title (drawer header) ───────────────────────────── */
     .title {
       color: var(--sidebarmenu-label-color);
       font-family: var(--sidebarmenu-label-font-family);

@@ -21,7 +21,7 @@
     /* Nav */
     --sidebarmenu-nav-link-padding-x:   var(--spacing-2xs);
     --sidebarmenu-nav-link-padding-y:   var(--spacing-2xs);
-    --sidebarmenu-nav-link-font-size:   var(--font-size-sm);
+    --sidebarmenu-nav-link-font-size:   var(--font-size-xs);
     --sidebarmenu-nav-sub-font-size:    var(--font-size-xs);
     --sidebarmenu-nav-sub-indent:       var(--spacing-md);
     --sidebarmenu-nav-link-color:       var(--color-text);

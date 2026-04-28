@@ -7,7 +7,7 @@
  *     div                      (sticky wrapper)
  *       p                      (label — laptop+ only)
  *       button.js-offcanvas    (toggle — mobile only)
- *       div.offcanvas
+ *       div.drawer
  *         div.header
  *           p.title
  *           button.js-offcanvas-close

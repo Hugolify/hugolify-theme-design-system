@@ -24,8 +24,19 @@
       flex-direction: column;
       flex: 1;
       gap: var(--item-gap);
-      padding: var(--item-padding);
+      padding: var(--item-padding-y) var(--item-padding-x);
       text-decoration: none;
+
+      > * {
+        margin-block: 0;
+      }
+    }
+
+    .metas {
+      background-color: var(--item-footer-color-bg);
+      border-block: var(--item-footer-border-width) var(--item-footer-border-style) var(--item-footer-color-border);
+      font-size: var(--item-footer-font-size);
+      padding: var(--item-footer-padding-y) var(--item-footer-padding-x);
 
       > * {
         margin-block: 0;
