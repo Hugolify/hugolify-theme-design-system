@@ -1,9 +1,9 @@
 {
   "devDependencies": {
-    "@uncinq/design-tokens": "^0.2.0",
-    "@uncinq/component-tokens": "^0.2.0",
-    "@uncinq/css-base": "^0.1.0",
-    "@uncinq/css-components": "^0.2.0",
+    "@uncinq/design-tokens": "^0.3.0",
+    "@uncinq/component-tokens": "^0.3.0",
+    "@uncinq/css-base": "^0.2.0",
+    "@uncinq/css-components": "^0.3.0",
     "autoprefixer": "^10",
     "postcss": "^8",
     "postcss-cli": "^11",

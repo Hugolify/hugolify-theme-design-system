@@ -226,17 +226,18 @@ The project then overrides tokens in `tokens/theme.css` (brand, typography…) a
 
 ### Color palette generation
 
-Color primitives (`--color-blue-500`, `--color-gray-900`…) need a coherent scale before becoming tokens. [Kigen](https://kigen.design/color) is a generator that produces an 11-step palette (50 → 950) from a single base color, following the Tailwind naming convention.
+Color primitives are defined in **OKLCH** — a perceptually uniform color space where equal steps in lightness produce equal perceived brightness differences, regardless of hue. Each hue provides an **11-step scale** (50 → 950).
 
-Key features useful for this DS:
+Hue angles align with **Tailwind v4** (e.g. blue ≈ 260°, red ≈ 25°, violet ≈ 293°). This makes scales predictable and cross-compatible with Tailwind projects.
 
-- **Algorithm choice** — different generation methods (perceptual, linear…)
-- **Contrast shift** — fine-tune luminosity spread across the scale
-- **OKLCH export** — modern color space, perceptually uniform
-- **CSS / Tokens export** — drops directly into `tokens/primitive/color.css`
-- **Figma plugin** — keeps designer and developer scales in sync
+Workflow: define OKLCH values directly in `tokens/primitive/color.css` → wire to semantic tokens in `tokens/semantic/color.css`. To generate a new hue scale from a base color, [Kigen](https://kigen.design/color) exports OKLCH natively.
 
-Workflow: generate the palette in Kigen → export as CSS → paste into `tokens/primitive/color.css` → wire to semantic tokens in `tokens/semantic/color.css`.
+```css
+/* tokens/primitive/color.css — 11 steps per hue, OKLCH */
+--color-blue-50:  oklch(0.970 0.014 254.604);
+--color-blue-500: oklch(0.623 0.214 259.815);
+--color-blue-950: oklch(0.282 0.091 267.935);
+```
 
 ---
 
@@ -249,13 +250,13 @@ Named after their physical content, with no contextual meaning.
 ```css
 /* tokens/primitive/color.css */
 :root {
-  --color-blue-100: #dbeafe;
-  --color-blue-500: #3b82f6;
-  --color-blue-900: #1e3a8a;
-  --color-gray-100: #f3f4f6;
-  --color-gray-500: #6b7280;
-  --color-gray-900: #111827;
-  --color-white: #ffffff;
+  --color-blue-100: oklch(0.932 0.032 255.585);
+  --color-blue-500: oklch(0.623 0.214 259.815);
+  --color-blue-900: oklch(0.379 0.146 265.522);
+  --color-gray-100: oklch(0.967 0.003 264.542);
+  --color-gray-500: oklch(0.556 0.022 264.364);
+  --color-gray-900: oklch(0.208 0.006 264.542);
+  --color-white:    oklch(1 0 0);
 }
 ```
 
@@ -276,11 +277,11 @@ Tokens that carry intent. They **always reference primitives**, never raw values
 ```css
 /* tokens/semantic/color.css */
 :root {
-  --color-bg: var(--color-white);
-  --color-bg-muted: var(--color-gray-100);
-  --color-brand: var(--color-blue-500);
-  --color-text: var(--color-gray-900);
-  --color-text-muted: var(--color-gray-500);
+  --color-bg:            var(--color-white);
+  --color-bg-muted:      var(--color-gray-100);
+  --color-brand:         var(--color-sienna-600);
+  --color-text:          var(--color-gray-900);
+  --color-text-muted:    var(--color-gray-500);
   --color-text-disabled: var(--color-gray-300);
 }
 ```
@@ -330,40 +331,52 @@ Generic component tokens are provided by `@uncinq/component-tokens`. Hugolify-sp
 When a token value changes at a breakpoint, the **responsive logic lives in the component CSS**, not in the token file. Token files hold only static named values.
 
 ```css
-/* tokens/component/container.css — static values only */
---container-max-width-tablet:      45rem;   /* 720px  */
---container-max-width-tablet-wide: 60rem;   /* 960px  */
---container-max-width-laptop:      75rem;   /* 1200px */
---container-max-width-desktop:     82.5rem; /* 1320px */
-
-/* components/container.css — breakpoint logic */
-.container {
-  @media (--tablet)      { max-width: var(--container-max-width-tablet); }
-  @media (--tablet-wide) { max-width: var(--container-max-width-tablet-wide); }
-  @media (--laptop)      { max-width: var(--container-max-width-laptop); }
-  @media (--desktop)     { max-width: var(--container-max-width-desktop); }
+/* tokens/semantic/grid.css — static span values only */
+@layer config {
+  :root {
+    --span-full: span var(--columns);
+    --span-8:    span 8;
+    --span-4:    span 4;
+  }
 }
 ```
 
-Breakpoint names in tokens follow the viewport they activate — not a size scale — to avoid ambiguity (`tablet` = active from tablet up, not the tablet size itself).
+```css
+/* layouts/grid.css — breakpoint logic switches --grid-column */
+.grid > * {
+  grid-column: var(--grid-column);
+}
+
+@media (--tablet-wide) {
+  .content { --grid-column: var(--span-8); }
+  .sidebar { --grid-column: var(--span-4); }
+}
+```
+
+Breakpoint names follow the viewport they activate — not a size scale — to avoid ambiguity (`tablet` = active from tablet up, not the tablet size itself).
 
 ### Fluid tokens
 
-Heading and spacing tokens use **CSS `clamp()`** for fluid scaling — no media queries needed. The value scales continuously between a minimum (mobile) and a maximum (desktop) based on viewport width. These are defined in `@uncinq/design-tokens/tokens/semantic/fluid.css`:
+Heading and spacing tokens use **CSS `clamp()`** for fluid scaling — no media queries needed. The value scales continuously between a minimum (mobile) and a maximum (desktop) based on viewport width. These are defined in `@uncinq/design-tokens/tokens/semantic/typography.css` and `spacing.css`:
 
 ```css
-/* Fluid text scale */
---fluid-text-sm:  clamp(1.125rem, 1rem + 0.5556vw, 1.5rem);   /* 18 → 24px */
---fluid-text-md:  clamp(1.5rem, 1.25rem + 1.1111vw, 2.25rem);  /* 24 → 36px */
---fluid-text-lg:  clamp(2.25rem, 2rem + 1.1111vw, 3rem);       /* 36 → 48px */
+/* Fluid font-size scale — --font-size-fluid-* */
+--font-size-fluid-sm:      clamp(0.875rem, 0.8393rem + 0.1786vw, 1rem);      /*  14 →  16px */
+--font-size-fluid-md:      clamp(1rem,     0.9643rem + 0.1786vw, 1.125rem);  /*  16 →  18px */
+--font-size-fluid-lg:      clamp(1.125rem, 1.0179rem + 0.5357vw, 1.5rem);   /*  18 →  24px */
+--font-size-fluid-xl:      clamp(1.5rem,   1.0714rem + 2.1429vw, 3rem);     /*  24 →  48px */
+--font-size-fluid-2xl:     clamp(3rem,     2.7143rem + 1.4286vw, 4rem);     /*  48 →  64px */
+--font-size-fluid-display: clamp(4rem,     3.4286rem + 2.8571vw, 6rem);     /*  64 →  96px */
 
-/* Fluid spacing scale */
---fluid-spacing-sm: clamp(1.25rem, 0.8333rem + 1.8519vw, 2.5rem);   /* 20 → 40px */
---fluid-spacing-md: clamp(1.875rem, 1.25rem + 2.7778vw, 3.75rem);   /* 30 → 60px */
---fluid-spacing-lg: clamp(2.5rem, 1.6667rem + 3.7037vw, 5rem);      /* 40 → 80px */
+/* Fluid spacing scale — --spacing-fluid-* */
+--spacing-fluid-sm:  clamp(1.25rem,  0.8333rem + 1.8519vw, 2.5rem);   /*  20 →  40px */
+--spacing-fluid-md:  clamp(1.875rem, 1.25rem   + 2.7778vw, 3.75rem);  /*  30 →  60px */
+--spacing-fluid-lg:  clamp(2.5rem,   1.6667rem + 3.7037vw, 5rem);     /*  40 →  80px */
+--spacing-fluid-xl:  clamp(3.125rem, 2.0833rem + 4.6296vw, 6.25rem);  /*  50 → 100px */
+--spacing-fluid-2xl: clamp(3.75rem,  2.5rem    + 5.5556vw, 7.5rem);   /*  60 → 120px */
 ```
 
-Viewport range: 360px → 1440px.
+Viewport range: 320px → 1440px. Headings use `--font-size-heading-01` → `--font-size-heading-06` which reference `--font-size-fluid-*` values.
 
 ### Naming conventions
 
