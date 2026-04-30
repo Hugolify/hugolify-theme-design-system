@@ -1,0 +1,17 @@
+/* components/notes.css */
+@layer components {
+  [href^="#nb-"] span {
+    display: none;
+  }
+
+  .notes {
+    ol {
+      list-style-type: disc;
+    }
+
+    li {
+      font-size: var(--font-size-small);
+      font-style: italic;
+    }
+  }
+}

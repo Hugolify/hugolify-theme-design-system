@@ -29,7 +29,6 @@
   /* ── Grid ─────────────────────────────────────────────────────────── */
   .block-latest-grid {
     .items {
-      display: flex;
       justify-content: center;
     }
   }
@@ -60,7 +59,9 @@
       }
     }
 
-    ol.list {
+    .list {
+      list-style: none;
+      padding-inline-start: 0;
       @media (--tablet) {
         margin-top: var(--block-latest-list-items-margin-top);
       }

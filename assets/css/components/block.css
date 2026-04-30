@@ -18,8 +18,7 @@
 
     > .container:first-child,
     &:not(:has(> .container:first-child)) {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: var(--block-gap);
     }
 
