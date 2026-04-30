@@ -1,16 +1,16 @@
 /* components/toc.css */
 /*
- * .toc — table of contents, sticky sidebar on laptop+, offcanvas on mobile.
+ * .toc — table of contents, sticky sidebar on laptop+, drawer on mobile.
  *
  * Structure:
  *   div.toc
  *     div                      (sticky wrapper)
  *       p                      (label — laptop+ only)
- *       button.js-offcanvas    (toggle — mobile only)
+ *       button.js-drawer       (toggle — mobile only)
  *       div.drawer
  *         div.header
  *           p.title
- *           button.js-offcanvas-close
+ *           button.js-drawer-close
  *         div.content
  *           nav#TableOfContents
  *             ul | ol
@@ -118,7 +118,7 @@
       }
     }
 
-    /* ── Title (offcanvas header) ───────────────────────────── */
+    /* ── Title (drawer header) ───────────────────────────── */
     .title {
       color: var(--toc-label-color);
       font-family: var(--toc-label-font-family);

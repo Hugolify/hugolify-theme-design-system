@@ -1,38 +1,23 @@
 /* components/items.css */
 @layer components {
   .items {
-    display: grid; /* FYI: use flexbox too */
-    flex-wrap: wrap; /* FYI: for flexbox */
-    grid-template-columns: repeat(var(--items-cols), 1fr);
-    gap: var(--items-gap);
-
-    & > * {
-      flex-basis: calc(100% / var(--items-cols) - var(--items-gap) / var(--items-cols) * (var(--items-cols) - 1)); /* FYI: for flexbox */
-      grid-column: var(--items-grid-column, auto);
-    }
-
     & + nav {
       margin-block-start: var(--items-margin-nav);
     }
-
-    @media (--tablet)      { --items-cols: 2; }
-    @media (--tablet-wide) { --items-cols: 3; }
-    @media (--laptop)      { --items-cols: 3; }
-    @media (--desktop)     { --items-cols: 4; }
   }
 
-  /* ── Column grid — n items per row at tablet-wide+ ──────────────── */
+  /* ── Explicit column overrides — activate at tablet-wide+ ─────────── */
   @media (--tablet-wide) {
-    .items-2 { --items-cols: 2; }
-    .items-3 { --items-cols: 3; }
-    .items-4 { --items-cols: 4; }
-    .items-5 { --items-cols: 5; }
-    .items-6 { --items-cols: 6; }
-    .items-7 { --items-cols: 7; }
-    .items-8 { --items-cols: 8; }
-    .items-9 { --items-cols: 9; }
-    .items-10 { --items-cols: 10; }
-    .items-11 { --items-cols: 11; }
-    .items-12 { --items-cols: 12; }
+    .items-2  { --items-cols: 2;  --items-min-width: 0%; }
+    .items-3  { --items-cols: 3;  --items-min-width: 0%; }
+    .items-4  { --items-cols: 4;  --items-min-width: 0%; }
+    .items-5  { --items-cols: 5;  --items-min-width: 0%; }
+    .items-6  { --items-cols: 6;  --items-min-width: 0%; }
+    .items-7  { --items-cols: 7;  --items-min-width: 0%; }
+    .items-8  { --items-cols: 8;  --items-min-width: 0%; }
+    .items-9  { --items-cols: 9;  --items-min-width: 0%; }
+    .items-10 { --items-cols: 10; --items-min-width: 0%; }
+    .items-11 { --items-cols: 11; --items-min-width: 0%; }
+    .items-12 { --items-cols: 12; --items-min-width: 0%; }
   }
 }

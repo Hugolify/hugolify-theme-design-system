@@ -1,0 +1,6 @@
+/* tokens/component/items.css */
+@layer config {
+  :root {
+    --items-margin-nav: var(--spacing-fluid-md);
+  }
+}

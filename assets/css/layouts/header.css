@@ -13,7 +13,7 @@
  *     <nav role="navigation">
  *       <div class="container">
  *         <a class="logo">...</a>
- *         <button class="btn-search">...</button>
+ *         <button class="btn btn-search">...</button>
  *         <button class="btn-menu">...</button>
  *         <div class="main-menu">...</div>
  *       </div>
@@ -83,7 +83,7 @@
         display: none;
       }
 
-      /* Not expanded: hidden until opened as offcanvas/modal (managed by JS)  */
+      /* Not expanded: hidden until opened as drawer/modal (managed by JS)  */
       /* Expanded: inline flex nav inside the header  */
       .main-menu {
         --drawer-color-bg: transparent;
@@ -112,7 +112,7 @@
           }
         }
 
-        /* Hide header from offcanvas/modal when displayed inline */
+        /* Hide header from drawer/modal when displayed inline */
         .header {
           display: none;
         }

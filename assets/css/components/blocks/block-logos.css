@@ -22,12 +22,12 @@
       aspect-ratio: var(--block-logos-item-ratio);
     }
 
-    @media (--mobile-tablet-only) {
+    @media not (--tablet-wide) {
       .logos {
         --items-cols: 3;
       }
     }
-    @media (--mobile-only) {
+    @media not (--tablet) {
       .logos {
         --items-cols: 2;
       }

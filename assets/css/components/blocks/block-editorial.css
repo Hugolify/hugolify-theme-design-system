@@ -44,7 +44,7 @@
 
     /* ── Mobile: media full-bleed, above content ──────────────── */
 
-    @media (--mobile-only) {
+    @media not (--tablet) {
       .media {
         margin-inline: calc(-1 * var(--container-padding-x));
         max-width: none;

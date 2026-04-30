@@ -17,7 +17,7 @@
  */
 @layer components {
   .heading {
-    margin-bottom: var(--heading-margin-bottom);
+    margin-block-end: var(--heading-margin-bottom);
 
     &,
     & > .container {
@@ -42,10 +42,12 @@
   .heading-filter {
     align-items: baseline;
     flex-direction: row;
-    justify-content: space-between;
 
     .surtitle {
       flex-basis: 100%;
+    }
+    .btn-filter {
+      margin-inline-start: auto;
     }
   }
 }

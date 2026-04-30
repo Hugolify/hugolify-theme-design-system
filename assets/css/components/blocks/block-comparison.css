@@ -30,8 +30,6 @@
     /* ── Grid ──────────────────────────────────────────────────── */
 
     .items {
-      display: flex;
-      flex-wrap: wrap;
       justify-content: center;
     }
 
@@ -44,6 +42,11 @@
         padding: var(--comparison-item-padding);
       }
 
+      h2,
+      h3 {
+        margin-block-start: 0;
+      }
+
       footer {
         margin-top: auto;
         padding: var(--comparison-item-padding);
@@ -52,7 +55,9 @@
       .badge {
         --badge-color-bg: var(--comparison-badge-color-bg);
         --badge-color-text: var(--comparison-badge-color-text);
-        float: inline-end;
+        position: absolute;
+        inset-block-start: var(--spacing-xs);
+        inset-inline-end: var(--spacing-xs);
       }
     }
 
@@ -70,7 +75,7 @@
       & + p {
         color: var(--comparison-pricing-sub-color-text);
         font-size: var(--comparison-pricing-sub-font-size);
-        margin-top: 0;
+        margin-block-start: 0;
       }
     }
 
@@ -86,6 +91,7 @@
 
       li {
         border-top: var(--border-width-normal) var(--border-style-solid) var(--comparison-list-color-border);
+        margin-block: 0;
         padding-block: var(--comparison-list-item-padding-y);
       }
     }

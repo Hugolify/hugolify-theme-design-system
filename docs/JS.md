@@ -46,13 +46,13 @@ assets/js/
 ├── components/          # Always-on UI: initialised on every page
 │   ├── index.js         # Barrel — imports all active components
 │   ├── custom.js        # Extension point for project-specific components
+│   ├── drawer.js
 │   ├── dropdown.js
 │   ├── form.js
 │   ├── gallery.js
 │   ├── gauge.js
 │   ├── menu.js
 │   ├── modal.js
-│   ├── offcanvas.js
 │   ├── tooltip.js
 │   └── video.js
 │
@@ -119,6 +119,7 @@ import './components/custom';
 ```
 
 **Load order:**
+
 1. `utils/global` — runs immediately (removes `.preload` class)
 2. `vendors/custom` — third-party libs before anything else
 3. Features — optional, Hugo-gated
@@ -163,10 +164,10 @@ Always-on UI components. Initialised on every page via `components/index.js`.
 
 ```js
 // components/index.js
+import './drawer';
 import './dropdown';
 import './menu';
 import './modal';
-import './offcanvas';
 import './tooltip';
 import './video';
 ```
@@ -303,16 +304,16 @@ Components dispatch a **4-event lifecycle** that mirrors the Bootstrap conventio
 | `component:hide` | Before closing — transition starts |
 | `component:hidden` | After closing — transition ends, focus restored |
 
-Component names replace `component`: `offcanvas:show`, `modal:shown`, `dropdown:hidden`…
+Component names replace `component`: `drawer:show`, `modal:shown`, `dropdown:hidden`…
 
 Other components (e.g. `menu.js`) listen to these events to react to state changes without direct coupling:
 
 ```js
-// menu.js — reacts to offcanvas and modal events
-elm.addEventListener('offcanvas:shown', () => {
+// menu.js — reacts to drawer and modal events
+elm.addEventListener('drawer:shown', () => {
   document.documentElement.classList.add('is-menu-open');
 });
-elm.addEventListener('offcanvas:hidden', () => {
+elm.addEventListener('drawer:hidden', () => {
   document.documentElement.classList.remove('is-menu-open');
 });
 ```

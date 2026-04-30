@@ -14,7 +14,9 @@
 @import 'component/gallery.css';
 @import 'component/header.css';
 @import 'component/images.css';
+@import 'component/items.css';
 @import 'component/main-menu.css';
+@import 'component/metas.css';
 @import 'component/pagination-between.css';
 @import 'component/press.css';
 @import 'component/pricing.css';

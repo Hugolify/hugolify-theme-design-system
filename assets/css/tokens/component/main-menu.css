@@ -15,7 +15,7 @@
     --main-menu-color-text-hover:  var(--color-brand);
     --main-menu-font-size:         var(--font-size-text);
 
-    /* Mobile panel (offcanvas / modal) */
+    /* Mobile panel (drawer / modal) */
     --main-menu-panel-color-bg:    var(--color-bg);
     --main-menu-panel-color-text:  var(--color-text);
     --main-menu-panel-font-size:   var(--font-size-md);

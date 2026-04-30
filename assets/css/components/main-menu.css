@@ -1,6 +1,6 @@
 /* components/main-menu.css */
 /*
- * .main-menu — mobile navigation panel (offcanvas / modal).
+ * .main-menu — mobile navigation panel (drawer / modal).
  *
  * Header bar sticky behaviour → components/header.css
  *
@@ -8,19 +8,45 @@
  *   html.is-menu-open          — panel is open
  *   html.is-dropdown-menu-open — a dropdown is open
  *
- * Panel trigger: .js-offcanvas-toggle[data-target="#navigation"]
+ * Panel trigger: .js-drawer-toggle[data-target="#navigation"]
  * Dropdown trigger: .js-dropdown-toggle
  */
-/* @layer components {
-
+@layer components {
   .main-menu {
-    --nav-font-size: var(--main-menu-font-size);
-    --nav-color-text: var(--main-menu-color-text);
-    --nav-color-text-hover: var(--main-menu-color-text-hover);
-    --nav-color-text-active: var(--main-menu-color-text-active);
-    --nav-spacing: var(--main-menu-spacing);
-    background-color: var(--main-menu-color-bg);
-    color: var(--main-menu-color-text);
 
+    /* ── Drawer / modal (below --header-expand) ───────────────────────
+     * In this context .dropdown-menu behaves as a plain inline sub-list.
+     * JS toggle classes (.show / .showing) still control open/closed state. */
+    @media not (--header-expand) {
+      .dropdown {
+        --dropdown-padding: 0;
+        --dropdown-item-padding-x: var(--nav-padding-x);
+        flex-direction: column;
+      }
+      .dropdown-toggle {
+        display: none;
+      }
+      .dropdown-menu {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        font-size: var(--main-menu-panel-font-size-sub);
+        min-width: 0;
+        opacity: 1;
+        pointer-events: auto;
+        position: static;
+        transform: none;
+        visibility: visible;
+
+        li a {
+          color: var(--nav-color-text);
+          white-space: normal;
+        }
+      }
+      .nav-item-highlighted {
+        margin-block: var(--nav-padding-y);
+      }
+    }
   }
-} */
+}

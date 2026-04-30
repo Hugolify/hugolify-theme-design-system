@@ -1,16 +1,16 @@
 /* components/sidebarmenu.css */
 /*
- * .sidebarmenu — section navigation, sticky sidebar on tablet+, offcanvas on mobile.
+ * .sidebarmenu — section navigation, sticky sidebar on tablet+, drawer on mobile.
  *
  * Structure:
  *   aside.sidebarmenu
  *     div                      (sticky wrapper)
  *       p                      (label — tablet+ only)
- *       button.js-offcanvas    (toggle — mobile only)
- *       div.offcanvas
+ *       button.js-drawer    (toggle — mobile only)
+ *       div.drawer
  *         div.header
  *           p.title
- *           button.js-offcanvas-close
+ *           button.js-drawer-close
  *         div.content
  *           nav
  *             ul.nav

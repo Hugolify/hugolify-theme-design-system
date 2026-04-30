@@ -2,13 +2,11 @@
 @layer config {
   :root {
     /* Block */
-    --pagination-between-color-border: var(--color-border);
-    --pagination-between-border-style: var(--border-style-solid);
-    --pagination-between-border-width: var(--border-width-normal);
-    --pagination-between-font-size:  var(--font-size-lg);
-    --pagination-between-font-weight:  var(--font-weight-bold);
-    --pagination-between-margin-top:   var(--spacing-lg);
-    --pagination-between-padding-y:  var(--spacing-lg);
+    --pagination-between-border: var(--border-width-normal) var(--border-style-solid) var(--color-border);
+    --pagination-between-font-size: var(--font-size-lg);
+    --pagination-between-font-weight: var(--font-weight-bold);
+    --pagination-between-margin-top: var(--spacing-lg);
+    --pagination-between-padding-y: var(--spacing-lg);
 
     /* Item */
     --pagination-between-item-padding: 0;

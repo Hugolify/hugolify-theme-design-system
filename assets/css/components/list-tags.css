@@ -1,0 +1,49 @@
+
+/* components/items.css */
+@layer components {
+  .list-tags {
+    p {
+      margin-bottom: var(--spacing-xs);
+    }
+    ul, 
+    ol {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--spacing-2xs);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      line-height: var(--line-height-none);
+      margin: 0;
+      &::before {
+        content: none;
+      }
+      a {
+        --badge-color-bg: var(--color-secondary);
+        --badge-color-bg-hover: var(--color-secondary-strong);
+        --badge-color-text: var(--color-text-on-secondary);
+        --badge-color-text-hover: var(--color-text-on-secondary);
+
+        background-color: var(--badge-color-bg);
+        border: var(--badge-border-width) var(--badge-border-style) var(--badge-color-border);
+        border-radius: var(--badge-border-radius);
+        color: var(--badge-color-text);
+        display: inline-flex;
+        font-size: var(--badge-font-size);
+        font-weight: var(--badge-font-weight);
+        padding: var(--badge-padding-y) var(--badge-padding-x);
+        text-decoration: none;
+
+        @media (hover: hover) and (pointer: fine) {
+          &:hover {
+            background-color: var(--badge-color-bg-hover);
+            color: var(--badge-color-text-hover);
+          }
+        }
+      }
+    }
+  }
+}

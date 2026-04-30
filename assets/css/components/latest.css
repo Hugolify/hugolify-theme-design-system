@@ -1,0 +1,13 @@
+
+/* components/latest.css */
+@layer components {
+  .latest {
+    @media (--tablet) {
+      .heading {
+        align-items: baseline;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}

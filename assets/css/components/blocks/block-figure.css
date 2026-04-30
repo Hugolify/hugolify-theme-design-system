@@ -53,7 +53,7 @@
 
   /* ── Full-bleed variants — mobile only ───────────────────── */
 
-  @media (--mobile-only) {
+  @media not (--tablet) {
     .block-figure-container {
       > .container {
         padding-inline: 0;

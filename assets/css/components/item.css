@@ -24,7 +24,9 @@
       flex-direction: column;
       flex: 1;
       gap: var(--item-gap);
-      padding: var(--item-padding-y) var(--item-padding-x);
+      order: var(--item-order);
+      padding-block: var(--item-padding-y);
+      padding-inline: var(--item-padding-x);
       text-decoration: none;
 
       > * {
@@ -33,14 +35,13 @@
     }
 
     .metas {
-      background-color: var(--item-footer-color-bg);
-      border-block: var(--item-footer-border-width) var(--item-footer-border-style) var(--item-footer-color-border);
-      font-size: var(--item-footer-font-size);
-      padding: var(--item-footer-padding-y) var(--item-footer-padding-x);
-
-      > * {
-        margin-block: 0;
-      }
+      background-color: var(--item-metas-color-bg);
+      border-block-end: var(--item-metas-border-end);
+      border-block-start: var(--item-metas-border-start);
+      font-size: var(--item-metas-font-size, var(--metas-font-size));
+      order: var(--item-metas-order);
+      padding-block: var(--item-metas-padding-y);
+      padding-inline: var(--item-metas-padding-x);
     }
 
     a.content {
@@ -73,13 +74,13 @@
     .media {
       --media-ratio: var(--item-media-ratio);
       --media-color-bg: var(--item-media-color-bg);
-      order: -1;
+      order: var(--item-media-order);
     }
 
     /* Focus */
     &:has(a.content:focus-visible) {
-      outline: 2px solid var(--color-focus);
-      outline-offset: 2px;
+      outline: var(--focus);
+      outline-offset: var(--focus-outline-offset);
     }
 
     /* Hover */

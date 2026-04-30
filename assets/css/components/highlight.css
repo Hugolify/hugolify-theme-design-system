@@ -1,0 +1,6 @@
+/* components/highlight.css */
+@layer components {
+  .highlight {
+    overflow: auto;
+  }
+}

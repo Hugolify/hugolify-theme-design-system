@@ -12,10 +12,10 @@
     --toc-label-color:          var(--color-heading);
     --toc-label-margin-bottom:  var(--spacing-sm);
 
-    /* Offcanvas placement (mobile) — override to switch side */
-    --toc-offcanvas-end:          auto;
-    --toc-offcanvas-start:        0;
-    --toc-offcanvas-translate:    translateX(-100%);  /* start = left */
+    /* Drawer placement (mobile) — override to switch side */
+    --toc-drawer-end:       auto;
+    --toc-drawer-start:     0;
+    --toc-drawer-translate: translateX(-100%);  /* start = left */
 
     /* Nav */
     --toc-nav-indent:           var(--size-16);

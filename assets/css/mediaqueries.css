@@ -1,28 +1,5 @@
 /* https://www.npmjs.com/package/postcss-custom-media */
-
-/* ── DOWN ──────────────────────────────────────────────── */
-
-/* < 768px */
-@custom-media --mobile-only (width < 48rem);
-
-/* < 1024px */
-@custom-media --mobile-tablet-only (width < 64rem);
-
-
-/* ── UP ──────────────────────────────────────────────── */
-
-/* 768px */
-@custom-media --tablet (width >= 48rem);
-
-/* 1024px */
-@custom-media --tablet-wide (width >= 64rem);
-
-/* 1440px */
-@custom-media --laptop (width >= 90rem);
-
-/* 1920px */
-@custom-media --desktop (width >= 120rem);
-
+/* Generic breakpoints (--tablet, --tablet-wide, --laptop, --desktop) come from @uncinq/design-tokens */
 
 /* ── OTHER ──────────────────────────────────────────────── */
 

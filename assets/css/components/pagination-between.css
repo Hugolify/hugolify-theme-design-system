@@ -27,12 +27,12 @@
     --font-size-text: var(--pagination-between-font-size);
     --font-weight-text: var(--pagination-between-font-weight);
 
-    border-top: var(--pagination-between-border-width) var(--pagination-between-border-style) var(--pagination-between-color-border);
+    border-block-start: var(--pagination-between-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     list-style: none;
-    margin-top: var(--pagination-between-margin-top);
+    margin-block-start: var(--pagination-between-margin-top);
     padding-inline-start: 0;
     padding-block: var(--pagination-between-padding-y);
 

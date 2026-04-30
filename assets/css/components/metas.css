@@ -1,0 +1,24 @@
+/* components/metas.css */
+@layer components {
+  .metas {
+    align-items: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: var(--metas-font-size);
+    gap: var(--metas-gap);
+
+    > * {
+      margin-block: 0;
+      &:not(:first-child):not(.share) {
+        &::before {
+          content: var(--metas-separator);
+          margin-inline-end: var(--metas-gap);
+        }
+      }
+    }
+
+    .share {
+      margin-inline-start: auto;
+    }
+  }
+}

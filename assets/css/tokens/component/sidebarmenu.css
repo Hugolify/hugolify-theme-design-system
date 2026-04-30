@@ -13,10 +13,10 @@
     --sidebarmenu-label-color:         var(--color-heading);
     --sidebarmenu-label-margin-bottom: var(--spacing-sm);
 
-    /* Offcanvas placement (mobile) — override to switch side */
-    --sidebarmenu-offcanvas-translate:    translateX(-100%);  /* start = left */
-    --sidebarmenu-offcanvas-start:        0;
-    --sidebarmenu-offcanvas-end:          auto;
+    /* Drawer placement (mobile) — override to switch side */
+    --sidebarmenu-drawer-translate: translateX(-100%);  /* start = left */
+    --sidebarmenu-drawer-start:     0;
+    --sidebarmenu-drawer-end:       auto;
 
     /* Nav */
     --sidebarmenu-nav-link-padding-x:   var(--spacing-2xs);

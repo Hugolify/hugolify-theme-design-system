@@ -1,0 +1,4 @@
+/* css/utilities.css */
+@layer utilities {
+  .d-none { display: none; }
+}

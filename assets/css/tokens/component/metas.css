@@ -1,0 +1,8 @@
+/* tokens/component/metas.css */
+@layer config {
+  :root {
+    --metas-font-size: var(--font-size-small);
+    --metas-gap: var(--spacing-2xs);
+    --metas-separator: '—';
+  }
+}

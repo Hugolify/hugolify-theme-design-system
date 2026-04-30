@@ -9,7 +9,8 @@
     --btn-color-bg: var(--item-btn-color-bg);
     --btn-border-width: var(--item-btn-border-width);
     --btn-color-text: var(--item-btn-color-text);
-    --btn-padding: var(--item-btn-padding);
+    --btn-padding-x: 0;
+    --btn-padding-y: 0;
     --btn-color-text-decoration: transparent;
 
     /* Hover */

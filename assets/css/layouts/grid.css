@@ -15,13 +15,17 @@
     @media (--desktop) { --grid-column: var(--grid-column-desktop); }
 
     /* Layouts */
+    > .heading,
+    > nav {
+      --grid-column: var(--span-full);
+    }
     .toc {
       order: -1;
     }
 
     @media (--tablet) {
       .content,
-      .sidebar + div,
+      .sidebar--menu + div,
       .sidebar,
       .toc {
         --grid-column: var(--span-full);
@@ -33,6 +37,7 @@
       /* ── Content ────────────────────────────────────────────── */
       .content {
         --grid-column: var(--span-8);
+        grid-row: span 3;
       }
       .content:first-child:last-child {
         --grid-column: var(--span-full);
