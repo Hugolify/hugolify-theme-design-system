@@ -36,14 +36,14 @@
 
       /* ── Content ────────────────────────────────────────────── */
       .content {
-        --grid-column: var(--span-8);
+        --grid-column: span 8;
         grid-row: span 3;
       }
       .content:first-child:last-child {
         --grid-column: var(--span-full);
       }
       .sidebar--menu + div {
-        --grid-column: var(--span-10);
+        --grid-column: span 10;
       }
 
       /* ── Sidebar ────────────────────────────────────────────── */
@@ -52,10 +52,10 @@
       }
       .sidebar,
       .toc {
-        --grid-column: var(--span-3) / -1;
+        --grid-column: span 3 / -1;
       }
       .sidebar--menu {
-        --grid-column: var(--span-2);
+        --grid-column: span 2;
       }
     }
 

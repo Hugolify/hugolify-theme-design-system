@@ -2,7 +2,7 @@
 @layer config {
   :root {
     /* Block */
-    --pagination-between-border: var(--border-width-normal) var(--border-style-solid) var(--color-border);
+    --pagination-between-border: var(--border-width-normal) var(--border-style-normal) var(--color-border);
     --pagination-between-font-size: var(--font-size-lg);
     --pagination-between-font-weight: var(--font-weight-bold);
     --pagination-between-margin-top: var(--spacing-lg);
@@ -14,7 +14,7 @@
     /* Link */
     --pagination-between-link-color-bg: transparent;
     --pagination-between-link-color-border: var(--color-border);
-    --pagination-between-link-border-style: var(--border-style-solid);
+    --pagination-between-link-border-style: var(--border-style-normal);
     --pagination-between-link-border-width: 0;
     --pagination-between-link-border-radius: var(--radius-control);
     --pagination-between-link-shadow: var(--shadow-none);
