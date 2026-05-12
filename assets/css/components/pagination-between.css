@@ -44,14 +44,13 @@
     }
 
     a {
-      align-items: flex-start;
-      background: var(--pagination-between-link-color-bg);
+      align-items: normal;
+      background: var(--pagination-between-link-color-background);
       border: var(--pagination-between-link-border-width) var(--pagination-between-link-border-style) var(--pagination-between-link-color-border);
       border-radius: var(--pagination-between-link-border-radius);
       box-shadow: var(--pagination-between-link-shadow);
-      display: inline-flex;
-      flex-direction: column;
-      gap: var(--pagination-between-link-gap);
+      display: inline-block;
+      justify-content: normal;
       padding: var(--pagination-between-link-padding);
 
       &::after {
@@ -63,32 +62,55 @@
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           --link-color-text-decoration: var(--pagination-between-link-color-text-decoration-hover);
-          --pagination-between-link-color-bg: var(--pagination-between-link-color-bg-hover);
+          --pagination-between-link-color-background: var(--pagination-between-link-color-background-hover);
           --pagination-between-link-shadow: var(--pagination-between-link-shadow-hover);
         }
       }
     }
 
+    .previous {
+      margin-inline-end: auto;
+    }
+
     .next {
       margin-inline-start: auto;
-      text-align: right;
-
-      a {
-        align-items: flex-end;
-      }
+      text-align: end;
     }
 
     @media (--tablet) {
       flex-direction: row;
       justify-content: space-between;
       li {
-        width: 50%;
+        flex: 1;
       }
     }
 
   }
 
-  /* ── with-image ──────────────────────────────────────────── */
+  /* ── with-title ──────────────────────────────────────────── */
+
+  .pagination-between-with-title {
+    a {
+      display: inline-flex;
+      flex-direction: column;
+    }
+  }
+
+  /* ── with-title and with-image ──────────────────────────────────────────── */
+
+  .pagination-between-with-title,
+  .pagination-between-with-image {
+    a {
+      display: inline-flex;
+      flex-direction: column;
+      gap: var(--pagination-between-link-gap);
+    }
+    .content {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
   /* .pagination-between-with-image {
     a {
       font-size: var(--font-size-lg);

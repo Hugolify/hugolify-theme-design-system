@@ -16,7 +16,7 @@
     /* ── Top bar ──────────────────────────────────────────────── */
 
     > span {
-      background-color: var(--screenshot-bar-color-bg);
+      background-color: var(--screenshot-bar-color-background);
       border-start-start-radius: var(--screenshot-border-radius);
       border-start-end-radius: var(--screenshot-border-radius);
       display: block;

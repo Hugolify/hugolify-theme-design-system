@@ -8,7 +8,7 @@
  */
 @layer components {
   .item {
-    background-color: var(--item-color-bg);
+    background-color: var(--item-color-background);
     border: var(--item-border-width) var(--item-border-style) var(--item-color-border);
     border-radius: var(--item-border-radius);
     box-shadow: var(--item-shadow);
@@ -35,7 +35,7 @@
     }
 
     .metas {
-      background-color: var(--item-metas-color-bg);
+      background-color: var(--item-metas-color-background);
       border-block-end: var(--item-metas-border-end);
       border-block-start: var(--item-metas-border-start);
       font-size: var(--item-metas-font-size, var(--metas-font-size));
@@ -73,7 +73,7 @@
 
     .media {
       --media-ratio: var(--item-media-ratio);
-      --media-color-bg: var(--item-media-color-bg);
+      --media-color-bg: var(--item-media-color-background);
       order: var(--item-media-order);
     }
 

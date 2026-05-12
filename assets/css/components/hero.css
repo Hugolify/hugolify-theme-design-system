@@ -30,7 +30,7 @@
     --color-text: var(--hero-color-text);
     --font-size-heading: var(--hero-font-size-title);
 
-    background-color: var(--hero-color-bg);
+    background-color: var(--hero-color-background);
     position: relative;
 
     .container {

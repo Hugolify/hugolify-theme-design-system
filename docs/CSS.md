@@ -75,7 +75,7 @@ This removes all debate about ordering, makes diffs cleaner, and speeds up scann
 ```css
 /* ✅ Correct */
 .button {
-  background-color: var(--btn-bg);
+  background-color: var(--btn-background);
   border: none;
   border-radius: var(--btn-border-radius);
   color: var(--btn-color);

@@ -8,7 +8,7 @@
     /* Item */
     --comparison-item-box-shadow-highlighted: var(--shadow-lg);
     --comparison-item-color-bg:               var(--color-bg-muted);
-    --comparison-item-color-bg-on-block-bg:   var(--color-bg);
+    --comparison-item-color-bg-on-block-bg:   var(--color-background);
     --comparison-item-color-bg-highlighted:   var(--color-bg-muted);
     --comparison-item-padding:                var(--spacing-sm);
 

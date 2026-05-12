@@ -16,7 +16,7 @@
  */
 @layer components {
   footer[role="contentinfo"] {
-    background-color: var(--footer-color-bg);
+    background-color: var(--footer-color-background);
     color: var(--footer-color-text);
     padding-block: var(--footer-padding-y);
 
@@ -117,7 +117,7 @@
         background-color: var(--footer-color-border);
         content: "";
         display: block;
-        height: var(--border-width-normal);
+        height: var(--border-width-sm);
         margin-bottom: var(--footer-gap);
       }
     }

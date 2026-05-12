@@ -16,7 +16,7 @@
     }
 
     a {
-      background-color: var(--gallery-item-color-bg);
+      background-color: var(--gallery-item-color-background);
       display: block;
       overflow: hidden;
     }

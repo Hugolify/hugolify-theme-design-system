@@ -30,7 +30,7 @@
   /* ── Base ─────────────────────────────────────────────────────────── */
   .block-testimonials {
     .quote {
-      --quote-color-bg:     var(--block-testimonials-quote-color-bg);
+      --quote-color-bg:     var(--block-testimonials-quote-color-background);
       --quote-color-border: var(--block-testimonials-quote-color-border);
       --quote-border-radius: var(--block-testimonials-quote-border-radius);
       --quote-border-style: var(--block-testimonials-quote-border-style);

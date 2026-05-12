@@ -24,7 +24,7 @@
   header[role="banner"] {
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);
-    background-color: var(--header-color-bg);
+    background-color: var(--header-color-background);
     padding: var(--header-spacing);
     position: sticky;
     top: 0;

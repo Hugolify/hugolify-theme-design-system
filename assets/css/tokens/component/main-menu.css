@@ -2,9 +2,9 @@
 @layer config {
   :root {
     /* Header bar */
-    --main-menu-color-bg:          var(--color-bg);
+    --main-menu-color-bg:          var(--color-background);
     --main-menu-color-border:      var(--color-border);
-    --main-menu-border-width:      var(--border-width-normal);
+    --main-menu-border-width:      var(--border-width-sm);
     --main-menu-padding-x:         var(--spacing-sm);
     --main-menu-padding-y:         var(--spacing-sm);
     --main-menu-shadow:            var(--shadow-sm);
@@ -16,7 +16,7 @@
     --main-menu-font-size:         var(--font-size-text);
 
     /* Mobile panel (drawer / modal) */
-    --main-menu-panel-color-bg:    var(--color-bg);
+    --main-menu-panel-color-bg:    var(--color-background);
     --main-menu-panel-color-text:  var(--color-text);
     --main-menu-panel-font-size:   var(--font-size-md);
     --main-menu-panel-font-size-sub: var(--font-size-sm);

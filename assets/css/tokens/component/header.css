@@ -2,11 +2,11 @@
 @layer config {
   :root {
     /* Colors */
-    --header-color-bg:     var(--color-bg);
-    --header-color-link:   var(--color-link);
-    --header-color-text:   var(--color-text);
-    --header-color-border: var(--color-border);
-    --header-shadow:       var(--shadow-sm);
+    --header-color-background:     var(--color-background);
+    --header-color-link:           var(--color-link);
+    --header-color-text:           var(--color-text);
+    --header-color-border:         var(--color-border);
+    --header-shadow:               var(--shadow-sm);
 
     /* Layout */
     --header-gap:          var(--spacing-sm);

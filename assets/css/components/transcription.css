@@ -10,9 +10,8 @@
  */
 @layer components {
   .transcription {
-    --details-color-bg: transparent;
+    --details-color-background: transparent;
     --details-color-text: var(--transcription-color-text);
-    --details-border: none;
     --details-border-radius: 0;
     --details-box-shadow: none;
     --details-box-shadow-hover: none;
@@ -21,5 +20,6 @@
     --details-content-font-size: var(--transcription-font-size);
     --details-summary-font-size:  var(--transcription-summary-font-size);
     --details-summary-font-weight: var(--transcription-summary-font-weight);
+    border: none;
   }
 }

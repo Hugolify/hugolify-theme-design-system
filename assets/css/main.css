@@ -31,11 +31,12 @@
 @import 'components/block-bg.css';
 @import 'components/credit.css';
 @import 'components/cta.css';
+@import 'components/filters.css';
 @import 'components/gallery.css';
-@import 'components/images.css';
 @import 'components/heading.css';
 @import 'components/hero.css';
 @import 'components/highlight.css';
+@import 'components/images.css';
 @import 'components/item.css';
 @import 'components/items.css';
 @import 'components/latest.css';

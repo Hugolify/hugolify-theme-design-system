@@ -1,18 +1,7 @@
 /* layouts/grid.css */
 @layer layouts {
   .grid {
-    display: grid;
-    grid-template-columns: repeat(var(--columns), 1fr);
-    gap: var(--gap);
-
-    & > * {
-      grid-column: var(--grid-column);
-    }
-
-    @media (--tablet) { --grid-column: var(--grid-column-tablet); }
-    @media (--tablet-wide) { --grid-column: var(--grid-column-tablet-wide); }
-    @media (--laptop) { --grid-column: var(--grid-column-laptop); }
-    @media (--desktop) { --grid-column: var(--grid-column-desktop); }
+    row-gap: 0;
 
     /* Layouts */
     > .heading,
@@ -20,6 +9,7 @@
       --grid-column: var(--span-full);
     }
     .toc {
+      margin-block-end: var(--gap);
       order: -1;
     }
 
@@ -48,6 +38,7 @@
 
       /* ── Sidebar ────────────────────────────────────────────── */
       .toc {
+        margin-block-end: 0;
         order: initial;
       }
       .sidebar,

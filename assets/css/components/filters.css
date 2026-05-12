@@ -1,0 +1,35 @@
+/* components/filters.css */
+/*
+ * .filters — vertical list of filters
+ */
+@layer components {
+  .filters {
+    .content {
+      > div {
+        &:not(:first-child) {
+          padding-top: var(--spacing-md);
+        }
+        &:not(:last-child) {
+          border-bottom: var(--border-width-sm) var(--border-style-normal) var(--color-border);
+          padding-bottom: var(--spacing-md);
+        }
+      }
+      .list {
+        --list-item-font-size: var(--font-size-xs);
+        :is(ul, ol) {
+          list-style: none;
+          padding-inline-start: 0;
+        }
+        &:not(.list-mini_card):not(.list-tags) {
+          li {
+            display: flex;
+            gap: var(--list-item-gap);
+            &::before {
+              content: var(--list-item-marker);
+            }
+          }
+        }
+      }
+    }
+  }
+}

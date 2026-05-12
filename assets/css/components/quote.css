@@ -14,7 +14,7 @@
  */
 @layer components {
   .quote {
-    background-color: var(--quote-color-bg);
+    background-color: var(--quote-color-background);
     border: var(--quote-border-width) var(--quote-border-style) var(--quote-color-border);
     border-radius: var(--quote-border-radius);
     display: flex;
@@ -52,7 +52,7 @@
       picture {
         align-items: center;
         aspect-ratio: 1;
-        background-color: var(--quote-avatar-color-bg);
+        background-color: var(--quote-avatar-color-background);
         border-radius: var(--quote-avatar-border-radius);
         display: flex;
         flex-shrink: 0;
@@ -76,7 +76,7 @@
 
       /* When avatar present: author text aligns left */
       picture + div {
-        text-align: left;
+        text-align: start;
       }
 
       cite {

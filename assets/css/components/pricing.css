@@ -27,7 +27,7 @@
     }
 
     span {
-      background-color: var(--pricing-discount-color-bg);
+      background-color: var(--pricing-discount-color-background);
       border-radius: var(--pricing-discount-border-radius);
       color: var(--pricing-discount-color-text);
       font-size: var(--pricing-discount-font-size);

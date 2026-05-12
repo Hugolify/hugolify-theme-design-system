@@ -6,7 +6,7 @@
  */
 @layer components {
   .page {
-    --btn-color-bg: var(--item-btn-color-bg);
+    --btn-color-bg: var(--item-btn-color-background);
     --btn-border-width: var(--item-btn-border-width);
     --btn-color-text: var(--item-btn-color-text);
     --btn-padding-x: 0;

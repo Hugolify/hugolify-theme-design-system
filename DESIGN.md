@@ -47,10 +47,10 @@ Colors are defined in two layers: **primitive** (raw OKLCH values, `@uncinq/desi
 
 | Token | Default | Use |
 |-------|---------|-----|
-| `--color-bg` | white | Page background |
-| `--color-bg-muted` | gray-100 | Section backgrounds, sidebars |
-| `--color-bg-surface` | = `--color-bg` | Cards, panels |
-| `--color-bg-media` | gray-200 | Image placeholders, skeleton |
+| `--color-background` | white | Page background |
+| `--color-background-muted` | gray-100 | Section backgrounds, sidebars |
+| `--color-background-surface` | = `--color-background` | Cards, panels |
+| `--color-background-media` | gray-200 | Image placeholders, skeleton |
 
 ### Text
 
@@ -222,7 +222,7 @@ Tokens: `--grid-columns`, `--grid-gap`, `--grid-max-width`.
 | `--shadow-lg` | Modals, drawers |
 | `--shadow-center-sm` | Centered glow effects |
 
-**Surface hierarchy:** `--color-bg` (page) → `--color-bg-surface` (cards) → `--color-bg-muted` (nested panels). Elevation is expressed through shadow, not background color changes.
+**Surface hierarchy:** `--color-background` (page) → `--color-background-surface` (cards) → `--color-background-muted` (nested panels). Elevation is expressed through shadow, not background color changes.
 
 **Backdrop:** `--color-backdrop` (semi-transparent black) behind drawers and modals.
 
@@ -278,7 +278,7 @@ Media queries are mobile-first (`min-width`). No utility class breakpoints — u
 ### Token reference (use these names, not raw values)
 
 ```
-Colors:    --color-brand, --color-bg, --color-text, --color-border
+Colors:    --color-brand, --color-background, --color-text, --color-border
 Spacing:   --spacing-xs → --spacing-2xl, --spacing-section
 Radius:    --radius-sm, --radius-md, --radius-lg, --radius-pill
 Shadow:    --shadow-sm, --shadow-md, --shadow-lg
@@ -287,7 +287,7 @@ Type:      --font-size-sm → --font-size-xl, --font-size-heading-01 → 06
 
 ### Generating a Hugo partial
 
-> "Create a Hugo partial for a pricing card. Use `--color-bg-surface`, `--shadow-sm`, `--radius-md`, `--spacing-lg`. The CTA should use `class="btn btn-primary"`. Accept `title`, `price`, `features` (list), and `cta` (object with `label` and `url`) as front matter params."
+> "Create a Hugo partial for a pricing card. Use `--color-background-surface`, `--shadow-sm`, `--radius-md`, `--spacing-lg`. The CTA should use `class="btn btn-primary"`. Accept `title`, `price`, `features` (list), and `cta` (object with `label` and `url`) as front matter params."
 
 ### Overriding the brand
 
@@ -295,7 +295,7 @@ Type:      --font-size-sm → --font-size-xl, --font-size-heading-01 → 06
 
 ### Adding a custom component token
 
-> "Add a `--hero-bg` token scoped to `.hero` that defaults to `--color-bg-muted`. Override it to `--color-brand-muted` for the homepage hero."
+> "Add a `--hero-background` token scoped to `.hero` that defaults to `--color-background-muted`. Override it to `--color-brand-muted` for the homepage hero."
 
 ### Responsive section
 

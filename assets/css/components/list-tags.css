@@ -22,12 +22,12 @@
         content: none;
       }
       a {
-        --badge-color-bg: var(--color-secondary);
-        --badge-color-bg-hover: var(--color-secondary-strong);
+        --badge-color-background: var(--color-secondary);
+        --badge-color-background-hover: var(--color-secondary-strong);
         --badge-color-text: var(--color-text-on-secondary);
         --badge-color-text-hover: var(--color-text-on-secondary);
 
-        background-color: var(--badge-color-bg);
+        background-color: var(--badge-color-background);
         border: var(--badge-border-width) var(--badge-border-style) var(--badge-color-border);
         border-radius: var(--badge-border-radius);
         color: var(--badge-color-text);
