@@ -1,0 +1,18 @@
+{
+  "press": {
+    "padding": {
+      "$type": "dimension",
+      "$value": "{spacing.surface}"
+    },
+    "name": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.md}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.heading}"
+      }
+    }
+  }
+}

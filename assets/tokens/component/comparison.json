@@ -1,0 +1,82 @@
+{
+  "comparison": {
+    "badge": {
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.primary.muted}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{color.primary.strong}"
+        }
+      }
+    },
+    "item": {
+      "boxShadow": {
+        "highlighted": {
+          "$type": "shadow",
+          "$value": "{shadow.lg}"
+        }
+      },
+      "color": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.background.muted.default}"
+          },
+          "onBlockBg": {
+            "$type": "color",
+            "$value": "{color.background.default}"
+          },
+          "highlighted": {
+            "$type": "color",
+            "$value": "{color.background.muted.default}"
+          }
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    },
+    "pricing": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.lg}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.bold}"
+      },
+      "sub": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{fontSize.xs}"
+        },
+        "color": {
+          "text": {
+            "$type": "color",
+            "$value": "{color.text.muted}"
+          }
+        }
+      }
+    },
+    "list": {
+      "color": {
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        }
+      },
+      "item": {
+        "padding": {
+          "block": {
+            "$type": "dimension",
+            "$value": "{spacing.xs}"
+          }
+        }
+      }
+    }
+  }
+}

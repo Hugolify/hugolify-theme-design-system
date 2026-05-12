@@ -27,14 +27,14 @@
     --font-size-text: var(--pagination-between-font-size);
     --font-weight-text: var(--pagination-between-font-weight);
 
-    border-block-start: var(--pagination-between-border);
+    border-block-start: var(--border-width-sm) var(--border-style-normal) var(--color-border);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     list-style: none;
-    margin-block-start: var(--pagination-between-margin-top);
+    margin-block-start: var(--pagination-between-margin-block-start);
     padding-inline-start: 0;
-    padding-block: var(--pagination-between-padding-y);
+    padding-block: var(--pagination-between-padding-block);
 
     li {
       font-size: var(--font-size-text);
@@ -50,8 +50,8 @@
       border-radius: var(--pagination-between-link-border-radius);
       box-shadow: var(--pagination-between-link-shadow);
       display: inline-block;
-      padding-block: var(--pagination-between-link-padding-y);
-      padding-inline: var(--pagination-between-link-padding-x);
+      padding-block: var(--pagination-between-link-padding-block);
+      padding-inline: var(--pagination-between-link-padding-inline);
 
       &::after {
         content: '';

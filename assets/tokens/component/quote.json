@@ -1,0 +1,118 @@
+{
+  "quote": {
+    "border": {
+      "radius": {
+        "$type": "string",
+        "$value": "0"
+      },
+      "style": {
+        "$type": "string",
+        "$value": "none"
+      },
+      "width": {
+        "$type": "string",
+        "$value": "0"
+      }
+    },
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "transparent"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "transparent"
+      }
+    },
+    "flex": {
+      "direction": {
+        "$type": "string",
+        "$value": "column"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.xs}"
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{spacing.xs}"
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{fontSize.fluid.lg}"
+    },
+    "fontStyle": {
+      "$type": "string",
+      "$value": "italic"
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.normal}"
+    },
+    "lineHeight": {
+      "$type": "string",
+      "$value": "{lineHeight.normal}"
+    },
+    "color-text": {
+      "$type": "color",
+      "$value": "{color.text.default}"
+    },
+    "figcaption": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.small}"
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.xs}"
+      }
+    },
+    "cite": {
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.bold}"
+      },
+      "fontStyle": {
+        "$type": "string",
+        "$value": "normal"
+      },
+      "color": {
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.default}"
+        }
+      }
+    },
+    "author": {
+      "color": {
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.muted}"
+        }
+      },
+      "lineHeight": {
+        "$type": "string",
+        "$value": "{lineHeight.normal}"
+      }
+    },
+    "avatar": {
+      "size": {
+        "$type": "dimension",
+        "$value": "3rem"
+      },
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.background.muted.default}"
+        }
+      },
+      "border": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.pill}"
+        }
+      }
+    }
+  }
+}

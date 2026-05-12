@@ -1,0 +1,92 @@
+{
+  "sidebarmenu": {
+    "sticky": {
+      "top": {
+        "$type": "string",
+        "$value": "calc(var(--header-height) + var(--spacing-md))"
+      }
+    },
+    "maxHeight": {
+      "$type": "string",
+      "$value": "calc(100vh - var(--sidebarmenu-sticky-top))"
+    },
+    "label": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.heading.05}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.heading}"
+      },
+      "fontFamily": {
+        "$type": "fontFamily",
+        "$value": "{fontFamily.heading}"
+      },
+      "lineHeight": {
+        "$type": "string",
+        "$value": "{lineHeight.heading}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.heading}"
+      },
+      "margin": {
+        "blockEnd": {
+          "$type": "dimension",
+          "$value": "{spacing.sm}"
+        }
+      }
+    },
+    "drawer": {
+      "translate": {
+        "$type": "string",
+        "$value": "translateX(-100%)"
+      },
+      "start": {
+        "$type": "string",
+        "$value": "0"
+      },
+      "end": {
+        "$type": "string",
+        "$value": "auto"
+      }
+    },
+    "nav": {
+      "link": {
+        "padding": {
+          "inline": {
+            "$type": "dimension",
+            "$value": "{spacing.2xs}"
+          },
+          "block": {
+            "$type": "dimension",
+            "$value": "{spacing.2xs}"
+          }
+        },
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{fontSize.xs}"
+        },
+        "color": {
+          "$type": "color",
+          "$value": "{color.text.default}"
+        },
+        "color-active": {
+          "$type": "color",
+          "$value": "{color.brand.default}"
+        }
+      },
+      "sub": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{fontSize.xs}"
+        },
+        "indent": {
+          "$type": "dimension",
+          "$value": "{spacing.md}"
+        }
+      }
+    }
+  }
+}

@@ -50,10 +50,10 @@
 
     @media not (--tablet) {
       .media {
-        margin-inline: calc(-1 * var(--container-padding-x));
+        margin-inline: calc(-1 * var(--container-padding-inline));
         max-width: none;
         order: -1;
-        width: calc(100% + 2 * var(--container-padding-x));
+        width: calc(100% + 2 * var(--container-padding-inline));
       }
     }
   }

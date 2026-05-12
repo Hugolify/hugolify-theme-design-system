@@ -1,7 +1,9 @@
-/* tokens/component/block-selected.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* block-selected.css */
 @layer config {
   :root {
     --block-selected-gap: var(--gap);
-    --block-selected-list-items-margin-top: 2.5rem;
+    --block-selected-list-items-margin-block-start: var(--spacing-lg);
   }
 }

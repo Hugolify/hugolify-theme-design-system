@@ -1,31 +1,25 @@
-/* tokens/component/pagination-between.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* pagination-between.css */
 @layer config {
   :root {
-    /* Block */
-    --pagination-between-border: var(--border-width-sm) var(--border-style-normal) var(--color-border);
     --pagination-between-font-size: var(--font-size-lg);
     --pagination-between-font-weight: var(--font-weight-bold);
-    --pagination-between-margin-top: var(--spacing-lg);
-    --pagination-between-padding-y: var(--spacing-lg);
-
-    /* Item */
+    --pagination-between-margin-block-start: var(--spacing-lg);
+    --pagination-between-padding-block: var(--spacing-lg);
     --pagination-between-item-padding: 0;
-
-    /* Link */
+    --pagination-between-link-border-radius: var(--radius-control);
     --pagination-between-link-border-style: var(--border-style-normal);
     --pagination-between-link-border-width: 0;
-    --pagination-between-link-border-radius: var(--radius-control);
     --pagination-between-link-color-background: transparent;
+    --pagination-between-link-color-background-hover: var(--color-background-muted);
     --pagination-between-link-color-border: var(--color-border);
     --pagination-between-link-color-text-decoration: transparent;
-    --pagination-between-link-gap: var(--spacing-sm);
-    --pagination-between-link-padding-x: var(--spacing-sm);
-    --pagination-between-link-padding-y: var(--spacing-sm);
-    --pagination-between-link-shadow: var(--shadow-none);
-
-    /* Link — hover */
-    --pagination-between-link-color-background-hover: var(--color-bg-muted);
     --pagination-between-link-color-text-decoration-hover: transparent;
+    --pagination-between-link-gap: var(--spacing-sm);
+    --pagination-between-link-padding-inline: var(--spacing-sm);
+    --pagination-between-link-padding-block: var(--spacing-sm);
+    --pagination-between-link-shadow: var(--shadow-none);
     --pagination-between-link-shadow-hover: var(--shadow-sm);
   }
 }

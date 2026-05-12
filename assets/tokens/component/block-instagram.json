@@ -1,0 +1,10 @@
+{
+  "block-instagram": {
+    "item": {
+      "maxWidth": {
+        "$type": "string",
+        "$value": "calc(300px - var(--items-gap))"
+      }
+    }
+  }
+}

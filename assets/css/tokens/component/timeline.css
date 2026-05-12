@@ -1,20 +1,17 @@
-/* tokens/component/timeline.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* timeline.css */
 @layer config {
   :root {
-    /* Connector line */
-    --timeline-connector-color:  var(--color-border);
-    --timeline-connector-width:  2px;
-
-    /* Step marker */
-    --timeline-marker-size:          1.5rem;
-    --timeline-marker-color-bg:      var(--color-brand);
-    --timeline-marker-color-text:    var(--color-text-on-brand);
+    --timeline-connector-color: var(--color-border);
+    --timeline-connector-width: 2px;
+    --timeline-marker-size: 1.5rem;
+    --timeline-marker-color-bg: var(--color-brand);
+    --timeline-marker-color-text: var(--color-text-on-brand);
     --timeline-marker-border-radius: var(--radius-pill);
-    --timeline-marker-font-size:     var(--font-size-sm);
-    --timeline-marker-font-weight:   var(--font-weight-heading);
-
-    /* Step content */
-    --timeline-step-gap:         var(--spacing-sm);
-    --timeline-gap:              var(--spacing-lg);
+    --timeline-marker-font-size: var(--font-size-sm);
+    --timeline-marker-font-weight: var(--font-weight-heading);
+    --timeline-step-gap: var(--spacing-sm);
+    --timeline-gap: var(--spacing-lg);
   }
 }

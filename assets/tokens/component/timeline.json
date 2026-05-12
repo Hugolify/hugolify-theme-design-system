@@ -1,0 +1,54 @@
+{
+  "timeline": {
+    "connector": {
+      "color": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      },
+      "width": {
+        "$type": "dimension",
+        "$value": "2px"
+      }
+    },
+    "marker": {
+      "size": {
+        "$type": "dimension",
+        "$value": "1.5rem"
+      },
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.brand.default}"
+        },
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.onBrand}"
+        }
+      },
+      "border": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.pill}"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.sm}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.heading}"
+      }
+    },
+    "step": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.lg}"
+    }
+  }
+}

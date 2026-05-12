@@ -25,8 +25,8 @@
       flex: 1;
       gap: var(--item-gap);
       order: var(--item-order);
-      padding-block: var(--item-padding-y);
-      padding-inline: var(--item-padding-x);
+      padding-block: var(--item-padding-block);
+      padding-inline: var(--item-padding-inline);
       text-decoration: none;
 
       > * {
@@ -40,8 +40,8 @@
       border-block-start: var(--item-metas-border-start);
       font-size: var(--item-metas-font-size, var(--metas-font-size));
       order: var(--item-metas-order);
-      padding-block: var(--item-metas-padding-y);
-      padding-inline: var(--item-metas-padding-x);
+      padding-block: var(--item-metas-padding-block);
+      padding-inline: var(--item-metas-padding-inline);
     }
 
     a.content {
@@ -68,7 +68,7 @@
 
     .btn {
       margin-inline-end: auto;
-      margin-top: auto;
+      margin-block-start: auto;
     }
 
     .media {

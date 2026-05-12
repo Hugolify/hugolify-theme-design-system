@@ -3,7 +3,7 @@
 @layer components {
   .list-tags {
     p {
-      margin-bottom: var(--spacing-xs);
+      margin-block-end: var(--spacing-xs);
     }
     ul, 
     ol {
@@ -34,7 +34,7 @@
         display: inline-flex;
         font-size: var(--badge-font-size);
         font-weight: var(--badge-font-weight);
-        padding: var(--badge-padding-y) var(--badge-padding-x);
+        padding: var(--badge-padding-block) var(--badge-padding-inline);
         text-decoration: none;
 
         @media (hover: hover) and (pointer: fine) {

@@ -1,0 +1,78 @@
+{
+  "pricing": {
+    "color": {
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.default}"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{fontSize.xl}"
+    },
+    "fontWeight": {
+      "$type": "fontWeight",
+      "$value": "{fontWeight.heading}"
+    },
+    "discount": {
+      "border": {
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.sm}"
+        }
+      },
+      "color": {
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.onBrand}"
+        },
+        "background": {
+          "$type": "color",
+          "$value": "{color.brand.default}"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.sm}"
+      },
+      "padding": {
+        "block": {
+          "$type": "dimension",
+          "$value": "{spacing.2xs}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{spacing.xs}"
+        }
+      }
+    },
+    "frequency": {
+      "color": {
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.muted}"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.sm}"
+      },
+      "fontStyle": {
+        "$type": "string",
+        "$value": "normal"
+      }
+    },
+    "original": {
+      "color": {
+        "text": {
+          "$type": "color",
+          "$value": "{color.text.muted}"
+        }
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.sm}"
+      }
+    }
+  }
+}

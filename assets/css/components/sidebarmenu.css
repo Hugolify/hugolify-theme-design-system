@@ -46,7 +46,7 @@
       font-size: var(--sidebarmenu-label-font-size);
       font-weight: var(--sidebarmenu-label-font-weight);
       line-height: var(--sidebarmenu-label-line-height);
-      margin-bottom: var(--sidebarmenu-label-margin-bottom);
+      margin-block-end: var(--sidebarmenu-label-margin-block-end);
 
       @media (--sidebarmenu-expand) {
         display: block;
@@ -80,8 +80,8 @@
         color: var(--sidebarmenu-nav-link-color);
         display: block;
         font-size: var(--sidebarmenu-nav-link-font-size);
-        padding-block: var(--sidebarmenu-nav-link-padding-y);
-        padding-inline: var(--sidebarmenu-nav-link-padding-x);
+        padding-block: var(--sidebarmenu-nav-link-padding-block);
+        padding-inline: var(--sidebarmenu-nav-link-padding-inline);
 
         &.active {
           color: var(--sidebarmenu-nav-link-color-active);

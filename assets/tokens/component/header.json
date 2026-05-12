@@ -1,0 +1,64 @@
+{
+  "header": {
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.background.default}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      },
+      "link": {
+        "$type": "color",
+        "$value": "{color.link.default}"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.default}"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.sm}"
+    },
+    "height": {
+      "$type": "dimension",
+      "$value": "84px"
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.sm}"
+    },
+    "padding": {
+      "inline": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "block": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    },
+    "zIndex": {
+      "$type": "number",
+      "$value": "{zIndex.sticky}"
+    },
+    "logo": {
+      "maxWidth": {
+        "$type": "dimension",
+        "$value": "85%"
+      }
+    },
+    "transition": {
+      "duration": {
+        "$type": "string",
+        "$value": "{duration.slow}"
+      },
+      "easing": {
+        "$type": "string",
+        "$value": "{easing.out}"
+      }
+    }
+  }
+}

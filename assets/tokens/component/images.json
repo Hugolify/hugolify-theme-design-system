@@ -1,0 +1,8 @@
+{
+  "images": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap}"
+    }
+  }
+}

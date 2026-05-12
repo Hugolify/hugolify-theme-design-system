@@ -48,7 +48,7 @@
       }
 
       footer {
-        margin-top: auto;
+        margin-block-start: auto;
         padding: var(--comparison-item-padding);
       }
 
@@ -92,7 +92,7 @@
       li {
         border-top: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
         margin-block: 0;
-        padding-block: var(--comparison-list-item-padding-y);
+        padding-block: var(--comparison-list-item-padding-block);
       }
     }
 

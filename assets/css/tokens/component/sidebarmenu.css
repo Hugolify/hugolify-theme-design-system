@@ -1,30 +1,25 @@
-/* tokens/component/sidebarmenu.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* sidebarmenu.css */
 @layer config {
   :root {
-    /* Sticky */
-    --sidebarmenu-sticky-top:    calc(var(--header-height) + var(--spacing-md));
-    --sidebarmenu-max-height:    calc(100vh - var(--sidebarmenu-sticky-top));
-
-    /* Label (tablet+ heading) */
-    --sidebarmenu-label-font-size:     var(--font-size-h5);
-    --sidebarmenu-label-font-weight:   var(--font-weight-heading);
-    --sidebarmenu-label-font-family:   var(--font-family-heading);
-    --sidebarmenu-label-line-height:   var(--line-height-heading);
-    --sidebarmenu-label-color:         var(--color-heading);
-    --sidebarmenu-label-margin-bottom: var(--spacing-sm);
-
-    /* Drawer placement (mobile) — override to switch side */
-    --sidebarmenu-drawer-translate: translateX(-100%);  /* start = left */
-    --sidebarmenu-drawer-start:     0;
-    --sidebarmenu-drawer-end:       auto;
-
-    /* Nav */
-    --sidebarmenu-nav-link-padding-x:   var(--spacing-2xs);
-    --sidebarmenu-nav-link-padding-y:   var(--spacing-2xs);
-    --sidebarmenu-nav-link-font-size:   var(--font-size-xs);
-    --sidebarmenu-nav-sub-font-size:    var(--font-size-xs);
-    --sidebarmenu-nav-sub-indent:       var(--spacing-md);
-    --sidebarmenu-nav-link-color:       var(--color-text);
+    --sidebarmenu-sticky-top: calc(var(--header-height) + var(--spacing-md));
+    --sidebarmenu-max-height: calc(100vh - var(--sidebarmenu-sticky-top));
+    --sidebarmenu-label-font-size: var(--font-size-heading-05);
+    --sidebarmenu-label-font-weight: var(--font-weight-heading);
+    --sidebarmenu-label-font-family: var(--font-family-heading);
+    --sidebarmenu-label-line-height: var(--line-height-heading);
+    --sidebarmenu-label-color: var(--color-heading);
+    --sidebarmenu-label-margin-block-end: var(--spacing-sm);
+    --sidebarmenu-drawer-translate: translateX(-100%);
+    --sidebarmenu-drawer-start: 0;
+    --sidebarmenu-drawer-end: auto;
+    --sidebarmenu-nav-link-padding-inline: var(--spacing-2xs);
+    --sidebarmenu-nav-link-padding-block: var(--spacing-2xs);
+    --sidebarmenu-nav-link-font-size: var(--font-size-xs);
+    --sidebarmenu-nav-link-color: var(--color-text);
     --sidebarmenu-nav-link-color-active: var(--color-brand);
+    --sidebarmenu-nav-sub-font-size: var(--font-size-xs);
+    --sidebarmenu-nav-sub-indent: var(--spacing-md);
   }
 }

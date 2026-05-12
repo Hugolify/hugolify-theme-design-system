@@ -1,0 +1,24 @@
+{
+  "gallery": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap}"
+    },
+    "item": {
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.background.media}"
+        }
+      },
+      "radius": {
+        "$type": "dimension",
+        "$value": "0"
+      },
+      "ratio": {
+        "$type": "string",
+        "$value": "1"
+      }
+    }
+  }
+}

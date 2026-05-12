@@ -1,0 +1,44 @@
+{
+  "block-testimonials": {
+    "columns": {
+      "$type": "number",
+      "$value": 3
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap}"
+    },
+    "quote": {
+      "border": {
+        "width": {
+          "$type": "dimension",
+          "$value": "0"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.md}"
+        }
+      },
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.background.muted.default}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "transparent"
+        }
+      },
+      "padding": {
+        "$type": "dimension",
+        "$value": "{spacing.lg}"
+      }
+    },
+    "list": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    }
+  }
+}

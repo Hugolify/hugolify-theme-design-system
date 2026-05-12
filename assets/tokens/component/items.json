@@ -1,0 +1,12 @@
+{
+  "items": {
+    "nav": {
+      "margin": {
+        "blockStart": {
+          "$type": "dimension",
+          "$value": "{spacing.fluid.md}"
+        }
+      }
+    }
+  }
+}

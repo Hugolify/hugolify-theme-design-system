@@ -20,7 +20,7 @@
     @media not (--header-expand) {
       .dropdown {
         --dropdown-padding: 0;
-        --dropdown-item-padding-x: var(--nav-padding-x);
+        --dropdown-item-padding-inline: var(--nav-padding-inline);
         flex-direction: column;
       }
       .dropdown-toggle {
@@ -45,7 +45,7 @@
         }
       }
       .nav-item-highlighted {
-        margin-block: var(--nav-padding-y);
+        margin-block: var(--nav-padding-block);
       }
     }
   }

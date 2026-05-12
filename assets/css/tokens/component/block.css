@@ -1,17 +1,13 @@
-/* tokens/component/block.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* block.css */
 @layer config {
   :root {
-
-    /* Vertical gap for each element in a section */
-    --block-gap:            var(--spacing-md);
-    --block-gap-tablet:     var(--spacing-lg);
-    --block-gap-laptop:     var(--spacing-lg);
-    --block-gap-desktop:    var(--spacing-xl);
-
-    /* Vertical padding between sections */
-    --block-padding-y:      var(--spacing-fluid-lg);
-
-    /* Background variant */
-    --block-bg-color:       var(--color-bg-muted);
+    --block-gap: var(--spacing-md);
+    --block-gap-tablet: var(--spacing-lg);
+    --block-gap-laptop: var(--spacing-lg);
+    --block-gap-desktop: var(--spacing-xl);
+    --block-padding-block: var(--spacing-fluid-lg);
+    --block-bg-color: var(--color-background-muted);
   }
 }

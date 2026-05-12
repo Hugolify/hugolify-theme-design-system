@@ -1,0 +1,16 @@
+{
+  "metas": {
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{fontSize.small}"
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.2xs}"
+    },
+    "separator": {
+      "$type": "string",
+      "$value": "—"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "block": {
+    "gap": {
+      "default": {
+        "$type": "dimension",
+        "$value": "{spacing.md}"
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": "{spacing.lg}"
+      },
+      "laptop": {
+        "$type": "dimension",
+        "$value": "{spacing.lg}"
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": "{spacing.xl}"
+      }
+    },
+    "padding": {
+      "block": {
+        "$type": "dimension",
+        "$value": "{spacing.fluid.lg}"
+      }
+    },
+    "bg": {
+      "color": {
+        "$type": "color",
+        "$value": "{color.background.muted.default}"
+      }
+    }
+  }
+}

@@ -46,7 +46,7 @@
     .heading {
       @media (--tablet) {
         align-items: flex-start;
-        margin-bottom: 0;
+        margin-block-end: 0;
         margin-inline-start: 0;
         max-width: none;
         text-align: start;
@@ -63,7 +63,7 @@
       list-style: none;
       padding-inline-start: 0;
       @media (--tablet) {
-        margin-top: var(--block-selected-list-items-margin-top);
+        margin-block-start: var(--block-selected-list-items-margin-block-start);
       }
     }
   }

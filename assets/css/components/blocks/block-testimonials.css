@@ -39,7 +39,7 @@
       height: 100%;
 
       figcaption {
-        margin-top: auto;
+        margin-block-start: auto;
       }
     }
   }

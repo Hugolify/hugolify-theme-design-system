@@ -2,7 +2,7 @@
 @layer components {
   .items {
     & + nav {
-      margin-block-start: var(--items-margin-nav);
+      margin-block-start: var(--items-nav-margin-block-start);
     }
   }
 

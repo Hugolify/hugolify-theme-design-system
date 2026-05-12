@@ -1,0 +1,82 @@
+{
+  "toc": {
+    "sticky": {
+      "top": {
+        "$type": "string",
+        "$value": "calc(var(--header-height) + var(--spacing-md))"
+      }
+    },
+    "label": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.heading.05}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.heading}"
+      },
+      "fontFamily": {
+        "$type": "fontFamily",
+        "$value": "{fontFamily.heading}"
+      },
+      "lineHeight": {
+        "$type": "string",
+        "$value": "{lineHeight.heading}"
+      },
+      "color": {
+        "$type": "color",
+        "$value": "{color.heading}"
+      },
+      "margin": {
+        "blockEnd": {
+          "$type": "dimension",
+          "$value": "{spacing.sm}"
+        }
+      }
+    },
+    "drawer": {
+      "end": {
+        "$type": "string",
+        "$value": "auto"
+      },
+      "start": {
+        "$type": "string",
+        "$value": "0"
+      },
+      "translate": {
+        "$type": "string",
+        "$value": "translateX(-100%)"
+      }
+    },
+    "nav": {
+      "indent": {
+        "$type": "dimension",
+        "$value": "{size.16}"
+      },
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.xs}"
+      },
+      "item": {
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.2xs}"
+        }
+      },
+      "link": {
+        "color": {
+          "textDecoration": {
+            "default": {
+              "$type": "color",
+              "$value": "transparent"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{color.link.default}"
+            }
+          }
+        }
+      }
+    }
+  }
+}

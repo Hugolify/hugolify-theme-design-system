@@ -1,0 +1,8 @@
+{
+  "audio": {
+    "width": {
+      "$type": "dimension",
+      "$value": "100%"
+    }
+  }
+}

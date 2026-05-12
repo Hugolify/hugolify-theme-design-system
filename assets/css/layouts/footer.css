@@ -18,7 +18,7 @@
   footer[role="contentinfo"] {
     background-color: var(--footer-color-background);
     color: var(--footer-color-text);
-    padding-block: var(--footer-padding-y);
+    padding-block: var(--footer-padding-block);
 
     .container {
       display: flex;
@@ -85,16 +85,11 @@
       }
     }
 
-    /* ── Information block ───────────────────────────────────────── */
-
-    .information {
-    }
-
     /* ── Footer title (mirrors .nav-title) ───────────────────────── */
 
     .footer-title {
-      font-size: var(--nav-font-size-title);
-      font-weight: var(--nav-font-weight-title);
+      font-size: var(--nav-title-font-size);
+      font-weight: var(--nav-title-font-weight);
     }
 
     /* ── Nav legal and social ───────────────────────────────────────── */
@@ -118,7 +113,7 @@
         content: "";
         display: block;
         height: var(--border-width-sm);
-        margin-bottom: var(--footer-gap);
+        margin-block-end: var(--footer-gap);
       }
     }
   }

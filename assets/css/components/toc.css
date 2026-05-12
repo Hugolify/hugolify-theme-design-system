@@ -42,7 +42,7 @@
       font-size: var(--toc-label-font-size);
       font-weight: var(--toc-label-font-weight);
       line-height: var(--toc-label-line-height);
-      margin-bottom: var(--toc-label-margin-bottom);
+      margin-block-end: var(--toc-label-margin-block-end);
 
       @media (--toc-expand) {
         display: block;
@@ -69,13 +69,13 @@
         font-size: var(--toc-nav-font-size);
 
         &:not(:last-child) {
-          margin-bottom: var(--toc-nav-item-gap);
+          margin-block-end: var(--toc-nav-item-gap);
         }
       }
 
       ol ol {
         list-style-type: circle;
-        margin-top: var(--toc-nav-item-gap);
+        margin-block-start: var(--toc-nav-item-gap);
       }
 
       a {

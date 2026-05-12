@@ -1,24 +1,20 @@
-/* tokens/component/header.css */
+/* Do not edit directly, this file was auto-generated. */
+
+/* header.css */
 @layer config {
   :root {
-    /* Colors */
-    --header-color-background:     var(--color-background);
-    --header-color-link:           var(--color-link);
-    --header-color-text:           var(--color-text);
-    --header-color-border:         var(--color-border);
-    --header-shadow:               var(--shadow-sm);
-
-    /* Layout */
-    --header-gap:          var(--spacing-sm);
-    --header-height:       84px;
-    --header-spacing:      var(--spacing-sm) 0;
-    --header-z-index:      100;
-
-    /* Logo */
+    --header-color-background: var(--color-background);
+    --header-color-border: var(--color-border);
+    --header-color-link: var(--color-link);
+    --header-color-text: var(--color-text);
+    --header-gap: var(--spacing-sm);
+    --header-height: 84px;
+    --header-shadow: var(--shadow-sm);
+    --header-padding-inline: 0;
+    --header-padding-block: var(--spacing-sm);
+    --header-z-index: var(--z-index-sticky);
     --header-logo-max-width: 85%;
-
-    /* Sticky transition */
     --header-transition-duration: var(--duration-slow);
-    --header-transition-easing:   var(--easing-out);
+    --header-transition-easing: var(--easing-out);
   }
 }

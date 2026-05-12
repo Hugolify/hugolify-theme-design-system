@@ -1,0 +1,20 @@
+{
+  "block-logos": {
+    "item": {
+      "ratio": {
+        "$type": "string",
+        "$value": "1"
+      },
+      "img": {
+        "maxHeight": {
+          "$type": "dimension",
+          "$value": "60%"
+        },
+        "maxWidth": {
+          "$type": "dimension",
+          "$value": "70%"
+        }
+      }
+    }
+  }
+}

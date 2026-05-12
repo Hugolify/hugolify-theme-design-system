@@ -82,8 +82,8 @@ This removes all debate about ordering, makes diffs cleaner, and speeds up scann
   cursor: pointer;
   display: inline-flex;
   font-size: var(--btn-font-size);
-  padding-block: var(--btn-padding-y);
-  padding-inline: var(--btn-padding-x);
+  padding-block: var(--btn-padding-block);
+  padding-inline: var(--btn-padding-inline);
   text-decoration: none;
 }
 ```

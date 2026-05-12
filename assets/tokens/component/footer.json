@@ -1,0 +1,40 @@
+{
+  "footer": {
+    "color": {
+      "background": {
+        "$type": "color",
+        "$value": "{color.background.muted.default}"
+      },
+      "border": {
+        "$type": "color",
+        "$value": "{color.border.default}"
+      },
+      "text": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.text.default}"
+        },
+        "muted": {
+          "$type": "color",
+          "$value": "{color.text.muted}"
+        }
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.lg}"
+    },
+    "padding": {
+      "block": {
+        "$type": "dimension",
+        "$value": "{spacing.xl}"
+      }
+    },
+    "logo": {
+      "height": {
+        "$type": "dimension",
+        "$value": "{logo.height.default}"
+      }
+    }
+  }
+}

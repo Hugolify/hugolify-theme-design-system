@@ -25,7 +25,8 @@
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);
     background-color: var(--header-color-background);
-    padding: var(--header-spacing);
+    padding-block: var(--header-padding-block);
+    padding-inline: var(--header-padding-inline);
     position: sticky;
     top: 0;
     z-index: var(--header-z-index);
@@ -73,7 +74,7 @@
     /* ── Main menu ────────────────────────────────────────────── */
 
     .main-menu .nav {
-      margin-inline: calc(var(--nav-padding-x) * -1);
+      margin-inline: calc(var(--nav-padding-inline) * -1);
     }
 
     /* ── Expand ──────────────────────────── */

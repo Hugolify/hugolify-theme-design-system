@@ -17,7 +17,7 @@
  */
 @layer components {
   .heading {
-    margin-block-end: var(--heading-margin-bottom);
+    margin-block-end: var(--heading-margin-block-end);
 
     &,
     & > .container {

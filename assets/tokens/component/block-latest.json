@@ -1,0 +1,18 @@
+{
+  "block-latest": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap}"
+    },
+    "list": {
+      "items": {
+        "margin": {
+          "blockStart": {
+            "$type": "dimension",
+            "$value": "{spacing.lg}"
+          }
+        }
+      }
+    }
+  }
+}

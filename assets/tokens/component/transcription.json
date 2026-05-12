@@ -1,0 +1,32 @@
+{
+  "transcription": {
+    "color": {
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.muted}"
+      }
+    },
+    "fontSize": {
+      "$type": "dimension",
+      "$value": "{fontSize.xs}"
+    },
+    "margin": {
+      "$type": "string",
+      "$value": "var(--spacing-xs) 0 0"
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "{spacing.xs}"
+    },
+    "summary": {
+      "fontSize": {
+        "$type": "dimension",
+        "$value": "{fontSize.xs}"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": "{fontWeight.normal}"
+      }
+    }
+  }
+}
