@@ -19,7 +19,8 @@
     --pagination-between-link-color-border: var(--color-border);
     --pagination-between-link-color-text-decoration: transparent;
     --pagination-between-link-gap: var(--spacing-sm);
-    --pagination-between-link-padding: var(--spacing-sm);
+    --pagination-between-link-padding-x: var(--spacing-sm);
+    --pagination-between-link-padding-y: var(--spacing-sm);
     --pagination-between-link-shadow: var(--shadow-none);
 
     /* Link — hover */
