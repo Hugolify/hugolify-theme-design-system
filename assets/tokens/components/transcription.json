@@ -11,8 +11,10 @@
       "$value": "{fontSize.xs}"
     },
     "margin": {
-      "$type": "string",
-      "$value": "var(--spacing-xs) 0 0"
+      "blockStart": {
+        "$type": "dimension",
+        "$value": "{spacing.xs}"
+      }
     },
     "padding": {
       "$type": "dimension",

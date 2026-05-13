@@ -1,9 +1,9 @@
 module:
   mounts:
-    # Copy SASS and JS
+    # Copy CSS and JS
     - source: assets
       target: assets
-  
+
 # Params
 params:
 

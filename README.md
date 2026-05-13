@@ -33,7 +33,8 @@ imports:
 
 ## Documentation
 
-https://www.hugolify.io/docs/
+- [DTCG](./docs/DTCG.md)
+- [Hugolify](./https://www.hugolify.io/docs/)
 
 ## Licensing
 

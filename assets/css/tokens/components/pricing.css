@@ -1,0 +1,21 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* pricing.css */
+@layer config {
+  :root {
+    --pricing-color-text: var(--color-text);
+    --pricing-font-size: var(--font-size-xl);
+    --pricing-font-weight: var(--font-weight-heading);
+    --pricing-discount-border-radius: var(--radius-sm);
+    --pricing-discount-color-text: var(--color-text-on-brand);
+    --pricing-discount-color-background: var(--color-brand);
+    --pricing-discount-font-size: var(--font-size-sm);
+    --pricing-discount-padding-block: var(--spacing-2xs);
+    --pricing-discount-padding-inline: var(--spacing-xs);
+    --pricing-frequency-color-text: var(--color-text-muted);
+    --pricing-frequency-font-size: var(--font-size-sm);
+    --pricing-frequency-font-style: normal;
+    --pricing-original-color-text: var(--color-text-muted);
+    --pricing-original-font-size: var(--font-size-sm);
+  }
+}

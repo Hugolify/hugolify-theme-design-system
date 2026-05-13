@@ -40,7 +40,8 @@
       border-block-start: var(--item-metas-border-start);
       font-size: var(--item-metas-font-size, var(--metas-font-size));
       order: var(--item-metas-order);
-      padding-block: var(--item-metas-padding-block);
+      padding-block-end: var(--item-metas-padding-block-end);
+      padding-block-start: var(--item-metas-padding-block-start);
       padding-inline: var(--item-metas-padding-inline);
     }
 

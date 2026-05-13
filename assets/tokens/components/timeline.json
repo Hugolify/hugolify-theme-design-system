@@ -7,13 +7,13 @@
       },
       "width": {
         "$type": "dimension",
-        "$value": "2px"
+        "$value": "{border.width.md}"
       }
     },
     "marker": {
       "size": {
         "$type": "dimension",
-        "$value": "1.5rem"
+        "$value": "{size.24}"
       },
       "color": {
         "background": {

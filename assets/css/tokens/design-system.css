@@ -7,31 +7,31 @@
 @import '@uncinq/component-tokens';
 
 /* 3. Component tokens — Hugolify-specific */
-@import 'component/audio.css';
-@import 'component/block.css';
-@import 'component/comparison.css';
-@import 'component/footer.css';
-@import 'component/gallery.css';
-@import 'component/header.css';
-@import 'component/images.css';
-@import 'component/items.css';
-@import 'component/main-menu.css';
-@import 'component/metas.css';
-@import 'component/pagination-between.css';
-@import 'component/press.css';
-@import 'component/pricing.css';
-@import 'component/quote.css';
-@import 'component/screenshot.css';
-@import 'component/sidebarmenu.css';
-@import 'component/timeline.css';
-@import 'component/toc.css';
-@import 'component/transcription.css';
+@import 'components/audio.css';
+@import 'components/block.css';
+@import 'components/comparison.css';
+@import 'components/footer.css';
+@import 'components/gallery.css';
+@import 'components/header.css';
+@import 'components/images.css';
+@import 'components/items.css';
+@import 'components/main-menu.css';
+@import 'components/metas.css';
+@import 'components/pagination-between.css';
+@import 'components/press.css';
+@import 'components/pricing.css';
+@import 'components/quote.css';
+@import 'components/screenshot.css';
+@import 'components/sidebarmenu.css';
+@import 'components/timeline.css';
+@import 'components/toc.css';
+@import 'components/transcription.css';
 
 /* Blocks */
-@import 'component/block-instagram.css';
-@import 'component/block-latest.css';
-@import 'component/block-title.css';
-@import 'component/block-video.css';
-@import 'component/block-logos.css';
-@import 'component/block-selected.css';
-@import 'component/block-testimonials.css';
+@import 'components/block-instagram.css';
+@import 'components/block-latest.css';
+@import 'components/block-title.css';
+@import 'components/block-video.css';
+@import 'components/block-logos.css';
+@import 'components/block-selected.css';
+@import 'components/block-testimonials.css';

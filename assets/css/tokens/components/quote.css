@@ -6,7 +6,7 @@
     --quote-border-radius: 0;
     --quote-border-style: none;
     --quote-border-width: 0;
-    --quote-color-bg: transparent;
+    --quote-color-background: transparent;
     --quote-color-border: transparent;
     --quote-flex-direction: column;
     --quote-gap: var(--spacing-xs);
@@ -23,8 +23,8 @@
     --quote-cite-color-text: var(--color-text);
     --quote-author-color-text: var(--color-text-muted);
     --quote-author-line-height: var(--line-height-normal);
-    --quote-avatar-size: 3rem;
-    --quote-avatar-color-bg: var(--color-background-muted);
+    --quote-avatar-size: var(--size-48);
+    --quote-avatar-color-background: var(--color-background-muted);
     --quote-avatar-border-radius: var(--radius-pill);
   }
 }

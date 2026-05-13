@@ -4,13 +4,15 @@
 @layer config {
   :root {
     --screenshot-border-radius: var(--radius-sm);
-    --screenshot-bar-color-bg: #D9D9D9;
-    --screenshot-bar-height: 1.25rem;
-    --screenshot-dot-size: 0.5rem;
-    --screenshot-dot-offset-top: 0.375rem;
+    --screenshot-bar-color-background: #D9D9D9;
+    --screenshot-bar-height: var(--size-20);
     --screenshot-dot-color-red: #EE0E00;
     --screenshot-dot-color-yellow: #EEAB00;
     --screenshot-dot-color-green: #0EB000;
+    --screenshot-dot-gap: var(--size-8);
+    --screenshot-dot-offset-left: var(--size-16);
+    --screenshot-dot-offset-top: var(--size-6);
+    --screenshot-dot-size: var(--size-8);
     --screenshot-shadow: var(--shadow-center-md);
     --screenshot-figcaption-padding-block-start: var(--spacing-xs);
   }

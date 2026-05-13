@@ -99,7 +99,7 @@
     "avatar": {
       "size": {
         "$type": "dimension",
-        "$value": "3rem"
+        "$value": "{size.48}"
       },
       "color": {
         "background": {

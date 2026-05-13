@@ -39,17 +39,17 @@
 
     &::before {
       background-color: var(--screenshot-dot-color-red);
-      left: 1rem;
+      left: var(--screenshot-dot-offset-left);
     }
 
     &::after {
       background-color: var(--screenshot-dot-color-yellow);
-      left: calc(1rem + var(--screenshot-dot-size) + 0.5rem);
+      left: calc(var(--screenshot-dot-offset-left) + var(--screenshot-dot-size) + var(--screenshot-dot-gap));
     }
 
     > span::before {
       background-color: var(--screenshot-dot-color-green);
-      left: calc(1rem + (var(--screenshot-dot-size) + 0.5rem) * 2);
+      left: calc(1rem + (var(--screenshot-dot-size) + var(--screenshot-dot-gap)) * 2);
     }
 
     /* ── Figure ────────────────────────────────────────────────── */

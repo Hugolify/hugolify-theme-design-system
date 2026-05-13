@@ -78,27 +78,27 @@ StyleDictionary.registerFormat({
 
 const tokenFiles = getTokenFiles('./assets/tokens');
 
-// Use published JSON tokens when available, fall back to local sibling repo
-const designTokensPath = fs.existsSync('./node_modules/@uncinq/design-tokens/tokens/primitive/color.json')
-  ? './node_modules/@uncinq/design-tokens/tokens'
-  : '../../_uncinq/design-tokens/tokens';
-
-const componentTokensPath = fs.existsSync('./node_modules/@uncinq/component-tokens/tokens/component/header.json')
-  ? './node_modules/@uncinq/component-tokens/tokens'
-  : '../../_uncinq/component-tokens/tokens';
+for (const pkg of ['@uncinq/design-tokens', '@uncinq/component-tokens']) {
+  if (!fs.existsSync(`./node_modules/${pkg}`)) {
+    throw new Error(`Missing ${pkg} — run npm install first.`);
+  }
+}
 
 export default {
   usesDtcg: true,
   log: { warnings: 'disabled', errors: { brokenReferences: 'console' } },
-  include: [...getTokenFiles(designTokensPath), ...getTokenFiles(componentTokensPath)],
+  include: [
+    ...getTokenFiles('./node_modules/@uncinq/design-tokens/tokens'),
+    ...getTokenFiles('./node_modules/@uncinq/component-tokens/tokens'),
+  ],
   source: tokenFiles,
 
   platforms: {
     css: {
       transformGroup: 'custom/css',
-      buildPath: 'assets/css/tokens/component/',
+      buildPath: 'assets/css/tokens/components/',
       files: tokenFiles.map(file => ({
-        destination: path.relative('./assets/tokens/component', file).replace(/\.json$/, '.css'),
+        destination: path.relative('./assets/tokens/components', file).replace(/\.json$/, '.css'),
         format: 'css/layer-config',
         filter: t => t.filePath === file,
       })),

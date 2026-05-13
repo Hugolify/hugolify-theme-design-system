@@ -4,9 +4,9 @@
 @layer config {
   :root {
     --timeline-connector-color: var(--color-border);
-    --timeline-connector-width: 2px;
-    --timeline-marker-size: 1.5rem;
-    --timeline-marker-color-bg: var(--color-brand);
+    --timeline-connector-width: var(--border-width-md);
+    --timeline-marker-size: var(--size-24);
+    --timeline-marker-color-background: var(--color-brand);
     --timeline-marker-color-text: var(--color-text-on-brand);
     --timeline-marker-border-radius: var(--radius-pill);
     --timeline-marker-font-size: var(--font-size-sm);
