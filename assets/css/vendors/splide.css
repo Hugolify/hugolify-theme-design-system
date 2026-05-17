@@ -3,10 +3,12 @@
   .splide {
     .splide__list {
       display: flex;
-      gap: var(--items-gap);
       list-style: none;
       margin-block-end: 0;
       padding-inline-start: 0;
+    }
+    .splide__list:not(.is-initialized) {
+      gap: var(--items-gap);
     }
     .splide__slide {
       flex-shrink: 0;

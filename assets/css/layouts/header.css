@@ -87,7 +87,7 @@
       /* Not expanded: hidden until opened as drawer/modal (managed by JS)  */
       /* Expanded: inline flex nav inside the header  */
       .main-menu {
-        --drawer-color-bg: transparent;
+        --drawer-color-background: transparent;
         --drawer-color-text: inherit;
         --drawer-shadow: none;
         --drawer-padding: 0;

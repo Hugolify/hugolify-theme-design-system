@@ -36,7 +36,7 @@
     /* ── Item card ─────────────────────────────────────────────── */
 
     .item {
-      --item-color-bg: var(--comparison-item-color-background);
+      --item-color-background: var(--comparison-item-color-background);
 
       header {
         padding: var(--comparison-item-padding);
@@ -53,7 +53,7 @@
       }
 
       .badge {
-        --badge-color-bg: var(--comparison-badge-color-background);
+        --badge-color-background: var(--comparison-badge-color-background);
         --badge-color-text: var(--comparison-badge-color-text);
         position: absolute;
         inset-block-start: var(--spacing-xs);
@@ -62,7 +62,7 @@
     }
 
     .item-highlighted {
-      --item-color-bg: var(--comparison-item-color-bg-highlighted);
+      --item-color-background: var(--comparison-item-color-background-highlighted);
       --item-shadow: var(--comparison-item-box-shadow-highlighted);
     }
 
@@ -106,7 +106,7 @@
 
     &.block-bg {
       .item {
-        --item-color-bg: var(--comparison-item-color-bg-on-block-background);
+        --item-color-background: var(--comparison-item-color-background-on-block-background);
       }
     }
   }

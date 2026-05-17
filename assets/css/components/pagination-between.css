@@ -53,12 +53,6 @@
       padding-block: var(--pagination-between-link-padding-block);
       padding-inline: var(--pagination-between-link-padding-inline);
 
-      &::after {
-        content: '';
-        inset: 0;
-        position: absolute;
-      }
-
       @media (hover: hover) and (pointer: fine) {
         &:hover {
           --link-color-text-decoration: var(--pagination-between-link-color-text-decoration-hover);

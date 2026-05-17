@@ -74,13 +74,13 @@
 
     .media {
       --media-ratio: var(--item-media-ratio);
-      --media-color-bg: var(--item-media-color-background);
+      --media-color-background: var(--item-media-color-background);
       order: var(--item-media-order);
     }
 
     /* Focus */
     &:has(a.content:focus-visible) {
-      outline: var(--focus);
+      outline: var(--focus-outline-width) var(--focus-outline-style) var(--focus-color-outline);
       outline-offset: var(--focus-outline-offset);
     }
 

@@ -23,15 +23,15 @@
     /* Vertical connector line */
     &::before {
       background-color: var(--timeline-connector-color);
-      bottom: 0;
       content: '';
-      left: calc(var(--timeline-marker-size) / 2);
+      inset-block: 0;
+      inset-inline-start: calc(var(--timeline-marker-size) / 2);
       position: absolute;
-      top: 0;
       width: var(--timeline-connector-width);
     }
 
     li {
+      margin-block: 0;
       padding-inline-start: calc(var(--timeline-marker-size) + var(--timeline-step-gap));
       position: relative;
     }
@@ -48,10 +48,10 @@
       font-size: var(--timeline-marker-font-size);
       font-weight: var(--timeline-marker-font-weight);
       height: var(--timeline-marker-size);
+      inset-block-start: 0;
+      inset-inline-start: 0;
       justify-content: center;
-      left: 0;
       position: absolute;
-      top: 0;
       width: var(--timeline-marker-size);
     }
   }

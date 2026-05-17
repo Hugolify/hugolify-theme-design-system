@@ -1,0 +1,15 @@
+/* components/blocks/block-informations.css */
+/*
+ * .block-informations — block section displaying informations cards.
+ *
+ * Structure:
+ *   section.block-informations[.block-bg]
+ *     .container
+ *       .heading
+ *       .items
+ *         div
+ *           [item card]
+ *       .footing
+ *
+ */
+

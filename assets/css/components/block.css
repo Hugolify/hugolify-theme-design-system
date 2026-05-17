@@ -16,8 +16,8 @@
 
     /* ── Container ─────────────── */
 
-    > .container:first-child,
-    &:not(:has(> .container:first-child)) {
+    &:has(> .heading, > .footing),
+    >.container:has(.heading, .footing) {
       display: grid;
       gap: var(--block-gap);
     }

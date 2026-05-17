@@ -20,6 +20,13 @@
     --details-content-font-size: var(--transcription-font-size);
     --details-summary-font-size:  var(--transcription-summary-font-size);
     --details-summary-font-weight: var(--transcription-summary-font-weight);
-    border: none;
+    
+    details {
+      border: none;
+    }
+    summary {
+      display: inline-flex;
+      gap: var(--spacing-xs)
+    }
   }
 }

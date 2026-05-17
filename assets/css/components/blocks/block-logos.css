@@ -22,14 +22,21 @@
       aspect-ratio: var(--block-logos-item-ratio);
     }
 
+    .container:has(.carousel) {
+      min-width: 0;
+    }
+
     @media not (--tablet-wide) {
       .logos {
-        --items-cols: 3;
+        --items-min-width: 18ch;
+      }
+      .container:has(.carousel) {
+        padding-inline: 0;
       }
     }
     @media not (--tablet) {
       .logos {
-        --items-cols: 2;
+        --items-min-width: 10ch;
       }
     }
 
