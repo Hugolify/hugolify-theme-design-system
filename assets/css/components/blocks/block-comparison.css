@@ -83,14 +83,14 @@
 
     .content {
       ul {
-        border-bottom: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
+        border-block-end: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
         list-style: none;
         margin-block: 0;
         padding-inline-start: 0;
       }
 
       li {
-        border-top: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
+        border-block-start: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
         margin-block: 0;
         padding-block: var(--comparison-list-item-padding-block);
       }

@@ -7,11 +7,11 @@
     .content {
       > div {
         &:not(:first-child) {
-          padding-top: var(--spacing-md);
+          padding-block-start: var(--spacing-md);
         }
         &:not(:last-child) {
-          border-bottom: var(--border-width-sm) var(--border-style-normal) var(--color-border);
-          padding-bottom: var(--spacing-md);
+          border-block-end: var(--border-width-sm) var(--border-style-normal) var(--color-border);
+          padding-block-end: var(--spacing-md);
         }
       }
       .list {

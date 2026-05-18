@@ -12,11 +12,11 @@
 
     /* When last in <main>: absorb main's bottom padding */
     /* main:has(> &:last-child) {
-      padding-bottom: 0;
+      padding-block-end: 0;
     }
 
     &:last-child {
-      padding-bottom: var(--block-bg-padding-bottom);
+      padding-block-end: var(--block-bg-padding-block-end);
     } */
   }
 }
