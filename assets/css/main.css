@@ -14,6 +14,7 @@
 @import 'mediaqueries.css';
 
 /* Vendors */
+@import 'vendors/leaflet.css';
 @import 'vendors/splide.css';
 
 /* Layouts */

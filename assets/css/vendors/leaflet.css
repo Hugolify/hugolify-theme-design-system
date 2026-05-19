@@ -1,0 +1,6 @@
+/* vendors/leaflet.css */
+@layer vendors {
+  .leaflet-container {
+    z-index: 1;;
+  }
+}

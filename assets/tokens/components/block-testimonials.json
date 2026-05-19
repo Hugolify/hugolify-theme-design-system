@@ -8,15 +8,21 @@
       "$type": "dimension",
       "$value": "{gap}"
     },
+    "list": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    },
     "quote": {
       "border": {
-        "width": {
-          "$type": "dimension",
-          "$value": "0"
-        },
         "radius": {
           "$type": "dimension",
           "$value": "{radius.md}"
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": "0"
         }
       },
       "color": {
@@ -29,15 +35,31 @@
           "$value": "transparent"
         }
       },
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.lg}"
+      },
       "padding": {
         "$type": "dimension",
         "$value": "{spacing.lg}"
       }
     },
-    "list": {
-      "gap": {
-        "$type": "dimension",
-        "$value": "{spacing.sm}"
+    "compact": {
+      "quote": {
+        "figcaption": {
+          "font-size": {
+            "$type": "dimension",
+            "$value": "{fontSize.2xs}"
+          }
+        },
+        "font-size": {
+          "$type": "dimension",
+          "$value": "{fontSize.small}"
+        },
+        "padding": {
+          "$type": "dimension",
+          "$value": "{spacing.sm}"
+        }
       }
     }
   }

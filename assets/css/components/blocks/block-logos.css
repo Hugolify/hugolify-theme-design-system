@@ -22,10 +22,6 @@
       aspect-ratio: var(--block-logos-item-ratio);
     }
 
-    .container:has(.carousel) {
-      min-width: 0;
-    }
-
     @media not (--tablet-wide) {
       .logos {
         --items-min-width: 18ch;

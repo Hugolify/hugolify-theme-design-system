@@ -14,6 +14,9 @@
  */
 @layer components {
   .block-images {
+    figure {
+      margin: 0;
+    }
     img {
       width: 100%;
     }

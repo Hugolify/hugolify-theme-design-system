@@ -17,9 +17,12 @@
     /* ── Container ─────────────── */
 
     &:has(> .heading, > .footing),
-    >.container:has(.heading, .footing) {
+    > .container:has(.heading, .footing) {
       display: grid;
       gap: var(--block-gap);
+      > * {
+        min-width: 0;
+      }
     }
 
     /* ── Heading & footing — start-aligned by default ─────────────── */

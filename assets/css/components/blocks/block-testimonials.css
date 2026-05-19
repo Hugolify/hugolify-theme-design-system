@@ -29,14 +29,32 @@
 
   /* ── Base ─────────────────────────────────────────────────────────── */
   .block-testimonials {
+    .testimonials > div {
+      container-type: inline-size;
+    }
+
     .quote {
-      --quote-color-background: var(--block-testimonials-quote-color-background);
-      --quote-color-border: var(--block-testimonials-quote-color-border);
       --quote-border-radius: var(--block-testimonials-quote-border-radius);
       --quote-border-style: var(--block-testimonials-quote-border-style);
       --quote-border-width: var(--block-testimonials-quote-border-width);
-      --quote-padding: var(--block-testimonials-quote-padding);
+      --quote-color-background: var(--block-testimonials-quote-color-background);
+      --quote-color-border: var(--block-testimonials-quote-color-border);
+      --quote-font-style: normal;
+      --quote-gap: var(--block-testimonials-quote-gap);
       height: 100%;
+      margin: 0;
+
+      /* ── Compact ─────────────────────────────────────────────────────────── */
+      --quote-figcaption-font-size: var(--block-testimonials-compact-quote-figcaption-font-size);
+      --quote-font-size: var(--block-testimonials-compact-quote-font-size);
+      --quote-padding: var(--block-testimonials-compact-quote-padding);
+
+      /* ── Default ─────────────────────────────────────────────────────────── */
+      @container (width >= 25rem) {
+        --quote-figcaption-font-size: var(--block-testimonials-quote-font-size);
+        --quote-font-size: var(--block-testimonials-quote-font-size);
+        --quote-padding: var(--block-testimonials-quote-padding);
+      }
 
       figcaption {
         margin-block-start: auto;
@@ -61,7 +79,7 @@
   /* ── Carousel ─────────────────────────────────────────────────────────── */
   .block-testimonials-carousel {
     .splide__pagination {
-      bottom: -2rem;
+      inset-block-start: calc(100% + var(--spacing-xs));
     }
   } 
 }

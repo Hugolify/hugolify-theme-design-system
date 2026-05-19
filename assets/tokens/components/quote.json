@@ -93,7 +93,7 @@
       },
       "lineHeight": {
         "$type": "string",
-        "$value": "{lineHeight.normal}"
+        "$value": "{lineHeight.snug}"
       }
     },
     "avatar": {

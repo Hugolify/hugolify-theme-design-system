@@ -22,7 +22,7 @@
     --quote-cite-font-style: normal;
     --quote-cite-color-text: var(--color-text);
     --quote-author-color-text: var(--color-text-muted);
-    --quote-author-line-height: var(--line-height-normal);
+    --quote-author-line-height: var(--line-height-snug);
     --quote-avatar-size: var(--size-48);
     --quote-avatar-color-background: var(--color-background-muted);
     --quote-avatar-border-radius: var(--radius-pill);

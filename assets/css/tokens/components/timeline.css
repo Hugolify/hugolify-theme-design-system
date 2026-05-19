@@ -5,6 +5,7 @@
   :root {
     --timeline-connector-color: var(--color-border);
     --timeline-connector-width: var(--border-width-md);
+    --timeline-gap: var(--spacing-lg);
     --timeline-marker-size: var(--size-24);
     --timeline-marker-color-background: var(--color-brand);
     --timeline-marker-color-text: var(--color-text-on-brand);
@@ -12,6 +13,5 @@
     --timeline-marker-font-size: var(--font-size-sm);
     --timeline-marker-font-weight: var(--font-weight-heading);
     --timeline-step-gap: var(--spacing-sm);
-    --timeline-gap: var(--spacing-lg);
   }
 }
