@@ -1,0 +1,11 @@
+/* components/text.css */
+@layer components {
+  .text {
+    p:first-child {
+      margin-block-start: 0;
+    }
+    p:last-child {
+      margin-block-end: 0;
+    }
+  }
+}

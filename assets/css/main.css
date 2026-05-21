@@ -51,9 +51,10 @@
 @import 'components/pricing.css';
 @import 'components/quote.css';
 @import 'components/screenshot.css';
-@import 'components/surtitle.css';
-@import 'components/timeline.css';
 @import 'components/sidebarmenu.css';
+@import 'components/surtitle.css';
+@import 'components/text.css';
+@import 'components/timeline.css';
 @import 'components/toc.css';
 @import 'components/transcription.css';
 
