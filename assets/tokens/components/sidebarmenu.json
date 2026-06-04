@@ -3,12 +3,12 @@
     "sticky": {
       "top": {
         "$type": "string",
-        "$value": "calc(var(--header-height) + var(--spacing-md))"
+        "$value": "calc({header.height} + {spacing.md})"
       }
     },
     "maxHeight": {
       "$type": "string",
-      "$value": "calc(100vh - var(--sidebarmenu-sticky-top))"
+      "$value": "calc(100vh - {sidebarmenu.sticky.top})"
     },
     "label": {
       "fontSize": {
