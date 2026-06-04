@@ -33,7 +33,7 @@ Colors are defined in two layers: **primitive** (raw OKLCH values, `@uncinq/desi
 
 **Override the brand in your project:**
 ```css
-@layer config {
+@layer tokens {
   :root {
     --color-brand:        var(--color-violet-600);
     --color-brand-muted:  var(--color-violet-100);
@@ -145,7 +145,7 @@ Components use **scoped CSS custom properties** — each component exposes its o
 
 ```css
 /* Project-level button customisation */
-@layer config {
+@layer tokens {
   :root {
     --btn-border-radius: var(--radius-pill);  /* pill buttons */
     --btn-font-weight: var(--font-weight-bold);
@@ -233,7 +233,7 @@ Tokens: `--grid-columns`, `--grid-gap`, `--grid-max-width`.
 ### Do
 
 - ✓ Reference semantic tokens (`--color-brand`, `--spacing-md`) in all component and project CSS
-- ✓ Override tokens in `@layer config` to rebrand — never edit package files
+- ✓ Override tokens in `@layer tokens` to rebrand — never edit package files
 - ✓ Use `--color-text-on-*` tokens for text on colored backgrounds
 - ✓ Use `btn-warning` with `--color-text-on-warning` (dark text — amber is bright)
 - ✓ Use Hugo partials for all page structure — don't write raw HTML for standard blocks
@@ -291,7 +291,7 @@ Type:      --font-size-sm → --font-size-xl, --font-size-heading-01 → 06
 
 ### Overriding the brand
 
-> "Override the brand color to violet in the project's `@layer config` block. Use `--color-violet-600` for brand, `--color-violet-100` for muted, `--color-violet-700` for hover, `--color-violet-900` for strong."
+> "Override the brand color to violet in the project's `@layer tokens` block. Use `--color-violet-600` for brand, `--color-violet-100` for muted, `--color-violet-700` for hover, `--color-violet-900` for strong."
 
 ### Adding a custom component token
 
