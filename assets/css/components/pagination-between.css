@@ -71,6 +71,11 @@
       text-align: end;
     }
 
+    .disabled {
+      opacity: var(--opacity-disabled);
+      pointer-events: none;
+    }
+
     @media (--tablet) {
       flex-direction: row;
       justify-content: space-between;

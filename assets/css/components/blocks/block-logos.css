@@ -24,7 +24,7 @@
 
     @media not (--tablet-wide) {
       .logos {
-        --items-min-width: 18ch;
+        --items-min-width: var(--block-logos-items-min-width-md);
       }
       .container:has(.carousel) {
         padding-inline: 0;
@@ -32,7 +32,7 @@
     }
     @media not (--tablet) {
       .logos {
-        --items-min-width: 10ch;
+        --items-min-width: var(--block-logos-items-min-width-sm);
       }
     }
 
@@ -50,8 +50,8 @@
 
     img {
       height: 100%;
-      max-height: var(--block-logos-item-img-max-height);
-      max-width: var(--block-logos-item-img-max-width);
+      max-height: var(--block-logos-item-image-max-height);
+      max-width: var(--block-logos-item-image-max-width);
       object-fit: contain;
       width: 100%;
     }

@@ -3,9 +3,9 @@
     "item": {
       "ratio": {
         "$type": "string",
-        "$value": "1"
+        "$value": "{ratio.square}"
       },
-      "img": {
+      "image": {
         "maxHeight": {
           "$type": "dimension",
           "$value": "60%"
@@ -13,6 +13,18 @@
         "maxWidth": {
           "$type": "dimension",
           "$value": "70%"
+        }
+      }
+    },
+    "items": {
+      "minWidth": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "10ch"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "18ch"
         }
       }
     }
