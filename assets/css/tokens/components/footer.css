@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* footer.css */
-@layer config {
+@layer tokens {
   :root {
     --footer-color-background: var(--color-background-muted);
     --footer-color-border: var(--color-border);

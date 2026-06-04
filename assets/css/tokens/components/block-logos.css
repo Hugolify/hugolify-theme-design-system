@@ -1,10 +1,12 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* block-logos.css */
-@layer config {
+@layer tokens {
   :root {
-    --block-logos-item-ratio: 1;
-    --block-logos-item-img-max-height: 60%;
-    --block-logos-item-img-max-width: 70%;
+    --block-logos-item-ratio: var(--ratio-square);
+    --block-logos-item-image-max-height: 60%;
+    --block-logos-item-image-max-width: 70%;
+    --block-logos-items-min-width-sm: 10ch;
+    --block-logos-items-min-width-md: 18ch;
   }
 }

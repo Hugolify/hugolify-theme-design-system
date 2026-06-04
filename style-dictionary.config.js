@@ -50,11 +50,11 @@ StyleDictionary.registerTransformGroup({
 });
 
 // -------------------------------------------------------
-// Format — @layer config
+// Format — @layer tokens
 // -------------------------------------------------------
 
 StyleDictionary.registerFormat({
-  name: 'css/layer-config',
+  name: 'css/layer-tokens',
   format({ dictionary, file }) {
     const allVars = dictionary.allTokens.map(t => {
       const name = pathToKebab(t.path);
@@ -68,7 +68,7 @@ StyleDictionary.registerFormat({
 
     const header = '/* Do not edit directly, this file was auto-generated. */';
 
-    return `${header}\n\n/* ${file.destination} */\n@layer config {\n  :root {\n${allVars}\n  }\n}\n`;
+    return `${header}\n\n/* ${file.destination} */\n@layer tokens {\n  :root {\n${allVars}\n  }\n}\n`;
   },
 });
 
@@ -99,7 +99,7 @@ export default {
       buildPath: 'assets/css/tokens/components/',
       files: tokenFiles.map(file => ({
         destination: path.relative('./assets/tokens/components', file).replace(/\.json$/, '.css'),
-        format: 'css/layer-config',
+        format: 'css/layer-tokens',
         filter: t => t.filePath === file,
       })),
     },

@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* pricing.css */
-@layer config {
+@layer tokens {
   :root {
     --pricing-color-text: var(--color-text);
     --pricing-font-size: var(--font-size-xl);

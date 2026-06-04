@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* metas.css */
-@layer config {
+@layer tokens {
   :root {
     --metas-font-size: var(--font-size-small);
     --metas-gap: var(--spacing-2xs);

@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* items.css */
-@layer config {
+@layer tokens {
   :root {
     --items-nav-margin-block-start: var(--spacing-fluid-md);
   }

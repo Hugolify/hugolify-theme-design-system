@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* main-menu.css */
-@layer config {
+@layer tokens {
   :root {
     --main-menu-border-width: var(--border-width-sm);
     --main-menu-color-background: var(--color-background);

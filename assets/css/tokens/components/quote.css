@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* quote.css */
-@layer config {
+@layer tokens {
   :root {
     --quote-border-radius: 0;
     --quote-border-style: none;

@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* timeline.css */
-@layer config {
+@layer tokens {
   :root {
     --timeline-connector-color: var(--color-border);
     --timeline-connector-width: var(--border-width-md);

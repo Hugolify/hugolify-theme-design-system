@@ -1,14 +1,14 @@
 /* css/main.css */
-@layer config, base, layouts, vendors, components, utilities;
-
-/* Un Cinq base */
-@import '@uncinq/css-base';
-@import '@uncinq/css-components';
+@layer reset, tokens, base, layouts, vendors, components, utilities;
 
 /* Tokens */
 @import 'tokens/design-system.css';
 @import 'tokens/theme.css';
 @import 'tokens/site.css';
+
+/* Un Cinq base */
+@import '@uncinq/css-base';
+@import '@uncinq/css-components';
 
 /* Config */
 @import 'mediaqueries.css';
@@ -87,16 +87,16 @@
 @import 'utilities.css';
 
 /* Modules / Sections */
-/* @import "modules/casestudies.css";
+@import "modules/casestudies.css";
 @import "modules/docs.css";
 @import "modules/events.css";
 @import "modules/expertises.css";
 @import "modules/jobs.css";
 @import "modules/persons.css";
-@import "modules/places.css"; */
+@import "modules/places.css";
 @import "modules/posts.css";
-/* @import "modules/products.css";
+@import "modules/products.css";
 @import "modules/projects.css";
 @import "modules/publications.css";
 @import "modules/realestates.css";
-@import "modules/services.css"; */
+@import "modules/services.css";

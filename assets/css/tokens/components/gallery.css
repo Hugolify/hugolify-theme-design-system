@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* gallery.css */
-@layer config {
+@layer tokens {
   :root {
     --gallery-gap: var(--gap);
     --gallery-item-color-background: var(--color-background-media);

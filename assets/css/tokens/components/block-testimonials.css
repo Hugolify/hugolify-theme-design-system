@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* block-testimonials.css */
-@layer config {
+@layer tokens {
   :root {
     --block-testimonials-columns: 3;
     --block-testimonials-gap: var(--gap);

@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* header.css */
-@layer config {
+@layer tokens {
   :root {
     --header-color-background: var(--color-background);
     --header-color-border: var(--color-border);

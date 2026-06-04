@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* block-latest.css */
-@layer config {
+@layer tokens {
   :root {
     --block-latest-gap: var(--gap);
     --block-latest-list-items-margin-block-start: var(--spacing-lg);

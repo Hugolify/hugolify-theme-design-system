@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* comparison.css */
-@layer config {
+@layer tokens {
   :root {
     --comparison-badge-color-background: var(--color-primary-muted);
     --comparison-badge-color-text: var(--color-primary-strong);

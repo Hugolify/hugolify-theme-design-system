@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* pagination-between.css */
-@layer config {
+@layer tokens {
   :root {
     --pagination-between-font-size: var(--font-size-lg);
     --pagination-between-font-weight: var(--font-weight-bold);

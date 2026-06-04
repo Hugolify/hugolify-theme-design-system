@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* images.css */
-@layer config {
+@layer tokens {
   :root {
     --images-gap: var(--gap);
   }

@@ -1,7 +1,7 @@
 /* Do not edit directly, this file was auto-generated. */
 
 /* press.css */
-@layer config {
+@layer tokens {
   :root {
     --press-padding: var(--spacing-surface);
     --press-name-font-size: var(--font-size-md);
