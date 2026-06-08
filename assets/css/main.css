@@ -1,14 +1,14 @@
 /* css/main.css */
 @layer reset, tokens, base, layouts, vendors, components, utilities;
 
+/* Un Cinq base */
+@import '@uncinq/css-base';
+@import '@uncinq/css-components';
+
 /* Tokens */
 @import 'tokens/design-system.css';
 @import 'tokens/theme.css';
 @import 'tokens/site.css';
-
-/* Un Cinq base */
-@import '@uncinq/css-base';
-@import '@uncinq/css-components';
 
 /* Config */
 @import 'mediaqueries.css';
@@ -23,11 +23,10 @@
 @import 'layouts/header.css';
 @import 'layouts/main.css';
 
-/* Components — generic */
-@import '@uncinq/css-components';
-
 /* Components — Hugolify-specific */
+@import 'components/avatar.css';
 @import 'components/audio.css';
+@import 'components/back.css';
 @import 'components/block.css';
 @import 'components/block-bg.css';
 @import 'components/credit.css';

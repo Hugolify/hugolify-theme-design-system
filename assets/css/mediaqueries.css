@@ -1,8 +1,6 @@
 /* https://www.npmjs.com/package/postcss-custom-media */
 /* Generic breakpoints (--tablet, --tablet-wide, --laptop, --desktop) come from @uncinq/css-base */
 
-/* ── OTHER ──────────────────────────────────────────────── */
-
 /* Header expand */
 @custom-media --header-expand (width >= 64rem);
 

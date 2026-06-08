@@ -1,0 +1,22 @@
+{
+  "back": {
+    "fontSize": {
+      "$value": "{fontSize.small}",
+      "$type": "dimension"
+    },
+    "gap": {
+      "$value": "{spacing.2xs}",
+      "$type": "dimension"
+    },
+    "icon": {
+      "default": {
+        "$value": "{icon.arrow}",
+        "$type": "string"
+      },
+      "size": {
+        "$value": "{icon.size}",
+        "$type": "dimension"
+      }
+    }
+  }
+}

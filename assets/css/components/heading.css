@@ -40,7 +40,8 @@
     flex-direction: row;
 
     .surtitle {
-      flex-basis: 100%;
+      flex: 0 0 100%;
+      max-width: none;
     }
     .btn-filter {
       margin-inline-start: auto;

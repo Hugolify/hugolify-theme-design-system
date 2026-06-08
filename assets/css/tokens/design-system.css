@@ -8,6 +8,7 @@
 
 /* 3. Component tokens — Hugolify-specific */
 @import 'components/audio.css';
+@import 'components/back.css';
 @import 'components/block.css';
 @import 'components/comparison.css';
 @import 'components/footer.css';

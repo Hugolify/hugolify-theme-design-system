@@ -1,0 +1,17 @@
+.back {
+  align-items: center;
+  display: inline-flex;
+  font-size: var(--back-font-size);
+  gap: var(--back-gap);
+
+  &::before {
+    background-color: currentColor;
+    content: '';
+    display: inline-block;
+    flex-shrink: 0;
+    height: var(--back-icon-size);
+    mask: var(--back-icon) center / var(--back-icon-size) no-repeat;
+    rotate: 180deg;
+    width: var(--back-icon-size);
+  }
+}

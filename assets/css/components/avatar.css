@@ -1,0 +1,4 @@
+.avatar {
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}

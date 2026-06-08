@@ -1,0 +1,11 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* back.css */
+@layer tokens {
+  :root {
+    --back-font-size: var(--font-size-small);
+    --back-gap: var(--spacing-2xs);
+    --back-icon: var(--icon-arrow);
+    --back-icon-size: var(--icon-size);
+  }
+}
