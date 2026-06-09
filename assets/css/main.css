@@ -29,6 +29,7 @@
 @import 'components/back.css';
 @import 'components/block.css';
 @import 'components/block-bg.css';
+@import 'components/contact-list.css';
 @import 'components/credit.css';
 @import 'components/cta.css';
 @import 'components/filters.css';
@@ -40,16 +41,19 @@
 @import 'components/item.css';
 @import 'components/items.css';
 @import 'components/latest.css';
+@import 'components/list.css';
 @import 'components/list-tags.css';
 @import 'components/logo.css';
 @import 'components/main-menu.css';
 @import 'components/metas.css';
+@import 'components/nav-social.css';
 @import 'components/notes.css';
 @import 'components/pagination-between.css';
 @import 'components/press.css';
 @import 'components/pricing.css';
 @import 'components/quote.css';
 @import 'components/screenshot.css';
+@import 'components/sidebar.css';
 @import 'components/sidebarmenu.css';
 @import 'components/surtitle.css';
 @import 'components/text.css';
@@ -79,9 +83,6 @@
 @import 'components/blocks/block-title.css';
 @import 'components/blocks/block-video.css';
 
-/* sections */
-@import 'sections/pages.css';
-
 /* Utilities */
 @import 'utilities.css';
 
@@ -91,6 +92,7 @@
 @import "modules/events.css";
 @import "modules/expertises.css";
 @import "modules/jobs.css";
+@import 'modules/pages.css';
 @import "modules/persons.css";
 @import "modules/places.css";
 @import "modules/posts.css";

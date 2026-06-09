@@ -1,0 +1,8 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* sidebar.css */
+@layer tokens {
+  :root {
+    --sidebar-gap: var(--spacing-md);
+  }
+}

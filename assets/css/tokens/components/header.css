@@ -14,7 +14,7 @@
     --header-padding-block: var(--spacing-sm);
     --header-z-index: var(--z-index-sticky);
     --header-logo-max-width: 85%;
-    --header-transition-duration: var(--duration-slow);
+    --header-transition-duration: var(--duration-normal);
     --header-transition-easing: var(--easing-out);
   }
 }

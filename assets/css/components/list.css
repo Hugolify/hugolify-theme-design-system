@@ -1,0 +1,22 @@
+
+/* components/list.css */
+@layer components {
+  aside.list {
+    --list-item-gap: var(--spacing-xs);
+
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+    li {
+      display: flex;
+      gap: var(--spacing-xs);
+
+      span {
+        color: var(--color-text-muted);
+        font-size: var(--font-size-fluid-xs);
+      }
+    }
+  }
+}

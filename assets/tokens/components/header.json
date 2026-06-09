@@ -53,7 +53,7 @@
     "transition": {
       "duration": {
         "$type": "string",
-        "$value": "{duration.slow}"
+        "$value": "{duration.normal}"
       },
       "easing": {
         "$type": "string",

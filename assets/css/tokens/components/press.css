@@ -3,8 +3,16 @@
 /* press.css */
 @layer tokens {
   :root {
-    --press-padding: var(--spacing-surface);
-    --press-name-font-size: var(--font-size-md);
-    --press-name-font-weight: var(--font-weight-heading);
+    --press-badge-border-radius: var(--radius-xs);
+    --press-badge-border-style: var(--border-style-normal);
+    --press-badge-border-width: var(--border-width-none);
+    --press-badge-color-background: var(--color-background-muted);
+    --press-card-border-radius: var(--radius-surface);
+    --press-card-border-style: var(--border-style-normal);
+    --press-card-border-width: var(--border-width-none);
+    --press-card-color-background: var(--color-background-muted);
+    --press-card-color-border: var(--color-border);
+    --press-card-title-font-size: var(--font-size-md);
+    --press-card-title-font-weight: var(--font-weight-heading);
   }
 }

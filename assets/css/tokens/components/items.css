@@ -3,6 +3,7 @@
 /* items.css */
 @layer tokens {
   :root {
+    --items-carousel-max-width: 75vw;
     --items-nav-margin-block-start: var(--spacing-fluid-md);
   }
 }

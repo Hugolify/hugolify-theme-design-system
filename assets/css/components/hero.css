@@ -25,10 +25,10 @@
  */
 @layer components {
   .hero {
-    --color-heading: var(--hero-color-title);
+    --color-heading: var(--hero-title-color);
     --color-link: var(--hero-color-link);
     --color-text: var(--hero-color-text);
-    --font-size-heading: var(--hero-font-size-title);
+    --font-size-heading: var(--hero-title-font-size);
 
     background-color: var(--hero-color-background);
     position: relative;
@@ -45,6 +45,9 @@
         align-items: center;
         min-height: var(--hero-min-height-tablet);
       }
+      @media (--desktop) {
+        min-height: var(--hero-min-height-desktop);
+      }
     }
   }
 
@@ -54,8 +57,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--hero-gap);
-    padding: var(--hero-padding);
-
+    padding-block: var(--hero-padding-block);
+    padding-inline: var(--hero-padding-inline);
+    max-width: 100%;
+  
     .surtitle {
       margin-block-end: calc(-1 * var(--hero-gap));
     }
@@ -92,9 +97,10 @@
     }
 
     @media (--tablet) {
-      flex: 1;
+      width: calc(50% - (var(--gap) * 0.5));
+
       &:first-child:last-child {
-        flex-basis: 100%;
+        width: 100%;
       }
     }
   }

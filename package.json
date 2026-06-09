@@ -21,7 +21,7 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "build": "style-dictionary build --config style-dictionary.config.js"
+    "build": "node style-dictionary.config.js"
   },
   "devDependencies": {
     "@hugolify/prettier-config": "^0.3.1",

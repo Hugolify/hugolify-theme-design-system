@@ -1,0 +1,5 @@
+.nav-social {
+  --nav-font-size: var(--font-size-small);
+  --nav-padding-block: var(--spacing-2xs);
+  --nav-padding-inline: var(--spacing-2xs);
+}

@@ -1,0 +1,8 @@
+{
+  "sidebar": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.md}"
+    }
+  }
+}

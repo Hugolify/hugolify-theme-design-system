@@ -1,17 +1,61 @@
 {
   "press": {
-    "padding": {
-      "$type": "dimension",
-      "$value": "{spacing.surface}"
-    },
-    "name": {
-      "fontSize": {
-        "$type": "dimension",
-        "$value": "{fontSize.md}"
+    "badge": {
+      "border": {
+        "radius": {
+          "$value": "{radius.xs}", 
+          "$type": "dimension" 
+        },
+        "style":   { 
+          "$value": "{border.style.normal}", 
+          "$type": "strokeStyle" 
+        },
+        "width":   { 
+          "$value": "{border.width.none}", 
+          "$type": "dimension" 
+        }
       },
-      "fontWeight": {
-        "$type": "fontWeight",
-        "$value": "{fontWeight.heading}"
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.background.muted}"
+        }
+      }
+    },
+    "card": {
+      "border": {
+        "radius": {
+          "$value": "{radius.surface}", 
+          "$type": "dimension" 
+        },
+        "style":   { 
+          "$value": "{border.style.normal}", 
+          "$type": "strokeStyle" 
+        },
+        "width":   { 
+          "$value": "{border.width.none}", 
+          "$type": "dimension" 
+        }
+      },
+      "color": {
+        "background": {
+          "$type": "color",
+          "$value": "{color.background.muted}"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "{color.border.default}"
+        }
+      },
+      "title": {
+        "fontSize": {
+          "$type": "dimension",
+          "$value": "{fontSize.md}"
+        },
+        "fontWeight": {
+          "$type": "fontWeight",
+          "$value": "{fontWeight.heading}"
+        }
       }
     }
   }

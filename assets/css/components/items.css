@@ -10,7 +10,7 @@
   @media not (--tablet-wide) {
     [class^="items-"],
     [class*=" items-"] {
-      grid-auto-columns: min(var(--items-min-width), 75vw);
+      grid-auto-columns: min(var(--items-min-width, 30ch), var(--items-carousel-max-width, 75vw));
       grid-auto-flow: column;
       grid-template-columns: unset;
       margin-inline: calc(-1 * var(--gutter));

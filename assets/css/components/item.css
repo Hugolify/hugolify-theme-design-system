@@ -20,6 +20,7 @@
     position: relative;
 
     .content {
+      align-items: start;
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -60,11 +61,11 @@
       color: var(--item-color-text-muted);
     }
 
-    .name {
-      color: var(--item-color-title);
-      font-size: var(--item-font-size-title);
-      font-weight: var(--item-font-weight-title);
-      line-height: var(--item-line-height-title);
+    .title {
+      color: var(--item-title-color);
+      font-size: var(--item-title-font-size);
+      font-weight: var(--item-title-font-weight);
+      line-height: var(--item-title-line-height);
     }
 
     .btn {
@@ -75,6 +76,8 @@
     .media {
       --media-ratio: var(--item-media-ratio);
       --media-color-background: var(--item-media-color-background);
+      border-radius: var(--item-media-border-radius);
+      max-width: var(--item-media-max-width);
       order: var(--item-media-order);
     }
 

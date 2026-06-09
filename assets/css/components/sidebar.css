@@ -1,0 +1,16 @@
+/* components/sidebar.css */
+/*
+ * .sidebar — aside section.
+ * 
+ */
+@layer components {
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sidebar-gap);
+
+    > * {
+      margin-block: 0;
+    }
+  }
+}

@@ -1,5 +1,11 @@
 {
   "items": {
+    "carousel": {
+      "maxWidth": {
+        "$value": "75vw",
+        "$type": "dimension"
+      }
+    },
     "nav": {
       "margin": {
         "blockStart": {

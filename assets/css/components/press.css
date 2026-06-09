@@ -1,23 +1,26 @@
 /* components/press.css */
 /*
- * .press — press mention card (publication logo + name + link).
+ * .press — press mention card or badge
  *
- * Structure:
- *   div.press
- *     div.content
- *       picture            (optional — publication logo)
- *       h3.name
- *       [p | ul]           (optional — metas: date, category…)
- *       a.btn              (optional — link to article)
  */
 @layer components {
   .press {
-    padding: var(--press-padding);
+    /* Badge */
+    --badge-border-radius: var(--press-badge-border-radius);
+    --badge-border-style: var(--press-badge-border-style);
+    --badge-border-width: var(--press-badge-border-width);
+    --badge-color-background: var(--press-badge-color-background);
 
-    .name {
-      font-size:   var(--press-name-font-size);
-      font-weight: var(--press-name-font-weight);
-      margin-block: 0;
+    /* Card */
+    --card-border-radius: var(--press-card-border-radius);
+    --card-border-style: var(--press-card-border-style);
+    --card-border-width: var(--press-card-border-width);
+    --card-color-background: var(--press-card-color-background);
+    --card-color-border: var(--press-card-color-border);
+    --card-title-font-size: var(--press-card-title-font-size);
+    --card-title-font-weight: var(--press-card-title-font-weight);
+    .metas {
+      font-size: var(--press-metas-font-size);
     }
   }
 }

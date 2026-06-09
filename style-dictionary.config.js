@@ -7,12 +7,14 @@ import path from 'node:path';
 // -------------------------------------------------------
 
 function getTokenFiles(dir) {
-  return fs.readdirSync(dir, { withFileTypes: true }).flatMap(entry => {
-    const fullPath = path.join(dir, entry.name);
-    if (entry.isDirectory()) return getTokenFiles(fullPath);
-    if (entry.name.endsWith('.json')) return [fullPath];
-    return [];
-  });
+  return fs.readdirSync(dir, { withFileTypes: true })
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .flatMap(entry => {
+      const fullPath = path.join(dir, entry.name);
+      if (entry.isDirectory()) return getTokenFiles(fullPath);
+      if (entry.name.endsWith('.json')) return [fullPath];
+      return [];
+    });
 }
 
 function pathToKebab(parts) {
@@ -76,7 +78,9 @@ StyleDictionary.registerFormat({
 // Config
 // -------------------------------------------------------
 
+const componentDir = './assets/tokens/components';
 const tokenFiles = getTokenFiles('./assets/tokens');
+const rel = file => path.relative(componentDir, file).replace(/\.json$/, '');
 
 for (const pkg of ['@uncinq/design-tokens', '@uncinq/component-tokens']) {
   if (!fs.existsSync(`./node_modules/${pkg}`)) {
@@ -84,7 +88,7 @@ for (const pkg of ['@uncinq/design-tokens', '@uncinq/component-tokens']) {
   }
 }
 
-export default {
+await new StyleDictionary({
   usesDtcg: true,
   log: { warnings: 'disabled', errors: { brokenReferences: 'console' } },
   include: [
@@ -92,16 +96,28 @@ export default {
     ...getTokenFiles('./node_modules/@uncinq/component-tokens/tokens'),
   ],
   source: tokenFiles,
-
   platforms: {
     css: {
       transformGroup: 'custom/css',
       buildPath: 'assets/css/tokens/components/',
       files: tokenFiles.map(file => ({
-        destination: path.relative('./assets/tokens/components', file).replace(/\.json$/, '.css'),
+        destination: `${rel(file)}.css`,
         format: 'css/layer-tokens',
         filter: t => t.filePath === file,
       })),
     },
   },
-};
+}).buildAllPlatforms();
+
+// -------------------------------------------------------
+// Barrel — assets/css/tokens/components.css imports every generated component
+// token file. Token files are discovered from disk, so tokens/design-system.css
+// imports this barrel once instead of listing each file by hand. Each file
+// declares its own @layer tokens, so a plain @import is enough.
+// -------------------------------------------------------
+
+fs.writeFileSync(
+  './assets/css/tokens/components.css',
+  '/* components.css — barrel, do not edit */\n' +
+    tokenFiles.map(file => `@import "./components/${rel(file)}.css";`).join('\n') + '\n',
+);
