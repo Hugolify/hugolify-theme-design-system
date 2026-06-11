@@ -78,9 +78,9 @@ StyleDictionary.registerFormat({
 // Config
 // -------------------------------------------------------
 
-const componentDir = './assets/tokens/components';
-const tokenFiles = getTokenFiles('./assets/tokens');
-const rel = file => path.relative(componentDir, file).replace(/\.json$/, '');
+const tokensRoot = './assets/tokens';
+const tokenFiles = getTokenFiles(tokensRoot);
+const rel = file => path.relative(tokensRoot, file).replace(/\.json$/, '');
 
 for (const pkg of ['@uncinq/design-tokens', '@uncinq/component-tokens']) {
   if (!fs.existsSync(`./node_modules/${pkg}`)) {
@@ -99,7 +99,7 @@ await new StyleDictionary({
   platforms: {
     css: {
       transformGroup: 'custom/css',
-      buildPath: 'assets/css/tokens/components/',
+      buildPath: 'assets/css/tokens/',
       files: tokenFiles.map(file => ({
         destination: `${rel(file)}.css`,
         format: 'css/layer-tokens',
@@ -110,14 +110,31 @@ await new StyleDictionary({
 }).buildAllPlatforms();
 
 // -------------------------------------------------------
-// Barrel — assets/css/tokens/components.css imports every generated component
-// token file. Token files are discovered from disk, so tokens/design-system.css
-// imports this barrel once instead of listing each file by hand. Each file
-// declares its own @layer tokens, so a plain @import is enough.
+// Single barrel — assets/css/tokens/hugolify.css imports every generated token
+// file, grouped by folder (components, semantic, …). Files are discovered from
+// disk, so adding a JSON — or a whole new group — needs no manual edit;
+// tokens/design-system.css imports this one barrel. Each file declares its own
+// @layer tokens, so a plain @import is enough. A token file that produced no
+// CSS (e.g. a name collision) is skipped rather than imported, so the CSS build
+// never points at a missing file.
 // -------------------------------------------------------
 
+const groups = {};
+const missing = [];
+for (const file of tokenFiles) {
+  const r = rel(file);
+  if (fs.existsSync(`./assets/css/tokens/${r}.css`)) (groups[r.split('/')[0]] ??= []).push(r);
+  else missing.push(r);
+}
+
+if (missing.length) {
+  console.warn(`⚠ No CSS generated (excluded from hugolify.css): ${missing.join(', ')}`);
+}
+
 fs.writeFileSync(
-  './assets/css/tokens/components.css',
-  '/* components.css — barrel, do not edit */\n' +
-    tokenFiles.map(file => `@import "./components/${rel(file)}.css";`).join('\n') + '\n',
+  './assets/css/tokens/hugolify.css',
+  '/* hugolify.css — barrel, do not edit */\n\n' +
+    Object.keys(groups).sort().map(group =>
+      `/* ${group} */\n` + groups[group].map(r => `@import "./${r}.css";`).join('\n'),
+    ).join('\n\n') + '\n',
 );

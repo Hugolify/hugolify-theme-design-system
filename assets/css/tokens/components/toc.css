@@ -1,6 +1,6 @@
 /* Do not edit directly, this file was auto-generated. */
 
-/* toc.css */
+/* components/toc.css */
 @layer tokens {
   :root {
     --toc-sticky-top: calc(var(--header-height) + var(--spacing-md));

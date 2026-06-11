@@ -1,8 +1,8 @@
 /* Do not edit directly, this file was auto-generated. */
 
-/* components/block-instagram.css */
+/* semantic/grid.css */
 @layer tokens {
   :root {
-    --block-instagram-item-max-width: 300px;
+    --gap-row: var(--spacing-section);
   }
 }

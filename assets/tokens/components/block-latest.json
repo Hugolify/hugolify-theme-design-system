@@ -2,7 +2,7 @@
   "block-latest": {
     "gap": {
       "$type": "dimension",
-      "$value": "{gap}"
+      "$value": "{gap.default}"
     },
     "list": {
       "items": {

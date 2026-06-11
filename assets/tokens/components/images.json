@@ -2,7 +2,7 @@
   "images": {
     "gap": {
       "$type": "dimension",
-      "$value": "{gap}"
+      "$value": "{gap.default}"
     }
   }
 }
