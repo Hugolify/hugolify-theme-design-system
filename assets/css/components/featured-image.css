@@ -1,0 +1,17 @@
+.featured-image {
+  display: block;
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  @media not (--tablet) {
+    margin-inline: calc(var(--gutter) * -1);
+    max-width: unset;
+
+    figcaption {
+      padding-inline: var(--gutter);
+    }
+  }
+}

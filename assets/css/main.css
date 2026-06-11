@@ -32,6 +32,7 @@
 @import 'components/contact-list.css';
 @import 'components/credit.css';
 @import 'components/cta.css';
+@import 'components/featured-image.css';
 @import 'components/filters.css';
 @import 'components/gallery.css';
 @import 'components/heading.css';
@@ -52,6 +53,7 @@
 @import 'components/press.css';
 @import 'components/pricing.css';
 @import 'components/quote.css';
+@import 'components/related.css';
 @import 'components/screenshot.css';
 @import 'components/sidebar.css';
 @import 'components/sidebarmenu.css';
