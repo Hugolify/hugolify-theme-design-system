@@ -6,5 +6,5 @@
 /* 2. Component tokens — generic */
 @import '@uncinq/component-tokens';
 
-/* 3. Component tokens — Hugolify-specific (auto-generated barrel) */
-@import 'components.css';
+/* 3. Hugolify-specific tokens */
+@import 'hugolify.css';
