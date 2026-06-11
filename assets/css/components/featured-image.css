@@ -1,5 +1,5 @@
 .featured-image {
-  display: block;
+  margin-block: 0;
 
   img {
     height: auto;

@@ -2,20 +2,8 @@
 /* components/latest.css */
 @layer components {
   .latest {
-    background-color: var(--color-background-muted);
-    padding-block: var(--spacing-section);
-
-    div + & {
-      margin-block-start: var(--spacing-fluid-lg);
-    }
-    & + & {
-      padding-block-start: 0;
-    }
-
-    &:last-child {
-      margin-block-end: calc(var(--spacing-section) * -1);
-    }
-
+    margin-block: var(--spacing-section);
+    
     @media (--tablet) {
       .heading {
         align-items: baseline;
