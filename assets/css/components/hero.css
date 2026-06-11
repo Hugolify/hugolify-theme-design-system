@@ -72,8 +72,11 @@
     p {
       margin-block: 0;
     }
-    p + p {
-      margin-block-start: var(--spacing-typography);
+
+    .description {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-typography);
     }
 
     /* ── Buttons — first = primary, second = outline ─────────────── */

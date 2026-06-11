@@ -43,6 +43,7 @@
       font-weight: var(--toc-label-font-weight);
       line-height: var(--toc-label-line-height);
       margin-block-end: var(--toc-label-margin-block-end);
+      margin-block-start: 0;
 
       @media (--toc-expand) {
         display: block;
