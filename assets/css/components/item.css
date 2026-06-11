@@ -1,9 +1,9 @@
-/* components/card.css */
+/* components/item.css */
 /*
  * .item — structural base for all card-like components.
  * Use alongside a content-type class: <article class="item page">
  *
- * Content-type classes (.page, .post, .project…) override --card-* tokens only.
+ * Content-type classes (.page, .post, .project…) override --item-* tokens only.
  * No structure duplication needed in content-type modules.
  */
 @layer components {

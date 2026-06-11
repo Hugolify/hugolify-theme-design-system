@@ -1,0 +1,23 @@
+/* components/card.css */
+/*
+ * Structure:
+ * <aside class="card">
+ *   <div class="content">
+ *     <p class="title">...</p>
+ *     <p class="description">...</p>
+ *   </div>
+ *   <div class="media">
+ *     picture | video
+ *   </div>
+ * </aside>
+ */
+@layer components {
+  .card {
+    .media {
+      --media-ratio: var(--card-media-ratio);
+      margin-block-start: var(--card-padding-block);
+      margin-inline-start: var(--card-padding-inline);
+      max-width: var(--card-media-max-width);
+    }
+  }
+}
