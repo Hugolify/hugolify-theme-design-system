@@ -1,0 +1,18 @@
+{
+  "more": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.xs}"
+    },
+    "icon": {
+      "default": {
+        "$type": "string",
+        "$value": "{icon.arrow}"
+      },
+      "size": {
+        "$type": "dimension",
+        "$value": "{icon.size}"
+      }
+    }
+  }
+}

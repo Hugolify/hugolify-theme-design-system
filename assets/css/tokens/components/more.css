@@ -1,0 +1,10 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/more.css */
+@layer tokens {
+  :root {
+    --more-gap: var(--spacing-xs);
+    --more-icon: var(--icon-arrow);
+    --more-icon-size: var(--icon-size);
+  }
+}

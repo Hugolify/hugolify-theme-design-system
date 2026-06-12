@@ -1,0 +1,16 @@
+/* components/more.css */
+@layer components {
+  .more {
+    align-items: center;
+    display: flex;
+    gap: var(--more-gap);
+    &::before {
+      background-color: currentColor;
+      content: '';
+      flex-shrink: 0;
+      height: var(--more-icon-size);
+      mask: var(--more-icon) center / var(--more-icon-size) no-repeat;
+      width: var(--more-icon-size);
+    }
+  }
+}
