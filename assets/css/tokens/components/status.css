@@ -1,0 +1,17 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/status.css */
+@layer tokens {
+  :root {
+    --status-border-radius: var(--radius-pill);
+    --status-border-style: solid;
+    --status-border-width: 0;
+    --status-color-background: var(--color-background-muted);
+    --status-color-border: transparent;
+    --status-color-text: var(--color-text-on-muted);
+    --status-font-size: var(--font-size-2xs);
+    --status-font-weight: var(--font-weight-control);
+    --status-padding-inline: var(--spacing-xs);
+    --status-padding-block: var(--spacing-2xs);
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "status": {
+    "border": {
+      "radius": { 
+        "$value": "{radius.pill}", 
+        "$type": "dimension" 
+      },
+      "style":  { 
+        "$value": "solid", 
+        "$type": "strokeStyle" 
+      },
+      "width":  { 
+        "$value": "0", 
+        "$type": "dimension" 
+      }
+    },
+    "color": {
+      "background": { 
+        "$value": "{color.background.muted}", 
+        "$type": "color" 
+      },
+      "border": { 
+        "$value": "transparent", 
+        "$type": "color" 
+      },
+      "text": { 
+        "$value": "{color.text.onMuted}", 
+        "$type": "color" 
+      }
+    },
+    "fontSize": {
+      "$value": "{fontSize.2xs}",
+      "$type": "dimension"
+    },
+    "fontWeight": {
+      "$value": "{fontWeight.control}",
+      "$type": "fontWeight"
+    },
+    "padding": {
+      "inline": {
+        "$value": "{spacing.xs}",
+        "$type": "dimension"
+      },
+      "block": {
+        "$value": "{spacing.2xs}",
+        "$type": "dimension"
+      }
+    }
+  }
+}
