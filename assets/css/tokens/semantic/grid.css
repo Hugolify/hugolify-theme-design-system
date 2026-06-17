@@ -3,6 +3,6 @@
 /* semantic/grid.css */
 @layer tokens {
   :root {
-    --gap-row: var(--spacing-section);
+    --gap-row: var(--spacing-fluid-sm);
   }
 }

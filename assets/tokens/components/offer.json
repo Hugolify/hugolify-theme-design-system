@@ -1,0 +1,14 @@
+{
+  "offer": {
+    "color": {
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.default}"
+      }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{spacing.xs}"
+    }
+  }
+}

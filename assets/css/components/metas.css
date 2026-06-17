@@ -11,19 +11,18 @@
     > * {
       margin-block: 0;
     }
+
     .share {
       display: none;
     }
 
     @media (--tablet) {
       flex-direction: row;
-      > * {
-        &:not(:first-child):not(.share) {
-          &::before {
-            content: var(--metas-separator);
-            margin-inline-end: var(--metas-gap);
-          }
-        }
+      > *:not(:first-child):not(.share)::before {
+        content: var(--metas-separator, "-");
+        display: inline-block;
+        margin-inline-end: var(--metas-gap);
+        vertical-align: middle;
       }
       .share {
         display: initial;

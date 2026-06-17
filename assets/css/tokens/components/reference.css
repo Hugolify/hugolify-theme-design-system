@@ -1,0 +1,18 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/reference.css */
+@layer tokens {
+  :root {
+    --reference-border-radius: var(--radius-2xs);
+    --reference-border-style: solid;
+    --reference-border-width: 0;
+    --reference-color-background: var(--color-gray-200);
+    --reference-color-border: transparent;
+    --reference-color-text: var(--color-text);
+    --reference-font-size: var(--font-size-2xs);
+    --reference-font-weight: var(--font-weight-control);
+    --reference-padding-inline: var(--spacing-xs);
+    --reference-padding-block: var(--spacing-2xs);
+    --reference-text-transform: uppercase;
+  }
+}

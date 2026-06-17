@@ -9,6 +9,12 @@
       margin-block: 0 !important;
     }
 
+    > .content {
+      display: flex;
+      flex-direction: column;
+      row-gap: var(--gap-row);
+    }
+
     .toc {
       margin-block-end: var(--gap);
       order: -1;
@@ -36,7 +42,7 @@
       .toc {
         --grid-column: span 3 / -1;
       }
-      .sidebar {
+      .sidebar:has(& + .toc) {
         align-self: start;
       }
       .sidebar--menu {

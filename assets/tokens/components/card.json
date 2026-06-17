@@ -41,6 +41,10 @@
           "$type": "color"
         }
       }
+    },
+    "transition": {
+      "$value": "{transition.normal}",
+      "$type": "string"
     }
   }
 }

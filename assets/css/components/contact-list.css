@@ -1,28 +1,11 @@
 .contact-list {
-  --card-border-width: 0;
-  --card-color-background: var(--color-background-muted);
-  --card-padding-block: var(--spacing-md);
-  --card-padding-inline: var(--spacing-md);
-  min-width: 0;
-
-  ul {
-    list-style: none;
-    padding-left: 0;
-  }
+  font-size: var(--font-size-small);
+  list-style: none;
+  padding-left: 0;
 
   li {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-  }
-
-  .nav-social {
-    margin-left: calc(var(--nav-padding-inline) * -1);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      --card-shadow: unset;
-    }
   }
 }

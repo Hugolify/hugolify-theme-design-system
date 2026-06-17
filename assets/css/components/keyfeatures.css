@@ -1,0 +1,20 @@
+@layer components {
+  .keyfeatures {
+    --alert-color-border: var(--color-background-muted);
+    --alert-color-background: var(--color-background-muted);
+    ul {
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
+    li {
+      display: flex;
+      font-size: var(--font-size-small);
+      gap: var(--spacing-2xs);
+
+      span {
+        opacity: .8;
+      }
+    }
+  }
+}

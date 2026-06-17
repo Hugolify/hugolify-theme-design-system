@@ -1,0 +1,17 @@
+.contact-card {
+  --card-border-width: 0;
+  --card-color-background: var(--color-background-muted);
+  --card-padding-block: var(--spacing-md);
+  --card-padding-inline: var(--spacing-md);
+  min-width: 0;
+
+  .nav-social {
+    margin-left: calc(var(--nav-padding-inline) * -1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --card-shadow: unset;
+    }
+  }
+}

@@ -26,9 +26,15 @@
       "$type": "dimension",
       "$value": "84px"
     },
-    "shadow": {
-      "$type": "shadow",
-      "$value": "{shadow.sm}"
+    "offset": {
+      "default": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      },
+      "scrollUp": {
+        "$type": "dimension",
+        "$value": "calc({header.height} + {header.offset.default})"
+      }
     },
     "padding": {
       "inline": {
@@ -39,6 +45,10 @@
         "$type": "dimension",
         "$value": "{spacing.sm}"
       }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "$value": "{shadow.sm}"
     },
     "zIndex": {
       "$type": "number",

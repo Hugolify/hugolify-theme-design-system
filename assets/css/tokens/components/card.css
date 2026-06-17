@@ -11,5 +11,6 @@
     --card-color-text: var(--item-color-text);
     --card-color-text-muted: var(--item-color-text-muted);
     --card-media-color-background: transparent;
+    --card-transition: var(--transition-normal);
   }
 }

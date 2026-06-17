@@ -26,7 +26,8 @@
       flex: 1;
       gap: var(--item-gap);
       order: var(--item-order);
-      padding-block: var(--item-padding-block);
+      padding-block-end: var(--item-padding-block-end);
+      padding-block-start: var(--item-padding-block-start);
       padding-inline: var(--item-padding-inline);
       text-decoration: none;
 
@@ -39,6 +40,7 @@
       background-color: var(--item-metas-color-background);
       border-block-end: var(--item-metas-border-end);
       border-block-start: var(--item-metas-border-start);
+      color: var(--item-metas-color-text, var(--item-color-text));
       font-size: var(--item-metas-font-size, var(--metas-font-size));
       order: var(--item-metas-order);
       padding-block-end: var(--item-metas-padding-block-end);
@@ -57,12 +59,8 @@
       }
     }
 
-    .description {
-      color: var(--item-color-text-muted);
-    }
-
     .title {
-      color: var(--item-title-color);
+      color: var(--item-title-color, var(--item-color-text));
       font-size: var(--item-title-font-size);
       font-weight: var(--item-title-font-weight);
       line-height: var(--item-title-line-height);

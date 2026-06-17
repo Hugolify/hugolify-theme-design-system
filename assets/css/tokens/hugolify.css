@@ -21,10 +21,12 @@
 @import "./components/main-menu.css";
 @import "./components/metas.css";
 @import "./components/more.css";
+@import "./components/offer.css";
 @import "./components/pagination-between.css";
 @import "./components/press.css";
 @import "./components/pricing.css";
 @import "./components/quote.css";
+@import "./components/reference.css";
 @import "./components/screenshot.css";
 @import "./components/sidebar.css";
 @import "./components/sidebarmenu.css";

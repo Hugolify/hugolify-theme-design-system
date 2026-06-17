@@ -9,9 +9,11 @@
     --header-color-text: var(--color-text);
     --header-gap: var(--spacing-sm);
     --header-height: 84px;
-    --header-shadow: var(--shadow-sm);
+    --header-offset: var(--spacing-sm);
+    --header-offset-scroll-up: calc(var(--header-height) + var(--header-offset));
     --header-padding-inline: 0;
     --header-padding-block: var(--spacing-sm);
+    --header-shadow: var(--shadow-sm);
     --header-z-index: var(--z-index-sticky);
     --header-logo-max-width: 85%;
     --header-transition-duration: var(--duration-normal);

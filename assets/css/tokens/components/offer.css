@@ -1,0 +1,9 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/offer.css */
+@layer tokens {
+  :root {
+    --offer-color-text: var(--color-text);
+    --offer-gap: var(--spacing-xs);
+  }
+}

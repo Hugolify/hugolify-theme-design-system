@@ -1,0 +1,14 @@
+/* components/reference.css */
+@layer components {
+  .reference {
+    background-color: var(--reference-color-background);
+    border: var(--reference-border-width) var(--reference-border-style) var(--reference-color-border);
+    border-radius: var(--reference-border-radius);
+    color: var(--reference-color-text);
+    display: inline-flex;
+    font-size: var(--reference-font-size);
+    font-weight: var(--reference-font-weight);
+    padding: var(--reference-padding-block) var(--reference-padding-inline);
+    text-transform: var(--reference-text-transform);
+  }
+}

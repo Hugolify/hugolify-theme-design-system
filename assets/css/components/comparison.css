@@ -1,0 +1,97 @@
+/* components/blocks/block-comparison.css */
+/*
+ * .block-comparison — pricing / feature comparison block.
+ *
+ * Structure:
+ *   section.block-comparison[.block-bg]
+ *     .heading
+ *     .container
+ *       .items.items-{2-6}
+ *         div
+ *           .item[.item-highlighted]
+ *             header
+ *               .badge         (optional)
+ *               h2 | h3
+ *               p              (subtitle)
+ *               .pricing       (price display)
+ *                 + p          (billing period)
+ *             .content
+ *               ul > li        (feature list)
+ *             footer
+ *               .btn           (CTA)
+ *     .footing
+ *
+ * Column variants: .items-2 through .items-6
+ * (set via `column` in content config, default 3)
+ */
+@layer components {
+  .comparison {
+    --item-color-background: var(--comparison-item-color-background);
+
+    header {
+      padding: var(--comparison-item-padding);
+    }
+
+    h2,
+    h3 {
+      margin-block-start: 0;
+    }
+
+    footer {
+      margin-block-start: auto;
+      padding: var(--comparison-item-padding);
+    }
+
+    .badge {
+      --badge-color-background: var(--comparison-badge-color-background);
+      --badge-color-text: var(--comparison-badge-color-text);
+      position: absolute;
+      inset-block-start: var(--spacing-xs);
+      inset-inline-end: var(--spacing-xs);
+    }
+
+    /* ── Pricing ───────────────────────────────────────────────── */
+
+    .pricing {
+      font-size: var(--comparison-pricing-font-size);
+      font-weight: var(--comparison-pricing-font-weight);
+
+      & + p {
+        color: var(--comparison-pricing-sub-color-text);
+        font-size: var(--comparison-pricing-sub-font-size);
+        margin-block-start: 0;
+      }
+    }
+
+    /* ── Feature list ──────────────────────────────────────────── */
+
+    .content {
+      ul {
+        border-block-end: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
+        list-style: none;
+        margin-block: 0;
+        padding-inline-start: 0;
+      }
+
+      li {
+        border-block-start: var(--border-width-sm) var(--border-style-normal) var(--comparison-list-color-border);
+        margin-block: 0;
+        padding-block: var(--comparison-list-item-padding-block);
+      }
+    }
+
+    /* ── CTA ───────────────────────────────────────────────────── */
+
+    .btn {
+      width: 100%;
+    }
+
+    /* ── Highlighted ───────────────────────────────────────── */
+
+    &.item-highlighted {
+      --item-color-background: var(--comparison-item-color-background-highlighted);
+      --item-shadow: var(--comparison-item-box-shadow-highlighted);
+    }
+
+  }
+}
