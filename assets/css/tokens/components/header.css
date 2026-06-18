@@ -14,7 +14,7 @@
     --header-padding-inline: 0px;
     --header-padding-block: var(--spacing-sm);
     --header-shadow: var(--shadow-sm);
-    --header-z-index: calc(var(--z-index-modal) - 1);
+    --header-z-index: calc(var(--z-index-drawer) - 1);
     --header-logo-max-width: 85%;
     --header-transition-duration: var(--duration-normal);
     --header-transition-easing: var(--easing-out);

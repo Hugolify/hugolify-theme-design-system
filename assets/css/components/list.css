@@ -13,6 +13,10 @@
       display: flex;
       gap: var(--spacing-xs);
 
+      .avatar {
+        align-self: start;
+      }
+
       span {
         color: var(--color-text-muted);
         font-size: var(--font-size-fluid-xs);

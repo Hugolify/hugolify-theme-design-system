@@ -1,6 +1,9 @@
 /* base/main.css */
 @layer base {
-  main:not(:has([class*="block-"])) {
-    padding-block: var(--spacing-section);
+  main:not(:has([class*="block-"]:first-child)) {
+    padding-block-start: var(--spacing-section);
+  }
+  main:not(:has([class*="block-"]:last-child)) {
+    padding-block-end: var(--spacing-section);
   }
 }

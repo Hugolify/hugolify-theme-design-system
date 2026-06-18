@@ -52,7 +52,7 @@
     },
     "zIndex": {
       "$type": "number",
-      "$value": "calc({zIndex.modal} - 1)"
+      "$value": "calc({zIndex.drawer} - 1)"
     },
     "logo": {
       "maxWidth": {
