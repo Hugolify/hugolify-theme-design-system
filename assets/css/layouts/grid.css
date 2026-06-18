@@ -63,7 +63,7 @@
 
     @media (--laptop) {
       /* ── Sidebar ────────────────────────────────────────────── */
-      .sidebar,
+      .sidebar:not(.sidebar--menu),
       .toc {
         --grid-column: span 3 / -1;
       }
