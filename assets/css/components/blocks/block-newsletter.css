@@ -1,0 +1,20 @@
+/* components/blocks/block-newsletter.css */
+/*
+ * .block-newsletter — block section for subscribing to the newsletter.
+ *
+ * Structure:
+ *   section.block-newsletter[.block-bg]
+ *     .container
+ *       form
+ */
+@layer components {
+  .block-newsletter {
+    .newsletter {
+      margin-inline: auto;
+      max-width: var(--max-width-paragraph);
+      div {
+        display: flex;
+      }
+    }
+  }
+}
