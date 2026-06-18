@@ -13,3 +13,11 @@
  *
  */
 
+@layer components {
+  .block-informations {
+    .media:has(.icon) {
+      --icon-size: var(--block-informations-media-icon-size);
+    }
+  }
+}
+  

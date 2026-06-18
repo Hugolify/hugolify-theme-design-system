@@ -3,6 +3,7 @@
 /* components */
 @import "./components/audio.css";
 @import "./components/back.css";
+@import "./components/block-informations.css";
 @import "./components/block-instagram.css";
 @import "./components/block-latest.css";
 @import "./components/block-logos.css";

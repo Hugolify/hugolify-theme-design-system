@@ -1,0 +1,12 @@
+{
+  "block-informations": {
+    "media": {
+      "icon": {
+        "size": {
+          "$type": "dimension",
+          "$value": "{fontSize.fluid.xl}"
+        }
+      }
+    }
+  }
+}
