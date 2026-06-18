@@ -5,6 +5,7 @@
  */
 @layer components {
   .sidebar {
+    align-items: start;
     display: flex;
     flex-direction: column;
     gap: var(--sidebar-gap);

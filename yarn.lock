@@ -201,14 +201,14 @@
     "@jsonjoy.com/codegen" "^1.0.0"
 
 "@uncinq/component-tokens@^1.0.0":
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.1.5.tgz#da2a227d24e19d22491048e58eed23aa1846bebe"
-  integrity sha512-V/qsjIF6I8rvYdYGbf4gYC01xy68sOaTcBpIK+/ZYlJ79abLjWx9wVOvpQnjFaEJHzlMaYA8ng0qPViZbJ316w==
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/@uncinq/component-tokens/-/component-tokens-1.1.6.tgz#21a42d1f01dd1e372a729bea691f623e35bb45b5"
+  integrity sha512-DpoFYfNXWFADeFbC3akqO0mA8A8Zg2k1gPm3lkpEOb2JkuetL7RSYdX9I0h8A3mo0vjwrQHkQunsAcbh/7DDSQ==
 
 "@uncinq/design-tokens@^1.0.0":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.1.4.tgz#1a2191111e58651e5cdd41383b77869b56fd4006"
-  integrity sha512-4gRLBf8P152LwfCXy7lfzZPburNPJIVk7aI0xLu4waL7zf0e4YXzSWQ+mriMVw9GzMSkB6tk7jk4Ry2y6KoxfA==
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/@uncinq/design-tokens/-/design-tokens-1.1.5.tgz#4cc1a43934e49ed9e622d867428e9e657085e8d4"
+  integrity sha512-gl65QOBMWCog8zVYQJ8NJhRB46XrYuXnpo30QMddXeEnvqDedZK+c6jvQxBjAdBJgW4rIxdupT8gkt4IiemPfQ==
 
 "@zip.js/zip.js@^2.7.44":
   version "2.8.26"

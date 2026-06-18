@@ -39,7 +39,7 @@
     "padding": {
       "inline": {
         "$type": "dimension",
-        "$value": "0"
+        "$value": "0px"
       },
       "block": {
         "$type": "dimension",
@@ -52,7 +52,7 @@
     },
     "zIndex": {
       "$type": "number",
-      "$value": "{zIndex.sticky}"
+      "$value": "calc({zIndex.modal} - 1)"
     },
     "logo": {
       "maxWidth": {

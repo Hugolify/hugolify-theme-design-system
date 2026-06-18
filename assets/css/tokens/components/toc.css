@@ -3,7 +3,7 @@
 /* components/toc.css */
 @layer tokens {
   :root {
-    --toc-sticky-top: calc(var(--header-height) + var(--spacing-md));
+    --toc-sticky-top: var(--header-offset-scroll-up);
     --toc-label-font-size: var(--font-size-heading-05);
     --toc-label-font-weight: var(--font-weight-heading);
     --toc-label-font-family: var(--font-family-heading);

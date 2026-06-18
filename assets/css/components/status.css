@@ -5,7 +5,7 @@
     border: var(--status-border-width) var(--status-border-style) var(--status-color-border);
     border-radius: var(--status-border-radius);
     color: var(--status-color-text);
-    display: inline-flex;
+    display: inline-block;
     font-size: var(--status-font-size);
     font-weight: var(--status-font-weight);
     padding: var(--status-padding-block) var(--status-padding-inline);

@@ -1,8 +1,0 @@
-{
-  "gap": {
-    "row": {
-      "$value": "{spacing.section}",
-      "$type": "dimension"
-    }
-  }
-}

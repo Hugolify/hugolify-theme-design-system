@@ -2,8 +2,8 @@
   "toc": {
     "sticky": {
       "top": {
-        "$type": "string",
-        "$value": "calc({header.height} + {spacing.md})"
+        "$type": "dimension",
+        "$value": "{header.offset.scrollUp}"
       }
     },
     "label": {

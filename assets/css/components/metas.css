@@ -3,7 +3,7 @@
   .metas {
     align-items: baseline;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
     font-size: var(--metas-font-size);
     gap: var(--metas-gap);
@@ -12,18 +12,18 @@
       margin-block: 0;
     }
 
+    > *:not(:first-child):not(.share):not(.status)::before {
+      content: var(--metas-separator, "-");
+      display: inline-block;
+      margin-inline-end: var(--metas-gap);
+      vertical-align: middle;
+    }
+
     .share {
       display: none;
     }
 
     @media (--tablet) {
-      flex-direction: row;
-      > *:not(:first-child):not(.share)::before {
-        content: var(--metas-separator, "-");
-        display: inline-block;
-        margin-inline-end: var(--metas-gap);
-        vertical-align: middle;
-      }
       .share {
         display: initial;
         margin-block-start: 0;

@@ -34,7 +34,7 @@ imports:
 ## Documentation
 
 - [DTCG](./docs/DTCG.md)
-- [Hugolify](./https://www.hugolify.io/docs/)
+- [Hugolify](https://www.hugolify.io/docs/)
 
 ## Licensing
 

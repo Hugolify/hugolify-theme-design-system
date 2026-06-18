@@ -40,7 +40,7 @@
       /* ── Sidebar ────────────────────────────────────────────── */
       .sidebar,
       .toc {
-        --grid-column: span 3 / -1;
+        --grid-column: span 4;
       }
       .sidebar:has(& + .toc) {
         align-self: start;
@@ -60,6 +60,15 @@
         }
       }
     }
+
+    @media (--laptop) {
+      /* ── Sidebar ────────────────────────────────────────────── */
+      .sidebar,
+      .toc {
+        --grid-column: span 3 / -1;
+      }
+    }
+
 
   }
 }

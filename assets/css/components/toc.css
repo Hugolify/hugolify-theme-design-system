@@ -29,7 +29,7 @@
         }
 
         html.is-scrolling-down & {
-          top: var(--spacing-md);
+          top: var(--header-offset);
         }
       }
     }

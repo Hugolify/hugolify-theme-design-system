@@ -2,6 +2,7 @@
   .keyfeatures {
     --alert-color-border: var(--color-background-muted);
     --alert-color-background: var(--color-background-muted);
+    --alert-color-text: var(--color-text-on-muted);
     ul {
       list-style: none;
       margin-block: 0;
