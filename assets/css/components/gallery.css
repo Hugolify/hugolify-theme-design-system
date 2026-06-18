@@ -11,6 +11,16 @@
   .gallery {
     gap: var(--gallery-gap);
 
+    @media not (--tablet) {
+      grid-template-columns: 1fr 1fr !important;
+      grid-auto-columns: unset !important;
+      grid-auto-flow: unset !important;
+      margin-inline: 0 !important;
+      overflow: unset;
+      padding-inline: 0 !important;
+      scroll-snap-type: none;
+    }
+
     figure {
       margin-block: 0;
     }
