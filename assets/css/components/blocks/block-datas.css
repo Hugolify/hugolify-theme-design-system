@@ -1,0 +1,25 @@
+/* components/blocks/block-datas.css */
+/*
+ * .block-datas — full-width block section wrapping a list of data.
+ *
+ * Structure:
+ *   section.block-datas[.block-bg]
+ *     .heading
+ *     .container
+ *       .items
+ *     .footing
+ */
+@layer components {
+  .block-datas {
+    text-align: center;
+    .gauge {
+      margin-inline: auto;
+    }
+    .value  {
+      font-size: var(--font-size-fluid-xl);
+    }
+    .title {
+      margin-block: 0;
+    }
+  }
+}

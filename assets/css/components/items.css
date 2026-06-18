@@ -1,6 +1,8 @@
 /* components/items.css */
 @layer components {
   .items {
+    list-style: none;
+    padding-inline-start: 0;
     & + nav {
       margin-block-start: var(--items-nav-margin-block-start);
     }
