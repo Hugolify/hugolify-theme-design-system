@@ -1,0 +1,84 @@
+@layer components {
+  .gauge {
+    aspect-ratio: var(--gauge-ratio, 1);
+    justify-content: space-around;
+    max-width: 100%;
+    position: relative;
+    width: var(--gauge-size, 200px);
+
+    svg {
+      display: block;
+
+      &.fail {
+        .circle {
+          stroke: var(--color-danger);
+        }
+        & + figcaption {
+          color: var(--color-danger);
+        }
+      }
+
+      &.average {
+        .circle {
+          stroke: var(--color-warning);
+        }
+        & + figcaption {
+          color: var(--color-warning);
+        }
+      }
+
+      &.pass {
+        .circle {
+          stroke: var(--color-success);
+        }
+        & + figcaption {
+          color: var(--color-success);
+        }
+      }
+    }
+
+    .circle-bg {
+      fill: none;
+      stroke: var(--gauge-color, var(--color-background-muted));
+      stroke-width: var(--gauge-stroke-size, 2.4);
+    }
+
+    .circle {
+      fill: none;
+      stroke: var(--gauge-stroke-color);
+      stroke-width: var(--gauge-stroke-size, 2.4);
+      stroke-linecap: round;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      &.show {
+        .circle {
+          animation-name: progress;
+          animation-duration: var(--duration-slow);
+          animation-timing-function: var(--easing);
+          animation-fill-mode: forwards;
+        }
+      }
+    }
+
+    figcaption {
+      align-items: center;
+      bottom: 0;
+      display: flex;
+      font-size: 2rem;
+      font-weight: var(--font-weight-bold);
+      justify-content: center;
+      left: 0;
+      margin-top: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  @keyframes progress {
+    0% {
+      stroke-dasharray: 0 100;
+    }
+  }
+}
