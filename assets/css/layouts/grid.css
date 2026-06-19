@@ -65,7 +65,7 @@
       /* ── Sidebar ────────────────────────────────────────────── */
       .sidebar:not(.sidebar--menu),
       .toc {
-        --grid-column: span 3 / -1;
+        --grid-column: span 4 / -1;
       }
     }
 

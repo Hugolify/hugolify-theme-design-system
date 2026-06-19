@@ -5,13 +5,16 @@
  */
 @layer components {
   .sidebar {
-    align-items: start;
     display: flex;
     flex-direction: column;
     gap: var(--sidebar-gap);
 
     > * {
       margin-block: 0;
+    }
+
+    .btn {
+      align-self: start;
     }
 
     .card {

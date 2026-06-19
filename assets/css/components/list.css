@@ -15,6 +15,7 @@
 
       .avatar {
         align-self: start;
+        flex-shrink: 0;
       }
 
       span {

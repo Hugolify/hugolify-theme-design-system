@@ -2,7 +2,7 @@
 @layer components {
   .more {
     align-items: center;
-    display: flex;
+    display: inline-flex;
     gap: var(--more-gap);
     &::before {
       background-color: currentColor;

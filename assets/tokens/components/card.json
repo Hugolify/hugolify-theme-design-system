@@ -1,14 +1,6 @@
 {
   "card": {
     "border": {
-      "radius": {
-        "$value": "{item.border.radius}",
-        "$type": "dimension"
-      },
-      "style": {
-        "$value": "{item.border.style}",
-        "$type": "strokeStyle"
-      },
       "width": {
         "$value": "{border.width.none}",
         "$type": "dimension"
@@ -18,21 +10,11 @@
       "background": {
         "$value": "{color.background.muted}",
         "$type": "color"
-      },
-      "border": {
-        "$value": "{item.color.border}",
-        "$type": "color"
-      },
-      "text": {
-        "default": {
-          "$value": "{item.color.text.default}",
-          "$type": "color"
-        },
-        "muted": {
-          "$value": "{item.color.text.muted}",
-          "$type": "color"
-        }
       }
+    },
+    "fontSize": {
+      "$value": "{font.size.xs}",
+      "$type": "dimension"
     },
     "media": {
       "color": {

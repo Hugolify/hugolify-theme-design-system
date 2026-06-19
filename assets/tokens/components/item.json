@@ -1,0 +1,8 @@
+{
+  "item": {
+    "fontSize": {
+      "$value": "{font.size.small}",
+      "$type": "dimension"
+    }
+  }
+}

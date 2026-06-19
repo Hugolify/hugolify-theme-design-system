@@ -7,8 +7,6 @@
 
 /* Tokens */
 @import 'tokens/design-system.css';
-@import 'tokens/theme.css';
-@import 'tokens/site.css';
 
 /* Config */
 @import 'mediaqueries.css';
@@ -115,3 +113,11 @@
 @import "modules/publications.css";
 @import "modules/realestates.css";
 @import "modules/services.css";
+
+/* Override Tokens */
+@import 'tokens/theme.css';
+@import 'tokens/site.css';
+
+/* Override CSS */
+@import "theme.css";
+@import "site.css";

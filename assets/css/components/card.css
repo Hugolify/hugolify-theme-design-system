@@ -19,8 +19,12 @@
       margin-inline-start: var(--card-padding-inline);
       max-width: var(--card-media-max-width);
     }
-    .btn {
+    .btn,
+    .more {
       align-self: start;
+    }
+    .more {
+      font-size: var(--font-size-xs);
     }
   }
 }

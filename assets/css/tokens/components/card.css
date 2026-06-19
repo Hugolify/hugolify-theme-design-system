@@ -3,14 +3,10 @@
 /* components/card.css */
 @layer tokens {
   :root {
-    --card-border-radius: var(--item-border-radius);
-    --card-border-style: var(--item-border-style);
     --card-border-width: var(--border-width-none);
     --card-color-background: var(--color-background-muted);
-    --card-color-border: var(--item-color-border);
-    --card-color-text: var(--item-color-text);
-    --card-color-text-muted: var(--item-color-text-muted);
     --card-media-color-background: transparent;
     --card-transition: var(--transition-normal);
+    --card-font-size: var(--font-size-xs);
   }
 }

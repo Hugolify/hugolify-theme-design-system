@@ -12,7 +12,6 @@
     border: var(--item-border-width) var(--item-border-style) var(--item-color-border);
     border-radius: var(--item-border-radius);
     box-shadow: var(--item-shadow);
-    color: var(--item-color-text);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -21,6 +20,7 @@
 
     .content {
       align-items: start;
+      color: var(--item-color-text);
       display: flex;
       flex-direction: column;
       flex: 1;
@@ -59,11 +59,20 @@
       }
     }
 
+    .surtitle {
+      margin-block-end: calc(var(--item-gap) * -1);
+    }
+
     .title {
       color: var(--item-title-color, var(--item-color-text));
+      font-family: var(--item-title-font-family);
       font-size: var(--item-title-font-size);
       font-weight: var(--item-title-font-weight);
       line-height: var(--item-title-line-height);
+    }
+
+    .description {
+      font-size: var(--item-font-size);
     }
 
     .btn {
