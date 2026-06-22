@@ -6,6 +6,7 @@
     --nav-social-icon-size: var(--size-20, 1.25rem);
 
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     font-size: var(--nav-font-size);
     gap: var(--spacing-2xs);
