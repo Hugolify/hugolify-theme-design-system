@@ -11,6 +11,13 @@ params:
   css:
     postcss: "postcss/design-system"
 
+  # Grid
+  column: 12
+  gutter: 30
+  container:
+    desktop: 1320
+    mobile: 315
+
   # Load JS
   animation: false # Load js and add data attributes
   carousel: true # Load splidejs
