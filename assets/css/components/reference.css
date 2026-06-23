@@ -8,7 +8,8 @@
     display: inline-block;
     font-size: var(--reference-font-size);
     font-weight: var(--reference-font-weight);
-    padding: var(--reference-padding-block) var(--reference-padding-inline);
+    padding-block: var(--reference-padding-block);
+    padding-inline: var(--reference-padding-inline);
     text-align: center;
     text-transform: var(--reference-text-transform);
   }

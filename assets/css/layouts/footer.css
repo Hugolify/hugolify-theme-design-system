@@ -94,9 +94,15 @@
 
     /* ── Nav legal and social ───────────────────────────────────────── */
 
+    .nav-legal {
+      align-items: start;
+      margin-inline-start: calc(var(--nav-padding-inline) * -1);
+    }
     .nav-legal,
     .nav-social {
-      flex-direction: row;
+      @media (--tablet) {
+        flex-direction: row;
+      }
     }
 
     /* ── Credits ───────────────────────────────────────── */

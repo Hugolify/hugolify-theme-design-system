@@ -8,7 +8,8 @@
     display: inline-block;
     font-size: var(--status-font-size);
     font-weight: var(--status-font-weight);
-    padding: var(--status-padding-block) var(--status-padding-inline);
+    padding-block: var(--status-padding-block);
+    padding-inline: var(--status-padding-inline);
     text-decoration: none;
   }
 
