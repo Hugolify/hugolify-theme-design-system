@@ -1,5 +1,5 @@
 /* css/main.css */
-@layer reset, tokens, base, layouts, vendors, components, utilities;
+@layer reset, tokens, vendors, base, layouts, components, utilities;
 
 /* Un Cinq base */
 @import '@uncinq/css-base';

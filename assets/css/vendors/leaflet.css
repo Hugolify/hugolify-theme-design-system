@@ -1,6 +1,9 @@
 /* vendors/leaflet.css */
 @layer vendors {
   .leaflet-container {
-    z-index: 1;;
+    z-index: 1;
+    a {
+      text-decoration: none !important;
+    }
   }
 }

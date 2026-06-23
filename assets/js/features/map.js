@@ -15,9 +15,8 @@ function loadLeaflet() {
   if (leafletLoadPromise) return leafletLoadPromise;
 
   leafletLoadPromise = new Promise((resolve) => {
-    const css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = '/assets/css/leaflet.min.css';
+    const css = document.createElement('style');
+    css.textContent = `@import url('/assets/css/leaflet.min.css') layer(vendors);`;
     document.head.appendChild(css);
 
     const js = document.createElement('script');
