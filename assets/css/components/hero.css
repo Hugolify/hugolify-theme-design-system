@@ -31,10 +31,11 @@
     --font-size-heading: var(--hero-title-font-size);
 
     background-color: var(--hero-color-background);
-    padding-block: var(--hero-padding-block);
+    color: var(--color-text);
     position: relative;
 
     .container {
+      padding-block: var(--hero-padding-block);
       position: relative;
     }
 
@@ -179,16 +180,38 @@
     }
   }
 
-  .hero-cover-darken {
-    & .hero-cover img,
-    & .hero-cover video {
-      filter: brightness(var(--hero-cover-brightness));
+  /* ── Hero cover darken ─────────────────────────────────────── */
+
+  .hero:has(.hero-cover-darken) {
+    --color-heading: var(--color-white);
+    --color-link: var(--color-white);
+    --color-text: var(--color-white);
+    --btn-color-text: var(--color-white);
+    --surtitle-color: var(--color-gray-300);
+
+    .container {
+      background: linear-gradient(to right, var(--color-black) 0%, var(--color-shadow-normal) 100%);
     }
 
-    /* Light text over darkened cover */
-    color: var(--color-dark-strong);
-    --hero-color-title: var(--color-dark-strong);
-    --hero-color-link: var(--color-dark-strong);
-  }
+    &.hero-center {
+      .container {
+        background: transparent;
+      }
+      .hero-cover {
+        filter: brightness(var(--hero-cover-brightness));
+      }
+    }
 
+    .btn {
+      --btn-color-background: var(--color-light);
+      --btn-color-background-hover: var(--color-light-strong);
+      --btn-color-border: var(--color-light);
+      --btn-color-border-hover: var(--color-light-strong);
+      --btn-color-text: var(--color-text-on-light);
+    }
+    .btn + .btn {
+      --btn-color-background: transparent;
+      --btn-color-text: var(--color-white);
+    }
+  }
 }
