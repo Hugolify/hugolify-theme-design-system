@@ -11,8 +11,8 @@
   .gallery {
     gap: var(--gallery-gap);
 
-    @media not (--tablet) {
-      grid-template-columns: 1fr 1fr !important;
+    @media not (--tablet-wide) {
+      grid-template-columns: 1fr 1fr 1fr !important;
       grid-auto-columns: unset !important;
       grid-auto-flow: unset !important;
       margin-inline: 0 !important;
@@ -20,6 +20,10 @@
       padding-inline: 0 !important;
       scroll-snap-type: none;
     }
+    @media not (--tablet) {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
 
     figure {
       margin-block: 0;

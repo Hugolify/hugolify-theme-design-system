@@ -9,6 +9,10 @@
 
     a {
       display: inline-flex;
+
+      &::after {
+        content: none;
+      }
     }
 
     /* Sized only when an icon is rendered (theme-icons imported);
