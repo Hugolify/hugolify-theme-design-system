@@ -13,10 +13,15 @@ params:
 
   # Grid
   column: 12
-  gutter: 30
+  gap:
+    desktop: 30
+    mobile: 30
+  gutter:
+    desktop: 60
+    mobile: 30
   container:
-    desktop: 1320
-    mobile: 315
+    desktop: 1440
+    mobile: 375
 
   # Load JS
   animation: false # Load js and add data attributes

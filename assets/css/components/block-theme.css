@@ -1,0 +1,31 @@
+/* components/block-theme.css */
+@layer components {
+
+  .block-accent {
+    --color-text: var(--color-text-on-accent);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-accent);
+    color: var(--color-text);
+  }
+  .block-dark {
+    --color-text: var(--color-text-on-dark);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-dark);
+    color: var(--color-text);
+  }
+
+  .block-light {
+    --color-text: var(--color-text-on-light);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-light);
+    color: var(--color-text);
+  }
+
+  /* Legacy */
+  .block-bg {
+    background-color: var(--block-bg-color);
+  }
+}

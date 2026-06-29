@@ -17,7 +17,8 @@
     /* ── Container ─────────────── */
 
     &:has(> .heading, > .footing),
-    > .container:has(.heading, .footing) {
+    > .container:has(.heading, .footing),
+    .block-content {
       display: grid;
       gap: var(--block-gap);
       > * {

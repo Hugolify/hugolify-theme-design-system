@@ -1,0 +1,14 @@
+/* components/block-align.css */
+/*
+ * .block-align-center — align center variant for block sections.
+ *
+ * Applied alongside a block class: <section class="block-editorial block-align-center">
+ */
+@layer components {
+  .block-align-center {
+    text-align: center;
+  }
+  .block-align-end {
+    text-align: end;
+  }
+}
