@@ -1,0 +1,67 @@
+/* components/editorial.css */
+/*
+ * .editorial — text + media side-by-side block.
+ *
+ * Structure:
+ *   .editorial
+ *     .content   — text, CTAs
+ *     .media     — image / screenshot
+ *
+ */
+@layer components {
+  .editorial {
+    display: grid;
+    gap: var(--gap);
+    grid-template-columns: 1fr;
+
+    @media (--tablet) {
+      align-items: center;
+      grid-template-columns: 1fr 1fr;
+
+      .content {
+        padding-inline-start: var(--editorial-content-padding-inline-start);
+        padding-inline-end: var(--editorial-content-padding-inline-end);
+      }
+    }
+
+    .content {
+      --gap-row: 0;
+    }
+    .media {
+      --media-ratio: none;
+    }
+
+    h2 {
+      margin-block-start: 0;
+    }
+
+    .cta {
+      margin-block-start: var(--gap);
+    }
+
+    /* ── Content text ─────────────────────────────────────────── */
+
+    figure {
+      display: block;
+      margin-block: 0;
+    }
+
+    img {
+      height: auto;
+      width: 100%;
+    }
+
+
+    /* ── Mobile: media full-bleed, above content ──────────────── */
+
+    @media not (--tablet) {
+      .media {
+        margin-inline: calc(-1 * var(--gutter));
+        max-width: none;
+        order: -1;
+        width: calc(100% + 2 * var(--gutter));
+      }
+    }
+  }
+  
+}

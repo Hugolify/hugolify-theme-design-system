@@ -6,64 +6,44 @@
  *   section.block-editorial[.block-editorial-rtl][.block-bg]
  *     .heading
  *     .container
- *       .row
+ *       .grid
  *         .content   — text, CTAs
  *         .media     — image / screenshot
  *     .footing
  *
  * Variants:
  *   .block-editorial-rtl  — reverses content/media order
+ *   .block-editorial-full  — full width media and content
  */
 @layer components {
-  .block-editorial {
-    .row {
-      align-items: center;
-    }
 
-    .content,
-    .media {
-      flex: 1;
-    }
-
-    .media {
-      --media-ratio: none;
-    }
-
-    h2 {
-      margin-block-start: 0;
-    }
-
-    /* ── Content text ─────────────────────────────────────────── */
-
-    figure {
-      display: block;
-      margin-block: 0;
-    }
-
-    img {
-      height: auto;
-      width: 100%;
-    }
-
-
-    /* ── Mobile: media full-bleed, above content ──────────────── */
-
-    @media not (--tablet) {
+  .block-editorial-rtl {
+    @media (--tablet) {
       .media {
-        margin-inline: calc(-1 * var(--container-padding-inline));
-        max-width: none;
         order: -1;
-        width: calc(100% + 2 * var(--container-padding-inline));
       }
     }
   }
 
-  /* ── RTL variant: reverse column order ──────────────────────── */
-
-  .block-editorial-rtl {
-    .row {
-      @media (--tablet) {
-        flex-direction: row-reverse;
+  .block-editorial.block-full {
+    .media {
+      margin-inline: 0;
+      width: 100%;
+    }
+    .content {
+      margin-inline-end: var(--gutter);
+      margin-inline-start: var(--gutter);
+    }
+    @media (--tablet) {
+      &.block-editorial-ltr {
+        .content {
+          margin-inline-end: 0;
+        }
+      }
+      &.block-editorial-rtl {
+        .content {
+          margin-inline-start: 0;
+        }
       }
     }
   }

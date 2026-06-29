@@ -1,0 +1,16 @@
+{
+  "editorial": {
+    "content": {
+      "paddingInline": {
+        "end": {
+          "$type": "dimension",
+          "$value": "0px"
+        },
+        "start": {
+          "$type": "dimension",
+          "$value": "0px"
+        }
+      }
+    }
+  }
+}

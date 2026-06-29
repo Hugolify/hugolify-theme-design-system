@@ -13,7 +13,9 @@
 @import "./components/block-video.css";
 @import "./components/block.css";
 @import "./components/card.css";
+@import "./components/carousel.css";
 @import "./components/comparison.css";
+@import "./components/editorial.css";
 @import "./components/footer.css";
 @import "./components/gallery.css";
 @import "./components/header.css";
@@ -27,6 +29,7 @@
 @import "./components/pagination-between.css";
 @import "./components/press.css";
 @import "./components/pricing.css";
+@import "./components/push.css";
 @import "./components/quote.css";
 @import "./components/reference.css";
 @import "./components/screenshot.css";

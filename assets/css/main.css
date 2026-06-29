@@ -26,7 +26,8 @@
 @import 'components/audio.css';
 @import 'components/back.css';
 @import 'components/block.css';
-@import 'components/block-bg.css';
+@import 'components/block-align.css';
+@import 'components/block-theme.css';
 @import 'components/card.css';
 @import 'components/comparison.css';
 @import 'components/contact-card.css';
@@ -34,6 +35,7 @@
 @import 'components/content-body.css';
 @import 'components/credit.css';
 @import 'components/cta.css';
+@import 'components/editorial.css';
 @import 'components/featured-image.css';
 @import 'components/filters.css';
 @import 'components/gallery.css';
@@ -58,6 +60,7 @@
 @import 'components/pagination-between.css';
 @import 'components/press.css';
 @import 'components/pricing.css';
+@import 'components/push.css';
 @import 'components/quote.css';
 @import 'components/reference.css';
 @import 'components/related.css';
@@ -88,6 +91,7 @@
 @import 'components/blocks/block-logos.css';
 @import 'components/blocks/block-map.css';
 @import 'components/blocks/block-newsletter.css';
+@import 'components/blocks/block-pushes.css';
 @import 'components/blocks/block-quote.css';
 @import 'components/blocks/block-selected.css';
 @import 'components/blocks/block-testimonials.css';
