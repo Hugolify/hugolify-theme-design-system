@@ -1,0 +1,120 @@
+/* components/push.css */
+/*
+ * .push — display a video or image with a title, description, and cta.
+ *
+ * Structure:
+ *   div.push
+ *     div.content
+ *       .surtitle
+ *       h2|h3
+ *       .description
+ *       .cta
+ *     div.media
+ *       img | video
+ */
+@layer components {
+  .push {
+    --media-color-background: var(--push-color-background);
+    --card-padding-block: var(--push-card-padding-block);
+    --card-gap: var(--push-content-gap);
+    --card-padding-inline: var(--push-card-padding-inline);
+    border-radius: var(--push-border-radius);
+    position: relative;
+    overflow: hidden;
+
+    &:not(.push-card) {
+      --color-heading: var(--push-color);
+      --btn-color-background: var(--color-light);
+      --btn-color-background-hover: var(--color-light-strong);
+      --btn-color-border: var(--color-light);
+      --btn-color-border-hover: var(--color-light-strong);
+      --btn-color-text: var(--color-text-on-light);
+      color: var(--push-color);
+    }
+
+    > .content {
+      align-items: flex-start;
+      aspect-ratio: var(--push-ratio-mobile);
+      display: flex;
+      flex-direction: column;
+      gap: var(--push-content-gap);
+      justify-content: center;
+      padding-block: var(--push-content-padding-block);
+      padding-inline: var(--push-content-padding-inline);
+      position: relative;
+      z-index: 1;
+
+      @media (--tablet) {
+        aspect-ratio: var(--push-ratio);
+      }
+      > * {
+        margin-block: 0;
+      }
+    }
+
+    .media {
+      height: 100%;
+      inset: 0;
+      position: absolute;
+      width: 100%;
+    }
+    
+    .btn::after {
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
+  }
+
+  /* Darken */
+  .push-darken {
+    /* Logical gradient directions (flipped under RTL) */
+    --push-gradient-to-end: to right;   /* toward inline-end */
+    --push-gradient-to-start: to left;  /* toward inline-start */
+
+    &:dir(rtl) {
+      --push-gradient-to-end: to left;
+      --push-gradient-to-start: to right;
+    }
+
+    > .content {
+      background: linear-gradient(var(--push-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+    }
+    &.push-end {
+      > .content {
+        background: linear-gradient(var(--push-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      }
+    }
+    &.push-card,
+    &.push-center {
+      > .content {
+        background: transparent;
+      }
+      .media {
+        filter: brightness(var(--hero-cover-brightness));
+      }
+    }
+  }
+
+  /* Center */
+  .push-center {
+    > .content {
+      align-items: center;
+      &:not(:has(.card)) {
+        text-align: center;
+      }
+    }
+  }
+
+  /* Align end */
+  .push-end {
+    @media (--tablet) {
+      > .content {
+        align-items: flex-end;
+        &:not(:has(.card)) {
+          text-align: end;
+        }
+      }
+    }
+  }
+}

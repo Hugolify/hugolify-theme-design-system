@@ -1,0 +1,44 @@
+/* components/blocks/block-pushes.css */
+/*
+ * .block-pushes — full-width block section wrapping a .push.
+ *
+ * Structure:
+ *   section.block-pushes[.block-bg]
+ *     .heading
+ *     .container
+ *       .push
+ *     .footing
+ */
+@layer components {
+  .block-pushes {
+    .carousel {
+      .push {
+        display: flex;
+        height: 100%;
+      }
+      .content {
+        align-self: center;
+        width: 100%;
+      }
+    }
+    &.block-full {
+      margin-inline: var(--gutter);
+    }
+    @media not (--tablet) {
+      > .container:not(:has(.items-2)) {
+        padding-inline: 0;
+      }
+      .push {
+        border-radius: 0;
+      }
+    }
+    .items-2 {
+      .push {
+        min-height: 100%;
+        @media (--tablet) {
+          --push-ratio: var(--push-ratio-double);
+        }
+      }
+    }
+  }
+}

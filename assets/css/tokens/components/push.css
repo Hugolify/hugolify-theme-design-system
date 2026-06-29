@@ -1,0 +1,19 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/push.css */
+@layer tokens {
+  :root {
+    --push-border-radius: var(--radius-surface);
+    --push-color: var(--color-white);
+    --push-color-background: var(--color-dark);
+    --push-color-brightness: 0.3;
+    --push-content-gap: var(--spacing-sm);
+    --push-content-padding-block: var(--spacing-fluid-md);
+    --push-content-padding-inline: var(--spacing-fluid-md);
+    --push-card-padding-block: var(--spacing-fluid-md);
+    --push-card-padding-inline: var(--spacing-fluid-md);
+    --push-ratio: var(--ratio-cinema);
+    --push-ratio-double: var(--ratio-photography);
+    --push-ratio-mobile: var(--ratio-landscape);
+  }
+}

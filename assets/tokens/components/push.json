@@ -1,0 +1,66 @@
+{
+  "push": {
+    "border": {
+      "radius": {
+        "$type": "dimension",
+        "$value": "{radius.surface}"
+      }
+    },
+    "color": {
+      "default": {
+        "$type": "color",
+        "$value": "{color.white}"
+      },
+      "background": {
+        "$type": "color",
+        "$value": "{color.dark}"
+      },
+      "brightness": {
+        "$type": "number",
+        "$value": 0.3
+      }
+    },
+    "content": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      },
+      "padding": {
+        "block": {
+          "$type": "dimension",
+          "$value": "{spacing.fluid.md}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{spacing.fluid.md}"
+        }
+      }
+    },
+    "card": {
+      "padding": {
+        "block": {
+          "$type": "dimension",
+          "$value": "{spacing.fluid.md}"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "{spacing.fluid.md}"
+        }
+      }
+    },
+    "ratio": {
+      "default": {
+        "$type": "string",
+        "$value": "{ratio.cinema}"
+      },
+      "double": {
+        "$type": "string",
+        "$value": "{ratio.photography}"
+      },
+      "mobile": {
+        "$type": "string",
+        "$value": "{ratio.landscape}"
+      }
+    }
+  }
+}
