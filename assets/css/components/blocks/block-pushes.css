@@ -21,9 +21,6 @@
         width: 100%;
       }
     }
-    &.block-full {
-      margin-inline: var(--gutter);
-    }
     @media not (--tablet) {
       > .container:not(:has(.items-2)) {
         padding-inline: 0;

@@ -26,6 +26,7 @@
   }
 
   .block-editorial.block-full {
+    --block-full-padding-inline: var(--block-editorial-full-padding-inline, 0);
     .media {
       margin-inline: 0;
       width: 100%;

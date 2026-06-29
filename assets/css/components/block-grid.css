@@ -1,0 +1,13 @@
+/* components/block-grid.css */
+/*
+ * .block-full — full-width variant for block sections.
+ * .block-medium — medium-width variant for block sections.
+ *
+ * Applied alongside a block class: <section class="block-editorial block-full">
+ */
+@layer components {
+  .block-full {
+    --block-full-padding-inline: var(--gutter);
+    padding-inline: var(--block-full-padding-inline);
+  }
+}
