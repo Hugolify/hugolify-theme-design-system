@@ -1,0 +1,58 @@
+{
+  "carousel": {
+    "arrow": {
+      "border": {
+        "width": {
+          "$type": "dimension",
+          "$value": "{border.width.sm}"
+        }
+      },
+      "color": {
+        "default": {
+          "$type": "color",
+          "$value": "{color.link.default}"
+        },
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "transparent"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "transparent"
+          }
+        },
+        "border": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.link.default}"
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.link.hover}"
+          }
+        },
+        "hover": {
+          "$type": "color",
+          "$value": "{color.link.hover}"
+        }
+      },
+      "marginInline": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    },
+    "pagination": {
+      "color": {
+        "active": {
+          "$type": "color",
+          "$value": "{color.active}"
+        }
+      },
+      "marginBlock": {
+        "$type": "dimension",
+        "$value": "{spacing.sm}"
+      }
+    }
+  }
+}

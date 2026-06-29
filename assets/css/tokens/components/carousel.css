@@ -1,0 +1,17 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/carousel.css */
+@layer tokens {
+  :root {
+    --carousel-arrow-border-width: var(--border-width-sm);
+    --carousel-arrow-color: var(--color-link);
+    --carousel-arrow-color-background: transparent;
+    --carousel-arrow-color-background-hover: transparent;
+    --carousel-arrow-color-border: var(--color-link);
+    --carousel-arrow-color-border-hover: var(--color-link-hover);
+    --carousel-arrow-color-hover: var(--color-link-hover);
+    --carousel-arrow-margin-inline: var(--spacing-sm);
+    --carousel-pagination-color-active: var(--color-active);
+    --carousel-pagination-margin-block: var(--spacing-sm);
+  }
+}
