@@ -3,7 +3,7 @@
  * .block-pushes — full-width block section wrapping a .push.
  *
  * Structure:
- *   section.block-pushes[.block-bg]
+ *   section.block-pushes[.block-light]
  *     .heading
  *     .container
  *       .push

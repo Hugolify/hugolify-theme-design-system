@@ -3,7 +3,7 @@
  * .block-video — block section displaying a video with optional transcription.
  *
  * Structure:
- *   section.block-video[.block-bg]
+ *   section.block-video[.block-light]
  *     .heading
  *     .container > .row > .col
  *       figure

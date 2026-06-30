@@ -3,7 +3,23 @@
  * .block-alert — block section displaying an alert message.
  *
  * Structure:
- *   section.block-alert[.block-bg]
+ *   section.block-alert[.block-light]
  *     .container
  *       .alert[.alert-{variant}]
  */
+@layer components {
+  .block-alert {
+    &.block-align-center {
+      text-align: center;
+      p {
+        margin-inline: auto;
+      }
+    }
+    &.block-align-end {
+      text-align: end;
+      p {
+        margin-inline-start: auto;
+      }
+    }
+  }
+}

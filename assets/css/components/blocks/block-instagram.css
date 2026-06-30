@@ -3,7 +3,7 @@
  * .block-instagram — block section displaying an Instagram feed.
  *
  * Structure:
- *   section.block-instagram[.block-bg]
+ *   section.block-instagram[.block-light]
  *     .heading
  *     .container
  *       div.instagram.js-instagram[data-limit][data-token]

@@ -13,6 +13,7 @@
     }
     @media not (--tablet-wide) {
       .items {
+        /* scrollsnap */
         grid-auto-columns: min(var(--items-min-width, 30ch), var(--items-carousel-max-width, 75vw));
         grid-auto-flow: column;
         grid-template-columns: none;

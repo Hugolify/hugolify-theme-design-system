@@ -3,7 +3,7 @@
  * .block-map — block section wrapping a .map.
  *
  * Structure — with grid (map inside container):
- *   section.block-map.block-map-{grid}[.block-bg]
+ *   section.block-map.block-{grid}[.block-light]
  *     .heading
  *     .container
  *       .row
@@ -12,7 +12,7 @@
  *     .footing
  *
  * Structure — full-width (map direct child):
- *   section.block-map[.block-bg]
+ *   section.block-map[.block-light]
  *     .heading
  *     div.map.js-map
  *     .footing

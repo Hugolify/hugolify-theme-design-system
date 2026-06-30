@@ -3,7 +3,7 @@
  * .block-cta — call-to-action block, centered at tablet-wide+.
  *
  * Structure:
- *   section.block-cta[.block-bg]
+ *   section.block-cta[.block-light]
  *     .heading
  *     .container
  *       .cta

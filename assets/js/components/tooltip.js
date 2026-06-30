@@ -37,7 +37,7 @@ class Tooltip {
     this._tip = document.createElement('div');
     this._tip.id = this._id;
     this._tip.setAttribute('role', 'tooltip');
-    this._tip.className = 'tooltip bs-tooltip-top fade';
+    this._tip.className = 'tooltip tooltip-top fade';
     this._tip.innerHTML = '<div class="tooltip-inner"></div><div class="tooltip-arrow"></div>';
     this._tip.querySelector('.tooltip-inner').textContent = this.text;
     document.body.appendChild(this._tip);

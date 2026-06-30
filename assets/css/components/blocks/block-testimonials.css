@@ -8,7 +8,7 @@
  *   .block-testimonials-list      — 2-col layout (heading | list), quote inline
  *
  * Structure — grid / carousel:
- *   section.block-testimonials.block-testimonials-grid[.block-bg]
+ *   section.block-testimonials.block-grid[.block-light]
  *     .heading
  *     .container
  *       .testimonials
@@ -17,7 +17,7 @@
  *     .footing
  *
  * Structure — list:
- *   section.block-testimonials.block-testimonials-list[.block-bg]
+ *   section.block-testimonials.block-list[.block-light]
  *     .container
  *       .heading
  *       ol.items

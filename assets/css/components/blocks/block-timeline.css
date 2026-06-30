@@ -3,7 +3,7 @@
  * .block-timeline — full-width section wrapping a .timeline.
  *
  * Structure:
- *   section.block-timeline[.block-bg]
+ *   section.block-timeline[.block-light]
  *     .heading
  *     .timeline
  *     .footing

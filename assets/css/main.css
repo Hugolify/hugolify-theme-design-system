@@ -73,6 +73,7 @@
 @import 'components/text.css';
 @import 'components/timeline.css';
 @import 'components/toc.css';
+@import 'components/tooltip.css';
 @import 'components/transcription.css';
 
 /* Blocks */
@@ -92,8 +93,10 @@
 @import 'components/blocks/block-logos.css';
 @import 'components/blocks/block-map.css';
 @import 'components/blocks/block-newsletter.css';
+@import 'components/blocks/block-paragraph.css';
 @import 'components/blocks/block-pushes.css';
 @import 'components/blocks/block-quote.css';
+@import 'components/blocks/block-search.css';
 @import 'components/blocks/block-selected.css';
 @import 'components/blocks/block-testimonials.css';
 @import 'components/blocks/block-timeline.css';

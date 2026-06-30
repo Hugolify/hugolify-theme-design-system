@@ -1,0 +1,21 @@
+/* components/tooltip.css */
+/*
+ * .tooltip — information pop-up.
+ *
+ * Expected HTML:
+ *   <span class="tooltip">
+ *     <span class="tooltip-inner">…</span>
+ *   </a>
+ */
+@layer components {
+  .tooltip-inner {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-xs);
+    color: var(--color-text-on-dark);
+    display: inline-flex;
+    font-size: var(--font-size-xs);
+    padding-block: var(--spacing-2xs);
+    padding-inline: var(--spacing-xs);
+    text-decoration: none;
+  }
+}

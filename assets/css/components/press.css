@@ -10,6 +10,7 @@
     --badge-border-style: var(--press-badge-border-style);
     --badge-border-width: var(--press-badge-border-width);
     --badge-color-background: var(--press-badge-color-background);
+    --badge-color-text: var(--color-text-on-light);
 
     /* Card */
     --card-border-radius: var(--press-card-border-radius);

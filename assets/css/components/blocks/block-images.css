@@ -3,7 +3,7 @@
  * .block-images — block section wrapping a collection of figures.
  *
  * Structure:
- *   section.block-images[.block-bg]
+ *   section.block-images[.block-light]
  *     .heading
  *     .container
  *       .images

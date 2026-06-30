@@ -1,0 +1,8 @@
+{
+  "block-quote": {
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap.default}"
+    }
+  }
+}

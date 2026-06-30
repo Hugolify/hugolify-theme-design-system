@@ -3,7 +3,7 @@
  * .block-quote — full-width block section wrapping a .quote.
  *
  * Structure:
- *   section.block-quote[.block-bg]
+ *   section.block-quote[.block-light]
  *     .heading
  *     .container
  *       .row
@@ -13,13 +13,17 @@
  */
 @layer components {
   .block-quote {
-    .container > .row > div {
-      margin-inline: auto;
-      max-width: var(--block-heading-max-width);
-    }
-
     .quote {
-      margin-block: 0;
+      --figure-margin-block: 0;
+      --quote-gap: var(--block-quote-gap);
+      --quote-padding: 0;
+    }
+    &.block-accent,
+    &.block-dark {
+      .quote {
+        --quote-color-text: var(--color-text);
+        --quote-cite-color-text: var(--color-text);
+      }
     }
   }
 }

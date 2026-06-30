@@ -3,7 +3,7 @@
  * .block-comparison — pricing / feature comparison block.
  *
  * Structure:
- *   section.block-comparison[.block-bg]
+ *   section.block-comparison[.block-light]
  *     .heading
  *     .container
  *       .items.items-{2-6}

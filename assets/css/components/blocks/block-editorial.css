@@ -3,7 +3,7 @@
  * .block-editorial — text + media side-by-side block.
  *
  * Structure:
- *   section.block-editorial[.block-editorial-rtl][.block-bg]
+ *   section.block-editorial[.block-editorial-rtl][.block-light]
  *     .heading
  *     .container
  *       .grid

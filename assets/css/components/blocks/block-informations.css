@@ -3,7 +3,7 @@
  * .block-informations — block section displaying informations cards.
  *
  * Structure:
- *   section.block-informations[.block-bg]
+ *   section.block-informations[.block-light]
  *     .container
  *       .heading
  *       .items

@@ -6,9 +6,12 @@
  */
 @layer components {
   .block-align-center {
-    text-align: center;
-  }
-  .block-align-end {
-    text-align: end;
+    @media (--tablet-wide) {
+      .items {
+        --items-cols: 4;
+        grid-template-columns: repeat(auto-fit, calc((100% - var(--items-gap) * (var(--items-cols) - 1)) / var(--items-cols)));
+        justify-content: center;
+      }
+    }
   }
 }

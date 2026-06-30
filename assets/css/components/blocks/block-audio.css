@@ -3,7 +3,7 @@
  * .block-audio — full-width block section wrapping an audio player.
  *
  * Structure:
- *   section.block-audio[.block-bg]
+ *   section.block-audio[.block-light]
  *     .heading
  *     .container
  *       audio.js-audio

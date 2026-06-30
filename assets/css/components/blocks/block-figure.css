@@ -3,7 +3,7 @@
  * .block-figure — full-width image/figure block.
  *
  * Structure:
- *   section.block-figure[.block-figure-{variant}][.block-bg]
+ *   section.block-figure[.block-figure-{variant}][.block-light]
  *     .heading
  *     figure
  *       picture / img

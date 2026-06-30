@@ -51,9 +51,11 @@
       }
     }
 
-    .footing {
-      @media (--tablet) {
-        grid-column: 1 / -1;
+    @media (--tablet) {
+      .footing {
+        grid-column: 2 / -1;
+        margin-inline: 0;
+        text-align: start;
       }
     }
 

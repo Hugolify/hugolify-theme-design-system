@@ -1,0 +1,19 @@
+/* components/blocks/block-search.css */
+/*
+ * .block-search — block section wrapping a .search.
+ *
+ * Structure — with grid (search inside container):
+ *   section.block-search.block-{grid}[.block-light]
+ *     .heading
+ *     .container
+ *       .row
+ *         div
+ *           .search
+ *     .footing
+ *
+ * Structure — full-width (search direct child):
+ *   section.block-search[.block-light]
+ *     .heading
+ *     .search
+ *     .footing
+ */

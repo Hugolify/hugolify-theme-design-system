@@ -1,0 +1,29 @@
+/* components/blocks/block-paragraph.css */
+/*
+ * .block-paragraph — full-width block section wrapping a paragraph.
+ *
+ * Structure:
+ *   section.block-paragraph[.block-light]
+ *     .heading
+*      .paragraph
+ *     .footing
+ */
+@layer components {
+  .block-paragraph {
+    &.block-align-center {
+      text-align: center;
+    }
+    &.block-align-end {
+      text-align: end;
+    }
+    .paragraph {
+      h2:first-child {
+        margin-block-start: 0;
+      }
+      .notes,
+      .cta {
+        margin-block-start: var(--gap);
+      }
+    }
+  }
+}

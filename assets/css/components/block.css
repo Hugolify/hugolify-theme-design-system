@@ -51,7 +51,7 @@
       .footing {
         align-items: center;
         margin-inline: auto;
-        max-width: var(--block-heading-max-width);
+        /* max-width: var(--block-heading-max-width); */
         text-align: center;
 
         & > .container {

@@ -3,7 +3,7 @@
  * .block-datas — full-width block section wrapping a list of data.
  *
  * Structure:
- *   section.block-datas[.block-bg]
+ *   section.block-datas[.block-light]
  *     .heading
  *     .container
  *       .items

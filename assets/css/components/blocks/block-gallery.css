@@ -3,7 +3,7 @@
  * .block-gallery — gallery block with optional heading and footing.
  *
  * Structure:
- *   section.block-gallery[.block-bg]
+ *   section.block-gallery[.block-light]
  *     .heading
  *     .container
  *       .gallery[.js-gallery]
