@@ -22,6 +22,10 @@
       "border": {
         "$type": "color",
         "$value": "transparent"
+      },
+      "text": {
+        "$type": "color",
+        "$value": "{color.text.default}"
       }
     },
     "flex": {
@@ -53,10 +57,6 @@
     "lineHeight": {
       "$type": "string",
       "$value": "{lineHeight.normal}"
-    },
-    "color-text": {
-      "$type": "color",
-      "$value": "{color.text.default}"
     },
     "figcaption": {
       "fontSize": {

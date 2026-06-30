@@ -8,6 +8,7 @@
     --quote-border-width: 0;
     --quote-color-background: transparent;
     --quote-color-border: transparent;
+    --quote-color-text: var(--color-text);
     --quote-flex-direction: column;
     --quote-gap: var(--spacing-xs);
     --quote-padding: var(--spacing-xs);
@@ -15,7 +16,6 @@
     --quote-font-style: italic;
     --quote-font-weight: var(--font-weight-normal);
     --quote-line-height: var(--line-height-normal);
-    --quote-color-text: var(--color-text);
     --quote-figcaption-font-size: var(--font-size-small);
     --quote-figcaption-gap: var(--spacing-xs);
     --quote-cite-font-weight: var(--font-weight-bold);

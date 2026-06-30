@@ -1,0 +1,20 @@
+{
+  "block-editorial": {
+    "full": {
+      "gap": {
+        "$type": "dimension",
+        "$value": "0px"
+      },
+      "padding": {
+        "block": {
+          "$type": "dimension",
+          "$value": "0px"
+        },
+        "inline": {
+          "$type": "dimension",
+          "$value": "0px"
+        }
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@
     .block-content {
       display: grid;
       gap: var(--block-gap);
+      padding-block: 0;
       > * {
         min-width: 0;
       }

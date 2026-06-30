@@ -62,24 +62,19 @@
     }
   }
 
-  /* ── Grid ─────────────────────────────────────────────────────────── */
-  .block-testimonials-grid {
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(var(--items-cols), 1fr);
-      gap: var(--items-gap);
-
-      @media (--tablet)      { --items-cols: 2; }
-      @media (--tablet-wide) { --items-cols: 3; }
-      @media (--laptop)      { --items-cols: 3; }
-      @media (--desktop)     { --items-cols: 4; }
+  /* ── List ─────────────────────────────────────────────────────────── */
+  .block-testimonials.block-list {
+    ol {
+      list-style: none;
+      padding-inline-start: 0;
     }
   }
 
   /* ── Carousel ─────────────────────────────────────────────────────────── */
-  .block-testimonials-carousel {
-    .splide__pagination {
-      inset-block-start: calc(100% + var(--spacing-xs));
+  .block-testimonials.block-carousel {
+    overflow: hidden;
+    .splide__track {
+      overflow: visible;
     }
-  } 
+  }
 }

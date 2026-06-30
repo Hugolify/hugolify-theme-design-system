@@ -5,10 +5,7 @@
  * Structure:
  *   section.block-timeline[.block-bg]
  *     .heading
- *     .container
- *       .row
- *         div
- *           ol.timeline
+ *     .timeline
  *     .footing
  */
 @layer components {
@@ -16,10 +13,13 @@
     .timeline {
       margin-block: 0;
     }
-    @media (--tablet-wide) {
-      .row > div {
-        margin-inline: auto;
-      }
+    &.block-accent {
+      --timeline-marker-color-background: var(--color-text-on-accent);
+      --timeline-marker-color-text: var(--color-accent);
+    }
+    &.block-dark {
+      --timeline-marker-color-background: var(--color-text-on-dark);
+      --timeline-marker-color-text: var(--color-dark);
     }
   }
 }

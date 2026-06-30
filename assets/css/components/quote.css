@@ -24,6 +24,7 @@
 
     blockquote {
       border-inline-start: 0;
+      color: var(--quote-color-text);
       font-size:   var(--quote-font-size);
       font-style:  var(--quote-font-style);
       font-weight: var(--quote-font-weight);

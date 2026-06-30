@@ -32,19 +32,12 @@
       width: 100%;
     }
     .content {
-      margin-inline-end: var(--gutter);
-      margin-inline-start: var(--gutter);
+      margin-inline: var(--gutter);
     }
     @media (--tablet) {
-      &.block-editorial-ltr {
-        .content {
-          margin-inline-end: 0;
-        }
-      }
-      &.block-editorial-rtl {
-        .content {
-          margin-inline-start: 0;
-        }
+      --block-padding-block: var(--block-editorial-full-padding-block, 0);
+      .editorial {
+        gap: var(--block-editorial-full-gap, var(--gap));
       }
     }
   }

@@ -3,11 +3,11 @@
  * .block-selected — block section displaying a selection of content items.
  *
  * Layouts (modifier on section):
- *   .block-selected-grid  (default) — items grid, uses commons/items partial
- *   .block-selected-list  — 2-col layout (heading | list), items as plain links
+ *   .block-grid  (default) — items grid, uses commons/items partial
+ *   .block-list  — 2-col layout (heading | list), items as plain links
  *
  * Structure — grid:
- *   section.block-selected.block-selected-grid.block-selected-{section}[.block-bg]
+ *   section.block-selected.block-grid.block-selected-{section}[.block-light]
  *     .container
  *       .heading
  *       .items
@@ -16,7 +16,7 @@
  *       .footing
  *
  * Structure — list:
- *   section.block-selected.block-selected-list.block-selected-{section}[.block-bg]
+ *   section.block-selected.block-list.block-selected-{section}[.block-light]
  *     .container
  *       .heading
  *       ol.list
@@ -27,18 +27,17 @@
 @layer components {
 
   /* ── Grid ─────────────────────────────────────────────────────────── */
-  .block-selected-grid {
+  .block-selected.block-grid {
     .items {
       justify-content: center;
     }
   }
 
   /* ── List ─────────────────────────────────────────────────────────── */
-  .block-selected-list {
-    .container {
+  .block-selected.block-list {
+    .block-content {
       @media (--tablet) {
-        display: grid;
-        gap: var(--block-selected-gap);
+        gap: var(--block-selected-gap, var(--gap));
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -46,7 +45,6 @@
     .heading {
       @media (--tablet) {
         align-items: flex-start;
-        margin-block-end: 0;
         margin-inline-start: 0;
         max-width: none;
         text-align: start;
@@ -62,9 +60,9 @@
     .list {
       list-style: none;
       padding-inline-start: 0;
-      @media (--tablet) {
+      /* @media (--tablet) {
         margin-block-start: var(--block-selected-list-items-margin-block-start);
-      }
+      } */
     }
   }
 }
