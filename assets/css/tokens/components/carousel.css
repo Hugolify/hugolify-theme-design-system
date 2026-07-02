@@ -10,7 +10,7 @@
     --carousel-arrow-color-border: var(--color-link);
     --carousel-arrow-color-border-hover: var(--color-link-hover);
     --carousel-arrow-color-hover: var(--color-link-hover);
-    --carousel-arrow-margin-inline: var(--spacing-sm);
+    --carousel-arrow-margin-inline: var(--spacing-xs);
     --carousel-pagination-color-active: var(--color-active);
     --carousel-pagination-margin-block: var(--spacing-sm);
   }

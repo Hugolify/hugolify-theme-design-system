@@ -1,0 +1,12 @@
+/* components/block-layout.css */
+/*
+ * .block-carousel — carousel variant for block sections.
+ * .block-list — list variant for block sections.
+ *
+ * Applied alongside a block class: <section class="block-logos block-carousel">
+ */
+@layer components {
+  .block-carousel {
+    overflow: hidden;
+  }
+}

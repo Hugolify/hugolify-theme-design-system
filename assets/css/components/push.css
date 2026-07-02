@@ -80,9 +80,11 @@
     > .content {
       background: linear-gradient(var(--push-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
     }
-    &.push-end {
-      > .content {
-        background: linear-gradient(var(--push-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+    @media (--tablet) {
+      &.push-end {
+        > .content {
+          background: linear-gradient(var(--push-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+        }
       }
     }
     &.push-card,

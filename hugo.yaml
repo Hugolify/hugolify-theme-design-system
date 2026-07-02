@@ -12,16 +12,18 @@ params:
     postcss: "postcss/design-system"
 
   # Grid
-  column: 12
+  column: 
+    mobile: 1
+    desktop: 12
+  container:
+    desktop: 1440
+    mobile: 375
   gap:
     desktop: 30
     mobile: 30
   gutter:
     desktop: 60
     mobile: 30
-  container:
-    desktop: 1440
-    mobile: 375
 
   # Load JS
   animation: false # Load js and add data attributes

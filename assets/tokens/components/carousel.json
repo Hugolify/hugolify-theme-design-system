@@ -39,7 +39,7 @@
       },
       "marginInline": {
         "$type": "dimension",
-        "$value": "{spacing.sm}"
+        "$value": "{spacing.xs}"
       }
     },
     "pagination": {

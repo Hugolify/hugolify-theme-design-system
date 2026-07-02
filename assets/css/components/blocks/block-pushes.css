@@ -22,11 +22,19 @@
       }
     }
     @media not (--tablet) {
-      > .container:not(:has(.items-2)) {
+      /* > .container:not(:has(.items-2)) {
         padding-inline: 0;
+      } */
+      .items .push,
+      .carousel .push {
+        margin-inline: 0
       }
       .push {
         border-radius: 0;
+      }
+      .carousel,
+      .push {
+        margin-inline: calc(var(--gutter) * -1);
       }
     }
     .items-2 {

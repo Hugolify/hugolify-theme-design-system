@@ -19,6 +19,11 @@
       overflow-x: auto;
       padding-inline: var(--gutter);
       scroll-snap-type: x mandatory;
+
+      > * {
+        scroll-margin-inline: var(--gutter);
+        scroll-snap-align: start;
+      }
     }
   }
 
@@ -30,6 +35,7 @@
       justify-content: center;
     }
 
+    .items-1  { --items-cols: 1; }
     .items-2  { --items-cols: 2; }
     .items-3  { --items-cols: 3; }
     .items-4  { --items-cols: 4; }
@@ -41,5 +47,17 @@
     .items-10 { --items-cols: 10; }
     .items-11 { --items-cols: 11; }
     .items-12 { --items-cols: 12; }
+    .items-13 { --items-cols: 13; }
+    .items-14 { --items-cols: 14; }
+    .items-15 { --items-cols: 15; }
+    .items-16 { --items-cols: 16; }
+    .items-17 { --items-cols: 17; }
+    .items-18 { --items-cols: 18; }
+    .items-19 { --items-cols: 19; }
+    .items-20 { --items-cols: 20; }
+    .items-21 { --items-cols: 21; }
+    .items-22 { --items-cols: 22; }
+    .items-23 { --items-cols: 23; }
+    .items-24 { --items-cols: 24; }
   }
 }
