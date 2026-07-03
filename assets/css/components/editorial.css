@@ -11,7 +11,7 @@
 @layer components {
   .editorial {
     display: grid;
-    gap: var(--gap);
+    gap: var(--editorial-gap);
     grid-template-columns: 1fr;
 
     @media (--tablet) {

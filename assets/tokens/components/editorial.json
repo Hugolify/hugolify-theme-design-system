@@ -11,6 +11,10 @@
           "$value": "0px"
         }
       }
+    },
+    "gap": {
+      "$type": "dimension",
+      "$value": "{gap}"
     }
   }
 }

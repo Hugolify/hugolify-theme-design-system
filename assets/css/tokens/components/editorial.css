@@ -5,5 +5,6 @@
   :root {
     --editorial-content-padding-inline-end: 0px;
     --editorial-content-padding-inline-start: 0px;
+    --editorial-gap: var(--gap);
   }
 }
