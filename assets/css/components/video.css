@@ -1,0 +1,29 @@
+/* components/video.css */
+/*
+ * .video — wrapper for videos.
+ *
+ * Structure:
+ *   .video
+ *     video
+ *     button
+ */
+@layer components {
+  .video {
+    position: relative;
+
+    video {
+      aspect-ratio: var(--ratio-video);
+      width: 100%;
+    }
+
+    .btn-toggle-video {
+      --btn-color-background: transparent;
+      --btn-color-background-hover: transparent;
+      --btn-color-border: transparent;
+      --btn-color-border-hover: transparent;
+      inset-block-end: 0;
+      inset-inline-end: 0;
+      position: absolute;
+    }
+  }
+}

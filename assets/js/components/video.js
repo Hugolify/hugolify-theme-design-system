@@ -1,11 +1,15 @@
 /**
  * Video — lazy-loads video sources via IntersectionObserver.
  * Supports mobile/desktop source variants via data-src_mobile / data-src.
+ * For autoplay videos without native controls, wires up the play/pause
+ * toggle button (.js-toggle-video) rendered alongside the video.
  */
 class Video {
   constructor(el) {
     this.el = el;
+    this.toggle = el.parentElement.querySelector('.js-toggle-video');
     this.observe();
+    this.initToggle();
   }
 
   observe() {
@@ -37,6 +41,30 @@ class Video {
 
     this.el.load();
     this.el.classList.remove('is-lazy');
+  }
+
+  initToggle() {
+    if (!this.toggle) return;
+
+    this.toggle.addEventListener('click', () => {
+      if (this.el.paused) {
+        this.el.play();
+      } else {
+        this.el.pause();
+      }
+    });
+
+    // Keep the button in sync with the video's actual playback state
+    this.el.addEventListener('play', () => this.syncToggle());
+    this.el.addEventListener('pause', () => this.syncToggle());
+    this.syncToggle();
+  }
+
+  syncToggle() {
+    const playing = !this.el.paused;
+    this.toggle.classList.toggle('is-playing', playing);
+    const label = playing ? this.toggle.dataset.labelPause : this.toggle.dataset.labelPlay;
+    if (label) this.toggle.setAttribute('aria-label', label);
   }
 }
 

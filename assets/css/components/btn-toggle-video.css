@@ -1,0 +1,29 @@
+/* components/btn-toggle-video.css */
+/*
+ * .btn-toggle-video — play/pause control overlaid on autoplay videos that
+ * have no native controls. The `.is-playing` state (set by video.js) decides
+ * which icon is shown.
+ *
+ * Structure:
+ *     button.btn-toggle-video.js-btn-toggle-video[.is-playing]
+ *       i.icon.icon-pause
+ *       i.icon.icon-play
+ */
+@layer components {
+  .btn-toggle-video {
+
+    .icon-pause {
+      display: none;
+    }
+
+    &.is-playing {
+      .icon-play {
+        display: none;
+      }
+
+      .icon-pause {
+        display: inline-flex;
+      }
+    }
+  }
+}

@@ -10,3 +10,16 @@
  *       .transcription
  *     .footing
  */
+@layer components {
+  .block-video {
+    figure {
+      margin-block: 0;
+    }
+    details {
+      --details-summary-padding-block: 0;
+      --details-summary-padding-inline: 0;
+      --details-content-padding-inline: 0;
+    }
+  }
+}
+
