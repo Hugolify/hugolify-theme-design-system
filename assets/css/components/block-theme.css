@@ -8,6 +8,15 @@
     background: var(--color-accent);
     color: var(--color-text);
   }
+
+  .block-black {
+    --color-text: var(--color-text-on-black);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-black);
+    color: var(--color-text);
+  }
+
   .block-dark {
     --color-text: var(--color-text-on-dark);
     --color-heading: var(--color-text);
@@ -16,11 +25,35 @@
     color: var(--color-text);
   }
 
+  .block-highlight {
+    --color-text: var(--color-text-on-highlight);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-highlight);
+    color: var(--color-text);
+  }
+
   .block-light {
     --color-text: var(--color-text-on-light);
     --color-heading: var(--color-text);
     --color-link: var(--color-text);
     background: var(--color-light);
+    color: var(--color-text);
+  }
+
+  .block-neutral {
+    --color-text: var(--color-text-on-neutral);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-neutral);
+    color: var(--color-text);
+  }
+
+  .block-white {
+    --color-text: var(--color-text-on-white);
+    --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    background: var(--color-white);
     color: var(--color-text);
   }
 
