@@ -10,42 +10,33 @@
       display: block;
 
       &.fail {
-        .circle {
-          stroke: var(--color-danger);
-        }
-        & + figcaption {
-          color: var(--color-danger);
-        }
+        --gauge-color: var(--color-danger-muted);
+        --gauge-stroke-color: var(--color-danger);
+        --color-text: var(--color-danger);
       }
 
       &.average {
-        .circle {
-          stroke: var(--color-warning);
-        }
-        & + figcaption {
-          color: var(--color-warning);
-        }
+        --gauge-color: var(--color-warning-muted);
+        --gauge-stroke-color: var(--color-warning);
+        --color-text: var(--color-warning);
       }
 
       &.pass {
-        .circle {
-          stroke: var(--color-success);
-        }
-        & + figcaption {
-          color: var(--color-success);
-        }
+        --gauge-color: var(--color-success-muted);
+        --gauge-stroke-color: var(--color-success);
+        --color-text: var(--color-success);
       }
     }
 
     .circle-bg {
       fill: none;
-      stroke: var(--gauge-color, var(--color-background-muted));
+      stroke: var(--gauge-color, var(--color-gray-300));
       stroke-width: var(--gauge-stroke-size, 2.4);
     }
 
     .circle {
       fill: none;
-      stroke: var(--gauge-stroke-color);
+      stroke: var(--gauge-stroke-color, var(--color-gray-500));
       stroke-width: var(--gauge-stroke-size, 2.4);
       stroke-linecap: round;
     }
