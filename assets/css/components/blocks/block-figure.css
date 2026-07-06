@@ -27,14 +27,14 @@
   /* ── Alignment variants — tablet+ ────────────────────────── */
 
   /* Full bleed: figcaption indented to match container gutter */
-  .block-figure-full {
+  .block-figure.block-full {
     figcaption {
       padding-inline: var(--gutter);
     }
   }
 
   @media (--tablet) {
-    .block-figure-start {
+    .block-figure.block-start {
       .heading {
         align-items: flex-start;
         margin-inline-start: 0;
@@ -42,7 +42,7 @@
       }
     }
 
-    .block-figure-end {
+    .block-figure.block-end {
       .heading {
         align-items: flex-end;
         margin-inline-end: 0;
@@ -54,7 +54,7 @@
   /* ── Full-bleed variants — mobile only ───────────────────── */
 
   @media not (--tablet) {
-    .block-figure-container {
+    .block-figure.block-container {
       > .container {
         padding-inline: 0;
       }

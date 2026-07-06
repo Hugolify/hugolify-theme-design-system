@@ -2,58 +2,52 @@
 @layer components {
 
   .block-accent {
+    --block-color-background: var(--color-accent);
     --color-text: var(--color-text-on-accent);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-accent);
-    color: var(--color-text);
   }
 
   .block-black {
+    --block-color-background: var(--color-text);
     --color-text: var(--color-text-on-black);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-black);
-    color: var(--color-text);
   }
 
   .block-dark {
+    --block-color-background: var(--color-dark);
     --color-text: var(--color-text-on-dark);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-dark);
-    color: var(--color-text);
   }
 
   .block-highlight {
+    --block-color-background: var(--color-highlight);
     --color-text: var(--color-text-on-highlight);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-highlight);
-    color: var(--color-text);
   }
 
   .block-light {
+    --block-color-background: var(--color-light);
     --color-text: var(--color-text-on-light);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-light);
-    color: var(--color-text);
   }
 
   .block-neutral {
+    --block-color-background: var(--color-neutral);
     --color-text: var(--color-text-on-neutral);
-    --color-heading: var(--color-text);
-    --color-link: var(--color-text);
-    background: var(--color-neutral);
-    color: var(--color-text);
   }
 
   .block-white {
+    --block-color-background: var(--color-white);
     --color-text: var(--color-text-on-white);
+  }
+
+  .block-accent,
+  .block-black,
+  .block-dark,
+  .block-highlight,
+  .block-light,
+  .block-neutral,
+  .block-white {
+    --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --color-heading: var(--color-text);
     --color-link: var(--color-text);
-    background: var(--color-white);
+    --surtitle-color: var(--color-text-muted);
+    background: var(--block-color-background);
     color: var(--color-text);
   }
 

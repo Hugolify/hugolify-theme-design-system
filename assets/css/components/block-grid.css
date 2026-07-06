@@ -7,7 +7,6 @@
  */
 @layer components {
   .block-full {
-    --block-full-padding-inline: var(--gutter);
-    padding-inline: var(--block-full-padding-inline);
+    padding-inline: var(--block-full-padding-inline, 0);
   }
 }
