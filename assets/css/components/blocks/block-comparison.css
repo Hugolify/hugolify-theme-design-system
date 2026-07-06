@@ -33,12 +33,20 @@
       justify-content: center;
     }
 
-    /* ── Background variants ───────────────────────────────────── */
+    /* ── variants ───────────────────────────────────── */
 
-    &.block-bg {
-      .item {
-        --item-color-background: var(--comparison-item-color-background-on-block-background);
+    &.block-bg,
+    &.block-light {
+      .comparison {
+        --item-color-background: var(--comparison-item-color-background-on-block-light);
       }
     }
+
+    &.block-full {
+      .items {
+        padding-inline: var(--gutter);
+      }
+    }
+
   }
 }

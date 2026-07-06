@@ -3,12 +3,18 @@
 /* components/comparison.css */
 @layer tokens {
   :root {
-    --comparison-badge-color-background: var(--color-primary-muted);
-    --comparison-badge-color-text: var(--color-primary-strong);
+    --comparison-badge-color-background: var(--color-brand-muted);
+    --comparison-badge-color-text: var(--color-brand-strong);
     --comparison-item-box-shadow-highlighted: var(--shadow-lg);
     --comparison-item-color-background: var(--color-background-muted);
-    --comparison-item-color-background-on-block-bg: var(--color-background);
+    --comparison-item-color-background-on-block-light: var(--color-background);
     --comparison-item-color-background-highlighted: var(--color-background-muted);
+    --comparison-item-footer-color-text: var(--item-color-text);
+    --comparison-item-footer-gap: var(--spacing-xs);
+    --comparison-item-footer-padding: var(--comparison-item-padding);
+    --comparison-item-header-color-text: var(--item-color-text);
+    --comparison-item-header-gap: var(--spacing-xs);
+    --comparison-item-header-padding: var(--comparison-item-padding);
     --comparison-item-padding: var(--spacing-sm);
     --comparison-pricing-font-size: var(--font-size-lg);
     --comparison-pricing-font-weight: var(--font-weight-bold);

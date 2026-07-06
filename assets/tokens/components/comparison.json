@@ -4,11 +4,11 @@
       "color": {
         "background": {
           "$type": "color",
-          "$value": "{color.primary.muted}"
+          "$value": "{color.brand.muted}"
         },
         "text": {
           "$type": "color",
-          "$value": "{color.primary.strong}"
+          "$value": "{color.brand.strong}"
         }
       }
     },
@@ -25,7 +25,7 @@
             "$type": "color",
             "$value": "{color.background.muted.default}"
           },
-          "onBlockBg": {
+          "onBlockLight": {
             "$type": "color",
             "$value": "{color.background.default}"
           },
@@ -33,6 +33,38 @@
             "$type": "color",
             "$value": "{color.background.muted.default}"
           }
+        }
+      },
+      "footer": {
+        "color": {
+          "text": {
+            "$value": "{item.color.text}",
+            "$type": "color"
+          }
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.xs}"
+        },
+        "padding": {
+          "$type": "dimension",
+          "$value": "{comparison.item.padding}"
+        }
+      },
+      "header": {
+        "color": {
+          "text": {
+            "$value": "{item.color.text}",
+            "$type": "color"
+          }
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.xs}"
+        },
+        "padding": {
+          "$type": "dimension",
+          "$value": "{comparison.item.padding}"
         }
       },
       "padding": {

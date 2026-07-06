@@ -1,35 +1,36 @@
-/* components/blocks/block-comparison.css */
+/* components/comparison.css */
 /*
- * .block-comparison — pricing / feature comparison block.
+ * .comparison — pricing / feature comparison block.
  *
  * Structure:
- *   section.block-comparison[.block-bg]
- *     .heading
- *     .container
- *       .items.items-{2-6}
- *         div
- *           .item[.item-highlighted]
- *             header
- *               .badge         (optional)
- *               h2 | h3
- *               p              (subtitle)
- *               .pricing       (price display)
- *                 + p          (billing period)
- *             .content
- *               ul > li        (feature list)
- *             footer
- *               .btn           (CTA)
- *     .footing
+ *   .comparison
+ *     div
+ *       .item[.item-highlighted]
+ *         header
+ *           .badge         (optional)
+ *           h2 | h3
+ *           p              (subtitle)
+ *           .pricing       (price display)
+ *             + p          (billing period)
+ *         .content
+ *           ul > li        (feature list)
+ *         footer
+ *           .btn           (CTA)
  *
- * Column variants: .items-2 through .items-6
- * (set via `column` in content config, default 3)
  */
 @layer components {
   .comparison {
     --item-color-background: var(--comparison-item-color-background);
 
     header {
-      padding: var(--comparison-item-padding);
+      color: var(--comparison-item-header-color-text);
+      display: flex;
+      flex-direction: column;
+      gap: var(--comparison-item-header-gap);
+      padding: var(--comparison-item-header-padding);
+      > * {
+        margin-block: 0;
+      }
     }
 
     h2,
@@ -38,8 +39,15 @@
     }
 
     footer {
+      color: var(--comparison-item-header-color-text);
+      display: flex;
+      flex-direction: column;
+      gap: var(--comparison-item-footer-gap);
       margin-block-start: auto;
-      padding: var(--comparison-item-padding);
+      padding: var(--comparison-item-footer-padding);
+      > * {
+        margin-block: 0;
+      }
     }
 
     .badge {
