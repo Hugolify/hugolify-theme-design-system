@@ -35,41 +35,19 @@
     /* ── Top — grid of columns ───────────────────────────────────── */
 
     .top {
-      display: flex;
-      flex-direction: column;
-      gap: var(--gap);
-
       @media (--tablet) {
-        display: grid;
-        grid-template-columns: repeat(var(--columns), 1fr);
-
-        .logo,
-        .description,
         & > div {
           grid-column: span 4;
         }
-        .logo {
-          grid-row: 1;
-        }
-        .description {
-          grid-row: 2;
-        }
-        & > div    { 
-          grid-row: 1 / 4; 
-        }
       }
       @media (--tablet-wide) {
-        .logo,
-        .description{
+        .brand {
           grid-column: span 6;
         }
         & > div {
           grid-column: span 3;
         }
       }
-
-
-
     }
 
     /* ── Bottom — legal + credit + social ────────────────────────── */

@@ -119,6 +119,7 @@
         }
 
         .content {
+          display: flex;
           overflow: visible;
         }
       }
