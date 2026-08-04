@@ -15,6 +15,9 @@
 @import 'vendors/leaflet.css';
 @import 'vendors/splide.css';
 
+/* Base */
+@import 'base/fonts.css';
+
 /* Layouts */
 @import 'layouts/footer.css';
 @import 'layouts/grid.css';
