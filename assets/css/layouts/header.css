@@ -20,7 +20,7 @@
  *     </nav>
  *   </header>
  */
-@layer components {
+@layer layouts {
   header[role="banner"] {
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);

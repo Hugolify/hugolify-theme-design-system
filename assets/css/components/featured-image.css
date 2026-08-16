@@ -1,17 +1,20 @@
-.featured-image {
-  margin-block: 0;
+/* components/featured-image.css */
+@layer components {
+  .featured-image {
+    margin-block: 0;
 
-  img {
-    height: auto;
-    width: 100%;
-  }
+    img {
+      height: auto;
+      width: 100%;
+    }
 
-  @media not (--tablet) {
-    margin-inline: calc(var(--gutter) * -1);
-    max-width: unset;
+    @media not (--tablet) {
+      margin-inline: calc(var(--gutter) * -1);
+      max-width: unset;
 
-    figcaption {
-      padding-inline: var(--gutter);
+      figcaption {
+        padding-inline: var(--gutter);
+      }
     }
   }
 }

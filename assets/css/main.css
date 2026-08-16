@@ -1,5 +1,5 @@
 /* css/main.css */
-@layer reset, tokens, vendors, base, layouts, components, utilities;
+@layer reset, tokens, vendors, base, layouts, components, pages, utilities;
 
 /* Un Cinq base */
 @import '@uncinq/css-base';
@@ -48,6 +48,7 @@
 @import 'components/gauge.css';
 @import 'components/heading.css';
 @import 'components/hero.css';
+@import 'components/hero-theme.css';
 @import 'components/highlight.css';
 @import 'components/images.css';
 @import 'components/item.css';
@@ -108,6 +109,9 @@
 @import 'components/blocks/block-timeline.css';
 @import 'components/blocks/block-title.css';
 @import 'components/blocks/block-video.css';
+
+/* Pages */
+@import "pages/home.css";
 
 /* Utilities */
 @import 'utilities.css';

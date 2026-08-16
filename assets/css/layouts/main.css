@@ -1,5 +1,5 @@
 /* base/main.css */
-@layer base {
+@layer layouts {
   main:not(:has([class*="block-"]:first-child)) {
     padding-block-start: var(--spacing-section);
   }

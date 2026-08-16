@@ -1,4 +1,7 @@
-.avatar {
-  border-radius: var(--radius-pill);
-  overflow: hidden;
+/* components/avatar.css */
+@layer components {
+  .avatar {
+    border-radius: var(--radius-pill);
+    overflow: hidden;
+  }
 }
