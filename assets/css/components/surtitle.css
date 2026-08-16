@@ -12,6 +12,7 @@
     font-size: var(--surtitle-font-size);
     font-weight: var(--surtitle-font-weight);
     letter-spacing: var(--surtitle-letter-spacing);
+    line-height: var(--surtitle-line-height);
     margin-block: var(--surtitle-margin-block);
     text-transform: var(--surtitle-text-transform);
   }
