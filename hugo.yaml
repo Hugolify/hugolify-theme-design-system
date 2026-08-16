@@ -14,6 +14,7 @@ params:
   # Grid
   column: 
     mobile: 1
+    tablet: 1
     desktop: 12
   container:
     desktop: 1440
