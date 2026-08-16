@@ -2,7 +2,7 @@
 @layer layouts {
   .grid {
     --grid-column: var(--span-full);
-    row-gap: var(--gap-row);
+    row-gap: var(--grid-row-gap, var(--gap-row));
 
     /* Layouts */
     > * {
@@ -12,7 +12,7 @@
     > .content {
       display: flex;
       flex-direction: column;
-      row-gap: var(--gap-row);
+      row-gap: var(--grid-row-gap, var(--gap-row));
     }
 
     .toc {

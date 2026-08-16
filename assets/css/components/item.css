@@ -19,7 +19,7 @@
     position: relative;
 
     .content {
-      align-items: start;
+      align-items: var(--item-align, start);
       color: var(--item-color-text);
       display: flex;
       flex-direction: column;
@@ -30,6 +30,7 @@
       padding-block-start: var(--item-padding-block-start);
       padding-inline: var(--item-padding-inline);
       text-decoration: none;
+      text-align: var(--item-align, start);
 
       > * {
         margin-block: 0;
