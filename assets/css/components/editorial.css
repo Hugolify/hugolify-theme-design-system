@@ -24,9 +24,6 @@
       }
     }
 
-    .content {
-      --gap-row: 0;
-    }
     .media {
       --media-ratio: none;
     }

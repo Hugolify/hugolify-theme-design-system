@@ -8,6 +8,7 @@
  *   .hero-with-cover      — background media (image or video)
  *   .hero-with-cover-image
  *   .hero-with-cover-video
+ *   .hero-with-darken     — darkness under text
  *   .hero-cover-darken    — brightness filter on cover
  *   .hero-with-image      — side image (not cover)
  *   .hero-with-video      — side video (not cover)
@@ -29,27 +30,22 @@
     --color-link: var(--hero-color-link);
     --color-text: var(--hero-color-text);
     --font-size-heading: var(--hero-title-font-size);
+    --surtitle-color: oklch(from var(--hero-color-text) l c h / var(--opacity-muted));
 
     background-color: var(--hero-color-background);
     color: var(--color-text);
     position: relative;
 
     .container {
-      padding-block: var(--hero-padding-block);
       position: relative;
     }
 
     .row {
+      align-items: center;
+      height: var(--hero-height);
       justify-content: center;
-      min-height: var(--hero-min-height);
-
-      @media (--tablet) {
-        align-items: center;
-        min-height: var(--hero-min-height-tablet);
-      }
-      @media (--desktop) {
-        min-height: var(--hero-min-height-desktop);
-      }
+      max-height: var(--hero-max-height);
+      padding-block: var(--hero-padding-block);
     }
   }
 
@@ -61,13 +57,9 @@
     gap: var(--hero-gap);
     padding-inline: var(--hero-padding-inline);
     max-width: 100%;
-  
-    .surtitle {
-      margin-block-end: calc(-1 * var(--hero-gap));
-    }
 
-    h1 {
-      margin-block: 0;
+    .heading {
+      margin-block-end: 0;
     }
 
     p {
@@ -130,6 +122,10 @@
       margin-inline: auto;
       text-align: center;
 
+      .heading {
+        align-items: center;
+      }
+
       .cta {
         justify-content: center;
       }
@@ -141,6 +137,18 @@
       .hero-content {
         margin-inline-start: auto;
       }
+    }
+  }
+  
+  .hero-vertical-start {
+    .hero-content {
+      margin-block-end: auto;
+    }
+  }
+  
+  .hero-vertical-end {
+    .hero-content {
+      margin-block-start: auto;
     }
   }
 
@@ -188,6 +196,7 @@
 
   /* ── Hero cover darken ─────────────────────────────────────── */
 
+  .hero-with-darken,
   .hero:has(.hero-cover-darken) {
     --color-heading: var(--color-white);
     --color-link: var(--color-white);
@@ -195,27 +204,6 @@
     --btn-color-text: var(--color-white);
     --surtitle-color: var(--color-gray-300);
 
-    &::before {
-      background: linear-gradient(to right, var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-      content: '';
-      inset: 0;
-      pointer-events: none;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .container {
-      z-index: 2;
-    }
-
-    &.hero-center {
-      .container {
-        background: transparent;
-      }
-      .hero-cover {
-        filter: brightness(var(--hero-media-brightness));
-      }
-    }
     .hero-content {
       .btn {
         --btn-color-background: var(--color-light);
@@ -229,5 +217,48 @@
         --btn-color-text: var(--color-white);
       }
     }
+  }
+  .hero-with-darken {
+    /* Logical gradient directions (flipped under RTL) */
+    --hero-gradient-to-end: to right;   /* toward inline-end */
+    --hero-gradient-to-start: to left;  /* toward inline-start */
+    &:dir(rtl) {
+      --hero-gradient-to-end: to left;
+      --hero-gradient-to-start: to right;
+    }
+    &::before {
+      background: linear-gradient(var(--hero-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
+    }
+    &.hero-center {
+      &::before {
+        background: var(--color-shadow-strong)
+      }
+    }
+    &.hero-end {
+      &::before {
+        background: linear-gradient(var(--hero-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      }
+    }
+    &.hero-vertical-end {
+      &::before {
+        background: linear-gradient(to top, var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      }
+    }
+    &.hero-vertical-start {
+      &::before {
+        background: linear-gradient(to bottom, var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      }
+    }
+    .container {
+      z-index: 2;
+    }
+  }
+  .hero-cover-darken {
+    filter: brightness(var(--hero-media-brightness));
   }
 }

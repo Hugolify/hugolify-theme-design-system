@@ -13,10 +13,15 @@
  */
 @layer components {
   .block-cta {
-    /* Laptop+: center heading and CTAs */
-    @media (--tablet-wide) {
+    &.block-align-center {
       .cta {
-        justify-content: center;
+        margin-inline: auto;
+      }
+    }
+    &.block-align-end {
+      .cta {
+        margin-inline-start: auto;
+        margin-inline-end: 0;
       }
     }
   }

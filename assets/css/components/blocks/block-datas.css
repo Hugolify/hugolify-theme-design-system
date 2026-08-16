@@ -11,7 +11,6 @@
  */
 @layer components {
   .block-datas {
-    text-align: center;
     .gauge {
       margin-inline: auto;
     }

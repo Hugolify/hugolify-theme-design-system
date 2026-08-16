@@ -10,19 +10,26 @@
  */
 @layer components {
   .block-paragraph {
-    &.block-align-center {
-      text-align: center;
-    }
-    &.block-align-end {
-      text-align: end;
-    }
     .paragraph {
-      h2:first-child {
-        margin-block-start: 0;
+      .heading {
+        margin-block-end: var(--gap);
       }
+      
       .notes,
       .cta {
         margin-block-start: var(--gap);
+      }
+    }
+
+    &.block-align-center {
+      .text p {
+        margin-inline: auto;
+      }
+    }
+
+    &.block-align-end {
+      .text p {
+        margin-inline-start: auto;
       }
     }
   }

@@ -17,6 +17,17 @@
  */
 @layer components {
 
+  .block-editorial {
+    .editorial {
+      .heading {
+        align-items: start;
+        margin-block-end: var(--gap);
+        margin-inline: 0;
+        text-align: start;
+      }
+    }
+  }
+
   .block-editorial-rtl {
     @media (--tablet) {
       .media {

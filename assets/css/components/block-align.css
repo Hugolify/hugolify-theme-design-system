@@ -6,11 +6,33 @@
  */
 @layer components {
   .block-align-center {
+    text-align: center;
+    .heading {
+      h2, p {
+        margin-inline: auto;
+      }
+    }
+
     @media (--tablet-wide) {
       .items {
-        --items-cols: 4;
         grid-template-columns: repeat(auto-fit, calc((100% - var(--items-gap) * (var(--items-cols) - 1)) / var(--items-cols)));
         justify-content: center;
+      }
+    }
+  }
+  .block-align-end {
+    text-align: end;
+    .heading {
+      h2, p {
+        margin-inline-start: auto;
+      }
+    }
+  }
+  .block-align-start {
+    text-align: start;
+    .heading {
+      h2, p {
+        margin-inline-end: auto;
       }
     }
   }
