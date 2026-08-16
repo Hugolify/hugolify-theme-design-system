@@ -1,0 +1,10 @@
+/* pages/home.css */
+@layer pages {
+  .home-page {
+    .hero {
+      .row {
+        height: var(--hero-home-height);
+      }
+    }
+  }
+}
