@@ -32,8 +32,26 @@
     },
     "logo": {
       "height": {
-        "$type": "dimension",
-        "$value": "{logo.height.default}"
+        "default": {
+          "$type": "dimension",
+          "$value": "{logo.height.default}"
+        },
+        "tablet": {
+          "$type": "dimension",
+          "$value": "{logo.height.tablet}"
+        },
+        "tabletWide": {
+          "$type": "dimension",
+          "$value": "{footer.logo.height.tablet}"
+        },
+        "laptop": {
+          "$type": "dimension",
+          "$value": "{footer.logo.height.tablet}"
+        },
+        "desktop": {
+          "$type": "dimension",
+          "$value": "{footer.logo.height.tablet}"
+        }
       }
     }
   }

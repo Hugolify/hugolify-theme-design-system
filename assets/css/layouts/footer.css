@@ -14,8 +14,17 @@
  *     </div>
  *   </footer>
  */
-@layer components {
+@layer layouts {
   footer[role="contentinfo"] {
+    --color-link: var(--footer-color-text);
+    --nav-color-text: var(--footer-color-text);
+
+    --logo-height: var(--footer-logo-height);
+    --logo-height-tablet: var(--footer-logo-height-tablet);
+    --logo-height-tablet-wide: var(--footer-logo-height-tablet-wide);
+    --logo-height-laptop: var(--footer-logo-height-laptop);
+    --logo-height-desktop: var(--footer-logo-height-desktop);
+
     background-color: var(--footer-color-background);
     color: var(--footer-color-text);
     padding-block: var(--footer-padding-block);
@@ -24,12 +33,6 @@
       display: flex;
       flex-direction: column;
       gap: var(--footer-gap);
-    }
-
-    /* ── Logo ────────────────────────────────────────────────────── */
-
-    .logo img {
-      height: var(--footer-logo-height);
     }
 
     /* ── Top — grid of columns ───────────────────────────────────── */
@@ -57,9 +60,11 @@
       flex-wrap: wrap;
       gap: var(--gap);
       justify-content: space-between;
+      padding-inline: var(--gutter);
 
       @media not (--tablet) {
         flex-direction: column;
+        margin-inline: calc(var(--gutter) * -1);
       }
     }
 
@@ -68,36 +73,30 @@
     .footer-title {
       font-size: var(--nav-title-font-size);
       font-weight: var(--nav-title-font-weight);
+      margin-block-start: 0;
+    }
+
+    /* ── Nav  ───────────────────────────────────────── */
+
+    .nav-title {
+      --nav-title-margin-block: 0 var(--spacing-typography);
+      --nav-title-padding-block: 0;
+      --nav-title-padding-inline: 0;
+    }
+    .nav-title + .nav {
+      --nav-margin-block: calc(var(--nav-link-padding-block) * -1) 0;
+      --nav-line-height: initial;
+    }
+    .nav {
+      margin-inline-start: calc(var(--nav-link-padding-inline) * -1);
     }
 
     /* ── Nav legal and social ───────────────────────────────────────── */
 
     .nav-legal {
-      align-items: start;
-      margin-inline-start: calc(var(--nav-padding-inline) * -1);
-    }
-    .nav-legal,
-    .nav-social {
       @media (--tablet) {
-        flex-direction: row;
-      }
-    }
-
-    /* ── Credits ───────────────────────────────────────── */
-
-    .hugolify {
-      color: var(--footer-color-text-muted);
-      font-size: var(--font-size-2xs);
-      margin-block: 0;
-      max-width: none;
-      text-align: center;
-
-      &::before {
-        background-color: var(--footer-color-border);
-        content: "";
-        display: block;
-        height: var(--border-width-sm);
-        margin-block-end: var(--footer-gap);
+        --nav-direction: row;
+        margin-inline-start: 0;
       }
     }
   }

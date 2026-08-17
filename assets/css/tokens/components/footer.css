@@ -10,5 +10,9 @@
     --footer-gap: var(--spacing-lg);
     --footer-padding-block: var(--spacing-xl);
     --footer-logo-height: var(--logo-height);
+    --footer-logo-height-tablet: var(--logo-height-tablet);
+    --footer-logo-height-tablet-wide: var(--footer-logo-height-tablet);
+    --footer-logo-height-laptop: var(--footer-logo-height-tablet);
+    --footer-logo-height-desktop: var(--footer-logo-height-tablet);
   }
 }

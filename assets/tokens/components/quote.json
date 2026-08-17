@@ -92,7 +92,7 @@
         }
       },
       "lineHeight": {
-        "$type": "string",
+        "$type": "dimension",
         "$value": "{lineHeight.snug}"
       }
     },

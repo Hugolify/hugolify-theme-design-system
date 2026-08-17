@@ -1,0 +1,15 @@
+/* components/hugolify.css */
+/*
+ * .hugolify — footer credit.
+ *
+ * Structure:
+ *   .hugolify
+ */
+@layer components {
+  .hugolify {
+    color: var(--footer-color-text-muted);
+    font-size: var(--font-size-2xs);
+    max-width: none;
+    text-align: center;
+  }
+}
