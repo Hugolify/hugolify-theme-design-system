@@ -89,5 +89,13 @@
         margin-inline-start: 0;
       }
     }
+
+    /* ── Information ───────────────────────────────────────── */
+
+    .information {
+      .btn {
+        margin-block-start: var(--spacing-typography);
+      }
+    }
   }
 }
