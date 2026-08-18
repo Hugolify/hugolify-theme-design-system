@@ -65,64 +65,10 @@
       }
     }
 
-    /* ── Menu button ────────────────────────────────────────────── */
-
-    .btn-menu span {
-      display: none;
-    }
-
     /* ── Main menu ────────────────────────────────────────────── */
 
     .main-menu .nav {
       margin-inline: calc(var(--nav-padding-inline) * -1);
-    }
-
-    /* ── Expand ──────────────────────────── */
-
-    @media (--header-expand) {
-      .btn-menu {
-        display: none;
-      }
-
-      /* Not expanded: hidden until opened as drawer/modal (managed by JS)  */
-      /* Expanded: inline flex nav inside the header  */
-      .main-menu {
-        --drawer-color-background: transparent;
-        --drawer-color-text: inherit;
-        --drawer-shadow: none;
-        --drawer-padding: 0;
-        --drawer-width: auto;
-        display: flex;
-        overflow: visible;
-        position: static;
-        transform: none;
-        visibility: visible;
-
-        .nav {
-          align-items: baseline;
-          flex-direction: row;
-          margin-inline: 0;
-        }
-
-        .nav-item-highlighted {
-          &:first-child {
-            margin-inline-start: 0;
-          }
-          &:last-child {
-            margin-inline-end: 0;
-          }
-        }
-
-        /* Hide header from drawer/modal when displayed inline */
-        .header {
-          display: none;
-        }
-
-        .content {
-          display: flex;
-          overflow: visible;
-        }
-      }
     }
 
   }

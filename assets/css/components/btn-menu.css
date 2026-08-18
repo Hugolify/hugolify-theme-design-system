@@ -1,0 +1,19 @@
+/* components/btn-menu.css */
+/*
+ * .btn-menu — menu button in header. On mobile it toggles the main menu.
+ *
+ * Structure:
+ *     button.btn-menu
+ *       span
+ */
+@layer components {
+  .btn-menu {
+    span {
+      display: none;
+    }
+
+    @media (--header-expand) {
+      display: none;
+    }
+  }
+}
