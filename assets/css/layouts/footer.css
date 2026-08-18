@@ -27,19 +27,16 @@
 
     background-color: var(--footer-color-background);
     color: var(--footer-color-text);
+    display: flex;
+    flex-direction: column;
+    gap: var(--footer-gap);
     padding-block: var(--footer-padding-block);
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      gap: var(--footer-gap);
-    }
 
     /* ── Top — grid of columns ───────────────────────────────────── */
 
     .top {
       @media (--tablet) {
-        & > div {
+        .grid > * {
           grid-column: span 4;
         }
       }
@@ -47,7 +44,7 @@
         .brand {
           grid-column: span 6;
         }
-        & > div {
+        .grid > * {
           grid-column: span 3;
         }
       }
@@ -56,15 +53,8 @@
     /* ── Bottom — legal + credit + social ────────────────────────── */
 
     .bottom {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--gap);
-      justify-content: space-between;
-      padding-inline: var(--gutter);
-
-      @media not (--tablet) {
-        flex-direction: column;
-        margin-inline: calc(var(--gutter) * -1);
+      .row {
+        justify-content: space-between;
       }
     }
 
