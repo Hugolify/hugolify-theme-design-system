@@ -1,13 +1,13 @@
 /* components/push.css */
 /*
- * .push — display a video or image with a title, description, and cta.
+ * .push — display a video or image with a surtitle, title, description, and cta.
  *
  * Structure:
  *   div.push
  *     div.content
  *       .surtitle
  *       h2|h3
- *       .description
+ *       .text
  *       .cta
  *     div.media
  *       img | video
