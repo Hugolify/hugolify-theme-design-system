@@ -21,10 +21,12 @@
         width: 100%;
       }
     }
+
+    &.block-full {
+      --push-border-radius: 0;
+    }
+
     @media not (--tablet) {
-      /* > .container:not(:has(.items-2)) {
-        padding-inline: 0;
-      } */
       .items .push,
       .carousel .push {
         margin-inline: 0
@@ -32,11 +34,14 @@
       .push {
         border-radius: 0;
       }
-      .carousel,
-      .push {
-        margin-inline: calc(var(--gutter) * -1);
+      &:not(.block-full) {
+        .carousel,
+        .push {
+          margin-inline: calc(var(--gutter) * -1);
+        }
       }
     }
+
     .items-2 {
       .push {
         min-height: 100%;
