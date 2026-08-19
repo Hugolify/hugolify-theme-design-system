@@ -13,6 +13,12 @@
  */
 @layer components {
   .block-cta {
+    &.block-accent,
+    &.block-dark {
+      --btn-color-background: var(--color-light);
+      --btn-color-border: var(--color-light);
+      --btn-color-text: var(--color-text-on-light);
+    }
     &.block-align-center {
       .cta {
         margin-inline: auto;
