@@ -9,7 +9,7 @@
 @layer components {
   .btn-menu {
     span {
-      display: none;
+      display: var(--btn-menu-text-display, none);
     }
 
     @media (--header-expand) {
