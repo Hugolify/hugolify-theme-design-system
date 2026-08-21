@@ -7,6 +7,7 @@
  */
 @layer components {
   .block-full {
+    padding-block: var(--block-full-padding-block, var(--block-padding-block));
     padding-inline: var(--block-full-padding-inline, 0);
   }
 }
