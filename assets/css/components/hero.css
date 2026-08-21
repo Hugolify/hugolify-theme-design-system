@@ -34,6 +34,7 @@
 
     background-color: var(--hero-color-background);
     color: var(--color-text);
+    margin-block: var(--hero-margin-block);
     position: relative;
 
     .container {
@@ -45,6 +46,7 @@
       height: var(--hero-height);
       justify-content: center;
       max-height: var(--hero-max-height);
+      min-height: var(--hero-min-height);
       padding-block: var(--hero-padding-block);
     }
   }
@@ -220,20 +222,30 @@
   }
   .hero-with-darken {
     /* Logical gradient directions (flipped under RTL) */
+    --hero-gradient-stop: 100%;
     --hero-gradient-to-end: to right;   /* toward inline-end */
     --hero-gradient-to-start: to left;  /* toward inline-start */
     &:dir(rtl) {
       --hero-gradient-to-end: to left;
       --hero-gradient-to-start: to right;
     }
+
+    @media (--tablet) {
+      --hero-gradient-stop: 50%;
+    }
+    @media (--desktop) {
+      --hero-gradient-stop: 33%;
+    }
+
     &::before {
-      background: linear-gradient(var(--hero-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
+      background: linear-gradient(var(--hero-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) var(--hero-gradient-stop));
       content: '';
       inset: 0;
       pointer-events: none;
       position: absolute;
       z-index: 1;
     }
+    
     &.hero-center {
       &::before {
         background: var(--color-shadow-strong)

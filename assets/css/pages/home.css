@@ -3,7 +3,9 @@
   .home-page {
     .hero {
       .row {
-        height: var(--hero-home-height);
+        height: var(--hero-home-height, var(--hero-height));
+        max-height: var(--hero-home-max-height, var(--hero-max-height));
+        min-height: var(--hero-home-min-height, var(--hero-min-height));
       }
     }
   }
