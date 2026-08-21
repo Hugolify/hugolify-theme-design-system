@@ -29,8 +29,9 @@
     --color-heading: var(--hero-title-color);
     --color-link: var(--hero-color-link);
     --color-text: var(--hero-color-text);
+    --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --font-size-heading: var(--hero-title-font-size);
-    --surtitle-color: oklch(from var(--hero-color-text) l c h / var(--opacity-muted));
+    --surtitle-color: var(--color-text-muted);
 
     background-color: var(--hero-color-background);
     color: var(--color-text);

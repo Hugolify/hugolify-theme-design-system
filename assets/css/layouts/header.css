@@ -24,6 +24,10 @@
   header[role="banner"] {
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);
+    --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
+    --surtitle-color: var(--color-text-muted);
+    --nav-color-text: var(--color-link);
+
     background-color: var(--header-color-background);
     padding-block: var(--header-padding-block);
     padding-inline: var(--header-padding-inline);
@@ -32,8 +36,9 @@
     z-index: var(--header-z-index);
 
     @media (prefers-reduced-motion: no-preference) {
-      transition: top var(--header-transition-duration) var(--header-transition-easing),
-                  box-shadow var(--header-transition-duration) var(--header-transition-easing);
+      transition: background var(--header-transition-duration) var(--header-transition-easing),
+                  box-shadow var(--header-transition-duration) var(--header-transition-easing),
+                  top var(--header-transition-duration) var(--header-transition-easing);
     }
 
     /* Auto-hide on scroll down */
@@ -43,6 +48,10 @@
 
     /* Shadow when sticky */
     &.is-sticky {
+      --color-link: var(--header-sticky-color-link, var(--header-color-link));
+      --color-text: var(--header-sticky-color-text, var(--header-color-text));
+
+      background-color: var(--header-sticky-color-background, var(--header-color-background));
       box-shadow: var(--header-shadow);
     }
 
