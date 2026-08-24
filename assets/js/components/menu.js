@@ -1,7 +1,7 @@
 /**
  * Menu — sticky header + body class toggles on open/close.
  *
- * Listens to custom events dispatched by components (dropdown, drawer, modal).
+ * Listens to custom events dispatched by components (dropdown, dialog).
  */
 const header = document.querySelector('header[role="banner"]');
 
@@ -39,8 +39,8 @@ class Menu {
       this._toggleClass(
         this.componentElm,
         this.classMenuOpen,
-        ['drawer:shown', 'modal:shown'],
-        ['drawer:hidden', 'modal:hidden']
+        ['dialog:shown'],
+        ['dialog:hidden']
       );
     }
   }

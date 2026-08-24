@@ -165,14 +165,28 @@ Components use **scoped CSS custom properties** — each component exposes its o
 
 `--nav-direction`: `column` (default, vertical) or `row` (horizontal).
 
-### Drawer (off-canvas panel)
+### Dialog (modal panel)
+
+Two CSS variants — `.modal` (centred) and `.drawer` (edge) — share one skeleton
+(`panel.css`) and one driver (`components/dialog.js`). The tag picks the
+strategy, not the class.
 
 ```html
-<div class="drawer" id="navigation" data-component="drawer">…</div>
-<button class="btn-menu js-drawer-toggle" data-target="navigation">Menu</button>
+<!-- Always an overlay → native <dialog>: the browser owns Escape, the focus
+     trap, inertness and the backdrop. -->
+<dialog class="drawer drawer-end" id="mainSearch" aria-labelledby="searchLabel">…</dialog>
+
+<!-- Becomes a region of the page above a breakpoint → not a <dialog>, since
+     one is exposed as role="dialog" even when only styled as a sidebar.
+     popover="auto" gives the same top layer and ::backdrop without the role;
+     dialog.js sets the dialog ARIA solely while the panel is open. -->
+<div class="drawer panel-inline" id="toc" popover="auto" aria-labelledby="tocLabel">…</div>
+
+<button class="btn-toc js-dialog-toggle" data-target="#toc">Table of contents</button>
 ```
 
-JS events: `drawer:show`, `drawer:shown`, `drawer:hide`, `drawer:hidden`. Body gets `drawer-open` class when open.
+Close with `.js-dialog-close` inside the panel, Escape, or a click outside.
+JS events: `dialog:shown`, `dialog:hidden`.
 
 ### Cards, blocks, sections
 

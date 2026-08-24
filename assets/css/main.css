@@ -8,8 +8,22 @@
 /* Tokens */
 @import 'tokens/design-system.css';
 
-/* Config */
-@import 'mediaqueries.css';
+/* Responsive breakpoints of the components that own a panel.
+   Aliases of the @uncinq/css-base scale, driven by the same site params as the
+   .panel-inline-* classes in the markup so the two cannot drift. `none` means
+   the panel never goes inline: the component's own responsive rules are
+   switched off with `not all`, and the partial renders a <dialog> instead of
+   a popover, since a panel that is always an overlay has nothing to hide.
+   main.css is executed as a Hugo template for this block — see
+   partials/head/css.html. */
+{{- $expand := dict
+  "filters"     (site.Params.filters.expand     | default "md")
+  "header"      (site.Params.header.expand      | default "md")
+  "sidebarmenu" (site.Params.sidebarmenu.expand | default "md")
+  "toc"         (site.Params.toc.expand         | default "md") }}
+{{- range $name, $bp := $expand }}
+@custom-media --{{ $name }}-expand {{ cond (eq $bp "none") "not all" (printf "(--%s)" $bp) }};
+{{- end }}
 
 /* Vendors */
 @import 'vendors/leaflet.css';

@@ -1,6 +1,6 @@
 /* components/main-menu.css */
 /*
- * .main-menu — mobile navigation panel (drawer / modal).
+ * .main-menu — mobile navigation panel (.drawer or .modal).
  *
  * Header bar sticky behaviour → components/header.css
  *
@@ -8,61 +8,67 @@
  *   html.is-menu-open          — panel is open
  *   html.is-dropdown-menu-open — a dropdown is open
  *
- * Panel trigger: .js-drawer-toggle[data-target="#navigation"]
+ * Panel trigger: .js-dialog-toggle[data-target="#navigation"]
  * Dropdown trigger: .js-dropdown-toggle
  */
 @layer components {
   .main-menu {
+    --modal-max-width: 60ch;
 
-    /* ── Drawer / modal (below --header-expand) ───────────────────────
+    /* ── Panel (below --header-expand) ────────────────────────────────
      * In this context .dropdown-menu behaves as a plain inline sub-list.
-     * JS toggle classes (.show / .showing) still control open/closed state. */
+     * The .show class set by components/dialog.js controls open/closed. */
     @media not (--header-expand) {
-      .dropdown {
-        --dropdown-padding: 0;
-        --dropdown-item-padding-inline: var(--nav-padding-inline);
-        flex-direction: column;
+      .nav {
+        margin-inline-start: calc(var(--nav-link-padding-inline) * -1);
       }
-      .dropdown-toggle {
-        display: none;
+      .nav ~ .nav {
+        --nav-border: var(--border-width-sm) var(--border-style-normal) var(--color-border);
+        --nav-margin-block: var(--spacing-sm) 0;
+        --nav-padding-block: var(--spacing-sm) 0;
+        border-block-start: var(--nav-border);
       }
-      .dropdown-menu {
-        background-color: transparent;
-        border: 0;
-        border-radius: 0;
-        box-shadow: none;
-        font-size: var(--main-menu-panel-font-size-sub);
-        min-width: 0;
-        opacity: 1;
-        pointer-events: auto;
-        position: static;
-        transform: none;
-        visibility: visible;
+      .nav:not(.nav-language) {
+        .dropdown {
+          --dropdown-color-text: var(--nav-color-text);
+          --dropdown-item-color-background: transparent;
+          --dropdown-item-color-background-hover: transparent;
+          --dropdown-item-padding-inline: var(--nav-link-padding-inline);
+          --dropdown-padding: 0;
+          flex-direction: column;
+        }
+        .dropdown-toggle {
+          display: none;
+        }
+        .dropdown-menu {
+          background-color: transparent;
+          border: 0;
+          border-radius: 0;
+          box-shadow: none;
+          font-size: var(--main-menu-panel-font-size-sub);
+          min-width: 0;
+          opacity: 1;
+          pointer-events: auto;
+          position: static;
+          transform: none;
+          visibility: visible;
 
-        li a {
-          color: var(--nav-color-text);
-          white-space: normal;
+          li a {
+            white-space: normal;
+          }
         }
       }
+
       .nav-item-highlighted {
         margin-block: var(--nav-padding-block);
       }
     }
 
-    /* Not expanded: hidden until opened as drawer/modal (managed by JS)  */
-    /* Expanded: inline flex nav inside the header  */
+    /* Expanded: inline flex nav inside the header. The panel styling itself —
+     * position, size, shadow, background, text and link colours — is
+     * neutralised by .panel-inline from @uncinq/css-components;
+     * only what is specific to the menu stays here. */
     @media (--header-expand) {
-      --drawer-color-background: transparent;
-      --drawer-color-text: inherit;
-      --drawer-shadow: none;
-      --drawer-padding: 0;
-      --drawer-width: auto;
-      display: flex;
-      overflow: visible;
-      position: static;
-      transform: none;
-      visibility: visible;
-
       .nav {
         align-items: baseline;
         flex-direction: row;
@@ -78,14 +84,9 @@
         }
       }
 
-      /* Hide header from drawer/modal when displayed inline */
-      .header {
-        display: none;
-      }
-
       .content {
+        align-items: baseline;
         display: flex;
-        overflow: visible;
       }
     }
   }

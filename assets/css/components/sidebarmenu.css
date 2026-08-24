@@ -6,11 +6,11 @@
  *   aside.sidebarmenu
  *     div                      (sticky wrapper)
  *       p                      (label — tablet+ only)
- *       button.js-drawer    (toggle — mobile only)
+ *       button.js-dialog-toggle  (toggle — mobile only)
  *       div.drawer
  *         div.header
  *           p.title
- *           button.js-drawer-close
+ *           button.js-dialog-close
  *         div.content
  *           nav
  *             ul.nav
@@ -53,13 +53,6 @@
       }
     }
 
-    /* ── Toggle button (tablet-wide-) ───────────────────────── */
-    > div > button {
-      @media (--sidebarmenu-expand) {
-        display: none;
-      }
-    }
-
     /* ── Nav ────────────────────────────────────────────────── */
     nav {
       ul {
@@ -85,35 +78,6 @@
 
         &.active {
           color: var(--sidebarmenu-nav-link-color-active);
-        }
-      }
-    }
-
-    /* ── Drawer — side panel on mobile, static on tablet-wide+ ── */
-    .drawer {
-      --drawer-end:          var(--sidebarmenu-drawer-end);
-      --drawer-start:        var(--sidebarmenu-drawer-start);
-      --drawer-translate:    var(--sidebarmenu-drawer-translate);
-
-      @media (--sidebarmenu-expand) {
-        box-shadow: none;
-        overflow: visible;
-        position: static;
-        transform: none;
-        transition: none;
-        visibility: visible;
-        width: auto;
-        z-index: auto;
-
-        > .header,
-        > .footer {
-          display: none;
-        }
-
-        > .content {
-          flex-grow: unset;
-          overflow-y: unset;
-          padding: 0;
         }
       }
     }

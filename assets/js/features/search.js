@@ -1,13 +1,10 @@
 /**
  * Search — focuses the input when the search panel opens.
  *
- * Listens to modal:shown and drawer:shown custom events.
+ * Listens to the dialog:shown custom event.
  */
 const search = document.getElementById('mainSearch');
 
 if (search) {
-  const focusInput = () => search.querySelector('input')?.focus();
-
-  search.addEventListener('drawer:shown', focusInput);
-  search.addEventListener('modal:shown', focusInput);
+  search.addEventListener('dialog:shown', () => search.querySelector('input')?.focus());
 }

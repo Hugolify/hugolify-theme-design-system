@@ -304,16 +304,21 @@ Components dispatch a **4-event lifecycle** that mirrors the Bootstrap conventio
 | `component:hide` | Before closing — transition starts |
 | `component:hidden` | After closing — transition ends, focus restored |
 
-Component names replace `component`: `drawer:show`, `modal:shown`, `dropdown:hidden`…
+Component names replace `component`: `dropdown:hidden`, `dialog:shown`…
+
+`dialog.js` dispatches only the two end-of-lifecycle events, `dialog:shown` and
+`dialog:hidden`: the open and close transitions are driven entirely by CSS
+(`allow-discrete` + `@starting-style`), so there is no JS-side "transition
+starts" moment left to announce.
 
 Other components (e.g. `menu.js`) listen to these events to react to state changes without direct coupling:
 
 ```js
-// menu.js — reacts to drawer and modal events
-elm.addEventListener('drawer:shown', () => {
+// menu.js — reacts to panel events, whatever variant or tag is used
+elm.addEventListener('dialog:shown', () => {
   document.documentElement.classList.add('is-menu-open');
 });
-elm.addEventListener('drawer:hidden', () => {
+elm.addEventListener('dialog:hidden', () => {
   document.documentElement.classList.remove('is-menu-open');
 });
 ```

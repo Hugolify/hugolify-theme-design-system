@@ -11,9 +11,6 @@
     --sidebarmenu-label-line-height: var(--line-height-heading);
     --sidebarmenu-label-color: var(--color-heading);
     --sidebarmenu-label-margin-block-end: var(--spacing-sm);
-    --sidebarmenu-drawer-translate: translateX(-100%);
-    --sidebarmenu-drawer-start: 0;
-    --sidebarmenu-drawer-end: auto;
     --sidebarmenu-nav-link-padding-inline: var(--spacing-2xs);
     --sidebarmenu-nav-link-padding-block: var(--spacing-2xs);
     --sidebarmenu-nav-link-font-size: var(--font-size-xs);

@@ -6,11 +6,11 @@
  *   div.toc
  *     div                      (sticky wrapper)
  *       p                      (label — laptop+ only)
- *       button.js-drawer       (toggle — mobile only)
+ *       button.js-dialog-toggle  (toggle — mobile only)
  *       div.drawer
  *         div.header
  *           p.title
- *           button.js-drawer-close
+ *           button.js-dialog-close
  *         div.content
  *           nav#TableOfContents
  *             ul | ol
@@ -50,13 +50,6 @@
       }
     }
 
-    /* ── Toggle button (tablet-wide-) ───────────────────────── */
-    > div > button {
-      @media (--toc-expand) {
-        display: none;
-      }
-    }
-
     /* ── Nav ────────────────────────────────────────────────── */
     nav {
       width: 100%;
@@ -86,35 +79,6 @@
           &:hover {
             text-decoration-color: var(--toc-nav-link-color-text-decoration-hover);
           }
-        }
-      }
-    }
-
-    /* ── Drawer — side panel on mobile, static on tablet-wide+ ── */
-    .drawer {
-      --drawer-end:          var(--toc-drawer-end);
-      --drawer-start:        var(--toc-drawer-start);
-      --drawer-translate:    var(--toc-drawer-translate);
-
-      @media (--toc-expand) {
-        box-shadow: none;
-        overflow: visible;
-        position: static;
-        transform: none;
-        transition: none;
-        visibility: visible;
-        width: auto;
-        z-index: auto;
-
-        > .header,
-        > .footer {
-          display: none;
-        }
-
-        > .content {
-          flex-grow: unset;
-          overflow-y: unset;
-          padding: 0;
         }
       }
     }

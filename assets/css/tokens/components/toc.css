@@ -10,9 +10,6 @@
     --toc-label-line-height: var(--line-height-heading);
     --toc-label-color: var(--color-heading);
     --toc-label-margin-block-end: var(--spacing-sm);
-    --toc-drawer-end: auto;
-    --toc-drawer-start: 0;
-    --toc-drawer-translate: translateX(-100%);
     --toc-nav-indent: var(--size-16);
     --toc-nav-font-size: var(--font-size-xs);
     --toc-nav-item-gap: var(--spacing-2xs);

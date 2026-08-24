@@ -38,20 +38,6 @@
         }
       }
     },
-    "drawer": {
-      "translate": {
-        "$type": "string",
-        "$value": "translateX(-100%)"
-      },
-      "start": {
-        "$type": "string",
-        "$value": "0"
-      },
-      "end": {
-        "$type": "string",
-        "$value": "auto"
-      }
-    },
     "nav": {
       "link": {
         "padding": {

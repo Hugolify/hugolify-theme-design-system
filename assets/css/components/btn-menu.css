@@ -11,9 +11,5 @@
     span {
       display: var(--btn-menu-text-display, none);
     }
-
-    @media (--header-expand) {
-      display: none;
-    }
   }
 }

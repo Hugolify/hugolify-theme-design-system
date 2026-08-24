@@ -34,20 +34,6 @@
         }
       }
     },
-    "drawer": {
-      "end": {
-        "$type": "string",
-        "$value": "auto"
-      },
-      "start": {
-        "$type": "string",
-        "$value": "0"
-      },
-      "translate": {
-        "$type": "string",
-        "$value": "translateX(-100%)"
-      }
-    },
     "nav": {
       "indent": {
         "$type": "dimension",
