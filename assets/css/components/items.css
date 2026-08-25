@@ -31,7 +31,7 @@
   @media (--tablet-wide) {
     [class^="items-"],
     [class*=" items-"] {
-      grid-template-columns: repeat(auto-fit, calc((100% - var(--items-gap) * (var(--items-cols) - 1)) / var(--items-cols)));
+      grid-template-columns: repeat(auto-fit, calc((100% - var(--items-column-gap, var(--items-gap)) * (var(--items-cols) - 1)) / var(--items-cols)));
       justify-content: center;
     }
 

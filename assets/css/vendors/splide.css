@@ -8,7 +8,8 @@
       padding-inline-start: 0 !important;
     }
     &:not(.is-initialized) .splide__list {
-      gap: var(--items-gap);
+      column-gap: var(--items-column-gap, var(--items-gap));
+      row-gap: var(--items-row-gap, var(--items-gap));
     }
     &:has(.splide__pagination) {
       margin-block-end: var(--carousel-pagination-margin-block);

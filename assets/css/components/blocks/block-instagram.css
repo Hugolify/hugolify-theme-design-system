@@ -16,10 +16,11 @@
     text-align: center;
 
     .instagram {
+      column-gap: var(--items-column-gap, var(--items-gap));
       display: flex;
       flex-wrap: wrap;
-      gap: var(--items-gap);
       justify-content: center;
+      row-gap: var(--items-row-gap, var(--items-gap));
 
       div {
         flex: 1;
