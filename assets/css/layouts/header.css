@@ -25,7 +25,7 @@
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
-    --surtitle-color: var(--color-text-muted);
+    --surtitle-color-text: var(--color-text-muted);
     --nav-color-text: var(--color-link);
 
     background-color: var(--header-color-background);

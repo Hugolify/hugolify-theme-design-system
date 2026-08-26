@@ -31,7 +31,7 @@
     --color-text: var(--hero-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --font-size-heading: var(--hero-title-font-size);
-    --surtitle-color: var(--color-text-muted);
+    --surtitle-color-text: var(--color-text-muted);
 
     background-color: var(--hero-color-background);
     color: var(--color-text);
@@ -205,7 +205,7 @@
     --color-link: var(--color-white);
     --color-text: var(--color-white);
     --btn-color-text: var(--color-white);
-    --surtitle-color: var(--color-gray-300);
+    --surtitle-color-text: var(--color-gray-300);
 
     .hero-content {
       .btn {

@@ -19,7 +19,7 @@
     --color-link: var(--footer-color-text);
     --color-text: var(--footer-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
-    --surtitle-color: var(--color-text-muted);
+    --surtitle-color-text: var(--color-text-muted);
     --nav-color-text: var(--footer-color-text);
 
     --logo-height: var(--footer-logo-height);
