@@ -3,8 +3,8 @@
     --nav-direction: row;
     --nav-font-size: var(--font-size-small);
     --nav-gap: var(--spacing-2xs);
-    --nav-padding-block: var(--spacing-2xs);
-    --nav-padding-inline: var(--spacing-2xs);
+    --nav-link-padding-block: var(--spacing-2xs);
+    --nav-link-padding-inline: var(--spacing-2xs);
     --nav-social-icon-size: var(--size-20, 1.25rem);
 
     a {
