@@ -5,6 +5,9 @@
  *
  * Content-type classes (.page, .post, .project…) override --item-* tokens only.
  * No structure duplication needed in content-type modules.
+ *
+ * Optional sizing: --item-max-width / --item-width are unset by default.
+ * Prefer ch units so the width tracks the text measure, like --items-min-width.
  */
 @layer components {
   .item {
@@ -19,8 +22,10 @@
     display: flex;
     flex-direction: column;
     height: 100%;
+    max-width: var(--item-max-width);
     overflow: hidden;
     position: relative;
+    width: var(--item-width);
 
     .content {
       align-items: var(--item-align, start);
