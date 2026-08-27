@@ -23,9 +23,9 @@
         margin-inline-start: calc(var(--nav-link-padding-inline) * -1);
       }
       .nav ~ .nav {
-        border-block-start: var(--border-width-sm) var(--border-style-normal) var(--color-border);
-        margin-block-start: var(--spacing-sm);
-        padding-block-start: var(--spacing-sm);
+        border-block-start: var(--main-menu-panel-separator-border-width) var(--main-menu-panel-separator-border-style) var(--main-menu-panel-separator-color-border);
+        margin-block-start: var(--main-menu-panel-separator-spacing);
+        padding-block-start: var(--main-menu-panel-separator-spacing);
       }
       .nav:not(.nav-language) {
         .dropdown {

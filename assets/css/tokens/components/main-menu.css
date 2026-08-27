@@ -3,9 +3,7 @@
 /* components/main-menu.css */
 @layer tokens {
   :root {
-    --main-menu-border-width: var(--border-width-sm);
     --main-menu-color-background: var(--color-background);
-    --main-menu-color-border: var(--color-border);
     --main-menu-color-text: var(--color-text);
     --main-menu-color-text-hover: var(--color-brand);
     --main-menu-padding-inline: var(--spacing-sm);
@@ -13,12 +11,16 @@
     --main-menu-shadow: var(--shadow-sm);
     --main-menu-z-index: var(--z-index-sticky);
     --main-menu-font-size: var(--font-size-text);
+    --main-menu-dropdown-color-background: var(--color-background-muted);
+    --main-menu-dropdown-radius: var(--radius-surface);
+    --main-menu-dropdown-shadow: var(--shadow-sm);
     --main-menu-panel-color-background: var(--color-background);
     --main-menu-panel-color-text: var(--color-text);
     --main-menu-panel-font-size: var(--font-size-md);
     --main-menu-panel-font-size-sub: var(--font-size-sm);
-    --main-menu-dropdown-color-background: var(--color-background-muted);
-    --main-menu-dropdown-radius: var(--radius-surface);
-    --main-menu-dropdown-shadow: var(--shadow-sm);
+    --main-menu-panel-separator-border-style: var(--border-style-normal);
+    --main-menu-panel-separator-border-width: var(--border-width-sm);
+    --main-menu-panel-separator-color-border: var(--border-color);
+    --main-menu-panel-separator-spacing: var(--spacing-sm);
   }
 }
