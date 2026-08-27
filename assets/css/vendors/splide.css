@@ -27,8 +27,27 @@
       }
     }
     .splide__pagination__page {
+      border-radius: var(--radius-pill, 50%);
+      height: var(--carousel-pagination-height, .5rem);
+      margin: var(--carousel-pagination-margin, .1875rem);
+      opacity: var(--carousel-pagination-opacity, 1);
+      width: var(--carousel-pagination-width, .5rem);
+
+      &:hover {
+        opacity: var(--carousel-pagination-opacity-hover, .75);
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        transition: var(--transition-normal);
+      }
+    
       &.is-active {
         background: var(--carousel-pagination-color-active, var(--color-active));
+        transform: var(--carousel-pagination-transform-active);
+        
+        &:hover {
+          opacity: var(--carousel-pagination-opacity-active-hover, .75);
+        }
       }
     }
     .splide__arrow {
