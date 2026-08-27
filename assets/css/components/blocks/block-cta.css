@@ -13,12 +13,20 @@
  */
 @layer components {
   .block-cta {
-    &.block-accent,
-    &.block-dark {
-      --btn-color-background: var(--color-light);
-      --btn-color-border: var(--color-light);
-      --btn-color-text: var(--color-text-on-light);
+
+    /* themes */
+    &.block-accent {
+      --btn-color-background: var(--color-text-on-accent);
+      --btn-color-border:  var(--color-text-on-accent);
+      --btn-color-text: var(--color-accent);
     }
+    &.block-dark {
+      --btn-color-background:var(--color-text-on-dark);
+      --btn-color-border: var(--color-text-on-dark);
+      --btn-color-text: var(--color-dark);
+    }
+
+    /* alignment */
     &.block-align-center {
       .cta {
         margin-inline: auto;
