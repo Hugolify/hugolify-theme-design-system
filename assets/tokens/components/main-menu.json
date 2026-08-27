@@ -89,7 +89,7 @@
         "color": {
           "border": {
             "$type": "color",
-            "$value": "{border.color.default}"
+            "$value": "{color.border.default}"
           }
         },
         "spacing": {

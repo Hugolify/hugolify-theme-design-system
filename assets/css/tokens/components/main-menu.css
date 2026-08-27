@@ -20,7 +20,7 @@
     --main-menu-panel-font-size-sub: var(--font-size-sm);
     --main-menu-panel-separator-border-style: var(--border-style-normal);
     --main-menu-panel-separator-border-width: var(--border-width-sm);
-    --main-menu-panel-separator-color-border: var(--border-color);
+    --main-menu-panel-separator-color-border: var(--color-border);
     --main-menu-panel-separator-spacing: var(--spacing-sm);
   }
 }
