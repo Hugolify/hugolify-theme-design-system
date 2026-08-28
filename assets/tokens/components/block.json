@@ -21,7 +21,7 @@
     "padding": {
       "block": {
         "$type": "dimension",
-        "$value": "{spacing.fluid.lg}"
+        "$value": "{spacing.section}"
       }
     },
     "bg": {

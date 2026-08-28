@@ -7,7 +7,7 @@
     --block-gap-tablet: var(--spacing-lg);
     --block-gap-laptop: var(--spacing-lg);
     --block-gap-desktop: var(--spacing-xl);
-    --block-padding-block: var(--spacing-fluid-lg);
+    --block-padding-block: var(--spacing-section);
     --block-bg-color: var(--color-background-muted);
   }
 }
