@@ -20,7 +20,7 @@
      * The .show class set by components/dialog.js controls open/closed. */
     @media not (--header-expand) {
       .nav {
-        margin-inline-start: calc(var(--nav-link-padding-inline) * -1);
+        --nav-item-margin-inline: calc(var(--nav-link-padding-inline) * -1) 0;
       }
       .nav ~ .nav {
         border-block-start: var(--main-menu-panel-separator-border-width) var(--main-menu-panel-separator-border-style) var(--main-menu-panel-separator-color-border);

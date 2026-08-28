@@ -81,7 +81,7 @@
       --nav-line-height: initial;
     }
     .nav {
-      --nav-margin-inline: calc(var(--nav-link-padding-inline) * -1);
+      --nav-item-margin-inline: calc(var(--nav-link-padding-inline) * -1) 0;
     }
 
     /* ── Nav legal and social ───────────────────────────────────────── */
