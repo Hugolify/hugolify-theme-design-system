@@ -61,6 +61,11 @@ assets/css/
 │   ├── blocks/
 │   └── sections/
 │
+├── utilities/               ← single-purpose classes (@layer utilities)
+│   ├── display.css
+│   └── scrollsnap.css
+│
+├── utilities.css            ← imports every utilities/ file
 ├── mediaqueries.css         ← @custom-media definitions
 └── main.css                 ← entry point — @layer + all imports
 ```
@@ -107,6 +112,8 @@ Layers are declared **once** at the top of `main.css`, in order of precedence (l
 | `layouts` | Layout structures (container, grid, row) |
 | `vendors` | Third-party libraries (Splide…) |
 | `components` | UI components |
+| `pages` | Page-specific rules |
+| `utilities` | Single-purpose classes — they win over a component's own rules |
 
 ### `main.css` — entry point
 

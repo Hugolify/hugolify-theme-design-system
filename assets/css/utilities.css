@@ -1,4 +1,7 @@
 /* css/utilities.css */
-@layer utilities {
-  .d-none { display: none; }
-}
+/*
+ * Imports every utility in @layer utilities — the last layer, so a utility
+ * wins over the grid or the display a component declares for itself.
+ */
+@import 'utilities/display.css';
+@import 'utilities/scrollsnap.css';

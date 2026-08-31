@@ -11,6 +11,11 @@
  */
 @layer components {
   .block-datas {
+    .items {
+      li {
+        margin-block: 0;
+      }
+    }
     .gauge {
       margin-inline: auto;
     }

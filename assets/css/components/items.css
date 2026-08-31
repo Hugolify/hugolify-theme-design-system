@@ -8,25 +8,6 @@
     }
   }
 
-  /* ── Carousel on mobile and tablet ─────────────── */
-  @media not (--tablet-wide) {
-    [class^="items-"],
-    [class*=" items-"] {
-      grid-auto-columns: min(var(--items-min-width, var(--max-width-item)), var(--items-carousel-max-width, 75vw));
-      grid-auto-flow: column;
-      grid-template-columns: unset;
-      margin-inline: calc(-1 * var(--gutter));
-      overflow-x: auto;
-      padding-inline: var(--gutter);
-      scroll-snap-type: x mandatory;
-
-      > * {
-        scroll-margin-inline: var(--gutter);
-        scroll-snap-align: start;
-      }
-    }
-  }
-
   /* ── Center + fixed columns at tablet-wide and up ─────────────── */
   @media (--tablet-wide) {
     [class^="items-"],

@@ -11,17 +11,14 @@
   .gallery {
     gap: var(--gallery-gap);
 
+    /* A gallery never becomes a carousel: it keeps a fixed number of columns
+       all the way down. No !important needed now that the carousel is the
+       opt-in .scrollsnap-* utility rather than a rule on every .items-*. */
     @media not (--tablet-wide) {
-      grid-template-columns: 1fr 1fr 1fr !important;
-      grid-auto-columns: unset !important;
-      grid-auto-flow: unset !important;
-      margin-inline: 0 !important;
-      overflow: unset;
-      padding-inline: 0 !important;
-      scroll-snap-type: none;
+      grid-template-columns: 1fr 1fr 1fr;
     }
     @media not (--tablet) {
-      grid-template-columns: 1fr 1fr !important;
+      grid-template-columns: 1fr 1fr;
     }
 
     figure {

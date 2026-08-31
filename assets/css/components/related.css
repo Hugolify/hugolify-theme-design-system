@@ -23,24 +23,5 @@
         justify-content: space-between;
       }
     }
-
-    @media not (--tablet-wide) {
-      .items {
-        grid-auto-columns: min(var(--items-min-width, var(--max-width-item)), var(--items-carousel-max-width, 75vw));
-        grid-auto-flow: column;
-        grid-template-columns: none;
-
-        margin-inline: calc(var(--gutter) * -1);
-        overflow-x: auto;
-        padding-inline: var(--gutter);
-        scroll-snap-type: x mandatory;
-
-        > * {
-          scroll-margin-inline: var(--gutter);
-          scroll-snap-align: start;
-        }
-
-      }
-    }
   }
 }
