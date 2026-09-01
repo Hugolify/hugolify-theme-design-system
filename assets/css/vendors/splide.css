@@ -27,7 +27,7 @@
       }
     }
     .splide__pagination__page {
-      border-radius: var(--radius-pill, 50%);
+      border-radius: var(--carousel-pagination-border-radius, 50%);
       height: var(--carousel-pagination-height, .5rem);
       margin: var(--carousel-pagination-margin, .1875rem);
       opacity: var(--carousel-pagination-opacity, 1);
