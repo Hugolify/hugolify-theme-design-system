@@ -29,31 +29,35 @@
 
   /* ── Base ─────────────────────────────────────────────────────────── */
   .block-testimonials {
-    .testimonials > div {
+    .testimonials > div,
+    .splide__slide {
       container-type: inline-size;
     }
 
+    /*
+     * Card look for the .quote: only the values that differ from the .quote
+     * design-system defaults are set here. Site-level customisation overrides
+     * the plain --quote-* tokens scoped to .block-testimonials.
+     */
     .quote {
-      --quote-border-radius: var(--block-testimonials-quote-border-radius);
-      --quote-border-style: var(--block-testimonials-quote-border-style);
-      --quote-border-width: var(--block-testimonials-quote-border-width);
-      --quote-color-background: var(--block-testimonials-quote-color-background);
-      --quote-color-border: var(--block-testimonials-quote-color-border);
+      --quote-border-radius: var(--radius-md);
+      --quote-color-background: var(--color-background-muted);
       --quote-font-style: normal;
-      --quote-gap: var(--block-testimonials-quote-gap);
+      --quote-gap: var(--spacing-lg);
       height: 100%;
       margin: 0;
 
-      /* ── Compact ─────────────────────────────────────────────────────────── */
-      --quote-figcaption-font-size: var(--block-testimonials-compact-quote-figcaption-font-size);
-      --quote-font-size: var(--block-testimonials-compact-quote-font-size);
-      --quote-padding: var(--block-testimonials-compact-quote-padding);
+      /* ── Compact ────────────────────────────────────── */
+      --quote-figcaption-font-size: var(--font-size-2xs);
+      --quote-font-size: var(--font-size-small);
+      --quote-padding: var(--spacing-sm);
 
-      /* ── Default ─────────────────────────────────────────────────────────── */
+      /* ── Default ────────────────────────────────────── */
       @container (width >= 25rem) {
-        --quote-figcaption-font-size: var(--block-testimonials-quote-font-size);
-        --quote-font-size: var(--block-testimonials-quote-font-size);
-        --quote-padding: var(--block-testimonials-quote-padding);
+        --quote-figcaption-font-size: var(--font-size-small);
+        --quote-font-size: var(--font-size-fluid-lg);
+        --quote-padding: var(--spacing-lg);
+        --max-width-paragraph: var(--max-width-heading);
       }
 
       figcaption {

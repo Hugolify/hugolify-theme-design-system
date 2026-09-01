@@ -13,54 +13,6 @@
         "$type": "dimension",
         "$value": "{spacing.sm}"
       }
-    },
-    "quote": {
-      "border": {
-        "radius": {
-          "$type": "dimension",
-          "$value": "{radius.md}"
-        },
-        "width": {
-          "$type": "dimension",
-          "$value": "0"
-        }
-      },
-      "color": {
-        "background": {
-          "$type": "color",
-          "$value": "{color.background.muted.default}"
-        },
-        "border": {
-          "$type": "color",
-          "$value": "transparent"
-        }
-      },
-      "gap": {
-        "$type": "dimension",
-        "$value": "{spacing.lg}"
-      },
-      "padding": {
-        "$type": "dimension",
-        "$value": "{spacing.lg}"
-      }
-    },
-    "compact": {
-      "quote": {
-        "figcaption": {
-          "font-size": {
-            "$type": "dimension",
-            "$value": "{fontSize.2xs}"
-          }
-        },
-        "font-size": {
-          "$type": "dimension",
-          "$value": "{fontSize.small}"
-        },
-        "padding": {
-          "$type": "dimension",
-          "$value": "{spacing.sm}"
-        }
-      }
     }
   }
 }
