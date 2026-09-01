@@ -11,9 +11,13 @@ Design System styling layer for [hugolify-theme](https://github.com/hugolify/hug
 
 This module provides the CSS (Design Tokens + CSS) and Vanilla JavaScript for hugolify-theme.
 
+## Demo
+
+https://hugolify-theme-design-system--hugolify-demo.netlify.app/
+
 ## Requirements
 
-- [Hugo extended](https://gohugo.io/installation/) >= 0.141.0
+- [Hugo extended](https://gohugo.io/installation/) >= 0.158.0
 - [hugolify-theme](https://github.com/hugolify/hugolify-theme) >= 2.0.0
 
 ## Install
