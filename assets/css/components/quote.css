@@ -33,6 +33,7 @@
       margin-inline: 0;
       padding-inline-start: 0;
       text-align: center;
+      text-transform: var(--quote-text-transform);
     }
 
     p {
@@ -73,6 +74,7 @@
         color: var(--quote-author-color-text);
         line-height: var(--quote-author-line-height);
         text-align: center;
+        text-transform: var(--quote-author-text-transform);
       }
 
       /* When avatar present: author text aligns left */
