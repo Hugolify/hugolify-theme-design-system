@@ -1,0 +1,24 @@
+@layer components {
+  .datas {
+    ul {
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
+    li {
+      border-block-end: var(--border-width-sm) var(--border-style-normal) var(--color-border);
+      margin-block: 0;
+      padding-block: var(--spacing-xs);
+    }
+    li:last-of-type {
+      border-block-end: none;
+    }
+    dl {
+      display: flex;
+      justify-content: space-between;
+    }
+    dt {
+      font-weight: 700;
+    }
+  }
+}
