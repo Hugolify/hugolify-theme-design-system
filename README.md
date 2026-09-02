@@ -4,9 +4,6 @@
 
 ## Overview
 
-> [!NOTE]
-> This project is in development.
-
 Design System styling layer for [hugolify-theme](https://github.com/hugolify/hugolify-theme).
 
 This module provides the CSS (Design Tokens + CSS) and Vanilla JavaScript for hugolify-theme.
@@ -39,6 +36,9 @@ imports:
 
 - [DTCG](./docs/DTCG.md)
 - [Hugolify](https://www.hugolify.io/docs/)
+
+## Tutorial
+- [How to create your own design system with Hugo and Hugolify](https://www.hugolify.io/tutorials/how-to-create-your-own-design-system-using-hugolify/)
 
 ## Licensing
 
