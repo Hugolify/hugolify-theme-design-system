@@ -10,11 +10,5 @@
     .nav-social {
       margin-left: calc(var(--nav-padding-inline) * -1);
     }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        --card-shadow: unset;
-      }
-    }
   }
 }
