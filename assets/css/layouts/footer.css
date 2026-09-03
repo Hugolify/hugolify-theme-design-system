@@ -16,6 +16,7 @@
  */
 @layer layouts {
   footer[role="contentinfo"] {
+    --color-credit: var(--color-text-muted);
     --color-link: var(--footer-color-text);
     --color-text: var(--footer-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
@@ -57,6 +58,8 @@
 
     .bottom {
       .row {
+        align-items: baseline;
+        gap: var(--gap);
         justify-content: space-between;
       }
     }
@@ -102,6 +105,10 @@
       .btn {
         margin-block-start: var(--spacing-typography);
       }
+    }
+
+    .credit {
+      margin-block: 0;
     }
   }
 }

@@ -22,6 +22,7 @@
  */
 @layer layouts {
   header[role="banner"] {
+    --color-credit: var(--color-text-muted);
     --color-link: var(--header-color-link);
     --color-text: var(--header-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));

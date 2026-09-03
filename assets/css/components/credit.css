@@ -3,6 +3,6 @@
   .credit {
     --color-link: var(--color-credit);
     color: var(--color-credit);
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-credit, var(--font-size-xs));
   }
 }
