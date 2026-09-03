@@ -28,6 +28,7 @@
   .hero {
     --color-heading: var(--hero-title-color);
     --color-link: var(--hero-color-link);
+    --color-link-hover: var(--color-link);
     --color-text: var(--hero-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --font-size-heading: var(--hero-title-font-size);
@@ -63,6 +64,12 @@
 
     .heading {
       margin-block-end: 0;
+    }
+
+    .back {
+      inset-block-start: var(--gutter);
+      inset-inline-start: var(--gutter);
+      position: absolute;
     }
 
     p {
