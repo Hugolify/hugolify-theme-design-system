@@ -278,11 +278,12 @@ Media queries are mobile-first (`min-width`). No utility class breakpoints — u
 ### Carousel below a breakpoint
 
 A grid of items becomes a horizontal, snapping carousel with the `.scrollsnap-*`
-utility (`css/utilities/scrollsnap.css`), never with a media query written into the
-component: `.scrollsnap-sm` (mobile), `.scrollsnap-md` (mobile + tablet),
-`.scrollsnap` (every width). The suffix names the rung where the carousel stops
-and the grid comes back. Hugo writes the class from a param, so the same
-component is a carousel in one context and a plain grid in another.
+utility (`@uncinq/css-components`, `css/utilities/scrollsnap.css`), never with a
+media query written into the component: `.scrollsnap-sm` (mobile),
+`.scrollsnap-md` (mobile + tablet), `.scrollsnap` (every width). The suffix
+names the rung where the carousel stops and the grid comes back. Hugo writes the
+class from a param, so the same component is a carousel in one context and a
+plain grid in another.
 
 ### Touch targets
 

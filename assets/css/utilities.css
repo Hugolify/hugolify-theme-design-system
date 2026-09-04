@@ -2,6 +2,8 @@
 /*
  * Imports every utility in @layer utilities — the last layer, so a utility
  * wins over the grid or the display a component declares for itself.
+ *
+ * .scrollsnap lives in @uncinq/css-components (css/utilities/scrollsnap.css),
+ * imported by main.css.
  */
 @import 'utilities/display.css';
-@import 'utilities/scrollsnap.css';
