@@ -40,6 +40,7 @@
     position: relative;
 
     .container {
+      padding-inline: var(--hero-container-padding-inline, var(--gutter));
       position: relative;
     }
 
