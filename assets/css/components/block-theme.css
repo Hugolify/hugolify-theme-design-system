@@ -51,6 +51,18 @@
     color: var(--color-text);
   }
 
+  /* space out consecutive blocks of the same theme */
+  .block:not(.block-accent, .block-black, .block-dark, .block-highlight, .block-light, .block-neutral, .block-white) + .block:not(.block-accent, .block-black, .block-dark, .block-highlight, .block-light, .block-neutral, .block-white),
+  .block-accent + .block-accent,
+  .block-black + .block-black,
+  .block-dark + .block-dark,
+  .block-highlight + .block-highlight,
+  .block-light + .block-light,
+  .block-neutral + .block-neutral,
+  .block-white + .block-white {
+    padding-block-start: var(--block-theme-padding-top, 0);
+  }
+
   /* Legacy */
   .block-bg {
     background-color: var(--block-bg-color);
