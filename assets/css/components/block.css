@@ -37,6 +37,28 @@
       margin-block-start: var(--block-footing-margin-block-start);
     }
 
+    /* ── Scrollsnap ─────────────── */
+
+    /* The carousel bleeds by --container-bleed, which drops to 0 once the
+       container caps (desktop) — the row then stops at the container edge.
+       Republish it as the real distance to the viewport edge so the row keeps
+       reaching the screen, gutter included.
+       A custom property, not the margin: the utility owns margin-inline in
+       @layer utilities and wins over @layer components whatever we declare.
+       Below --desktop the container spans the viewport and the calc falls
+       under --gutter, so max() hands back the token value unchanged — the two
+       meet exactly at the rung, --size-desktop being the width the container
+       caps at AND the width --desktop kicks in.
+       Lengths only, no percentage: the utility feeds this to the items'
+       scroll-margin-inline, which takes <length> and would drop a % outright,
+       losing the snap offset that lands each card on the content edge. */
+    .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
+      --container-bleed: max(
+        var(--gutter),
+        calc((100vw - var(--size-desktop)) / 2 + var(--gutter))
+      );
+    }
+
     @media (--tablet) { --block-gap: var(--block-gap-tablet); }
     @media (--laptop) { --block-gap: var(--block-gap-laptop); }
     @media (--desktop) { --block-gap: var(--block-gap-desktop); }
