@@ -8,12 +8,6 @@
 /* global Splide */
 import scrollspy from '../utils/scrollspy';
 
-// Lucide "chevron-right" path (https://lucide.dev/icons/chevron-right),
-// rescaled from Lucide's 24×24 grid to the 40×40 viewBox Splide requires for
-// `arrowPath`. Rendered as a stroke (not Splide's default fill) via CSS — see
-// vendors/splide.css. Splide mirrors the prev arrow, so one path covers both.
-const ARROW_PATH = 'm15 30 10-10-10-10';
-
 // Splide scripts
 let splideLoadPromise = null;
 function loadSplide() {
@@ -47,8 +41,9 @@ class Carousel {
   }
 
   initDefaults() {
+    // The arrow Splide injects is hidden and redrawn from a token in CSS —
+    // see vendors/splide.css — so there is no arrowPath to pass here.
     Splide.defaults = {
-      arrowPath: ARROW_PATH,
       i18n: window.i18n.carousel
     };
   }

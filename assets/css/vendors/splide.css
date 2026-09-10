@@ -71,17 +71,27 @@
           --carousel-arrow-color-border: var(--carousel-arrow-color-border-hover);
         }
       }
-    }
-    /* Render the `arrowPath` chevron as a Lucide-style stroke, not Splide's fill. */
-    .splide__arrow svg {
-      fill: none;
-      height: 100%;
-      scale: .7;
-      stroke: var(--carousel-arrow-color);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      width: 100%;
+
+      /* The arrow is the --carousel-arrow-icon mask, like .scrollsnap-nav and
+         .back, so the <svg> Splide injects steps aside and the glyph stays a
+         token both carousels read. */
+      svg {
+        display: none;
+      }
+
+      &::before {
+        background-color: currentColor;
+        content: '';
+        height: var(--carousel-arrow-icon-size);
+        mask: var(--carousel-arrow-icon) center / var(--carousel-arrow-icon-size) no-repeat;
+        width: var(--carousel-arrow-icon-size);
+      }
+
+      /* One arrow for both buttons: prev is next, turned around — Splide's own
+         mirroring went out with its <svg>. */
+      &.splide__arrow--prev::before {
+        rotate: 180deg;
+      }
     }
 
     figure {

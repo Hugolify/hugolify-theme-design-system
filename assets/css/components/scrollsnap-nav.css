@@ -1,0 +1,104 @@
+/* components/scrollsnap-nav.css */
+/*
+ * .scrollsnap-nav — prev/next buttons for a .scrollsnap-* carousel.
+ *
+ * The utility (@uncinq/css-components, css/utilities/scrollsnap.css) scrolls
+ * and snaps on its own; these buttons only add a pointer and keyboard way to
+ * move the row — desktop has no swipe.
+ *
+ * Injected before the scrolling grid by js/components/scrollsnap.js, on the
+ * grids that opted in with .js-scrollsnap-nav (see func/SetScrollsnap.html),
+ * and hidden again whenever the row stops overflowing: above the carousel's
+ * rung the grid comes back and the buttons go away by themselves, so no
+ * breakpoint is repeated here.
+ *
+ * They sit above the row, not under it: they come first in the DOM so a
+ * keyboard reaches them without crossing every item, and reading order has to
+ * match what is on screen.
+ *
+ * The glyph is the --icon-arrow mask, like .back and the pagination controls;
+ * the colors come from the --carousel-arrow-* tokens, so the buttons sit
+ * between the two families they belong to.
+ *
+ * Structure:
+ *   .scrollsnap-nav[.scrollsnap-nav-pointer]
+ *     button.scrollsnap-nav-btn.scrollsnap-nav-prev[aria-disabled]
+ *     button.scrollsnap-nav-btn.scrollsnap-nav-next
+ *   .items.scrollsnap-md.js-scrollsnap-nav
+ */
+@layer components {
+  .scrollsnap-nav {
+    display: flex;
+    gap: var(--items-carousel-nav-gap);
+    justify-content: flex-end;
+    margin-block-start: var(--items-carousel-nav-margin-block-start);
+    margin-block-end: var(--items-carousel-nav-margin-block-end);
+
+    /* The utilities layer would otherwise lose to this display. */
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  /* scrollsnap.nav: pointer — a touch screen swipes the row, so the buttons
+     would only eat space under it. any-pointer rather than pointer, so a mouse
+     plugged into a tablet still gets them. */
+  @media not (any-pointer: fine) {
+    .scrollsnap-nav-pointer {
+      display: none;
+    }
+  }
+
+  .scrollsnap-nav-btn {
+    align-items: center;
+    background: var(--carousel-arrow-color-background);
+    border-color: var(--carousel-arrow-color-border);
+    border-radius: var(--items-carousel-nav-border-radius);
+    border-style: var(--border-style-normal);
+    border-width: var(--carousel-arrow-border-width);
+    color: var(--carousel-arrow-color);
+    cursor: pointer;
+    display: flex;
+    height: var(--items-carousel-nav-size);
+    justify-content: center;
+    padding: 0;
+    width: var(--items-carousel-nav-size);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: var(--transition-normal);
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover:not([aria-disabled="true"]) {
+        --carousel-arrow-color: var(--carousel-arrow-color-hover);
+        --carousel-arrow-color-border: var(--carousel-arrow-color-border-hover);
+      }
+    }
+
+    /* aria-disabled, not disabled: the button keeps its focus when the row
+       reaches its end under the click. */
+    &[aria-disabled="true"] {
+      cursor: default;
+      opacity: var(--items-carousel-nav-opacity-disabled);
+    }
+
+    /* The glyph is a mask, so it takes the button's own color with it. */
+    &::before {
+      background-color: currentColor;
+      content: '';
+      flex-shrink: 0;
+      height: var(--items-carousel-nav-icon-size);
+      width: var(--items-carousel-nav-icon-size);
+    }
+
+    /* One arrow for both buttons: prev is next, turned around. */
+    &.scrollsnap-nav-prev::before {
+      mask: var(--items-carousel-nav-icon-previous) center / var(--items-carousel-nav-icon-size) no-repeat;
+      rotate: 180deg;
+    }
+
+    &.scrollsnap-nav-next::before {
+      mask: var(--items-carousel-nav-icon-next) center / var(--items-carousel-nav-icon-size) no-repeat;
+    }
+  }
+}

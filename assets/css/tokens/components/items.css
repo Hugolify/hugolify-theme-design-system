@@ -4,6 +4,13 @@
 @layer tokens {
   :root {
     --items-carousel-max-width: 75vw;
+    --items-carousel-nav-border-radius: 50%;
+    --items-carousel-nav-gap: var(--spacing-xs);
+    --items-carousel-nav-icon-next: var(--carousel-arrow-icon);
+    --items-carousel-nav-icon-previous: var(--carousel-arrow-icon);
+    --items-carousel-nav-icon-size: var(--icon-size);
+    --items-carousel-nav-opacity-disabled: var(--opacity-disabled);
+    --items-carousel-nav-size: var(--spacing-lg);
     --items-nav-margin-block-start: var(--spacing-fluid-md);
   }
 }

@@ -37,6 +37,16 @@
           "$value": "{color.link.hover}"
         }
       },
+      "icon": {
+        "default": {
+          "$type": "string",
+          "$value": "{icon.arrow}"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{icon.size}"
+        }
+      },
       "marginInline": {
         "$type": "dimension",
         "$value": "{spacing.xs}"

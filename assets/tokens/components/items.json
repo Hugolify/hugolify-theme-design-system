@@ -4,6 +4,40 @@
       "maxWidth": {
         "$value": "75vw",
         "$type": "dimension"
+      },
+      "nav": {
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "50%"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{spacing.xs}"
+        },
+        "icon": {
+          "next": {
+            "$type": "string",
+            "$value": "{carousel.arrow.icon.default}"
+          },
+          "previous": {
+            "$type": "string",
+            "$value": "{carousel.arrow.icon.default}"
+          },
+          "size": {
+            "$type": "dimension",
+            "$value": "{icon.size}"
+          }
+        },
+        "opacity": {
+          "disabled": {
+            "$type": "number",
+            "$value": "{opacity.disabled}"
+          }
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": "{spacing.lg}"
+        }
       }
     },
     "nav": {
