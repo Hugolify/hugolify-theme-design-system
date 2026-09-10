@@ -25,6 +25,10 @@
  *   their end of the row rather than disabled, which would drop the focus of
  *   whoever just clicked them
  * - the whole nav is hidden while the row does not overflow
+ *
+ * The pointer-only variant is left to CSS — see components/scrollsnap-nav.css.
+ * A neighbour that has to know whether the buttons are on screen therefore
+ * needs both states: the hidden attribute AND that media query.
  */
 
 const SCROLLERS = '.scrollsnap, .scrollsnap-sm, .scrollsnap-md, .scrollsnap-lg, .scrollsnap-xl';

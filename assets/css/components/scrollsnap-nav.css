@@ -12,6 +12,11 @@
  * rung the grid comes back and the buttons go away by themselves, so no
  * breakpoint is repeated here.
  *
+ * Two things hide the nav, and a neighbour reading its state needs both: the
+ * hidden attribute while the row does not overflow, and the media query below
+ * for scrollsnap.nav: pointer. See how .block-content takes its grid gap back
+ * in components/block.css.
+ *
  * They sit above the row, not under it: they come first in the DOM so a
  * keyboard reaches them without crossing every item, and reading order has to
  * match what is on screen.
@@ -21,7 +26,7 @@
  * between the two families they belong to.
  *
  * Structure:
- *   .scrollsnap-nav[.scrollsnap-nav-pointer]
+ *   .scrollsnap-nav[.scrollsnap-nav-pointer][hidden]
  *     button.scrollsnap-nav-btn.scrollsnap-nav-prev[aria-disabled]
  *     button.scrollsnap-nav-btn.scrollsnap-nav-next
  *   .items.scrollsnap-md.js-scrollsnap-nav
@@ -41,7 +46,7 @@
   }
 
   /* scrollsnap.nav: pointer — a touch screen swipes the row, so the buttons
-     would only eat space under it. any-pointer rather than pointer, so a mouse
+     would only eat space above it. any-pointer rather than pointer, so a mouse
      plugged into a tablet still gets them. */
   @media not (any-pointer: fine) {
     .scrollsnap-nav-pointer {

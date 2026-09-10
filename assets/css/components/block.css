@@ -44,6 +44,16 @@
       > .scrollsnap-nav:not([hidden]) + * {
         margin-block-start: calc(var(--block-gap) * -1);
       }
+
+      /* The other way the nav leaves the screen: scrollsnap.nav: pointer on a
+         touch device. It stays in the DOM, without the hidden attribute, so
+         the rule above still matches it — and there is no gap to take back
+         under buttons nobody sees. */
+      @media not (any-pointer: fine) {
+        > .scrollsnap-nav-pointer + * {
+          margin-block-start: 0;
+        }
+      }
     }
 
     /* ── Heading & footing ─────────────── */
