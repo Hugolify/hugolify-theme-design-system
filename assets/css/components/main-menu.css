@@ -57,7 +57,9 @@
           }
         }
       }
-
+      .dropdown-menu {
+        --nav-item-margin-inline: 0;
+      }
       .nav-item-highlighted {
         margin-block: var(--nav-padding-block);
       }

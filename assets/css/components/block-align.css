@@ -7,9 +7,13 @@
 @layer components {
   .block-align-center {
     text-align: center;
-    .heading {
+    .heading,
+    .footing {
       h2, p {
         margin-inline: auto;
+      }
+      .cta {
+        justify-content: center;
       }
     }
 
