@@ -58,9 +58,5 @@
         calc((100vw - var(--size-desktop)) / 2 + var(--gutter))
       );
     }
-
-    @media (--tablet) { --block-gap: var(--block-gap-tablet); }
-    @media (--laptop) { --block-gap: var(--block-gap-laptop); }
-    @media (--desktop) { --block-gap: var(--block-gap-desktop); }
   }
 }

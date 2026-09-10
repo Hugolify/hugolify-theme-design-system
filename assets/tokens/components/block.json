@@ -3,19 +3,7 @@
     "gap": {
       "default": {
         "$type": "dimension",
-        "$value": "{spacing.md}"
-      },
-      "tablet": {
-        "$type": "dimension",
-        "$value": "{spacing.lg}"
-      },
-      "laptop": {
-        "$type": "dimension",
-        "$value": "{spacing.lg}"
-      },
-      "desktop": {
-        "$type": "dimension",
-        "$value": "{spacing.xl}"
+        "$value": "{spacing.fluid.md}"
       }
     },
     "padding": {
