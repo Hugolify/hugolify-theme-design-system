@@ -28,6 +28,12 @@
             "$value": "{icon.size}"
           }
         },
+        "margin": {
+          "blockEnd": {
+            "$type": "dimension",
+            "$value": "{spacing.sm}"
+          }
+        },
         "opacity": {
           "disabled": {
             "$type": "number",

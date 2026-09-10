@@ -25,6 +25,25 @@
       > * {
         min-width: 0;
       }
+
+      /* The carousel nav belongs to the row it drives, not to the block's own
+         rhythm, so the grid row gap between the two is taken back and the
+         --items-carousel-nav-margin-block-end token is left as the only
+         distance that counts. Everywhere else a .scrollsnap-nav lands
+         (.related, .latest) the parent is in normal flow with no gap to take
+         back, and the token holds on its own.
+
+         Taken back on the ROW rather than on the nav: a negative
+         margin-block-end bigger than the nav's own height makes its grid track
+         contribution negative, tracks floor at zero, and the gap comes back in
+         full below the buttons. The row is always taller than the gap, so its
+         contribution stays positive whatever --block-gap grows to.
+
+         :not([hidden]) because the nav is display:none while the row does not
+         overflow, and the row would otherwise be pulled up into the heading. */
+      > .scrollsnap-nav:not([hidden]) + * {
+        margin-block-start: calc(var(--block-gap) * -1);
+      }
     }
 
     /* ── Heading & footing ─────────────── */
