@@ -24,10 +24,12 @@
   header[role="banner"] {
     --color-credit: var(--color-text-muted);
     --color-link: var(--header-color-link);
+    --color-link-active: var(--header-color-link-active, var(--color-link));
     --color-text: var(--header-color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --surtitle-color-text: var(--color-text-muted);
     --nav-color-text: var(--color-link);
+    --nav-color-text-active: var(--color-link-active);
 
     background-color: var(--header-color-background);
     padding-block: var(--header-padding-block);
