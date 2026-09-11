@@ -1,4 +1,14 @@
 /* vendors/splide.css */
+/*
+ * Splide, dressed with the --carousel-* tokens so it and the CSS carousels
+ * (.scrollsnap-nav, .scrollsnap-pagination) wear the same skin.
+ *
+ * splide.min.css is injected at runtime into @layer libs — see
+ * features/carousel.js — which is declared before this layer in main.css. Its
+ * state rules (.is-active {background:#fff}, :hover {opacity:.9}, arrows at
+ * 0,3,0) therefore lose to everything here without a single !important, and
+ * without counting specificity against a minified file at every edit.
+ */
 @layer vendors {
   .splide {
     .splide__list {
@@ -19,6 +29,9 @@
       margin-block: 0 !important;
     }
     .splide__pagination {
+      /* Spacing on the list, not on each page, so the dots keep the same
+         --carousel-pagination-gap as the scrollsnap ones. */
+      gap: var(--carousel-pagination-gap);
       inset-block-end: auto;
       inset-block-start: 100%;
       margin-block: var(--carousel-pagination-margin-block);
@@ -27,39 +40,51 @@
       }
     }
     .splide__pagination__page {
-      background: var(--carousel-pagination-color, var(--color-neutral));
-      border-radius: var(--carousel-pagination-border-radius, 50%);
-      height: var(--carousel-pagination-height, .5rem);
-      margin: var(--carousel-pagination-margin, .1875rem);
-      opacity: var(--carousel-pagination-opacity, 1);
-      width: var(--carousel-pagination-width, .5rem);
-
-      &:hover {
-        opacity: var(--carousel-pagination-opacity-hover, .75);
-      }
+      background: var(--carousel-pagination-color);
+      border-color: var(--carousel-pagination-color-border);
+      border-radius: var(--carousel-pagination-border-radius);
+      border-style: var(--carousel-pagination-border-style);
+      border-width: var(--carousel-pagination-border-width);
+      height: var(--carousel-pagination-height);
+      margin: 0;
+      /* Splide dims its dots and blows up the current one; the state is the
+         colors' job here, the same as .scrollsnap-pagination-dot. */
+      opacity: 1;
+      width: var(--carousel-pagination-width);
 
       @media (prefers-reduced-motion: no-preference) {
         transition: var(--transition-normal);
       }
-    
-      &.is-active {
-        background: var(--carousel-pagination-color-active, var(--color-active));
-        transform: var(--carousel-pagination-transform-active);
-        
+
+      @media (hover: hover) and (pointer: fine) {
         &:hover {
-          opacity: var(--carousel-pagination-opacity-active-hover, .75);
+          --carousel-pagination-color: var(--carousel-pagination-color-hover);
+          --carousel-pagination-color-border: var(--carousel-pagination-color-border-hover);
         }
+      }
+
+      &.is-active {
+        --carousel-pagination-color: var(--carousel-pagination-color-active);
+        --carousel-pagination-color-border: var(--carousel-pagination-color-border-active);
+        transform: none;
       }
     }
     .splide__arrow {
       background: var(--carousel-arrow-color-background);
       border-color: var(--carousel-arrow-color-border);
+      border-radius: var(--carousel-arrow-border-radius);
       border-style: var(--border-style-normal);
       border-width: var(--carousel-arrow-border-width);
       color: var(--carousel-arrow-color);
+      height: var(--carousel-arrow-size);
+      /* Splide fades its arrows by default; ours are opaque until the row
+         reaches its end, like .scrollsnap-nav-btn. Specificity carries it —
+         these rules are one class deeper than Splide's own. */
+      opacity: 1;
+      width: var(--carousel-arrow-size);
 
-      &:not(:disabled) {
-        opacity: 1 !important;
+      &:disabled {
+        opacity: var(--carousel-arrow-opacity-disabled);
       }
 
       @media (prefers-reduced-motion: no-preference) {
@@ -104,13 +129,44 @@
       .splide__arrow {
         margin-inline: var(--carousel-arrow-margin-inline);
       }
+
+      /* Outside the track, in the side margin the block leaves around it. */
       .splide__arrow--next {
-        inset-inline-start: 100%;
         inset-inline-end: auto;
+        inset-inline-start: 100%;
       }
       .splide__arrow--prev {
-        inset-inline-start: auto;
         inset-inline-end: 100%;
+        inset-inline-start: auto;
+      }
+    }
+
+    /* ── Full-bleed block ─────────────── */
+    /*
+     * A .block-full carousel spans the viewport: there is no side margin for
+     * the arrows to step into, and nothing below the track to hold the dots.
+     * Both controls come inside, over the slides, and the room the block was
+     * reserving underneath goes away with them.
+     */
+    .block-full & {
+      &:has(.splide__pagination) {
+        margin-block-end: 0;
+      }
+
+      .splide__pagination {
+        inset-block-end: 0;
+        inset-block-start: auto;
+      }
+
+      @media (--tablet) {
+        .splide__arrow--next {
+          inset-inline-end: 0;
+          inset-inline-start: auto;
+        }
+        .splide__arrow--prev {
+          inset-inline-end: auto;
+          inset-inline-start: 0;
+        }
       }
     }
   }
