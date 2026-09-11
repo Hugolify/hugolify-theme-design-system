@@ -14,7 +14,7 @@ function loadTobii() {
 
   tobiiLoadPromise = new Promise((resolve) => {
     const css = document.createElement('style');
-    css.textContent = `@import url('/assets/css/tobii.min.css') layer(vendors);`;
+    css.textContent = `@import url('/assets/css/tobii.min.css') layer(libs);`;
     document.head.appendChild(css);
 
     const js = document.createElement('script');

@@ -27,11 +27,12 @@
 The CSS stack is split across four shared npm packages and a local layer:
 
 ```text
-@uncinq/design-tokens        ← primitive + semantic CSS custom properties  (@layer config)
-@uncinq/component-tokens     ← component-scoped CSS custom properties      (@layer config)
-@uncinq/css-base             ← reset, native element styles, layouts       (@layer base, layouts)
-@uncinq/css-components       ← generic UI components                       (@layer components)
+@uncinq/design-tokens        ← primitive + semantic CSS custom properties  (@layer tokens)
+@uncinq/component-tokens     ← component-scoped CSS custom properties      (@layer tokens)
+@uncinq/css-base             ← reset, native element styles, layouts       (@layer reset, base, layouts)
+@uncinq/css-components       ← generic UI components                       (@layer components, utilities)
 hugolify-theme-design-system ← hugolify-specific tokens + components       (all layers)
+third-party stylesheets      ← Splide, Leaflet, Tobii, injected at runtime (@layer libs)
 ```
 
 Each layer is strictly additive — no package reaches into a lower layer.
@@ -60,6 +61,10 @@ assets/css/
 ├── components/              ← hugolify-specific components (@layer components)
 │   ├── blocks/
 │   └── sections/
+│
+├── vendors/                 ← our overrides OF third-party CSS (@layer vendors)
+│   ├── leaflet.css          ←   the libraries themselves land in @layer libs
+│   └── splide.css
 │
 ├── utilities/               ← single-purpose classes (@layer utilities)
 │   ├── display.css
@@ -102,24 +107,47 @@ This removes all debate about ordering, makes diffs cleaner, and speeds up scann
 Layers are declared **once** at the top of `main.css`, in order of precedence (lowest to highest).
 
 ```css
-@layer config, base, layouts, vendors, components;
+@layer reset, tokens, libs, vendors, base, layouts, components, pages, utilities;
 ```
 
 | Layer | Contents |
 | --- | --- |
-| `config` | Design tokens — CSS custom properties, `@custom-media` |
-| `base` | Reset, native HTML element styles |
+| `reset` | The reset itself, from @uncinq/css-base |
+| `tokens` | Design tokens — CSS custom properties |
+| `libs` | Third-party stylesheets themselves (Splide, Leaflet, Tobii) |
+| `vendors` | **Our overrides** of those libraries |
+| `base` | Native HTML element styles |
 | `layouts` | Layout structures (container, grid, row) |
-| `vendors` | Third-party libraries (Splide…) |
 | `components` | UI components |
 | `pages` | Page-specific rules |
 | `utilities` | Single-purpose classes — they win over a component's own rules |
+
+### `libs` vs `vendors`
+
+The libraries are loaded by their feature scripts, on first use, with
+`@import url('/assets/css/splide.min.css') layer(libs)` — see
+`js/features/carousel.js`, `js/features/map.js`, `js/components/gallery.js`.
+They therefore arrive **after** everything main.css imported, so they cannot
+share a layer with the CSS that dresses them: at equal specificity the file
+that loaded last would win, and a minified library wins a lot of those ties.
+Two layers settle it once and for all, and spare `vendors/*.css` an
+`!important` on every rule.
+
+Three things to keep in mind:
+
+- a layer name that is never declared is appended **last**, stronger than
+  `utilities` — so `libs` has to stay in the `@layer` line above, or injecting
+  into it makes the problem worse than not layering at all
+- CSS **outside** any layer beats every layer, so dropping `layer(…)` from
+  those imports would set the libraries above everything
+- `!important` reverses the layer order: an important declaration in `libs`
+  still beats one in `vendors`
 
 ### `main.css` — entry point
 
 ```css
 /* css/main.css */
-@layer config, base, layouts, vendors, components;
+@layer reset, tokens, libs, vendors, base, layouts, components, pages, utilities;
 
 /* Un Cinq base — reset + elements + layouts */
 @import '@uncinq/css-base';
@@ -132,7 +160,7 @@ Layers are declared **once** at the top of `main.css`, in order of precedence (l
 /* Config */
 @import 'mediaqueries.css';
 
-/* Vendors */
+/* Vendors — our overrides; the libraries land in @layer libs at runtime */
 @import 'vendors/splide.css';
 
 /* Layouts */

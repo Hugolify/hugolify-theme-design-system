@@ -15,7 +15,7 @@ function loadSplide() {
 
   splideLoadPromise = new Promise((resolve) => {
     const css = document.createElement('style');
-    css.textContent = `@import url('/assets/css/splide.min.css') layer(vendors);`;
+    css.textContent = `@import url('/assets/css/splide.min.css') layer(libs);`;
     document.head.appendChild(css);
 
     const js = document.createElement('script');
