@@ -20,7 +20,7 @@
       margin-inline: auto;
     }
     .value  {
-      font-size: var(--font-size-fluid-xl);
+      font-size: var(--datas-value-font-size, var(--font-size-fluid-xl));
     }
     .title {
       margin-block: 0;
