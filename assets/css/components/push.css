@@ -98,7 +98,7 @@
         background: transparent;
       }
       .media {
-        filter: brightness(var(--hero-cover-brightness));
+        filter: brightness(var(--push-media-brightness, var(--hero-media-brightness)));
       }
     }
   }
