@@ -1,6 +1,6 @@
 /**
  * Scrollsnap — keyboard access for the CSS carousels, and their optional
- * prev/next buttons.
+ * prev/next buttons and pagination.
  *
  * The carousel itself is pure CSS (@uncinq/css-components,
  * css/utilities/scrollsnap.css): the row scrolls and snaps with no JS at all.
@@ -10,25 +10,28 @@
  *   every .scrollsnap-* row that actually overflows gets tabindex="0" and a
  *   name. Above its breakpoint the grid comes back, there is nothing left to
  *   scroll, and the tab stop goes away with it
- * - prev/next buttons, opt-in with the scrollsnap.nav param — site wide, per
- *   block type, or on a single block. The theme then puts .js-scrollsnap-nav,
- *   or .js-scrollsnap-nav-pointer for the buttons a touch screen does not get,
- *   next to .scrollsnap-* (see func/SetScrollsnap.html)
+ * - prev/next buttons, opt-in with the scrollsnap.nav param, and a pagination,
+ *   opt-in with scrollsnap.pagination — site wide, per block type, or on a
+ *   single block. The theme then puts .js-scrollsnap-nav /
+ *   .js-scrollsnap-pagination, or their -pointer variant for controls a touch
+ *   screen does not get, next to .scrollsnap-* (see func/SetScrollsnap.html)
  *
  * A11y:
  * - while it scrolls, the row is a named role="group": announced as one thing,
  *   focusable, and scrolled with the arrow keys — items are not always links,
  *   so tabbing into them is not a way in one can count on
  * - the buttons come BEFORE the row, in the DOM and on screen alike, so they
- *   are reached without tabbing through every item first
- * - they carry an aria-label and aria-controls, and turn aria-disabled at
- *   their end of the row rather than disabled, which would drop the focus of
- *   whoever just clicked them
- * - the whole nav is hidden while the row does not overflow
+ *   are reached without tabbing through every item first; the pagination comes
+ *   after, where it is read as the position report it is
+ * - controls carry an aria-label and aria-controls, the nav turns aria-disabled
+ *   at its end of the row rather than disabled, which would drop the focus of
+ *   whoever just clicked, and the current dot carries aria-current
+ * - controls are hidden while the row does not overflow
  *
- * The pointer-only variant is left to CSS — see components/scrollsnap-nav.css.
- * A neighbour that has to know whether the buttons are on screen therefore
- * needs both states: the hidden attribute AND that media query.
+ * The pointer-only variants are left to CSS — see components/scrollsnap-nav.css
+ * and components/scrollsnap-pagination.css. A neighbour that has to know
+ * whether a control is on screen therefore needs both states: the hidden
+ * attribute AND that media query.
  */
 
 const SCROLLERS = '.scrollsnap, .scrollsnap-sm, .scrollsnap-md, .scrollsnap-lg, .scrollsnap-xl';
@@ -41,33 +44,49 @@ class Scrollsnap {
     this.rtl = getComputedStyle(scroller).direction === 'rtl';
     this.frame = null;
     this.scrollable = null;
-    // A row the markup already named keeps its own role and label.
+    this.dots = [];
+    // A row already named by the markup keeps its own role and label.
     this.named = scroller.hasAttribute('role') || scroller.hasAttribute('aria-label');
-    this.label = (window.i18n && window.i18n.carousel && window.i18n.carousel.carousel) || 'Carousel';
+    this.i18n = window.i18n || {};
 
-    this.nav = this.wantsNav() ? this.renderNav() : null;
+    this.nav = this.wants('nav') ? this.renderNav() : null;
     if (this.nav) scroller.insertAdjacentElement('beforebegin', this.nav);
+
+    this.pagination = this.wants('pagination') ? this.renderPagination() : null;
+    if (this.pagination) scroller.insertAdjacentElement('afterend', this.pagination);
 
     this.bind();
     this.update();
   }
 
-  wantsNav() {
-    return this.scroller.classList.contains('js-scrollsnap-nav')
-      || this.scroller.classList.contains('js-scrollsnap-nav-pointer');
+  /** Opted in either way — plain, or only where there is a fine pointer. */
+  wants(kind) {
+    return this.scroller.classList.contains(`js-scrollsnap-${kind}`)
+      || this.scroller.classList.contains(`js-scrollsnap-${kind}-pointer`);
+  }
+
+  /** The class name of a control, carrying the pointer variant over to CSS. */
+  classFor(kind) {
+    const base = `scrollsnap-${kind}`;
+    return this.scroller.classList.contains(`js-scrollsnap-${kind}-pointer`)
+      ? `${base} ${base}-pointer`
+      : base;
+  }
+
+  /** aria-controls needs something to point at. */
+  identify() {
+    if (!this.scroller.id) this.scroller.id = `scrollsnap-${(uid += 1)}`;
+    return this.scroller.id;
   }
 
   renderNav() {
-    if (!this.scroller.id) this.scroller.id = `scrollsnap-${(uid += 1)}`;
+    this.identify();
 
     const nav = document.createElement('div');
-    // The pointer-only variant is decided in CSS, on the nav itself.
-    nav.className = this.scroller.classList.contains('js-scrollsnap-nav-pointer')
-      ? 'scrollsnap-nav scrollsnap-nav-pointer'
-      : 'scrollsnap-nav';
+    nav.className = this.classFor('nav');
     nav.hidden = true;
-    this.prev = this.button('prev', window.i18n && window.i18n.previous);
-    this.next = this.button('next', window.i18n && window.i18n.next);
+    this.prev = this.button('prev', this.i18n.previous);
+    this.next = this.button('next', this.i18n.next);
     nav.append(this.prev, this.next);
     return nav;
   }
@@ -82,10 +101,32 @@ class Scrollsnap {
     return button;
   }
 
+  /** The dots themselves are built on measure — their count depends on how
+      many viewports wide the row turns out to be. */
+  renderPagination() {
+    this.identify();
+
+    const pagination = document.createElement('div');
+    pagination.className = this.classFor('pagination');
+    pagination.hidden = true;
+    return pagination;
+  }
+
+  dot(page) {
+    const label = (this.i18n.carousel && this.i18n.carousel.pageX) || '%s';
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'scrollsnap-pagination-dot';
+    dot.setAttribute('aria-label', label.replace('%s', page + 1));
+    dot.setAttribute('aria-controls', this.scroller.id);
+    dot.addEventListener('click', () => this.scrollTo(page * this.scroller.clientWidth));
+    return dot;
+  }
+
   bind() {
     if (this.nav) {
-      this.prev.addEventListener('click', () => this.scroll(-1));
-      this.next.addEventListener('click', () => this.scroll(1));
+      this.prev.addEventListener('click', () => this.move(-1));
+      this.next.addEventListener('click', () => this.move(1));
     }
     this.scroller.addEventListener('scroll', () => this.schedule(), { passive: true });
     // Catches both the viewport resizing and the grid coming back above its rung.
@@ -93,14 +134,25 @@ class Scrollsnap {
   }
 
   /** One item at a time — the snap points do the landing. */
-  scroll(sign) {
+  move(sign) {
     // aria-disabled leaves the button clickable, so the end is checked here.
     if ((sign < 0 ? this.prev : this.next).getAttribute('aria-disabled') === 'true') return;
 
     this.scroller.scrollBy({
       left: this.step() * sign * (this.rtl ? -1 : 1),
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      behavior: this.behavior()
     });
+  }
+
+  scrollTo(left) {
+    this.scroller.scrollTo({
+      left: this.rtl ? -left : left,
+      behavior: this.behavior()
+    });
+  }
+
+  behavior() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
   }
 
   /** Item pitch = width + gap, read off the items themselves. */
@@ -122,28 +174,60 @@ class Scrollsnap {
   update() {
     const max = this.scroller.scrollWidth - this.scroller.clientWidth;
     // A pixel of slack: sub-pixel track widths leave a scrollWidth that never
-    // quite matches, and would keep a dead tab stop or an end button alive.
+    // quite matches, and would keep a dead tab stop or an end control alive.
     this.setScrollable(max > 1);
-    if (!this.nav || !this.scrollable) return;
+    if (!this.scrollable) return;
 
     const position = Math.abs(this.scroller.scrollLeft);
+    if (this.nav) this.updateNav(position, max);
+    if (this.pagination) this.updatePagination(position, max);
+  }
+
+  updateNav(position, max) {
     this.prev.setAttribute('aria-disabled', String(position <= 1));
     this.next.setAttribute('aria-disabled', String(position >= max - 1));
   }
 
+  updatePagination(position, max) {
+    const width = this.scroller.clientWidth;
+    // One dot per viewport-wide page — the same unit a dot scrolls by, so the
+    // count follows the row instead of the number of items, and 9 cards under
+    // 3 columns read as 3 dots rather than 9.
+    this.fill(Math.max(1, Math.ceil((this.scroller.scrollWidth - 1) / width)));
+
+    // The last page is a partial one: the row stops before a whole width, so
+    // rounding would never reach it.
+    const current = position >= max - 1
+      ? this.dots.length - 1
+      : Math.min(Math.round(position / width), this.dots.length - 1);
+
+    this.dots.forEach((dot, page) => {
+      if (page === current) dot.setAttribute('aria-current', 'true');
+      else dot.removeAttribute('aria-current');
+    });
+  }
+
+  fill(pages) {
+    if (pages === this.dots.length) return;
+
+    this.dots = Array.from({ length: pages }, (_, page) => this.dot(page));
+    this.pagination.replaceChildren(...this.dots);
+  }
+
   /** A row that no longer overflows is a plain grid again — and a plain grid
-      is neither a tab stop nor a group. */
+      is neither a tab stop nor a group, and has nothing to drive. */
   setScrollable(scrollable) {
     if (scrollable === this.scrollable) return;
     this.scrollable = scrollable;
 
     if (this.nav) this.nav.hidden = !scrollable;
+    if (this.pagination) this.pagination.hidden = !scrollable;
 
     if (scrollable) {
       this.scroller.tabIndex = 0;
       if (!this.named) {
         this.scroller.setAttribute('role', 'group');
-        this.scroller.setAttribute('aria-label', this.label);
+        this.scroller.setAttribute('aria-label', (this.i18n.carousel && this.i18n.carousel.carousel) || 'Carousel');
       }
       return;
     }

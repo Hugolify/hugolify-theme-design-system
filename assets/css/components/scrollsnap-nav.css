@@ -76,6 +76,7 @@
     @media (hover: hover) and (pointer: fine) {
       &:hover:not([aria-disabled="true"]) {
         --carousel-arrow-color: var(--carousel-arrow-color-hover);
+        --carousel-arrow-color-background: var(--carousel-arrow-color-background-hover);
         --carousel-arrow-color-border: var(--carousel-arrow-color-border-hover);
       }
     }

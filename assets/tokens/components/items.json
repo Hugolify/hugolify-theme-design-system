@@ -8,11 +8,11 @@
       "nav": {
         "borderRadius": {
           "$type": "dimension",
-          "$value": "50%"
+          "$value": "{carousel.arrow.borderRadius}"
         },
         "gap": {
           "$type": "dimension",
-          "$value": "{spacing.xs}"
+          "$value": "{carousel.arrow.gap}"
         },
         "icon": {
           "next": {
@@ -25,24 +25,86 @@
           },
           "size": {
             "$type": "dimension",
-            "$value": "{icon.size}"
+            "$value": "{carousel.arrow.icon.size}"
           }
         },
         "margin": {
           "blockEnd": {
             "$type": "dimension",
-            "$value": "{spacing.sm}"
+            "$value": "{carousel.arrow.marginBlock}"
           }
         },
         "opacity": {
           "disabled": {
             "$type": "number",
-            "$value": "{opacity.disabled}"
+            "$value": "{carousel.arrow.opacity.disabled}"
           }
         },
         "size": {
           "$type": "dimension",
-          "$value": "{spacing.lg}"
+          "$value": "{carousel.arrow.size}"
+        }
+      },
+      "pagination": {
+        "border": {
+          "style": {
+            "$type": "string",
+            "$value": "{carousel.pagination.border.style}"
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": "{carousel.pagination.border.width}"
+          }
+        },
+        "borderRadius": {
+          "$type": "dimension",
+          "$value": "{carousel.pagination.borderRadius}"
+        },
+        "color": {
+          "default": {
+            "$type": "color",
+            "$value": "{carousel.pagination.color.default}"
+          },
+          "active": {
+            "$type": "color",
+            "$value": "{carousel.pagination.color.active}"
+          },
+          "border": {
+            "default": {
+              "$type": "color",
+              "$value": "{carousel.pagination.color.border.default}"
+            },
+            "active": {
+              "$type": "color",
+              "$value": "{carousel.pagination.color.border.active}"
+            },
+            "hover": {
+              "$type": "color",
+              "$value": "{carousel.pagination.color.border.hover}"
+            }
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{carousel.pagination.color.hover}"
+          }
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{carousel.pagination.gap}"
+        },
+        "height": {
+          "$type": "dimension",
+          "$value": "{carousel.pagination.height}"
+        },
+        "margin": {
+          "blockStart": {
+            "$type": "dimension",
+            "$value": "{carousel.pagination.marginBlock}"
+          }
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": "{carousel.pagination.width}"
         }
       }
     },

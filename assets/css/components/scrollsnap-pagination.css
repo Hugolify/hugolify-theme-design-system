@@ -1,0 +1,77 @@
+/* components/scrollsnap-pagination.css */
+/*
+ * .scrollsnap-pagination — dots reporting, and driving, the position of a
+ * .scrollsnap-* carousel.
+ *
+ * One dot per viewport-wide page rather than per item, so a row of nine cards
+ * three columns wide reads as three dots. The count is measured in JS — see
+ * js/components/scrollsnap.js — which also injects the whole thing after the
+ * row on the grids that opted in with .js-scrollsnap-pagination.
+ *
+ * Colors come from the --carousel-pagination-* family, so the dots match the
+ * Splide ones.
+ *
+ * Two things hide the pagination, and a neighbour reading its state needs
+ * both: the hidden attribute while the row does not overflow, and the media
+ * query below for scrollsnap.pagination: pointer. See how .block-content takes
+ * its grid gap back in components/block.css.
+ *
+ * Structure:
+ *   .items.scrollsnap-md.js-scrollsnap-pagination
+ *   .scrollsnap-pagination[.scrollsnap-pagination-pointer][hidden]
+ *     button.scrollsnap-pagination-dot[aria-current]
+ */
+@layer components {
+  .scrollsnap-pagination {
+    display: flex;
+    gap: var(--items-carousel-pagination-gap);
+    justify-content: center;
+    margin-block-start: var(--items-carousel-pagination-margin-block-start);
+
+    /* The utilities layer would otherwise lose to this display. */
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  /* scrollsnap.pagination: pointer — same reading as the nav's own variant. */
+  @media not (any-pointer: fine) {
+    .scrollsnap-pagination-pointer {
+      display: none;
+    }
+  }
+
+  .scrollsnap-pagination-dot {
+    background-color: var(--items-carousel-pagination-color);
+    border-color: var(--items-carousel-pagination-color-border);
+    border-radius: var(--items-carousel-pagination-border-radius);
+    border-style: var(--items-carousel-pagination-border-style);
+    border-width: var(--items-carousel-pagination-border-width);
+    cursor: pointer;
+    height: var(--items-carousel-pagination-height);
+    padding: 0;
+    width: var(--items-carousel-pagination-width);
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: var(--transition-normal);
+    }
+
+    /* States redefine the tokens rather than the properties, the way the
+       arrows do — one place declares what a dot is made of. */
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --items-carousel-pagination-color: var(--items-carousel-pagination-color-hover);
+        --items-carousel-pagination-color-border: var(--items-carousel-pagination-color-border-hover);
+      }
+    }
+
+    /* aria-current rather than a class: the state is the same one a screen
+       reader is told about, so there is only one to keep true. Declared after
+       :hover, so the current dot keeps its look under the pointer. */
+    &[aria-current="true"] {
+      --items-carousel-pagination-color: var(--items-carousel-pagination-color-active);
+      --items-carousel-pagination-color-border: var(--items-carousel-pagination-color-border-active);
+      cursor: default;
+    }
+  }
+}

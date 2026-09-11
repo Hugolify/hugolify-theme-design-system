@@ -4,14 +4,27 @@
 @layer tokens {
   :root {
     --items-carousel-max-width: 75vw;
-    --items-carousel-nav-border-radius: 50%;
-    --items-carousel-nav-gap: var(--spacing-xs);
+    --items-carousel-nav-border-radius: var(--carousel-arrow-border-radius);
+    --items-carousel-nav-gap: var(--carousel-arrow-gap);
     --items-carousel-nav-icon-next: var(--carousel-arrow-icon);
     --items-carousel-nav-icon-previous: var(--carousel-arrow-icon);
-    --items-carousel-nav-icon-size: var(--icon-size);
-    --items-carousel-nav-margin-block-end: var(--spacing-sm);
-    --items-carousel-nav-opacity-disabled: var(--opacity-disabled);
-    --items-carousel-nav-size: var(--spacing-lg);
+    --items-carousel-nav-icon-size: var(--carousel-arrow-icon-size);
+    --items-carousel-nav-margin-block-end: var(--carousel-arrow-margin-block);
+    --items-carousel-nav-opacity-disabled: var(--carousel-arrow-opacity-disabled);
+    --items-carousel-nav-size: var(--carousel-arrow-size);
+    --items-carousel-pagination-border-style: var(--carousel-pagination-border-style);
+    --items-carousel-pagination-border-width: var(--carousel-pagination-border-width);
+    --items-carousel-pagination-border-radius: var(--carousel-pagination-border-radius);
+    --items-carousel-pagination-color: var(--carousel-pagination-color);
+    --items-carousel-pagination-color-active: var(--carousel-pagination-color-active);
+    --items-carousel-pagination-color-border: var(--carousel-pagination-color-border);
+    --items-carousel-pagination-color-border-active: var(--carousel-pagination-color-border-active);
+    --items-carousel-pagination-color-border-hover: var(--carousel-pagination-color-border-hover);
+    --items-carousel-pagination-color-hover: var(--carousel-pagination-color-hover);
+    --items-carousel-pagination-gap: var(--carousel-pagination-gap);
+    --items-carousel-pagination-height: var(--carousel-pagination-height);
+    --items-carousel-pagination-margin-block-start: var(--carousel-pagination-margin-block);
+    --items-carousel-pagination-width: var(--carousel-pagination-width);
     --items-nav-margin-block-start: var(--spacing-fluid-md);
   }
 }
