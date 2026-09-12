@@ -10,7 +10,14 @@
  *       .text
  *       .cta
  *     div.media
- *       img | video
+ *       img | .video > video
+ *
+ * Modifiers:
+ *   .push-start|center|end        offset, horizontal position of the content
+ *   .push-align-start|center|end  text alignment
+ *   .push-vertical-start|end      vertical position of the content
+ *   .push-card                    background behind the text
+ *   .push-darken                  gradient under the text
  */
 @layer components {
   .push {
@@ -103,25 +110,51 @@
     }
   }
 
-  /* Center */
+  /* Offset: horizontal position of the content. It says nothing about the text
+     alignment, which .push-align-* handles on its own. */
   .push-center {
     > .content {
       align-items: center;
-      &:not(:has(.card)) {
-        text-align: center;
-      }
     }
   }
 
-  /* Align end */
   .push-end {
     @media (--tablet) {
       > .content {
         align-items: flex-end;
-        &:not(:has(.card)) {
-          text-align: end;
-        }
       }
+    }
+  }
+
+  /* Text alignment */
+  .push-align-start {
+    > .content:not(:has(.card)) {
+      text-align: start;
+    }
+  }
+
+  .push-align-center {
+    > .content:not(:has(.card)) {
+      text-align: center;
+    }
+  }
+
+  .push-align-end {
+    > .content:not(:has(.card)) {
+      text-align: end;
+    }
+  }
+
+  /* Vertical position of the content (centered by default) */
+  .push-vertical-start {
+    > .content {
+      justify-content: flex-start;
+    }
+  }
+
+  .push-vertical-end {
+    > .content {
+      justify-content: flex-end;
     }
   }
 }
