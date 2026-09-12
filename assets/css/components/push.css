@@ -22,6 +22,7 @@
 @layer components {
   .push {
     --media-color-background: var(--push-color-background);
+    --ratio-video: auto;
     --card-padding-block: var(--push-card-padding-block);
     --card-gap: var(--push-content-gap);
     --card-padding-inline: var(--push-card-padding-inline);
