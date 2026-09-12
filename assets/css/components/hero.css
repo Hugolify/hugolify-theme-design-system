@@ -231,50 +231,53 @@
   }
   .hero-with-darken {
     /* Logical gradient directions (flipped under RTL) */
-    --hero-gradient-stop: 100%;
     --hero-gradient-to-end: to right;   /* toward inline-end */
     --hero-gradient-to-start: to left;  /* toward inline-start */
+
+    /* The shadow comes from the edge the content sits against. Only this
+       variable changes from one variant to the next; the ::before below is
+       the single place that paints it. Its colors and its stop are tokens, but
+       the gradient is composed here on purpose: a custom property is
+       substituted on the element that declares it, so a --hero-darken sitting
+       on :root would freeze the direction and the stop before :dir(rtl), the
+       breakpoints or any variant below could change them. */
+    --hero-darken: linear-gradient(var(--hero-gradient-to-end), var(--hero-gradient-color-from) 0%, var(--hero-gradient-color-to) var(--hero-gradient-stop));
+
     &:dir(rtl) {
       --hero-gradient-to-end: to left;
       --hero-gradient-to-start: to right;
     }
 
     @media (--tablet) {
-      --hero-gradient-stop: 50%;
+      --hero-gradient-stop: var(--hero-gradient-stop-tablet);
     }
     @media (--desktop) {
-      --hero-gradient-stop: 33%;
+      --hero-gradient-stop: var(--hero-gradient-stop-desktop);
+    }
+
+    &.hero-center {
+      --hero-darken: var(--hero-gradient-color-from);
+    }
+    &.hero-end {
+      --hero-darken: linear-gradient(var(--hero-gradient-to-start), var(--hero-gradient-color-from) 0%, var(--hero-gradient-color-to) var(--hero-gradient-stop));
+    }
+
+    &.hero-vertical-end {
+      --hero-darken: linear-gradient(to top, var(--hero-gradient-color-from) 0%, var(--hero-gradient-color-to) var(--hero-gradient-stop));
+    }
+    &.hero-vertical-start {
+      --hero-darken: linear-gradient(to bottom, var(--hero-gradient-color-from) 0%, var(--hero-gradient-color-to) var(--hero-gradient-stop));
     }
 
     &::before {
-      background: linear-gradient(var(--hero-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) var(--hero-gradient-stop));
+      background: var(--hero-darken);
       content: '';
       inset: 0;
       pointer-events: none;
       position: absolute;
       z-index: 1;
     }
-    
-    &.hero-center {
-      &::before {
-        background: var(--color-shadow-strong)
-      }
-    }
-    &.hero-end {
-      &::before {
-        background: linear-gradient(var(--hero-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-      }
-    }
-    &.hero-vertical-end {
-      &::before {
-        background: linear-gradient(to top, var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-      }
-    }
-    &.hero-vertical-start {
-      &::before {
-        background: linear-gradient(to bottom, var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-      }
-    }
+
     .container {
       z-index: 2;
     }

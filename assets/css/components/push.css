@@ -84,29 +84,44 @@
     --push-gradient-to-end: to right;   /* toward inline-end */
     --push-gradient-to-start: to left;  /* toward inline-start */
 
+    /* The shadow comes from the edge the content sits against. Only this
+       variable changes from one variant to the next; the > .content rule
+       below is the single place that paints it. */
+    --push-darken: linear-gradient(var(--push-gradient-to-end), var(--push-gradient-color-from) 0%, var(--push-gradient-color-to) var(--push-gradient-stop));
+
     &:dir(rtl) {
       --push-gradient-to-end: to left;
       --push-gradient-to-start: to right;
     }
 
-    > .content {
-      background: linear-gradient(var(--push-gradient-to-end), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-    }
     @media (--tablet) {
       &.push-end {
-        > .content {
-          background: linear-gradient(var(--push-gradient-to-start), var(--color-shadow-strong) 0%, var(--color-shadow-light) 100%);
-        }
+        --push-darken: linear-gradient(var(--push-gradient-to-start), var(--push-gradient-color-from) 0%, var(--push-gradient-color-to) var(--push-gradient-stop));
       }
     }
+
+    /* A vertical offset tilts the gradient the same way, as in .hero.
+       Declared after the horizontal ones, so it wins when both are set. */
+    &.push-vertical-start {
+      --push-darken: linear-gradient(to bottom, var(--push-gradient-color-from) 0%, var(--push-gradient-color-to) var(--push-gradient-stop));
+    }
+    &.push-vertical-end {
+      --push-darken: linear-gradient(to top, var(--push-gradient-color-from) 0%, var(--push-gradient-color-to) var(--push-gradient-stop));
+    }
+
+    /* …except when the text carries its own background, or is centered: the
+       media is dimmed as a whole instead. */
     &.push-card,
     &.push-center {
-      > .content {
-        background: transparent;
-      }
+      --push-darken: transparent;
+
       .media {
         filter: brightness(var(--push-media-brightness, var(--hero-media-brightness)));
       }
+    }
+
+    > .content {
+      background: var(--push-darken);
     }
   }
 

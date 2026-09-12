@@ -7,6 +7,9 @@
     --push-color: var(--color-white);
     --push-color-background: var(--color-dark);
     --push-color-brightness: 0.3;
+    --push-gradient-color-from: var(--gradient-darken-color-from);
+    --push-gradient-color-to: var(--gradient-darken-color-to);
+    --push-gradient-stop: var(--gradient-darken-stop);
     --push-content-gap: var(--spacing-sm);
     --push-content-padding-block: var(--spacing-fluid-md);
     --push-content-padding-inline: var(--spacing-fluid-md);

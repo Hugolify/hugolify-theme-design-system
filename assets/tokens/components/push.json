@@ -20,6 +20,22 @@
         "$value": 0.3
       }
     },
+    "gradient": {
+      "color": {
+        "from": {
+          "$type": "color",
+          "$value": "{gradient.darken.color.from}"
+        },
+        "to": {
+          "$type": "color",
+          "$value": "{gradient.darken.color.to}"
+        }
+      },
+      "stop": {
+        "$type": "dimension",
+        "$value": "{gradient.darken.stop.default}"
+      }
+    },
     "content": {
       "gap": {
         "$type": "dimension",
