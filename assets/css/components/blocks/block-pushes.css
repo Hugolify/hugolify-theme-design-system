@@ -11,19 +11,20 @@
  */
 @layer components {
   .block-pushes {
-    .carousel {
-      .push {
-        display: flex;
-        height: 100%;
-      }
-      .content {
-        align-self: center;
-        width: 100%;
-      }
-    }
+    /* How many pushes stand side by side: the grid counts them with
+       --items-cols, the carousel with --perPage, set inline by the template.
+       One by default — a lone push spans the whole block. */
+    --push-columns: 1;
 
     &.block-full {
       --push-border-radius: 0;
+    }
+
+    .items {
+      --push-columns: var(--items-cols, 1);
+    }
+    .carousel {
+      --push-columns: var(--perPage, 1);
     }
 
     @media not (--tablet) {
@@ -42,11 +43,16 @@
       }
     }
 
-    .items-2 {
+    /* Sharing the width with its neighbours, a push is no longer wide enough
+       for the cinema ratio, and has to fill the height its row settles on.
+       Tablet and up only: below that, pushes are always stacked full width.
+       The style query reads --push-columns from the push's own parent, which
+       inherits it from the .items or .carousel above. */
+    @media (--tablet) {
       .push {
-        min-height: 100%;
-        @media (--tablet) {
+        @container not style(--push-columns: 1) {
           --push-ratio: var(--push-ratio-double);
+          min-height: 100%;
         }
       }
     }

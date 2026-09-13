@@ -47,7 +47,7 @@
       display: flex;
       flex-direction: column;
       gap: var(--push-content-gap);
-      justify-content: center;
+      justify-content: var(--push-content-justify, center);
       padding-block: var(--push-content-padding-block);
       padding-inline: var(--push-content-padding-inline);
       position: relative;
@@ -55,6 +55,7 @@
 
       @media (--tablet) {
         aspect-ratio: var(--push-ratio);
+        text-align: var(--push-content-align);
       }
       > * {
         margin-block: 0;
@@ -86,8 +87,8 @@
     --push-gradient-to-start: to left;  /* toward inline-start */
 
     /* The shadow comes from the edge the content sits against. Only this
-       variable changes from one variant to the next; the > .content rule
-       below is the single place that paints it. */
+       variable changes from one variant to the next; the ::before below is
+       the single place that paints it. */
     --push-darken: linear-gradient(var(--push-gradient-to-end), var(--push-gradient-color-from) 0%, var(--push-gradient-color-to) var(--push-gradient-stop));
 
     &:dir(rtl) {
@@ -121,56 +122,65 @@
       }
     }
 
-    > .content {
+    /* Painted on the push itself, not on > .content: the content box does not
+       always span the whole push (in a carousel it is vertically centred inside
+       a stretched push), and the gradient has to cover the media edge to edge.
+       Same layering as .hero: the overlay sits above the media, the content
+       above the overlay. */
+    &::before {
       background: var(--push-darken);
+      content: '';
+      inset: 0;
+      pointer-events: none;
+      position: absolute;
+      z-index: 1;
     }
   }
 
-  /* Offset: horizontal position of the content. It says nothing about the text
-     alignment, which .push-align-* handles on its own. */
+  /* Offset: horizontal position of the content */
   .push-center {
     > .content {
-      align-items: center;
+      @media (--tablet) {
+        padding-inline-start: 25%;
+        padding-inline-end: 25%;
+      }
+      @media (--laptop) {
+        padding-inline-start: 33.33%;
+        padding-inline-end: 33.33%;
+      }
     }
   }
 
   .push-end {
-    @media (--tablet) {
-      > .content {
-        align-items: flex-end;
+    > .content {
+      @media (--tablet) {
+        padding-inline-start: 50%;
+      }
+      @media (--laptop) {
+        padding-inline-start: 66.66%;
       }
     }
   }
 
   /* Text alignment */
   .push-align-start {
-    > .content:not(:has(.card)) {
-      text-align: start;
-    }
+    --push-content-align: start;
   }
 
   .push-align-center {
-    > .content:not(:has(.card)) {
-      text-align: center;
-    }
+    --push-content-align: center;
   }
 
   .push-align-end {
-    > .content:not(:has(.card)) {
-      text-align: end;
-    }
+    --push-content-align: end;
   }
 
   /* Vertical position of the content (centered by default) */
   .push-vertical-start {
-    > .content {
-      justify-content: flex-start;
-    }
+    --push-content-justify: flex-start;
   }
 
   .push-vertical-end {
-    > .content {
-      justify-content: flex-end;
-    }
+    --push-content-justify: flex-end;
   }
 }
