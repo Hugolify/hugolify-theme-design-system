@@ -42,6 +42,10 @@
       "$type": "dimension",
       "$value": "{spacing.xs}"
     },
+    "fontFamily": {
+      "$type": "fontFamily",
+      "$value": "{fontFamily.heading}"
+    },
     "fontSize": {
       "$type": "dimension",
       "$value": "{fontSize.fluid.lg}"

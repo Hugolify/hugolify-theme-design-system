@@ -12,6 +12,7 @@
     --quote-flex-direction: column;
     --quote-gap: var(--spacing-xs);
     --quote-padding: var(--spacing-xs);
+    --quote-font-family: var(--font-family-heading);
     --quote-font-size: var(--font-size-fluid-lg);
     --quote-font-style: italic;
     --quote-font-weight: var(--font-weight-normal);
