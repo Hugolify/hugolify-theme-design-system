@@ -9,7 +9,7 @@
     text-align: center;
     .heading,
     .footing {
-      h2, p {
+      h1, h2, h3, p {
         margin-inline: auto;
       }
       .cta {
@@ -27,15 +27,18 @@
   .block-align-end {
     text-align: end;
     .heading {
-      h2, p {
+      h1, h2, h3, p {
         margin-inline-start: auto;
+      }
+      .cta {
+        justify-content: end;
       }
     }
   }
   .block-align-start {
     text-align: start;
     .heading {
-      h2, p {
+      h1, h2, h3, p {
         margin-inline-end: auto;
       }
     }

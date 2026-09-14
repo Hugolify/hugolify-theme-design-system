@@ -31,7 +31,7 @@
       margin-block: 0;
     }
 
-    .surtitle {
+    .surtitle:has(+ *) {
       margin-block-end: var(--heading-surtitle-margin-block-end);
     }
 
