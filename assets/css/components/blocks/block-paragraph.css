@@ -1,20 +1,30 @@
 /* components/blocks/block-paragraph.css */
 /*
  * .block-paragraph — full-width block section wrapping a paragraph.
+ * .block-paragraph-list — the same paragraph, repeated in an .items grid.
+ *
+ * Both blocks render the same .paragraph component (commons/paragraph.html),
+ * so the inner rules are shared through :is() rather than duplicated.
  *
  * Structure:
  *   section.block-paragraph[.block-light]
  *     .heading
-*      .paragraph
+ *     .paragraph
+ *     .footing
+ *
+ *   section.block-paragraph-list[.block-light]
+ *     .heading
+ *     .items.items-{1,2}
+ *       .paragraph
  *     .footing
  */
 @layer components {
-  .block-paragraph {
+  :is(.block-paragraph, .block-paragraph-list) {
     .paragraph {
       .heading {
         margin-block-end: var(--gap);
       }
-      
+
       .notes,
       .cta {
         margin-block-start: var(--gap);
