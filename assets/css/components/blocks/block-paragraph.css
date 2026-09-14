@@ -25,11 +25,17 @@
       .text p {
         margin-inline: auto;
       }
+      .cta {
+        justify-content: center;
+      }
     }
 
     &.block-align-end {
       .text p {
         margin-inline-start: auto;
+      }
+      .cta {
+        justify-content: end;
       }
     }
   }
