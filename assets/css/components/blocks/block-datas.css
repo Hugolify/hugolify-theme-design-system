@@ -19,8 +19,11 @@
     .gauge {
       margin-inline: auto;
     }
-    .value  {
+    .value {
+      font-family: var(--datas-value-font-family, var(--font-family-heading));
       font-size: var(--datas-value-font-size, var(--font-size-fluid-xl));
+      font-weight: var(--datas-value-font-weight, var(--font-weight-heading));
+      line-height: var(--datas-value-line-height, var(--line-height-none));
     }
     .title {
       margin-block: 0;
