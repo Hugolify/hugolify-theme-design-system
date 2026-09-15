@@ -7,7 +7,7 @@
   }
 
   .block-black {
-    --block-color-background: var(--color-text);
+    --block-color-background: var(--color-black);
     --color-text: var(--color-text-on-black);
   }
 
@@ -46,6 +46,8 @@
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --color-heading: var(--color-text);
     --color-link: var(--color-text);
+    --details-color-text: var(--color-text-muted);
+    --transcription-color-text: var(--color-text-muted);
     --surtitle-color-text: var(--color-text-muted);
     background: var(--block-color-background);
     color: var(--color-text);
