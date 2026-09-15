@@ -12,9 +12,20 @@
  */
 @layer components {
   .block-audio {
-    audio {
-      @media (--tablet-wide) {
-        margin-inline: auto;
+    @media (--tablet) {
+      &.block-align-center {
+        --details-content-align: center;
+        audio,
+        p {
+          margin-inline: auto;
+        }
+      }
+      &.block-align-end {
+        --details-content-align: end;
+        audio,
+        p {
+          margin-inline-start: auto;
+        }
       }
     }
   }
