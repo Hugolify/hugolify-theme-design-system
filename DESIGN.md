@@ -292,7 +292,7 @@ plain grid in another.
 
 ### Typography
 
-- Fluid type via `--fluid-text-*` tokens (Utopia clamp) — no manual breakpoints for font sizes
+- Fluid type via `--font-size-fluid-*` tokens (Utopia clamp) — no manual breakpoints for font sizes
 - `--max-width-paragraph` caps line length on wide viewports
 
 ---
