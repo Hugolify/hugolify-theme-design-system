@@ -85,6 +85,7 @@
 
     .btn {
       margin-inline-end: auto;
+      margin-block-end: 0;
       margin-block-start: auto;
     }
 

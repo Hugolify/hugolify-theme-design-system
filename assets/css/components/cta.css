@@ -9,6 +9,7 @@
 
   @media (--tablet) {
     .cta {
+      align-items: baseline;
       flex-direction: row;
     }
   }
