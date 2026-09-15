@@ -9,7 +9,7 @@
  */
 @layer components {
   .block-alert {
-    --max-width-paragraph: 60rem;
+    --max-width-paragraph: var(--max-width);
     
     @media (--tablet) {
       &.block-align-center {
