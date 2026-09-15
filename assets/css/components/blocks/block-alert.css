@@ -7,3 +7,23 @@
  *     .container
  *       .alert[.alert-{variant}]
  */
+@layer components {
+  .block-alert {
+    --max-width-paragraph: 60rem;
+    
+    @media (--tablet) {
+      &.block-align-center {
+        --alert-align: center;
+        p {
+          margin-inline: auto;
+        }
+      }
+      &.block-align-end {
+        --alert-align: end;
+        p {
+          margin-inline-start: auto;
+        }
+      }
+    }
+  }
+}
