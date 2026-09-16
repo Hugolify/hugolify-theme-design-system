@@ -1,0 +1,29 @@
+/* components/footing.css */
+/*
+ * .footing — section footer block (text + CTAs).
+ *
+ * Expected HTML (blocks/footing.html):
+ *   <footer class="footing">
+ *     <div class="container">           optional
+ *       <div class="text">…</div>       optional
+ *       <div class="cta">…</div>        optional
+ *     </div>
+ *   </footer>
+ */
+@layer components {
+  .footing {
+    margin-block-start: var(--footing-margin-block-start);
+
+    &,
+    & > .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: var(--footing-gap);
+    }
+
+    p {
+      margin-block: 0;
+    }
+  }
+}

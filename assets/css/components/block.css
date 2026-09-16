@@ -82,7 +82,7 @@
     }
 
     .footing {
-      margin-block-start: var(--block-footing-margin-block-start);
+      margin-block-start: 0;
     }
 
     /* ── Scrollsnap ─────────────── */

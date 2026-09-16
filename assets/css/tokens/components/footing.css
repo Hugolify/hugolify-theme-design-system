@@ -1,0 +1,9 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/footing.css */
+@layer tokens {
+  :root {
+    --footing-gap: var(--spacing-xs);
+    --footing-margin-block-start: var(--spacing-fluid-md);
+  }
+}

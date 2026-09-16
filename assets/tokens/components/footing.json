@@ -1,0 +1,14 @@
+{
+  "footing": {
+    "gap": {
+      "$value": "{spacing.xs}",
+      "$type": "dimension"
+    },
+    "margin": {
+      "blockStart": {
+        "$value": "{spacing.fluid.md}",
+        "$type": "dimension"
+      }
+    }
+  }
+}
