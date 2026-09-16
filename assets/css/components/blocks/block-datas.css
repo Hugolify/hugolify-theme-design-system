@@ -11,21 +11,28 @@
  */
 @layer components {
   .block-datas {
-    .items {
-      li {
-        margin-block: 0;
-      }
+    .item {
+      --item-border-radius: 0;
+      --item-border-width: 0;
+      --item-color-background: transparent;
+      --item-color-text: var(--color-text);
+      --item-media-color-background: transparent;
+      --item-padding-bocks: 0;
+      --item-padding-inline: 0;
+      --item-shadow: none;
+      --item-shadow-hover: none;
+      --item-title-color: var(--color-heading);
+      margin-block: 0;
     }
     .gauge {
-      margin-inline: auto;
+      margin: 0 auto;
     }
     .value {
+      color: var(--datas-value-color, var(--color-heading));
       font-family: var(--datas-value-font-family, var(--font-family-heading));
       font-size: var(--datas-value-font-size, var(--font-size-fluid-xl));
       font-weight: var(--datas-value-font-weight, var(--font-weight-heading));
       line-height: var(--datas-value-line-height, var(--line-height-none));
-    }
-    .title {
       margin-block: 0;
     }
   }
