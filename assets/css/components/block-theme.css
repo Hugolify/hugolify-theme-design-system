@@ -8,12 +8,16 @@
 
   .block-black {
     --block-color-background: var(--color-black);
+    --color-background-muted: var(--color-dark-muted);
     --color-text: var(--color-text-on-black);
+    --color-text-on-muted: var(--color-text-on-dark);
   }
 
   .block-dark {
     --block-color-background: var(--color-dark);
+    --color-background-muted: var(--color-dark-muted);
     --color-text: var(--color-text-on-dark);
+    --color-text-on-muted: var(--color-text-on-dark);
   }
 
   .block-highlight {
@@ -43,12 +47,35 @@
   .block-light,
   .block-neutral,
   .block-white {
+    /* Every role below derives from --color-text, which each theme rebinds, so
+       components nested in a block follow the theme without naming it. */
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
+    /* Hover shifts the ink toward the block background, which is what
+       --color-text-hover does at :root: gray-900 to gray-700 in the light theme
+       (lighter, 21% of the way to white), gray-200 to gray-300 in the dark one.
+       color-mix keeps the result opaque, so the ink never depends on what sits
+       behind the block. 15% rather than the 21% of :root because .block-accent
+       only holds 5.85:1 at rest and a wider shift drops it below AA. */
+    --color-text-hover: color-mix(in oklab, var(--color-text) 85%, var(--block-color-background));
+    --color-active: var(--color-text);
     --color-heading: var(--color-text);
     --color-link: var(--color-text);
+    --color-link-hover: var(--color-text-hover);
     --details-color-text: var(--color-text-muted);
     --transcription-color-text: var(--color-text-muted);
     --surtitle-color-text: var(--color-text-muted);
+    /* Arrows invert on hover: the glyph is a currentColor mask, so swapping ink
+       and background is enough. Pagination reads the neutral family rather than
+       a role, so those two stay explicit: rebinding --color-neutral here would
+       also hit .btn-neutral and .badge-neutral inside the block. */
+    --carousel-arrow-color-background-hover: var(--color-link);
+    --carousel-arrow-color-border: var(--color-link);
+    --carousel-arrow-color-border-hover: var(--color-link);
+    --carousel-arrow-color: var(--color-link);
+    --carousel-arrow-color-hover: var(--block-color-background);
+    --carousel-pagination-color-active: var(--color-active);
+    --items-carousel-pagination-color-active: var(--color-active);
+
     background: var(--block-color-background);
     color: var(--color-text);
   }
