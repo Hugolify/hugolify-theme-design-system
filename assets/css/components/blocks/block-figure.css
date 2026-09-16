@@ -24,30 +24,10 @@
     }
   }
 
-  /* ── Alignment variants — tablet+ ────────────────────────── */
-
   /* Full bleed: figcaption indented to match container gutter */
   .block-figure.block-full {
     figcaption {
       padding-inline: var(--gutter);
-    }
-  }
-
-  @media (--tablet) {
-    .block-figure.block-start {
-      .heading {
-        align-items: flex-start;
-        margin-inline-start: 0;
-        text-align: start;
-      }
-    }
-
-    .block-figure.block-end {
-      .heading {
-        align-items: flex-end;
-        margin-inline-end: 0;
-        text-align: end;
-      }
     }
   }
 
