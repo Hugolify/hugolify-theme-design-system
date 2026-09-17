@@ -32,7 +32,9 @@
 
     &:not(.push-card) {
       --color-heading: var(--push-color);
-      --surtitle-color-text: oklch(from var(--push-color) l c h / var(--opacity-muted));
+      --color-link: var(--push-color);
+      --color-link-hover: var(--push-color);
+      --surtitle-color-text:  var(--push-surtitle-color, oklch(from var(--push-color) l c h / var(--opacity-muted)));
       --btn-color-background: var(--color-light);
       --btn-color-background-hover: var(--color-light-strong);
       --btn-color-border: var(--color-light);

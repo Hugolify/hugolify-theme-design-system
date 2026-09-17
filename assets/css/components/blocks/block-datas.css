@@ -12,6 +12,7 @@
 @layer components {
   .block-datas {
     .item {
+      --item-align: normal;
       --item-border-radius: 0;
       --item-border-width: 0;
       --item-color-background: transparent;
