@@ -61,7 +61,7 @@
     --color-heading: var(--color-text);
     --color-link: var(--color-text);
     --color-link-hover: var(--color-text-hover);
-    --details-color-text: var(--color-text-muted);
+    --details-color-text: var(--color-text);
     --transcription-color-text: var(--color-text-muted);
     --surtitle-color-text: var(--color-text-muted);
     /* Arrows invert on hover: the glyph is a currentColor mask, so swapping ink
