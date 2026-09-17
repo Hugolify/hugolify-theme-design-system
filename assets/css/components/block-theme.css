@@ -58,6 +58,7 @@
        only holds 5.85:1 at rest and a wider shift drops it below AA. */
     --color-text-hover: color-mix(in oklab, var(--color-text) 85%, var(--block-color-background));
     --color-active: var(--color-text);
+    --color-credit: var(--color-text-muted);
     --color-heading: var(--color-text);
     /* --color-link: var(--color-text);
     --color-link-hover: var(--color-text-hover); */
