@@ -2,18 +2,18 @@
 /* components/related.css */
 @layer components {
   .related {
-    background-color: var(--color-background-muted);
-    margin-block: 0;
-    padding-block: var(--spacing-section);
+    background-color: var(--related-color-background, var(--color-background-muted));
+    margin-block: var(--related-color-margin-block, 0);
+    padding-block: var(--related-color-padding-block, var(--spacing-section));
 
     div + & {
-      margin-block-start: var(--spacing-section);
+      margin-block-start: var(--related-color-padding-block, var(--spacing-section));
     }
     & + & {
       padding-block-start: 0;
     }
     &:last-child {
-      margin-block-end: calc(var(--spacing-section) * -1);
+      margin-block-end: calc(var(--related-color-padding-block, var(--spacing-section)) * -1);
     }
 
     @media (--tablet) {
