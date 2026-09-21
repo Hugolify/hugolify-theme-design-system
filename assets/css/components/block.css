@@ -99,8 +99,14 @@
        caps at AND the width --desktop kicks in.
        Lengths only, no percentage: the utility feeds this to the items'
        scroll-margin-inline, which takes <length> and would drop a % outright,
-       losing the snap offset that lands each card on the content edge. */
-    .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
+       losing the snap offset that lands each card on the content edge.
+
+       Under .container, because republishing is correcting a bleed the
+       container already grants, not granting one. A block asked for grid:
+       "full" has no .container at all, its content already spans the viewport,
+       and the row has nothing left to pull out of — setting the property there
+       would hand it a bleed the utility is meant to withhold. */
+    .container .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
       --container-bleed: max(
         var(--gutter),
         calc((100vw - var(--size-desktop)) / 2 + var(--gutter))
