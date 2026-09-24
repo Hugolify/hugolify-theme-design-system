@@ -41,6 +41,20 @@
         "$type": "dimension",
         "$value": "{spacing.sm}"
       },
+      "maxInlineSize": {
+        "default": {
+          "$type": "dimension",
+          "$value": "100%"
+        },
+        "tablet": {
+          "$type": "dimension",
+          "$value": "50%"
+        },
+        "laptop": {
+          "$type": "dimension",
+          "$value": "33.33%"
+        }
+      },
       "padding": {
         "block": {
           "$type": "dimension",

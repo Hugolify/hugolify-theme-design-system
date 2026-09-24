@@ -11,6 +11,9 @@
     --push-gradient-color-to: var(--gradient-darken-color-to);
     --push-gradient-stop: var(--gradient-darken-stop);
     --push-content-gap: var(--spacing-sm);
+    --push-content-max-inline-size: 100%;
+    --push-content-max-inline-size-tablet: 50%;
+    --push-content-max-inline-size-laptop: 33.33%;
     --push-content-padding-block: var(--spacing-fluid-md);
     --push-content-padding-inline: var(--spacing-fluid-md);
     --push-card-padding-block: var(--spacing-fluid-md);
