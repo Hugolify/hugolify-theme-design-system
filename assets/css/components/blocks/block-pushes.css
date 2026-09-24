@@ -18,6 +18,23 @@
 
     &.block-full {
       --push-border-radius: 0;
+
+      /* Full bleed, a carousel lays its dots over the slides
+         (vendors/splide.css). That holds for a lone push spanning the
+         viewport; standing side by side, the pushes are cards again and their
+         dots go back below the track, with the room that takes. */
+      .carousel:has(.splide__pagination) {
+        /* No style query for this one: --push-columns is set on the carousel
+           itself, and a query only ever reads an ancestor. The arithmetic
+           stands in: 0 for one column, 1 from two up. */
+        margin-block-end: calc(var(--carousel-pagination-margin-block) * min(1, var(--push-columns) - 1));
+      }
+      .carousel .splide__pagination {
+        @container not style(--push-columns: 1) {
+          inset-block-end: auto;
+          inset-block-start: 100%;
+        }
+      }
     }
 
     .items {

@@ -149,22 +149,7 @@
     }
 
     /* ── Full-bleed block ─────────────── */
-    /*
-     * A .block-full carousel spans the viewport: there is no side margin for
-     * the arrows to step into, and nothing below the track to hold the dots.
-     * Both controls come inside, over the slides, and the room the block was
-     * reserving underneath goes away with them.
-     */
     .block-full & {
-      &:has(.splide__pagination) {
-        margin-block-end: 0;
-      }
-
-      .splide__pagination {
-        inset-block-end: 0;
-        inset-block-start: auto;
-      }
-
       @media (--tablet) {
         .splide__arrow--next {
           inset-inline-end: 0;
