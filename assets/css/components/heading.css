@@ -31,6 +31,10 @@
       margin-block: 0;
     }
 
+    .surtitle {
+      align-self: start;
+    }
+
     .surtitle:has(+ *) {
       margin-block-end: var(--heading-surtitle-margin-block-end);
     }
