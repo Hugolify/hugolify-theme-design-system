@@ -61,6 +61,7 @@
     --item-color-background: var(--color-background-surface);
     --item-color-border: var(--color-background-surface);
     --item-color-text: var(--color-text);
+    --item-metas-color-text: var(--color-text-muted);
     --item-title-color: var(--color-text);
     --transcription-color-text: var(--color-text-muted);
     --surtitle-color-text: var(--color-text-muted);
