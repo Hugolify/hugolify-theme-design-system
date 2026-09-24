@@ -30,6 +30,13 @@
     position: relative;
     overflow: hidden;
 
+    @media (--tablet) {
+      --push-content-max-inline-size: var(--push-content-max-inline-size-tablet);
+    }
+    @media (--laptop) {
+      --push-content-max-inline-size: var(--push-content-max-inline-size-laptop);
+    }
+
     &:not(.push-card) {
       --color-heading: var(--push-color);
       --color-link: var(--push-color);
@@ -141,16 +148,6 @@
   }
 
   /* Offset: horizontal position of the content. */
-  .push-center,
-  .push-end {
-    @media (--tablet) {
-      --push-content-max-inline-size: var(--push-content-max-inline-size-tablet);
-    }
-    @media (--laptop) {
-      --push-content-max-inline-size: var(--push-content-max-inline-size-laptop);
-    }
-  }
-
   .push-center {
     @media (--tablet) {
       --push-content-items: center;

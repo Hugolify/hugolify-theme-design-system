@@ -41,6 +41,17 @@
           margin-inline: calc(var(--gutter) * -1);
         }
       }
+
+      /* A scrolling row is the exception: its items keep their own width and
+         scroll inside the gutter, so a push there neither bleeds nor loses
+         its corners. Declared last to win over :not(.block-full), which
+         carries the same specificity. Under .block-full the radius stays 0,
+         --push-border-radius being the one the block already set. */
+      :is(.scrollsnap, .scrollsnap-sm, .scrollsnap-md, .scrollsnap-lg, .scrollsnap-xl) .push {
+        border-radius: var(--push-border-radius);
+        margin-inline: 0;
+        min-height: 100%;
+      }
     }
 
     /* Sharing the width with its neighbours, a push is no longer wide enough
