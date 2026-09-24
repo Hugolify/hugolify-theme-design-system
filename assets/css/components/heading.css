@@ -21,6 +21,7 @@
 
     &,
     & > .container {
+      align-items: inherit;
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
@@ -29,10 +30,6 @@
 
     h1, h2, h3, p {
       margin-block: 0;
-    }
-
-    .surtitle {
-      align-self: start;
     }
 
     .surtitle:has(+ *) {
