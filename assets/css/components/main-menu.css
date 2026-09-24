@@ -89,6 +89,11 @@
         align-items: baseline;
         display: flex;
       }
+
+      .dropdown-menu {
+        inset-inline-end: 0;
+        inset-inline-start: auto;
+      }
     }
   }
 }
