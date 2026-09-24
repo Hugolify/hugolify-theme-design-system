@@ -49,6 +49,7 @@
   .block-white {
     /* base */
     --color-active: var(--color-text);
+    --color-border: oklch(from var(--color-text) l c h / var(--opacity-subtle));
     --color-credit: var(--color-text-muted);
     --color-heading: var(--color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
