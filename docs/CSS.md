@@ -107,7 +107,7 @@ This removes all debate about ordering, makes diffs cleaner, and speeds up scann
 Layers are declared **once** at the top of `main.css`, in order of precedence (lowest to highest).
 
 ```css
-@layer reset, tokens, libs, vendors, base, layouts, components, pages, utilities;
+@layer reset, tokens, libs, base, vendors, layouts, components, pages, utilities;
 ```
 
 | Layer | Contents |
@@ -115,8 +115,8 @@ Layers are declared **once** at the top of `main.css`, in order of precedence (l
 | `reset` | The reset itself, from @uncinq/css-base |
 | `tokens` | Design tokens — CSS custom properties |
 | `libs` | Third-party stylesheets themselves (Splide, Leaflet, Tobii) |
-| `vendors` | **Our overrides** of those libraries |
 | `base` | Native HTML element styles |
+| `vendors` | **Our overrides** of those libraries — above `base` so they win over native element styles |
 | `layouts` | Layout structures (container, grid, row) |
 | `components` | UI components |
 | `pages` | Page-specific rules |
@@ -133,6 +133,13 @@ that loaded last would win, and a minified library wins a lot of those ties.
 Two layers settle it once and for all, and spare `vendors/*.css` an
 `!important` on every rule.
 
+`libs` is the weakest layer after `tokens`: a library must never win over our
+own base styles. `vendors` sits right after `base`, because it is override
+code: dressing a library's markup often means undoing a native element style
+(`button`, `input`, `ul`…) that `base` applies to it. It stays below
+`components`, so a design-system class added to library markup (`.btn` on the
+Pagefind buttons, for instance) keeps its own rules.
+
 Three things to keep in mind:
 
 - a layer name that is never declared is appended **last**, stronger than
@@ -147,7 +154,7 @@ Three things to keep in mind:
 
 ```css
 /* css/main.css */
-@layer reset, tokens, libs, vendors, base, layouts, components, pages, utilities;
+@layer reset, tokens, libs, base, vendors, layouts, components, pages, utilities;
 
 /* Un Cinq base — reset + elements + layouts */
 @import '@uncinq/css-base';
@@ -160,7 +167,12 @@ Three things to keep in mind:
 /* Config */
 @import 'mediaqueries.css';
 
+/* Base */
+@import 'base/fonts.css';
+
 /* Vendors — our overrides; the libraries land in @layer libs at runtime */
+@import 'vendors/leaflet.css';
+@import 'vendors/pagefind.css';
 @import 'vendors/splide.css';
 
 /* Layouts */

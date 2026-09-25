@@ -1,0 +1,35 @@
+/* vendors/pagefind.css */
+@layer vendors {
+  .pagefind-ui__form {
+    display: flex;
+    flex-wrap: wrap;
+    .pagefind-ui__search-input {
+      flex: 1;
+    }
+    .pagefind-ui__drawer {
+      flex-basis: 100%;
+    }
+    .pagefind-ui__results {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+      list-style: none;
+      margin-block: 0;
+      padding-inline-start: 0;
+    }
+    .pagefind-ui__result {
+      display: flex;
+      gap: var(--gap);
+    }
+    .pagefind-ui__result-thumb {
+      flex: 1;
+    }
+    .pagefind-ui__result-inner {
+      flex: 3;
+    }
+    .pagefind-ui__result-image {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

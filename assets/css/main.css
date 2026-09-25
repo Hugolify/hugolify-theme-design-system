@@ -1,5 +1,5 @@
 /* css/main.css */
-@layer reset, tokens, libs, vendors, base, layouts, components, pages, utilities;
+@layer reset, tokens, libs, base, vendors, layouts, components, pages, utilities;
 
 /* Un Cinq base */
 @import '@uncinq/css-base';
@@ -25,12 +25,13 @@
 @custom-media --{{ $name }}-expand {{ cond (eq $bp "none") "not all" (printf "(--%s)" $bp) }};
 {{- end }}
 
-/* Vendors */
-@import 'vendors/leaflet.css';
-@import 'vendors/splide.css';
-
 /* Base */
 @import 'base/fonts.css';
+
+/* Vendors */
+@import 'vendors/leaflet.css';
+@import 'vendors/pagefind.css';
+@import 'vendors/splide.css';
 
 /* Layouts */
 @import 'layouts/footer.css';
