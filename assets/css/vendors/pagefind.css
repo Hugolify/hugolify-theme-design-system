@@ -2,9 +2,12 @@
 @layer vendors {
   .pagefind-ui__form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     .pagefind-ui__search-input {
       flex: 1;
+    }
+    .pagefind-ui__search-clear {
+      display: none;
     }
     .pagefind-ui__drawer {
       flex-basis: 100%;
