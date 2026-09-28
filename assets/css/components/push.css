@@ -69,6 +69,7 @@
       > * {
         margin-block: 0;
         max-inline-size: var(--push-content-max-inline-size);
+        width: 100%;
       }
     }
 
