@@ -1,0 +1,40 @@
+{
+  "avatars": {
+    "border": {
+      "width": {
+        "$value": "{border.width.sm}",
+        "$type": "dimension"
+      }
+    },
+    "color": {
+      "background": {
+        "$value": "{color.background.muted.default}",
+        "$type": "color"
+      },
+      "border": {
+        "$value": "{color.background.default}",
+        "$type": "color"
+      },
+      "text": {
+        "$value": "{color.text.onMuted}",
+        "$type": "color"
+      }
+    },
+    "fontSize": {
+      "$value": "{fontSize.2xs}",
+      "$type": "dimension"
+    },
+    "fontWeight": {
+      "$value": "{fontWeight.control}",
+      "$type": "fontWeight"
+    },
+    "overlap": {
+      "$value": "calc({avatars.size} * -.3)",
+      "$type": "dimension"
+    },
+    "size": {
+      "$value": "30px",
+      "$type": "dimension"
+    }
+  }
+}

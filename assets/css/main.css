@@ -41,6 +41,7 @@
 
 /* Components — Hugolify-specific */
 @import 'components/avatar.css';
+@import 'components/avatars.css';
 @import 'components/audio.css';
 @import 'components/back.css';
 @import 'components/block.css';

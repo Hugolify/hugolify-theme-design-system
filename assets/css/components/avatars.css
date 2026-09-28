@@ -1,0 +1,63 @@
+/* components/avatars.css */
+/*
+ * .avatars — a group of persons as overlapping round avatars, the last one
+ * counting those left out.
+ *
+ * Expected HTML (hugolify-theme, commons/avatars.html):
+ *   <ul class="avatars">
+ *     <li><a><picture class="avatar"><img></picture></a></li>
+ *     <li><a><span class="avatar">AB</span></a></li>
+ *     <li class="avatars-count">+2</li>
+ *   </ul>
+ *
+ * The images are requested at the xsmall size (50x50), larger than
+ * --avatars-size, so they stay sharp on dense screens. Each avatar is ringed
+ * with --avatars-color-border so the overlap reads as a cut-out: set it to the
+ * background the group sits on.
+ */
+@layer components {
+  .avatars {
+    align-items: center;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+
+      & + li {
+        margin-inline-start: var(--avatars-overlap);
+      }
+    }
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .avatar,
+    .avatars-count {
+      align-items: center;
+      background-color: var(--avatars-color-background);
+      block-size: var(--avatars-size);
+      border-radius: var(--radius-pill);
+      box-shadow: 0 0 0 var(--avatars-border-width) var(--avatars-color-border);
+      color: var(--avatars-color-text);
+      display: flex;
+      font-size: var(--avatars-font-size);
+      font-weight: var(--avatars-font-weight);
+      inline-size: var(--avatars-size);
+      justify-content: center;
+      line-height: 1;
+      overflow: hidden;
+    }
+
+    img {
+      block-size: 100%;
+      display: block;
+      inline-size: 100%;
+      object-fit: cover;
+    }
+  }
+}

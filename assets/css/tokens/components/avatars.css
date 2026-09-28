@@ -1,0 +1,15 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/avatars.css */
+@layer tokens {
+  :root {
+    --avatars-border-width: var(--border-width-sm);
+    --avatars-color-background: var(--color-background-muted);
+    --avatars-color-border: var(--color-background);
+    --avatars-color-text: var(--color-text-on-muted);
+    --avatars-font-size: var(--font-size-2xs);
+    --avatars-font-weight: var(--font-weight-control);
+    --avatars-overlap: calc(var(--avatars-size) * -.3);
+    --avatars-size: 30px;
+  }
+}
