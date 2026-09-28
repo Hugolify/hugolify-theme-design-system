@@ -1,0 +1,19 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* components/filters.css */
+@layer tokens {
+  :root {
+    --filters-group-border-style: var(--border-style-normal);
+    --filters-group-border-width: var(--border-width-sm);
+    --filters-group-color-border: var(--color-border);
+    --filters-group-padding-block-start: var(--spacing-md);
+    --filters-group-padding-block-end: var(--spacing-md);
+    --filters-list-font-size: var(--font-size-xs);
+    --filters-more-gap: var(--spacing-2xs);
+    --filters-more-icon-size: 1em;
+    --filters-more-padding-block: var(--spacing-2xs);
+    --filters-search-status-color-text: var(--color-text-muted);
+    --filters-search-status-font-size: var(--font-size-xs);
+    --filters-search-status-margin-block: var(--spacing-xs);
+  }
+}

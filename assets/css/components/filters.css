@@ -7,16 +7,16 @@
     .content {
       > div {
         &:not(:first-child) {
-          padding-block-start: var(--spacing-md);
+          padding-block-start: var(--filters-group-padding-block-start);
         }
         &:not(:last-child) {
-          border-block-end: var(--border-width-sm) var(--border-style-normal) var(--color-border);
-          padding-block-end: var(--spacing-md);
+          border-block-end: var(--filters-group-border-width) var(--filters-group-border-style) var(--filters-group-color-border);
+          padding-block-end: var(--filters-group-padding-block-end);
         }
       }
     }
     .list {
-      --list-item-font-size: var(--font-size-xs);
+      --list-item-font-size: var(--filters-list-font-size);
       :is(ul, ol) {
         list-style: none;
         padding-inline-start: 0;
@@ -25,6 +25,11 @@
         display: flex;
         gap: var(--list-item-gap);
         align-items: center;
+
+        /* The display above beats the browser's own [hidden] rule */
+        &[hidden] {
+          display: none;
+        }
       }
       &:not(.list-mini_card):not(.list-tags) {
         li {

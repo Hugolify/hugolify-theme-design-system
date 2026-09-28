@@ -13,6 +13,12 @@ import './vendors/custom';
 {{ if $params.carousel }}
   import './features/carousel';
 {{ end }}
+{{ if $params.filters.more.enable }}
+  import './features/filters-more';
+{{ end }}
+{{ if $params.filters.search.enable }}
+  import './features/filters-search';
+{{ end }}
 {{ if $params.map }}
   import './features/map';
 {{ end }}

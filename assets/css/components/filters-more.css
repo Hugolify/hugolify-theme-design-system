@@ -1,0 +1,47 @@
+/* components/filters-more.css */
+/*
+ * .filters-more — terms past site.Params.filters.more.limit, folded behind a
+ * "show more" that goes away once unfolded, the focus being carried over by
+ * features/filters-more.js. Rendered when site.Params.filters.more.enable is
+ * true, see commons/filters/taxonomy.html in hugolify-theme.
+ *
+ * Structure:
+ *   div.list
+ *     ol            (the terms up to the limit)
+ *     details.filters-more
+ *       summary
+ *       ol[start]   (the rest)
+ *
+ * A <details> comes with a frame of its own from css-base; here it is one
+ * more line in the list, so the frame steps aside.
+ */
+@layer components {
+  .filters-more {
+    --details-box-shadow: none;
+    --details-box-shadow-hover: none;
+    --details-color-background: transparent;
+    --details-icon-size: var(--filters-more-icon-size);
+    --details-margin: 0;
+    --details-summary-font-family: inherit;
+    --details-summary-font-size: var(--list-item-font-size);
+    --details-summary-font-weight: inherit;
+    --details-summary-padding-block: var(--filters-more-padding-block);
+    --details-summary-padding-inline: 0;
+
+    border: none;
+
+    summary {
+      display: inline-flex;
+      gap: var(--filters-more-gap);
+    }
+
+    /* Taking away the control the user has just pressed drops the focus back
+       to the document, against WCAG 2.4.3 Focus Order. Only a fold that
+       features/filters-more.js has taken over loses its summary, the script
+       being there to catch the focus. Script off, the summary stays, which
+       native <details> handles on its own. */
+    &.is-initialized[open] > summary {
+      display: none;
+    }
+  }
+}

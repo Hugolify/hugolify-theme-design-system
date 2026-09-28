@@ -61,6 +61,8 @@
 @import 'components/editorial.css';
 @import 'components/featured-image.css';
 @import 'components/filters.css';
+@import 'components/filters-more.css';
+@import 'components/filters-search.css';
 @import 'components/gallery.css';
 @import 'components/gauge.css';
 @import 'components/heading.css';

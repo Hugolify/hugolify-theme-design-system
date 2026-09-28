@@ -1,0 +1,26 @@
+/* components/filters-search.css */
+/*
+ * .filters-search — field narrowing the terms of .filters, driven by
+ * features/filters-search.js. Rendered when site.Params.filters.search.enable
+ * is true, see commons/filters/search.html in hugolify-theme.
+ *
+ * Structure:
+ *   div.filters-search
+ *     label.visually-hidden
+ *     input[type=search]
+ *     p[role=status]  (empty until nothing matches)
+ */
+@layer components {
+  .filters-search {
+    [role='status'] {
+      color: var(--filters-search-status-color-text);
+      font-size: var(--filters-search-status-font-size);
+      margin-block: var(--filters-search-status-margin-block) 0;
+
+      /* Kept in the DOM while empty so screen readers announce its updates */
+      &:empty {
+        margin: 0;
+      }
+    }
+  }
+}
