@@ -5,7 +5,7 @@
     --nav-gap: var(--spacing-2xs);
     --nav-link-padding-block: var(--spacing-2xs);
     --nav-link-padding-inline: var(--spacing-2xs);
-    --nav-social-icon-size: var(--size-20, 1.25rem);
+    --nav-social-icon-size: var(--spacing-sm, 1.25rem);
 
     a {
       display: inline-flex;

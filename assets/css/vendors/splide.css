@@ -31,7 +31,7 @@
         row-gap: var(--items-row-gap, var(--items-gap));
       }
       .splide__slide {
-        width: calc(100% / var(--perPage));
+        width: calc(100% / var(--perPage, 1));
       }
     }
     
@@ -41,6 +41,8 @@
       gap: var(--carousel-pagination-gap);
       inset-block-end: auto;
       inset-block-start: 100%;
+      justify-content: center;
+      list-style: none;
       margin-block: var(--carousel-pagination-margin-block);
       li {
         margin-block: 0 !important;
