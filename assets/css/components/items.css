@@ -3,6 +3,9 @@
   .items {
     list-style: none;
     padding-inline-start: 0;
+    > li {
+      margin-block: 0;
+    }
     & + nav {
       margin-block-start: var(--items-nav-margin-block-start);
     }
