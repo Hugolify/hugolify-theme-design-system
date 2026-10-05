@@ -1,0 +1,24 @@
+{
+  "anim": {
+    "delay": {
+      "$value": "{duration.fast}",
+      "$type": "duration",
+      "$description": "Stagger unit of a scroll-triggered sequence: each part waits a multiple of it, set as --anim-step."
+    },
+    "distance": {
+      "$value": "{spacing.md}",
+      "$type": "dimension",
+      "$description": "How far a part rises into place as it appears."
+    },
+    "duration": {
+      "$value": "{duration.slow}",
+      "$type": "duration",
+      "$description": "Travel time of a single part of a scroll-triggered sequence."
+    },
+    "easing": {
+      "$value": "{easing.inOutQuart}",
+      "$type": "cubicBezier",
+      "$description": "Slight overshoot at the end of the travel, so a part settles rather than stops."
+    }
+  }
+}

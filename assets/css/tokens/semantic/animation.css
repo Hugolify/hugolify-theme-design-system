@@ -1,0 +1,11 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* semantic/animation.css */
+@layer tokens {
+  :root {
+    --anim-delay: var(--duration-fast);
+    --anim-distance: var(--spacing-md);
+    --anim-duration: var(--duration-slow);
+    --anim-easing: var(--easing-in-out-quart);
+  }
+}

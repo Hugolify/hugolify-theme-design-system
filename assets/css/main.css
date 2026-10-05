@@ -26,6 +26,7 @@
 {{- end }}
 
 /* Base */
+@import 'base/animation.css';
 @import 'base/fonts.css';
 
 /* Vendors */

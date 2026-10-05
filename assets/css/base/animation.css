@@ -1,0 +1,47 @@
+/* base/animation.css */
+/*
+ * [data-anim] reveals a part of the page once, when it first scrolls into
+ * view: it fades in and rises by --anim-distance. The parts that paint a
+ * background band, block and hero, are the exception: they only fade.
+ *
+ * js/features/animation.js observes every [data-anim] and sets data-anim-show
+ * on it at first intersection. The attribute itself comes from the theme
+ * markup, and only when site.Params.animation is true, so with animations off
+ * no selector here matches and nothing is ever hidden.
+ *
+ * Everything sits behind prefers-reduced-motion: no-preference, because the
+ * from-state is what hides the content and it must never reach a reader who
+ * refuses motion. The to-state is keyed on the attribute the script adds
+ * rather than on an animation, for the same reason: a page whose JS never ran
+ * was never hidden in the first place.
+ *
+ * Tokens: tokens/semantic/animation.css.
+ */
+@layer base {
+  @media (prefers-reduced-motion: no-preference) {
+    /* Each [data-anim] hides and reveals itself, so one nested inside another
+       stays hidden until it intersects on its own. */
+    [data-anim] {
+      opacity: 0;
+      transition-delay: var(--anim-delay);
+      transition-duration: var(--anim-duration);
+      transition-property: opacity, translate;
+      transition-timing-function: var(--anim-easing);
+      translate: 0 var(--anim-distance);
+    }
+
+    /* A block and a hero each paint a full-width background band, and two
+       adjacent bands carry different colours, so a rising one slides against
+       the edge of its neighbour instead of with it. These fade in place. Same
+       specificity as the rule above, so this has to stay after it. */
+    [data-anim="block"],
+    [data-anim="hero"] {
+      translate: 0 0;
+    }
+
+    [data-anim][data-anim-show] {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+}
