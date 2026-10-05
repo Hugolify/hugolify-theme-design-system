@@ -138,6 +138,7 @@
 @import 'utilities.css';
 
 /* Modules / Sections */
+@import "modules/awards.css";
 @import "modules/casestudies.css";
 @import "modules/docs.css";
 @import "modules/events.css";
