@@ -63,8 +63,11 @@
     --item-color-text: var(--color-text);
     --item-metas-color-text: var(--color-text-muted);
     --item-title-color: var(--color-text);
-    --transcription-color-text: var(--color-text-muted);
+    --push-card-color-background: var(--color-background-muted);
+    --push-card-color-text: var(--color-text-on-muted);
+    --push-card-title-color: var(--color-text-on-muted);
     --surtitle-color-text: var(--color-text-muted);
+    --transcription-color-text: var(--color-text-muted);
   }
 
   /* all themes */

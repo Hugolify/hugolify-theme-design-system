@@ -73,7 +73,8 @@
 
     /* Sharing the width with its neighbours, a push is no longer wide enough
        for the cinema ratio, nor for a text box capped at a share of its width,
-       and has to fill the height its row settles on.
+       and has to fill the height its row settles on. Its padding narrows with
+       it, keeping the share of the push it takes with two to a row.
        Tablet and up only: below that, pushes are always stacked full width.
        The style query reads --push-columns from the push's own parent, which
        inherits it from the .items or .carousel above. */
@@ -81,6 +82,8 @@
       .push {
         @container not style(--push-columns: 1) {
           --push-content-max-inline-size: 100%;
+          --push-content-padding-block: calc(var(--spacing-fluid-md) * 2 / var(--push-columns));
+          --push-content-padding-inline: calc(var(--spacing-fluid-md) * 2 / var(--push-columns));
           --push-ratio: var(--push-ratio-double);
           min-height: 100%;
         }
