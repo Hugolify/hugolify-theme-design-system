@@ -217,10 +217,11 @@
     .hero-content {
       .btn {
         --btn-color-background: var(--color-light);
-        --btn-color-background-hover: var(--color-light-strong);
+        --btn-color-background-hover: var(--color-light-hover);
         --btn-color-border: var(--color-light);
-        --btn-color-border-hover: var(--color-light-strong);
+        --btn-color-border-hover: var(--color-light-hover);
         --btn-color-text: var(--color-text-on-light);
+        --btn-color-text-hover: var(--color-text-on-light);
       }
       .btn + .btn {
         --btn-color-background: transparent;
