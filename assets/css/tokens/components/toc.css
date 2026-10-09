@@ -14,6 +14,6 @@
     --toc-nav-font-size: var(--font-size-xs);
     --toc-nav-item-gap: var(--spacing-2xs);
     --toc-nav-link-color-text-decoration: transparent;
-    --toc-nav-link-color-text-decoration-hover: var(--color-link);
+    --toc-nav-link-color-text-decoration-hover: currentColor;
   }
 }
