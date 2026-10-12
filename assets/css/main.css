@@ -39,6 +39,7 @@
 @import 'layouts/grid.css';
 @import 'layouts/header.css';
 @import 'layouts/main.css';
+@import 'layouts/row.css';
 
 /* Components — Hugolify-specific */
 @import 'components/avatar.css';

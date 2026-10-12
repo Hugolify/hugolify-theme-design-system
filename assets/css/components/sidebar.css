@@ -13,6 +13,11 @@
       margin-block: 0;
     }
 
+    /* The TOC fills the rest of the sidebar so its sticky wrapper can travel */
+    > .toc:last-child {
+      flex-grow: 1;
+    }
+
     .btn {
       align-self: start;
     }

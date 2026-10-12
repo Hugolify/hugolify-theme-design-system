@@ -42,7 +42,7 @@
       .toc {
         --grid-column: span 4;
       }
-      .sidebar:has(& + .toc) {
+      .sidebar:has(+ .toc) {
         align-self: start;
       }
       .sidebar--menu {

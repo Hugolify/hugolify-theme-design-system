@@ -1,0 +1,45 @@
+/* layouts/row.css */
+/*
+ * Proportions of the .row layouts, same as their .grid counterparts:
+ *   .row > .content + .sidebar   : content 8 / sidebar 4 (pages and docs single)
+ *   .row > .sidebar--menu + div  : docs menu 2 / page 10
+ *
+ * Widths reuse the .col-* formula of @uncinq/css-base, so gutters line up with
+ * the grid. Below tablet-wide everything stacks, the sidebar holding the TOC first.
+ */
+@layer layouts {
+  .row {
+    > .sidebar:has(.toc) {
+      order: -1;
+    }
+
+    @media (--tablet) {
+      /* Full width until tablet-wide, like the one-column grid */
+      > .content,
+      > .sidebar,
+      > .sidebar--menu + div {
+        --col-span: var(--columns);
+        flex: 0 0 calc(
+          var(--col-span) / var(--columns) * 100%
+          - (1 - var(--col-span) / var(--columns)) * var(--grid-gap, var(--gap))
+        );
+      }
+    }
+
+    @media (--tablet-wide) {
+      /* ── Content + sidebar, only when the sidebar has something to show ── */
+      &:has(> .sidebar:not(.sidebar--menu) > *) {
+        > .content { --col-span: calc(var(--columns) * 2 / 3); }
+        > .sidebar { --col-span: calc(var(--columns) / 3); }
+      }
+
+      /* ── Docs menu + page ──────────────────────────────────────────────── */
+      > .sidebar--menu       { --col-span: calc(var(--columns) / 6); }
+      > .sidebar--menu + div { --col-span: calc(var(--columns) * 5 / 6); }
+
+      > .sidebar:has(.toc) {
+        order: initial;
+      }
+    }
+  }
+}
