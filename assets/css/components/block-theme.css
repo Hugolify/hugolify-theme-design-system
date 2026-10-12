@@ -53,6 +53,8 @@
     --color-border: oklch(from var(--color-text) l c h / var(--opacity-subtle));
     --color-credit: var(--color-text-muted);
     --color-heading: var(--color-text);
+    --color-link: var(--color-text);
+    --color-link-hover: var(--color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --color-text-on-surface: var(--color-text);
 
@@ -92,6 +94,11 @@
   .block-neutral + .block-neutral,
   .block-white + .block-white {
     padding-block-start: var(--block-theme-padding-top, 0);
+  }
+
+  .block-accent {
+    --btn-color-background: var(--color-text-on-accent);
+    --btn-color-text: var(--color-accent);
   }
 
   /* Legacy */
