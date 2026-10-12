@@ -99,6 +99,12 @@
   .block-accent {
     --btn-color-background: var(--color-text-on-accent);
     --btn-color-text: var(--color-accent);
+
+    /* The push card has its own background: its button keeps the default colors */
+    .push-card {
+      --btn-color-background: var(--color-brand);
+      --btn-color-text: var(--color-text-on-brand);
+    }
   }
 
   /* Legacy */
