@@ -1,6 +1,7 @@
 /**
  * Video — lazy-loads video sources via IntersectionObserver.
  * Supports mobile/desktop source variants via data-src_mobile / data-src.
+ * Starts videos marked data-autoplay once loaded (see autoplay()).
  * For autoplay videos without native controls, wires up the play/pause
  * toggle button (.js-toggle-video) rendered alongside the video.
  */
@@ -41,6 +42,15 @@ class Video {
 
     this.el.load();
     this.el.classList.remove('is-lazy');
+    this.autoplay();
+  }
+
+  // Autoplay from script rather than the autoplay attribute: in Low Power
+  // Mode, Safari forces a play button over any video carrying the attribute.
+  // A refused play() leaves the video on its poster, with no button drawn.
+  autoplay() {
+    if (!this.el.hasAttribute('data-autoplay')) return;
+    this.el.play().catch(() => {});
   }
 
   initToggle() {
