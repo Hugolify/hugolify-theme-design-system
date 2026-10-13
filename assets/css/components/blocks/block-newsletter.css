@@ -8,6 +8,9 @@
  *       form.newsletter
  *         div                (email + submit)
  *         div.form-check*    (optional checkboxes, e.g. consent)
+ *         div.alert[hidden]  (provider's answer, filled by js/components/newsletter.js)
+ *
+ * States (set by the script on form.newsletter): .is-submitting, .is-success, .has-error
  */
 @layer components {
   .block-newsletter {
@@ -17,6 +20,13 @@
       max-width: var(--max-width-paragraph);
       .row {
         flex-wrap: nowrap;
+      }
+      &.is-submitting {
+        cursor: progress;
+      }
+      /* Once subscribed, only the provider's message remains */
+      &.is-success > :not(.alert) {
+        display: none;
       }
     }
 
