@@ -5,15 +5,19 @@
  * Structure:
  *   section.block-newsletter[.block-light]
  *     .container
- *       form
+ *       form.newsletter
+ *         div                (email + submit)
+ *         div.form-check*    (optional checkboxes, e.g. consent)
  */
 @layer components {
   .block-newsletter {
     .newsletter {
+      display: grid;
+      gap: var(--gap);
       margin-inline: auto;
       max-width: var(--max-width-paragraph);
-      div {
-        display: flex;
+      .row {
+        flex-wrap: nowrap;
       }
     }
   }
