@@ -9,5 +9,12 @@
   .block-full {
     padding-block: var(--block-full-padding-block, var(--block-padding-block));
     padding-inline: var(--block-full-padding-inline, 0);
+
+    /* Without a .container, the block's own heading and footing would touch
+       the viewport edges. Direct children only: a .heading nested in the body
+       (editorial, paragraph…) sits in content that already handles its inset. */
+    > .block-content > :is(.heading, .footing) {
+      padding-inline: var(--block-full-heading-padding-inline, var(--gutter));
+    }
   }
 }
