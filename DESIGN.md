@@ -285,6 +285,10 @@ names the rung where the carousel stops and the grid comes back. Hugo writes the
 class from a param, so the same component is a carousel in one context and a
 plain grid in another.
 
+Inside a `.block-align-center`, a carousel with too few items to fill the row is
+centered (`justify-content: safe center`), and starts back at the beginning
+once it overflows.
+
 ### Touch targets
 
 - Minimum 44×44px for interactive elements (WCAG 2.5.5)

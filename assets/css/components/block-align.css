@@ -44,3 +44,16 @@
     }
   }
 }
+
+/* A .scrollsnap-* row resets justify-content to start from @layer utilities,
+   which undoes the centering above whatever @layer components declares — so
+   the align-center answer has to live in that same layer, where specificity
+   wins over the bare utility class without an !important.
+   `safe` centers the row while it fits and falls back to start once it
+   overflows: plain center would push the first item out past the scroll
+   origin, out of reach. */
+@layer utilities {
+  .block-align-center .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
+    justify-content: safe center;
+  }
+}
