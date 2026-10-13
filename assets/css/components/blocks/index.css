@@ -1,0 +1,27 @@
+/* components/blocks/index.css */
+/* Fallback file if has not hugolify-admin: main.css imports every block */
+@import 'block-alert.css';
+@import 'block-audio.css';
+@import 'block-comparison.css';
+@import 'block-cta.css';
+@import 'block-datas.css';
+@import 'block-editorial.css';
+@import 'block-embed.css';
+@import 'block-figure.css';
+@import 'block-gallery.css';
+@import 'block-images.css';
+@import 'block-informations.css';
+@import 'block-instagram.css';
+@import 'block-latest.css';
+@import 'block-logos.css';
+@import 'block-map.css';
+@import 'block-newsletter.css';
+@import 'block-paragraph.css';
+@import 'block-pushes.css';
+@import 'block-quote.css';
+@import 'block-search.css';
+@import 'block-selected.css';
+@import 'block-testimonials.css';
+@import 'block-timeline.css';
+@import 'block-title.css';
+@import 'block-video.css';

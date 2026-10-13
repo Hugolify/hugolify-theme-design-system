@@ -59,7 +59,9 @@ assets/css/
 │   └── main.css
 │
 ├── components/              ← hugolify-specific components (@layer components)
-│   ├── blocks/
+│   ├── blocks/              ← one file per block: block-{type}.css, imported only
+│   │                            if listed in params.admin.blocks.enable,
+│   │                            all of them through index.css otherwise
 │   └── sections/
 │
 ├── vendors/                 ← our overrides OF third-party CSS (@layer vendors)
