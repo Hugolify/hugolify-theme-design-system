@@ -14,10 +14,21 @@
     .newsletter {
       display: grid;
       gap: var(--gap);
-      margin-inline: auto;
       max-width: var(--max-width-paragraph);
       .row {
         flex-wrap: nowrap;
+      }
+    }
+
+    &.block-align-center {
+      .newsletter {
+        margin-inline: auto;
+      }
+    }
+
+    &.block-align-end {
+      .newsletter {
+        margin-inline-start: auto;
       }
     }
   }
