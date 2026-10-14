@@ -19,7 +19,10 @@
  * A11y:
  * - while it scrolls, the row is a named role="group": announced as one thing,
  *   focusable, and scrolled with the arrow keys — items are not always links,
- *   so tabbing into them is not a way in one can count on
+ *   so tabbing into them is not a way in one can count on. A <ul> or <ol> row
+ *   keeps its list role instead, named the same way: as a group, its <li>
+ *   would have no list parent (axe listitem), and a list is already announced
+ *   as one thing
  * - the buttons come BEFORE the row, in the DOM and on screen alike, so they
  *   are reached without tabbing through every item first; the pagination comes
  *   after, where it is read as the position report it is
@@ -47,6 +50,8 @@ class Scrollsnap {
     this.dots = [];
     // A row already named by the markup keeps its own role and label.
     this.named = scroller.hasAttribute('role') || scroller.hasAttribute('aria-label');
+    // A list keeps its role: as a group, its <li> would have no list parent.
+    this.list = scroller.matches('ul, ol');
     this.i18n = window.i18n || {};
 
     this.nav = this.wants('nav') ? this.renderNav() : null;
@@ -226,7 +231,7 @@ class Scrollsnap {
     if (scrollable) {
       this.scroller.tabIndex = 0;
       if (!this.named) {
-        this.scroller.setAttribute('role', 'group');
+        if (!this.list) this.scroller.setAttribute('role', 'group');
         this.scroller.setAttribute('aria-label', (this.i18n.carousel && this.i18n.carousel.carousel) || 'Carousel');
       }
       return;
