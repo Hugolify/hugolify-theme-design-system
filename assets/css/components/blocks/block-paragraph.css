@@ -20,6 +20,8 @@
  */
 @layer components {
   :is(.block-paragraph, .block-paragraph-list) {
+    --items-row-gap: var(--gap-row);
+
     .paragraph {
       .heading {
         margin-block-end: var(--gap);

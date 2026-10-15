@@ -17,20 +17,28 @@
       }
     }
 
+    /* The columns come from components/items.css: an incomplete row only
+       needs to be moved */
     @media (--tablet-wide) {
       .items {
-        grid-template-columns: repeat(auto-fit, calc((100% - var(--items-column-gap, var(--items-gap)) * (var(--items-cols) - 1)) / var(--items-cols)));
         justify-content: center;
       }
     }
   }
   .block-align-end {
     text-align: end;
-    .heading {
+    .heading,
+    .footing {
       h1, h2, h3, p {
         margin-inline-start: auto;
       }
       .cta {
+        justify-content: end;
+      }
+    }
+
+    @media (--tablet-wide) {
+      .items {
         justify-content: end;
       }
     }
@@ -46,14 +54,17 @@
 }
 
 /* A .scrollsnap-* row resets justify-content to start from @layer utilities,
-   which undoes the centering above whatever @layer components declares — so
-   the align-center answer has to live in that same layer, where specificity
-   wins over the bare utility class without an !important.
-   `safe` centers the row while it fits and falls back to start once it
-   overflows: plain center would push the first item out past the scroll
-   origin, out of reach. */
+   which undoes the alignment above whatever @layer components declares — so
+   the align-center and align-end answers have to live in that same layer,
+   where specificity wins over the bare utility class without an !important.
+   `safe` aligns the row while it fits and falls back to start once it
+   overflows: plain center or end would push the first item out past the
+   scroll origin, out of reach. */
 @layer utilities {
   .block-align-center .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
     justify-content: safe center;
+  }
+  .block-align-end .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
+    justify-content: safe end;
   }
 }

@@ -53,11 +53,31 @@
       }
 
       /* ── Sidebar + TOC ──────────────────────────────────────── */
-      &:has(.sidebar + .toc) {
-        grid-template-rows: auto auto 1fr auto;
-        .content {
-          grid-row: span 2;
-        }
+      /*
+       * The content spans the sidebar row and the TOC row. The TOC row must
+       * be the 1fr one: the content's extra height then lands there and the
+       * TOC stays right under the sidebar. Two auto rows would share it
+       * equally and push the TOC down.
+       *
+       * Each element above the content (a heading, metas...) takes a full
+       * row, so the sidebar row is the one at the index of .content and
+       * the TOC row the next: as many auto rows as that index, then 1fr.
+       * Up to three elements above the content.
+       */
+      &:has(.sidebar + .toc) .content {
+        grid-row: span 2;
+      }
+      &:has(> .content:nth-child(1) + .sidebar + .toc) {
+        grid-template-rows: repeat(1, auto) 1fr;
+      }
+      &:has(> .content:nth-child(2) + .sidebar + .toc) {
+        grid-template-rows: repeat(2, auto) 1fr;
+      }
+      &:has(> .content:nth-child(3) + .sidebar + .toc) {
+        grid-template-rows: repeat(3, auto) 1fr;
+      }
+      &:has(> .content:nth-child(4) + .sidebar + .toc) {
+        grid-template-rows: repeat(4, auto) 1fr;
       }
     }
 
