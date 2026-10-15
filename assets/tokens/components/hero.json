@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "card": {
+      "opacity": {
+        "$value": "{theme.card.opacity}",
+        "$type": "number",
+        "$description": "A card in a hero (contact card of a person, a place) is a veil of the hero text colour at this opacity, see components/hero-theme.css."
+      }
+    }
+  }
+}

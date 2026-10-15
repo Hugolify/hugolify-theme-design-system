@@ -3,6 +3,7 @@
 /* components/block.css */
 @layer tokens {
   :root {
+    --block-card-opacity: var(--theme-card-opacity);
     --block-gap: var(--spacing-fluid-md);
     --block-padding-block: var(--spacing-section);
     --block-bg-color: var(--color-background-muted);

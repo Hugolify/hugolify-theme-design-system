@@ -1,5 +1,12 @@
 {
   "block": {
+    "card": {
+      "opacity": {
+        "$type": "number",
+        "$value": "{theme.card.opacity}",
+        "$description": "A card in a themed block is a veil of the block text colour at this opacity, see components/block-theme.css."
+      }
+    },
     "gap": {
       "default": {
         "$type": "dimension",

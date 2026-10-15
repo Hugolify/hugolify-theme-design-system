@@ -23,6 +23,7 @@
 @import "./components/footing.css";
 @import "./components/gallery.css";
 @import "./components/header.css";
+@import "./components/hero.css";
 @import "./components/images.css";
 @import "./components/item.css";
 @import "./components/items.css";
@@ -45,3 +46,4 @@
 
 /* semantic */
 @import "./semantic/animation.css";
+@import "./semantic/theme.css";

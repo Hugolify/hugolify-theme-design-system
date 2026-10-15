@@ -1,0 +1,8 @@
+/* Do not edit directly, this file was auto-generated. */
+
+/* semantic/theme.css */
+@layer tokens {
+  :root {
+    --theme-card-opacity: var(--opacity-shadow);
+  }
+}

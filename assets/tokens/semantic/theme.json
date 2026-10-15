@@ -1,0 +1,11 @@
+{
+  "theme": {
+    "card": {
+      "opacity": {
+        "$value": "{opacity.shadow}",
+        "$type": "number",
+        "$description": "A card in a themed context (a hero or a block with a theme class) is a veil of the context text colour at this opacity, the same as the surface of a themed block. --hero-card-opacity and --block-card-opacity default to it."
+      }
+    }
+  }
+}
