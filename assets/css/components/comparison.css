@@ -39,7 +39,7 @@
     }
 
     footer {
-      color: var(--comparison-item-header-color-text);
+      color: var(--comparison-item-footer-color-text);
       display: flex;
       flex-direction: column;
       gap: var(--comparison-item-footer-gap);
