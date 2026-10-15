@@ -7,7 +7,6 @@
     --comparison-badge-color-text: var(--color-brand-strong);
     --comparison-item-box-shadow-highlighted: var(--shadow-lg);
     --comparison-item-color-background: var(--color-background-muted);
-    --comparison-item-color-background-on-block-light: var(--color-background);
     --comparison-item-color-background-highlighted: var(--color-background-muted);
     --comparison-item-footer-color-text: var(--item-color-text);
     --comparison-item-footer-gap: var(--spacing-xs);

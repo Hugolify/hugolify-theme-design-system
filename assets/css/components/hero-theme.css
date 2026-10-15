@@ -55,4 +55,33 @@
     --hero-title-color: var(--color-text-on-white);
   }
 
+  /* ── Cards ───────────────────────────────────────────────────── */
+
+  /* A themed hero gives its cards a veil of its text colour through
+     --theme-card-*. Overrides, unset by default:
+     --hero-card-color-background, -color-text, -color-link, -title-color. */
+  .hero-accent,
+  .hero-black,
+  .hero-dark,
+  .hero-highlight,
+  .hero-light,
+  .hero-neutral,
+  .hero-white {
+    --theme-card-color-background: var(
+      --hero-card-color-background,
+      oklch(from var(--color-text) l c h / var(--hero-card-opacity))
+    );
+    --theme-card-color-text: var(--hero-card-color-text, var(--color-text));
+    --theme-card-color-link: var(--hero-card-color-link, var(--theme-card-color-text));
+    --theme-card-title-color: var(--hero-card-title-color, var(--hero-card-color-text, var(--color-heading)));
+
+    .card {
+      --card-color-background: var(--theme-card-color-background);
+      --card-color-text: var(--theme-card-color-text);
+      --card-title-color: var(--theme-card-title-color);
+      --color-link: var(--theme-card-color-link);
+      --color-link-hover: var(--color-link);
+    }
+  }
+
 }

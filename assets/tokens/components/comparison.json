@@ -25,10 +25,6 @@
             "$type": "color",
             "$value": "{color.background.muted.default}"
           },
-          "onBlockLight": {
-            "$type": "color",
-            "$value": "{color.background.default}"
-          },
           "highlighted": {
             "$type": "color",
             "$value": "{color.background.muted.default}"

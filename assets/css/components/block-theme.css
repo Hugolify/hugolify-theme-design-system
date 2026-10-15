@@ -40,11 +40,12 @@
     --color-text: var(--color-text-on-white);
   }
 
-  /* override colors for all themes except light */
+  /* all themes: colours follow the block text colour */
   .block-accent,
   .block-black,
   .block-dark,
   .block-highlight,
+  .block-light,
   .block-neutral,
   .block-white {
     /* base */
@@ -58,31 +59,53 @@
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
     --color-text-on-surface: var(--color-text);
 
-    /* componens */
+    /* components */
+    --comparison-item-color-background: var(--theme-card-color-background);
+    --comparison-item-color-background-highlighted: var(--theme-card-color-background);
+    --comparison-item-footer-color-text: var(--theme-card-color-text);
+    --comparison-item-header-color-text: var(--theme-card-color-text);
+    --comparison-list-color-border: var(--color-border);
+    --comparison-pricing-sub-color-text: var(--color-text-muted);
     --details-color-text: var(--color-text);
-    --item-color-background: var(--color-background-surface);
+    --help-color-text: var(--color-text-muted);
+    --item-color-background: var(--theme-card-color-background);
     --item-color-border: var(--color-background-surface);
-    --item-color-text: var(--color-text);
+    --item-color-text: var(--theme-card-color-text);
     --item-metas-color-text: var(--color-text-muted);
-    --item-title-color: var(--color-text);
+    --item-title-color: var(--theme-card-title-color);
     --label-color-text: var(--color-text);
+    --pricing-color-text: var(--color-text);
     --push-card-color-background: var(--color-background-muted);
     --push-card-color-text: var(--color-text-on-muted);
     --push-card-title-color: var(--color-text-on-muted);
+    --quote-author-color-text: var(--color-text-muted);
+    --quote-cite-color-text: var(--color-text);
+    --quote-color-text: var(--color-text);
     --surtitle-color-text: var(--color-text-muted);
+    --timeline-connector-color: var(--color-border);
     --transcription-color-text: var(--color-text-muted);
-  }
 
-  /* all themes */
-  .block-accent,
-  .block-black,
-  .block-dark,
-  .block-highlight,
-  .block-light,
-  .block-neutral,
-  .block-white {
+    /* cards (.card, items, quotes...): a veil of the block text colour.
+       Overrides, unset by default:
+       --block-card-color-background, -color-text, -color-link, -title-color. */
+    --theme-card-color-background: var(
+      --block-card-color-background,
+      oklch(from var(--color-text) l c h / var(--block-card-opacity))
+    );
+    --theme-card-color-text: var(--block-card-color-text, var(--color-text));
+    --theme-card-color-link: var(--block-card-color-link, var(--theme-card-color-text));
+    --theme-card-title-color: var(--block-card-title-color, var(--block-card-color-text, var(--color-heading)));
+
     background: var(--block-color-background);
     color: var(--color-text);
+
+    .card {
+      --card-color-background: var(--theme-card-color-background);
+      --card-color-text: var(--theme-card-color-text);
+      --card-title-color: var(--theme-card-title-color);
+      --color-link: var(--theme-card-color-link);
+      --color-link-hover: var(--color-link);
+    }
   }
 
   /* space out consecutive blocks of the same theme */

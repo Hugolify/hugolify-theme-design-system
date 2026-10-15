@@ -37,11 +37,15 @@
     /*
      * Card look for the .quote: only the values that differ from the .quote
      * design-system defaults are set here. Site-level customisation overrides
-     * the plain --quote-* tokens scoped to .block-testimonials.
+     * the plain --quote-* tokens scoped to .block-testimonials. In a themed
+     * block the card takes the colours of the theme (components/block-theme.css).
      */
     .quote {
       --quote-border-radius: var(--radius-md);
-      --quote-color-background: var(--color-background-muted);
+      --quote-color-background: var(--theme-card-color-background, var(--color-background-muted));
+      --quote-color-text: var(--theme-card-color-text, var(--color-text));
+      --quote-cite-color-text: var(--quote-color-text);
+      --quote-author-color-text: oklch(from var(--quote-color-text) l c h / var(--opacity-muted));
       --quote-font-style: normal;
       --quote-gap: var(--spacing-lg);
       height: 100%;
@@ -69,8 +73,14 @@
   /* ── List ─────────────────────────────────────────────────────────── */
   .block-testimonials.block-list {
     ol {
+      display: grid;
       list-style: none;
       padding-inline-start: 0;
+      row-gap: var(--block-testimonials-list-gap);
+
+      > li {
+        margin-block: 0;
+      }
     }
   }
 
