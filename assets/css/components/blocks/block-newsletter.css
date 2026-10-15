@@ -18,8 +18,12 @@
       display: grid;
       gap: var(--gap);
       max-width: var(--max-width-paragraph);
+      width: 100%;
       .row {
         flex-wrap: nowrap;
+      }
+      .btn {
+        flex-shrink: 0;
       }
       &.is-submitting {
         cursor: progress;
