@@ -13,10 +13,22 @@
  */
 @layer components {
   .block-quote {
+    --block-quote-align: start;
+    
     .quote {
       --figure-margin-block: 0;
       --quote-gap: var(--block-quote-gap);
       --quote-padding: 0;
+
+      blockquote {
+        text-align: var(--block-quote-align);
+      }
+      figcaption {
+        justify-content: var(--block-quote-align);
+        div:first-child {
+          text-align: var(--block-quote-align);
+        }
+      }
     }
     &.block-accent,
     &.block-dark {
@@ -24,6 +36,14 @@
         --quote-color-text: var(--color-text);
         --quote-cite-color-text: var(--color-text);
       }
+    }
+
+    &.block-align-center {
+      --block-quote-align: center;
+    }
+
+    &.block-align-end {
+      --block-quote-align: end;
     }
   }
 }
