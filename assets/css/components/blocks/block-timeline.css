@@ -17,6 +17,7 @@
       --timeline-marker-color-background: var(--color-text-on-accent);
       --timeline-marker-color-text: var(--color-accent);
     }
+    &.block-black,
     &.block-dark {
       --timeline-marker-color-background: var(--color-text-on-dark);
       --timeline-marker-color-text: var(--color-dark);
