@@ -24,29 +24,3 @@
  * Column variants: .items-2 through .items-6
  * (set via `column` in content config, default 3)
  */
-@layer components {
-  .block-comparison {
-
-    /* ── Grid ──────────────────────────────────────────────────── */
-
-    .items {
-      justify-content: center;
-    }
-
-    /* ── variants ───────────────────────────────────── */
-
-    &.block-bg,
-    &.block-light {
-      .comparison {
-        --item-color-background: var(--comparison-item-color-background-on-block-light);
-      }
-    }
-
-    &.block-full {
-      .items {
-        padding-inline: var(--gutter);
-      }
-    }
-
-  }
-}
