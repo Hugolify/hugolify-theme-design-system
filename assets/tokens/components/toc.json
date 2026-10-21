@@ -37,7 +37,7 @@
     "nav": {
       "indent": {
         "$type": "dimension",
-        "$value": "{spacing.sm}"
+        "$value": "{list.ordered.padding.inlineStart}"
       },
       "fontSize": {
         "$type": "dimension",

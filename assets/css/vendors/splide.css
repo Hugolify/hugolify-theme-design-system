@@ -44,6 +44,9 @@
       justify-content: center;
       list-style: none;
       margin-block: var(--carousel-pagination-margin-block);
+      /* Splide pads it 0 1em from libs, which base's list indent beats on the
+         start side only: without this the centered dots sit off-center. */
+      padding-inline: 0;
       li {
         margin-block: 0 !important;
       }

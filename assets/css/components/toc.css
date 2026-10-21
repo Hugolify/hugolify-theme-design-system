@@ -52,16 +52,20 @@
 
     /* ── Nav ────────────────────────────────────────────────── */
     nav {
+      /* Sub-lists keep the item gap, not the prose rhythm of css-base. */
+      --list-nested-margin-block-end: var(--toc-nav-item-gap);
+      --list-nested-margin-block-start: var(--toc-nav-item-gap);
       width: 100%;
 
+      /* The font size sits on the list, not the item, so an em indent is
+         measured at the size of the markers it has to hold. */
       ol,
       ul {
+        font-size: var(--toc-nav-font-size);
         padding-inline-start: var(--toc-nav-indent);
       }
 
       li {
-        font-size: var(--toc-nav-font-size);
-
         &:not(:last-child) {
           margin-block-end: var(--toc-nav-item-gap);
         }
@@ -69,7 +73,6 @@
 
       ol ol {
         list-style-type: circle;
-        margin-block-start: var(--toc-nav-item-gap);
       }
 
       a {
