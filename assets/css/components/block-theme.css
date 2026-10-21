@@ -3,41 +3,41 @@
 
   .block-accent {
     --block-color-background: var(--color-accent);
-    --color-text: var(--color-text-on-accent);
+    --color-text: var(--color-on-accent);
   }
 
   .block-black {
     --block-color-background: var(--color-black);
     --color-background-muted: var(--color-dark-muted);
-    --color-text: var(--color-text-on-black);
-    --color-text-on-muted: var(--color-text-on-dark);
+    --color-text: var(--color-on-black);
+    --color-on-muted: var(--color-on-dark);
   }
 
   .block-dark {
     --block-color-background: var(--color-dark);
     --color-background-muted: var(--color-dark-muted);
-    --color-text: var(--color-text-on-dark);
-    --color-text-on-muted: var(--color-text-on-dark);
+    --color-text: var(--color-on-dark);
+    --color-on-muted: var(--color-on-dark);
   }
 
   .block-highlight {
     --block-color-background: var(--color-highlight);
-    --color-text: var(--color-text-on-highlight);
+    --color-text: var(--color-on-highlight);
   }
 
   .block-light {
     --block-color-background: var(--color-light);
-    --color-text: var(--color-text-on-light);
+    --color-text: var(--color-on-light);
   }
 
   .block-neutral {
     --block-color-background: var(--color-neutral);
-    --color-text: var(--color-text-on-neutral);
+    --color-text: var(--color-on-neutral);
   }
 
   .block-white {
     --block-color-background: var(--color-white);
-    --color-text: var(--color-text-on-white);
+    --color-text: var(--color-on-white);
   }
 
   /* all themes: colours follow the block text colour */
@@ -57,7 +57,7 @@
     --color-link: var(--color-text);
     --color-link-hover: var(--color-text);
     --color-text-muted: oklch(from var(--color-text) l c h / var(--opacity-muted));
-    --color-text-on-surface: var(--color-text);
+    --color-on-surface: var(--color-text);
 
     /* components */
     --comparison-item-color-background: var(--theme-card-color-background);
@@ -76,8 +76,8 @@
     --label-color-text: var(--color-text);
     --pricing-color-text: var(--color-text);
     --push-card-color-background: var(--color-background-muted);
-    --push-card-color-text: var(--color-text-on-muted);
-    --push-card-title-color: var(--color-text-on-muted);
+    --push-card-color-text: var(--color-on-muted);
+    --push-card-title-color: var(--color-on-muted);
     --quote-author-color-text: var(--color-text-muted);
     --quote-cite-color-text: var(--color-text);
     --quote-color-text: var(--color-text);
@@ -121,13 +121,13 @@
   }
 
   .block-accent {
-    --btn-color-background: var(--color-text-on-accent);
+    --btn-color-background: var(--color-on-accent);
     --btn-color-text: var(--color-accent);
 
     /* The push card has its own background: its button keeps the default colors */
     .push-card {
       --btn-color-background: var(--color-brand);
-      --btn-color-text: var(--color-text-on-brand);
+      --btn-color-text: var(--color-on-brand);
     }
   }
 

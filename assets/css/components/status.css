@@ -24,6 +24,6 @@
   .status-exclusive    {
     --status-color-background: var(--color-danger);
     --status-color-background-hover: var(--color-danger-strong);
-    --status-color-text: var(--color-text-on-danger);
+    --status-color-text: var(--color-on-danger);
   }
 }

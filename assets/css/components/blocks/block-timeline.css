@@ -14,12 +14,12 @@
       margin-block: 0;
     }
     &.block-accent {
-      --timeline-marker-color-background: var(--color-text-on-accent);
+      --timeline-marker-color-background: var(--color-on-accent);
       --timeline-marker-color-text: var(--color-accent);
     }
     &.block-black,
     &.block-dark {
-      --timeline-marker-color-background: var(--color-text-on-dark);
+      --timeline-marker-color-background: var(--color-on-dark);
       --timeline-marker-color-text: var(--color-dark);
     }
   }

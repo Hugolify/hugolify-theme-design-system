@@ -7,7 +7,7 @@
     --pricing-font-size: var(--font-size-md);
     --pricing-font-weight: var(--font-weight-heading);
     --pricing-discount-border-radius: var(--radius-sm);
-    --pricing-discount-color-text: var(--color-text-on-brand);
+    --pricing-discount-color-text: var(--color-on-brand);
     --pricing-discount-color-background: var(--color-brand);
     --pricing-discount-font-size: var(--font-size-sm);
     --pricing-discount-padding-block: var(--spacing-2xs);

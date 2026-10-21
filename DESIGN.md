@@ -29,7 +29,7 @@ Colors are defined in two layers: **primitive** (raw OKLCH values, `@uncinq/desi
 | `--color-brand-muted` | sienna-100 | Tinted section backgrounds |
 | `--color-brand-hover` | sienna-700 | Hover state on brand elements |
 | `--color-brand-strong` | sienna-900 | Emphasis, darkest brand shade |
-| `--color-text-on-brand` | white | Text on brand-colored backgrounds |
+| `--color-on-brand` | white | Text on brand-colored backgrounds |
 
 **Override the brand in your project:**
 ```css
@@ -67,10 +67,10 @@ Colors are defined in two layers: **primitive** (raw OKLCH values, `@uncinq/desi
 
 | Token | Primitive | Pair with |
 |-------|-----------|-----------|
-| `--color-danger` | red-600 | `--color-text-on-danger` (white) |
-| `--color-success` | green-600 | `--color-text-on-success` (white) |
-| `--color-info` | blue-600 | `--color-text-on-info` (white) |
-| `--color-warning` | amber-500 | `--color-text-on-warning` (gray-900) ⚠ dark text required |
+| `--color-danger` | red-600 | `--color-on-danger` (white) |
+| `--color-success` | green-600 | `--color-on-success` (white) |
+| `--color-info` | blue-600 | `--color-on-info` (white) |
+| `--color-warning` | amber-500 | `--color-on-warning` (gray-900) ⚠ dark text required |
 
 Each variant has `-muted` (light bg) and `-strong` (hover/emphasis) companions.
 
@@ -248,8 +248,8 @@ Tokens: `--grid-columns`, `--grid-gap`, `--grid-max-width`.
 
 - ✓ Reference semantic tokens (`--color-brand`, `--spacing-md`) in all component and project CSS
 - ✓ Override tokens in `@layer tokens` to rebrand — never edit package files
-- ✓ Use `--color-text-on-*` tokens for text on colored backgrounds
-- ✓ Use `btn-warning` with `--color-text-on-warning` (dark text — amber is bright)
+- ✓ Use `--color-on-*` tokens for text on colored backgrounds
+- ✓ Use `btn-warning` with `--color-on-warning` (dark text — amber is bright)
 - ✓ Use Hugo partials for all page structure — don't write raw HTML for standard blocks
 
 ### Don't

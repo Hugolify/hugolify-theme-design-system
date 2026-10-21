@@ -26,7 +26,7 @@
         },
         "text": {
           "$type": "color",
-          "$value": "{color.text.onBrand}"
+          "$value": "{color.on.brand}"
         }
       },
       "border": {

@@ -24,7 +24,7 @@
       "color": {
         "text": {
           "$type": "color",
-          "$value": "{color.text.onBrand}"
+          "$value": "{color.on.brand}"
         },
         "background": {
           "$type": "color",

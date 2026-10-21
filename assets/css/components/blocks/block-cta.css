@@ -16,13 +16,13 @@
 
     /* themes */
     &.block-accent {
-      --btn-color-background: var(--color-text-on-accent);
-      --btn-color-border:  var(--color-text-on-accent);
+      --btn-color-background: var(--color-on-accent);
+      --btn-color-border:  var(--color-on-accent);
       --btn-color-text: var(--color-accent);
     }
     &.block-dark {
-      --btn-color-background:var(--color-text-on-dark);
-      --btn-color-border: var(--color-text-on-dark);
+      --btn-color-background:var(--color-on-dark);
+      --btn-color-border: var(--color-on-dark);
       --btn-color-text: var(--color-dark);
     }
 

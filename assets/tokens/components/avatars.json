@@ -16,7 +16,7 @@
         "$type": "color"
       },
       "text": {
-        "$value": "{color.text.onMuted}",
+        "$value": "{color.on.muted}",
         "$type": "color"
       }
     },

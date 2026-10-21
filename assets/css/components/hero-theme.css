@@ -3,56 +3,56 @@
 
   .hero-accent {
     --hero-color-background: var(--color-accent);
-    --hero-color-link: var(--color-text-on-accent);
-    --hero-color-text: var(--color-text-on-accent);
-    --hero-title-color: var(--color-text-on-accent);
+    --hero-color-link: var(--color-on-accent);
+    --hero-color-text: var(--color-on-accent);
+    --hero-title-color: var(--color-on-accent);
     .btn {
-      --btn-color-background: var(--color-text-on-accent);
-      --btn-color-border: var(--color-text-on-accent);
+      --btn-color-background: var(--color-on-accent);
+      --btn-color-border: var(--color-on-accent);
       --btn-color-text: var(--color-accent);
     }
   }
 
   .hero-black {
     --hero-color-background: var(--color-text);
-    --hero-color-link: var(--color-text-on-black);
-    --hero-color-text: var(--color-text-on-black);
-    --hero-title-color: var(--color-text-on-black);
+    --hero-color-link: var(--color-on-black);
+    --hero-color-text: var(--color-on-black);
+    --hero-title-color: var(--color-on-black);
   }
 
   .hero-dark {
     --hero-color-background: var(--color-dark);
-    --hero-color-link: var(--color-text-on-dark);
-    --hero-color-text: var(--color-text-on-dark);
-    --hero-title-color: var(--color-text-on-dark);
+    --hero-color-link: var(--color-on-dark);
+    --hero-color-text: var(--color-on-dark);
+    --hero-title-color: var(--color-on-dark);
   }
 
   .hero-highlight {
     --hero-color-background: var(--color-highlight);
-    --hero-color-link: var(--color-text-on-highlight);
-    --hero-color-text: var(--color-text-on-highlight);
-    --hero-title-color: var(--color-text-on-highlight);
+    --hero-color-link: var(--color-on-highlight);
+    --hero-color-text: var(--color-on-highlight);
+    --hero-title-color: var(--color-on-highlight);
   }
 
   .hero-light {
     --hero-color-background: var(--color-light);
-    --hero-color-link: var(--color-text-on-light);
-    --hero-color-text: var(--color-text-on-light);
-    --hero-title-color: var(--color-text-on-light);
+    --hero-color-link: var(--color-on-light);
+    --hero-color-text: var(--color-on-light);
+    --hero-title-color: var(--color-on-light);
   }
 
   .hero-neutral {
     --hero-color-background: var(--color-neutral);
-    --hero-color-link: var(--color-text-on-neutral);
-    --hero-color-text: var(--color-text-on-neutral);
-    --hero-title-color: var(--color-text-on-neutral);
+    --hero-color-link: var(--color-on-neutral);
+    --hero-color-text: var(--color-on-neutral);
+    --hero-title-color: var(--color-on-neutral);
   }
 
   .hero-white {
     --hero-color-background: var(--color-white);
-    --hero-color-link: var(--color-text-on-white);
-    --hero-color-text: var(--color-text-on-white);
-    --hero-title-color: var(--color-text-on-white);
+    --hero-color-link: var(--color-on-white);
+    --hero-color-text: var(--color-on-white);
+    --hero-title-color: var(--color-on-white);
   }
 
   /* ── Cards ───────────────────────────────────────────────────── */

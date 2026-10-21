@@ -11,7 +11,7 @@
   .tooltip-inner {
     background-color: var(--color-dark);
     border-radius: var(--radius-xs);
-    color: var(--color-text-on-dark);
+    color: var(--color-on-dark);
     display: inline-flex;
     font-size: var(--font-size-xs);
     padding-block: var(--spacing-2xs);

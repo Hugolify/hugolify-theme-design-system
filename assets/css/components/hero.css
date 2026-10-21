@@ -88,7 +88,7 @@
 
     .btn {
       --btn-color-background: var(--color-brand);
-      --btn-color-text: var(--color-text-on-brand);
+      --btn-color-text: var(--color-on-brand);
       --btn-color-border: var(--color-brand);
     }
 
@@ -220,8 +220,8 @@
         --btn-color-background-hover: var(--color-light-hover);
         --btn-color-border: var(--color-light);
         --btn-color-border-hover: var(--color-light-hover);
-        --btn-color-text: var(--color-text-on-light);
-        --btn-color-text-hover: var(--color-text-on-light);
+        --btn-color-text: var(--color-on-light);
+        --btn-color-text-hover: var(--color-on-light);
       }
       .btn + .btn {
         --btn-color-background: transparent;
