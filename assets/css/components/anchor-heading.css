@@ -1,0 +1,42 @@
+/* components/anchor-heading.css */
+/*
+ * .anchor-heading* — anchored Markdown headings, emitted by the
+ * hugolify-theme render hook (layouts/_markup/render-heading.html).
+ *
+ * h#.anchor-heading.anchor-heading-{level}
+ *   span.anchor-heading-icon > i.icon   (optional, before the text)
+ *   a.anchor-heading-link                (wraps the text)
+ *
+ * The prefix anchor-heading keeps the classes apart from the .heading
+ * component (section header block).
+ */
+@layer components {
+  .anchor-heading-icon {
+    display: inline-block;
+    margin-inline-end: var(--heading-anchor-icon-margin-inline-end, 0.4em);
+    vertical-align: var(--heading-anchor-icon-vertical-align, -0.15em);
+
+    .icon {
+      /* 1em = the heading's font-size: the icon follows every level
+         (H1–H6) without a per-level rule. */
+      --icon-size: var(--heading-anchor-icon-size, 0.9em);
+    }
+  }
+
+  .anchor-heading-link {
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: var(--heading-anchor-marker, " #");
+      opacity: 0;
+      text-decoration: none;
+      transition: opacity var(--heading-anchor-marker-transition-duration, 200ms)
+        var(--heading-anchor-marker-transition-easing, ease-in-out);
+    }
+  }
+
+  .anchor-heading:hover .anchor-heading-link::after {
+    opacity: var(--heading-anchor-marker-opacity, 0.5);
+  }
+}

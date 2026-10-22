@@ -42,6 +42,7 @@
 @import 'layouts/row.css';
 
 /* Components — Hugolify-specific */
+@import 'components/anchor-heading.css';
 @import 'components/avatar.css';
 @import 'components/avatars.css';
 @import 'components/audio.css';
