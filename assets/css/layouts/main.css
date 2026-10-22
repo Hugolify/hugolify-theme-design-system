@@ -1,9 +1,19 @@
 /* base/main.css */
 @layer layouts {
-  main:not(:has([class*="block-"]:first-child)) {
+  /* main carries the section rhythm on its edges, unless a block sits right
+     there: a block brings its own padding-block and the two would stack.
+     Direct children only, and .block rather than [class*="block-"], which
+     also matches .block-content, .block-align-* and the like at any depth,
+     so any nested first or last child dropped the padding.
+
+     At the top, the page layouts print the schema.org
+     <script type="application/ld+json"> first in main. It renders nothing,
+     so "of :not(script)" counts the children after it: a block right behind
+     the script is still the first child. */
+  main:not(:has(> .block:nth-child(1 of :not(script)))) {
     padding-block-start: var(--spacing-section);
   }
-  main:not(:has([class*="block-"]:last-child)) {
+  main:not(:has(> .block:last-child)) {
     padding-block-end: var(--spacing-section);
   }
 }
