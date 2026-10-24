@@ -1,0 +1,17 @@
+/* components/btn-search.css */
+/*
+ * .btn-search — search button in header. It opens the search panel, whose
+ * Pagefind UI is built by JavaScript: without it the panel would stay empty,
+ * so the button goes.
+ *
+ * Structure:
+ *     button.btn.btn-search
+ *       span
+ */
+@layer components {
+  @media (scripting: none) {
+    .btn-search {
+      display: none;
+    }
+  }
+}

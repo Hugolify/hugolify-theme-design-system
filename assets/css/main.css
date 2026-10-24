@@ -52,6 +52,7 @@
 @import 'components/block-layout.css';
 @import 'components/block-theme.css';
 @import 'components/btn-menu.css';
+@import 'components/btn-search.css';
 @import 'components/card.css';
 @import 'components/comparison.css';
 @import 'components/contact-card.css';
@@ -83,6 +84,7 @@
 @import 'components/main-menu.css';
 @import 'components/metas.css';
 @import 'components/more.css';
+@import 'components/nav-language.css';
 @import 'components/nav-social.css';
 @import 'components/notes.css';
 @import 'components/offer.css';

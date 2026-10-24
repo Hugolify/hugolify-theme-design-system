@@ -8,7 +8,7 @@
  *   html.is-menu-open          — panel is open
  *   html.is-dropdown-menu-open — a dropdown is open
  *
- * Panel trigger: .js-dialog-toggle[data-target="#navigation"]
+ * Panel trigger: .js-dialog-toggle[popovertarget="navigation"]
  * Dropdown trigger: .js-dropdown-toggle
  */
 @layer components {

@@ -1,0 +1,52 @@
+/* components/nav-language.css */
+/*
+ * .nav-language — language switcher (hugolify-theme nav/language.html): the
+ * current language, then a dropdown listing the others.
+ *
+ * Without JavaScript nothing opens the dropdown, so the other languages are
+ * laid out in its place instead of opening on hover: every link stays
+ * reachable, and there is no hover menu that Escape could not dismiss. The
+ * current language goes, its link only leads to the page already shown.
+ *
+ * Structure:
+ *     ul.nav.nav-language
+ *       li.dropdown
+ *         a                      (current language)
+ *         button.dropdown-toggle
+ *         ul.dropdown-menu
+ *           li > a[lang]
+ */
+@layer components {
+  @media (scripting: none) {
+    .nav-language {
+      .dropdown > a,
+      .dropdown-toggle {
+        display: none;
+      }
+
+      .dropdown-menu {
+        --dropdown-color-text: var(--nav-color-text);
+        --dropdown-item-color-background: transparent;
+        --dropdown-item-color-background-hover: transparent;
+        --dropdown-item-padding-block: var(--nav-link-padding-block);
+        --dropdown-item-padding-inline: var(--nav-link-padding-inline);
+
+        background-color: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        display: flex;
+        /* .nav lists default to a column (css-components nav.css) */
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 0;
+        opacity: 1;
+        padding: 0;
+        pointer-events: auto;
+        position: static;
+        transform: none;
+        visibility: visible;
+      }
+    }
+  }
+}
