@@ -7,8 +7,10 @@
  */
 @layer components {
   .hugolify {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-2xs);
+    --color-link: var(--color-credit);
+    --color-link-hover: var(--color-credit);
+    color: var(--color-credit);
+    font-size: var(--footer-credit-font-size, var(--font-size-2xs));
     max-width: none;
     text-align: center;
   }
