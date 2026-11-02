@@ -172,10 +172,17 @@ Three things to keep in mind:
 /* Base */
 @import 'base/fonts.css';
 
-/* Vendors — our overrides; the libraries land in @layer libs at runtime */
+/* Vendors — our overrides; the libraries land in @layer libs at runtime.
+   Each one only with params.map, params.search.enable and params.carousel. */
+{{- if site.Params.map }}
 @import 'vendors/leaflet.css';
+{{- end }}
+{{- if site.Params.search.enable }}
 @import 'vendors/pagefind.css';
+{{- end }}
+{{- if site.Params.carousel }}
 @import 'vendors/splide.css';
+{{- end }}
 
 /* Layouts */
 @import 'layouts/footer.css';

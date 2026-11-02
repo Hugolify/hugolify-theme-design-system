@@ -29,10 +29,18 @@
 @import 'base/animation.css';
 @import 'base/fonts.css';
 
-/* Vendors */
+/* Vendors: like js/main.js, only the libraries the site loads (params.map,
+   params.search.enable, params.carousel — hugolify-admin offers the carousel
+   layout only with the latter). */
+{{- if site.Params.map }}
 @import 'vendors/leaflet.css';
+{{- end }}
+{{- if site.Params.search.enable }}
 @import 'vendors/pagefind.css';
+{{- end }}
+{{- if site.Params.carousel }}
 @import 'vendors/splide.css';
+{{- end }}
 
 /* Layouts */
 @import 'layouts/footer.css';
