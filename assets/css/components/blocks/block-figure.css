@@ -16,11 +16,27 @@
  *   .block-figure-full      — figure full viewport width, figcaption padded
  *   .block-figure-large     — figure full bleed on mobile
  *   .block-figure-container — figure full bleed on mobile (same as large)
+ *   .block-figure-ratio     — image boxed to --block-figure-ratio (set inline by the theme)
  */
 @layer components {
   .block-figure {
     figure {
       margin-block: 0;
+    }
+  }
+
+  /* Ratio (width / height) from params.blocks.figure.image.ratio or the entry ui.ratio. The CDN
+     already crops a raster image to it; an SVG is served as-is, so it takes the ratio here,
+     contained whole rather than cut. Without the variant the image keeps its own ratio (and the
+     width/height hint that reserves its space before it loads). */
+  .block-figure-ratio {
+    figure img {
+      aspect-ratio: var(--block-figure-ratio);
+      object-fit: cover;
+    }
+
+    figure img[src$=".svg"] {
+      object-fit: contain;
     }
   }
 
