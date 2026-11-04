@@ -2,7 +2,6 @@
 import './audio';
 import './chart';
 import './datas';
-import './form';
 import './gallery';
 import './instagram';
 import './newsletter';

@@ -19,6 +19,9 @@ import './vendors/custom';
 {{ if $params.filters.search.enable }}
   import './features/filters-search';
 {{ end }}
+{{ if $params.form.ajax }}
+  import './features/form';
+{{ end }}
 {{ if $params.map }}
   import './features/map';
 {{ end }}

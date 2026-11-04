@@ -32,6 +32,8 @@ class Newsletter {
 
     this.form.classList.add('is-submitting');
     this.submit.disabled = true;
+    // Hidden while sending, so that the same error shown again is announced again
+    this.message.hidden = true;
 
     let result;
     try {
@@ -104,6 +106,9 @@ class Newsletter {
     this.form.classList.toggle('has-error', !success);
     this.submit.disabled = false;
 
+    // An error leaves the focus on the form: it is a status message, which the
+    // RGAA wants as role="alert" (7.5.2). A success takes the focus below (7.4).
+    this.message.setAttribute('role', success ? 'status' : 'alert');
     this.message.textContent = this.toText(message) || (success ? i18n.success : i18n.error) || '';
     this.message.classList.toggle('alert-success', success);
     this.message.classList.toggle('alert-danger', !success);

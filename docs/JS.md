@@ -48,7 +48,6 @@ assets/js/
 │   ├── custom.js        # Extension point for project-specific components
 │   ├── drawer.js
 │   ├── dropdown.js
-│   ├── form.js
 │   ├── gallery.js
 │   ├── gauge.js
 │   ├── menu.js
@@ -60,6 +59,7 @@ assets/js/
 │   ├── custom.js        # Extension point for project-specific features
 │   ├── animation.js     # data-anim scroll reveal (requires params.animation)
 │   ├── carousel.js      # (requires params.carousel)
+│   ├── form.js          # async .js-form submission (requires params.form.ajax)
 │   ├── map.js           # (requires params.map)
 │   ├── parallax.js      # (requires params.parallax.enable)
 │   ├── search.js        # (requires params.search.enable)
@@ -71,7 +71,6 @@ assets/js/
 │   ├── audio.js
 │   ├── chart.js
 │   ├── datas.js
-│   ├── form.js
 │   ├── gallery.js
 │   └── instagram.js
 │
@@ -222,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 ### `blocks/`
 
-JS specific to content blocks (chart, gallery, form…). Loaded selectively:
+JS specific to content blocks (chart, gallery…). Loaded selectively:
 
 - **With hugolify-admin** — only the blocks used on the site are imported (via `params.admin.blocks.enable`)
 - **Without hugolify-admin** — `blocks/index.js` imports everything as a fallback
