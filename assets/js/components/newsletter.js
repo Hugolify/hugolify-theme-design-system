@@ -1,16 +1,12 @@
 /**
  * Newsletter — async signup, the provider's answer shown in .js-newsletter-message,
  * an .alert turned .alert-success or .alert-danger.
- * The provider is read from the form action:
- * - Brevo (*.sibforms.com) answers JSON and allows CORS:
- *   { success, message } or { success: false, errors: { FIELD: message } }
- * - Mailchimp (*.list-manage.com) blocks CORS on /subscribe/post, so the fields
- *   go through JSONP on /subscribe/post-json: { result: 'success' | 'error', msg }
- * - any other endpoint is posted with fetch and judged on the HTTP status.
+ * The hostname of the form action picks the provider that sends the form
+ * (js/providers/: Brevo, Mailchimp, any other endpoint).
  */
-const forms = document.querySelectorAll('.js-newsletter-form');
+import { getProvider } from '../providers/index';
 
-const MAILCHIMP_TIMEOUT = 15000;
+const forms = document.querySelectorAll('.js-newsletter-form');
 
 class Newsletter {
   constructor(form) {
@@ -27,8 +23,11 @@ class Newsletter {
   async handleSubmit(event) {
     event.preventDefault();
 
-    const url = new URL(this.form.action);
-    const data = new URLSearchParams(new FormData(this.form));
+    // Read from the attribute: form.action is shadowed by a field named "action"
+    const url = new URL(
+      this.form.getAttribute('action') || window.location.href,
+      document.baseURI
+    );
 
     this.form.classList.add('is-submitting');
     this.submit.disabled = true;
@@ -37,65 +36,13 @@ class Newsletter {
 
     let result;
     try {
-      if (url.hostname.endsWith('.sibforms.com')) {
-        result = await this.sendBrevo(url, data);
-      } else if (url.hostname.endsWith('.list-manage.com')) {
-        result = await this.sendMailchimp(url, data);
-      } else {
-        result = await this.sendDefault(url, data);
-      }
+      result = await getProvider(url).send(url, this.form);
     } catch (error) {
       console.error('Newsletter:', error);
       result = { success: false };
     }
 
     this.showResult(result);
-  }
-
-  async sendBrevo(url, data) {
-    const response = await fetch(url, { method: 'POST', body: data });
-    const json = await response.json();
-    const errors = Object.values(json.errors || {}).join(' ');
-    return { success: json.success === true, message: json.message || errors };
-  }
-
-  sendMailchimp(url, data) {
-    return new Promise((resolve, reject) => {
-      const callback = `newsletterMailchimp${Date.now()}`;
-      const script = document.createElement('script');
-      const timeout = setTimeout(() => {
-        cleanup();
-        reject(new Error('Mailchimp timeout'));
-      }, MAILCHIMP_TIMEOUT);
-      const cleanup = () => {
-        clearTimeout(timeout);
-        delete window[callback];
-        script.remove();
-      };
-
-      window[callback] = (json) => {
-        cleanup();
-        // Field errors come prefixed with the field index, e.g. "0 - Please enter a value"
-        const message = String(json.msg || '').replace(/^\d+ - /, '');
-        resolve({ success: json.result === 'success', message });
-      };
-
-      url.pathname = url.pathname.replace(/\/post$/, '/post-json');
-      data.forEach((value, key) => url.searchParams.append(key, value));
-      url.searchParams.set('c', callback);
-
-      script.src = url.href;
-      script.onerror = () => {
-        cleanup();
-        reject(new Error('Mailchimp request failed'));
-      };
-      document.head.append(script);
-    });
-  }
-
-  async sendDefault(url, data) {
-    const response = await fetch(url, { method: 'POST', body: data });
-    return { success: response.ok };
   }
 
   showResult({ success, message }) {

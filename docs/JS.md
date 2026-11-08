@@ -74,6 +74,14 @@ assets/js/
 │   ├── gallery.js
 │   └── instagram.js
 │
+├── providers/           # How a form reaches its service, picked from the action hostname
+│   ├── index.js         # getProvider(url): the first match, else default.js
+│   ├── brevo.js         # *.sibforms.com: FormData to the action ?isAjax=1, JSON answer
+│   ├── mailchimp.js     # *.list-manage.com: JSONP on /subscribe/post-json
+│   └── default.js       # any other endpoint, judged on the HTTP status
+│                        # Used by features/form.js and components/newsletter.js;
+│                        # another service is one more module in PROVIDERS (index.js)
+│
 ├── vendors/             # Third-party integrations
 │   └── custom.js        # Extension point — import npm packages here
 │

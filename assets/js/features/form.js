@@ -4,13 +4,14 @@
  * visitor on the page and shows the answer in .js-form-message, an .alert
  * turned .alert-success or .alert-danger.
  *
- * The fields go out as FormData, the multipart body the form posts natively
- * (enctype="multipart/form-data"), files included:
- * - Netlify Forms: no action, the form posts to its own page
- * - any other endpoint (params.form.action: Formspree, Fabform…) is asked for
- *   JSON, so that it answers instead of redirecting to its own thank-you page
- * Both are judged on the HTTP status.
+ * The endpoint is the form action (the block's action, else params.form.action),
+ * or the page itself for Netlify Forms. Its hostname picks the provider that
+ * sends the form (js/providers/: Brevo, Mailchimp, any other endpoint).
+ * The message is the form.success or form.error translation, not the
+ * service's: one service form may serve every language of the site.
  */
+import { getProvider } from '../providers/index';
+
 const forms = document.querySelectorAll('.js-form');
 
 class Form {
@@ -29,22 +30,20 @@ class Form {
     event.preventDefault();
 
     // Read from the attribute: form.action is shadowed by a field named "action"
-    const url = new URL(this.form.getAttribute('action') || window.location.href, document.baseURI);
-    const headers = url.origin === window.location.origin ? {} : { Accept: 'application/json' };
+    const url = new URL(
+      this.form.getAttribute('action') || window.location.href,
+      document.baseURI
+    );
 
     this.form.classList.add('is-submitting');
     this.submit.disabled = true;
 
     let success = false;
     try {
-      const response = await fetch(url, {
-        method: 'POST',
-        headers,
-        body: new FormData(this.form)
-      });
-      success = response.ok;
+      const result = await getProvider(url).send(url, this.form);
+      success = result.success;
       if (!success) {
-        console.error('Form:', response.status, response.statusText);
+        console.error('Form:', result.message || result.details);
       }
     } catch (error) {
       console.error('Form:', error);
