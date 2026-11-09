@@ -4,6 +4,7 @@
  *
  * Structure:
  *   figure.quote
+ *     div.rating         (optional — @uncinq/css-components rating.css)
  *     blockquote
  *       p
  *     figcaption
@@ -21,6 +22,11 @@
     flex-direction: var(--quote-flex-direction);
     gap: var(--quote-gap);
     padding: var(--quote-padding);
+
+    /* Centered like the quote itself */
+    .rating {
+      --rating-justify-content: center;
+    }
 
     blockquote {
       border-inline-start: 0;
