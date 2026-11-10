@@ -93,13 +93,20 @@
        reaching the screen, gutter included.
        A custom property, not the margin: the utility owns margin-inline in
        @layer utilities and wins over @layer components whatever we declare.
-       Below --desktop the container spans the viewport and the calc falls
-       under --gutter, so max() hands back the token value unchanged — the two
-       meet exactly at the rung, --size-desktop being the width the container
-       caps at AND the width --desktop kicks in.
+       The cap is read from --container-max-width-desktop, the width the
+       container really stops at, not from --size-desktop: a theme may cap
+       below the rung (hugolify-theme-5 stops at 90rem while --desktop kicks in
+       at 100rem), and a bleed computed from the rung would leave the row short
+       of the screen by the difference on both sides.
+       Only from --desktop, the rung that cap applies at: below it the container
+       spans the viewport and already publishes the right bleed (one gutter),
+       where the calc would pull the row past the screen whenever the cap is
+       narrower than the viewport.
        Lengths only, no percentage: the utility feeds this to the items'
        scroll-margin-inline, which takes <length> and would drop a % outright,
-       losing the snap offset that lands each card on the content edge.
+       losing the snap offset that lands each card on the content edge. A
+       desktop max-width of 100% does not cap at all and has no business here:
+       its --container-bleed-desktop is a gutter already.
 
        Under .container, because republishing is correcting a bleed the
        container already grants, not granting one. A block asked for grid:
@@ -107,10 +114,12 @@
        and the row has nothing left to pull out of — setting the property there
        would hand it a bleed the utility is meant to withhold. */
     .container .items:is([class^="scrollsnap"], [class*=" scrollsnap"]) {
-      --container-bleed: max(
-        var(--gutter),
-        calc((100vw - var(--size-desktop)) / 2 + var(--gutter))
-      );
+      @media (--desktop) {
+        --container-bleed: max(
+          var(--gutter),
+          calc((100vw - var(--container-max-width-desktop, var(--size-desktop))) / 2 + var(--gutter))
+        );
+      }
     }
   }
 }
