@@ -114,6 +114,9 @@
 @import 'components/tooltip.css';
 @import 'components/transcription.css';
 
+/* Shortcodes */
+@import 'components/shortcodes/embed.css';
+
 /* Blocks: with hugolify-admin, only the blocks the site enables
    (params.admin.blocks.enable), like js/main.js; otherwise all of them.
    A block without a stylesheet of its own uses its base block's one

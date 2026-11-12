@@ -1,0 +1,41 @@
+/* components/shortcodes/embed.css */
+/*
+ * div.youtube, div.vimeo, div.twitch, div.dailymotion: the wrappers of the
+ * video shortcodes once they are given a class:
+ *   {{< youtube id="…" class="youtube" >}}
+ *   {{< vimeo id="…" class="vimeo" >}}
+ *   {{< twitch id="…" class="twitch" >}}
+ *   {{< dailymotion id="…" class="dailymotion" >}}
+ * With a class, Hugo's youtube and vimeo, and the core's twitch and
+ * dailymotion, drop the inline styles that sized the iframe and took its
+ * border off, so the styling layer supplies them, as hugolify-theme-bootstrap
+ * does: the box of .embed (@uncinq/css-components), read from the same
+ * --embed-* tokens so the two cannot drift, as wide as the text column. Below
+ * --sm the box bleeds to the edges of the screen, over the container gutter.
+ *
+ * div, because the social menu gives its items the same class names
+ * (li.youtube, li.vimeo, li.twitch).
+ *
+ * Structure:
+ *   div.youtube | div.vimeo | div.twitch | div.dailymotion
+ *     iframe
+ */
+@layer components {
+  div:is(.dailymotion, .twitch, .vimeo, .youtube) {
+    aspect-ratio: var(--embed-ratio);
+    border-radius: var(--embed-border-radius);
+    margin-block: var(--spacing-typography);
+    overflow: hidden;
+
+    > iframe {
+      border: 0;
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media not (--sm) {
+      margin-inline: calc(var(--gutter) * -1);
+    }
+  }
+}
