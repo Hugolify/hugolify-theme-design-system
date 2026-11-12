@@ -76,7 +76,12 @@
         margin-inline: 0;
       }
 
+      /* The button carries its own padding, unlike a link whose padding
+         spaces it from its neighbours: the margin gives the button that same
+         room, whatever --nav-gap is. */
       .nav-item-highlighted {
+        margin-inline: var(--nav-link-padding-inline);
+
         &:first-child {
           margin-inline-start: 0;
         }
