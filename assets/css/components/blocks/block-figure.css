@@ -20,7 +20,8 @@
  */
 @layer components {
   .block-figure {
-    figure {
+    figure,
+    .screenshot {
       margin-block: 0;
     }
   }

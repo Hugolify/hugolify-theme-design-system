@@ -14,7 +14,8 @@
  */
 @layer components {
   .block-images {
-    figure {
+    figure,
+    .screenshot {
       margin: 0;
     }
     img {

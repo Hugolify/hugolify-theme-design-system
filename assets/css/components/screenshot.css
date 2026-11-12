@@ -11,6 +11,8 @@
  */
 @layer components {
   .screenshot {
+    /* The wrapper takes over the spacing of the figure it holds */
+    margin-block: var(--figure-margin-block);
     position: relative;
 
     /* ── Top bar ──────────────────────────────────────────────── */

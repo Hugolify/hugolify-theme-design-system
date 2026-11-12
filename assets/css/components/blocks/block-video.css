@@ -12,7 +12,8 @@
  */
 @layer components {
   .block-video {
-    figure {
+    figure,
+    .screenshot {
       margin-block: 0;
     }
     details {

@@ -38,7 +38,8 @@
 
     /* ── Content text ─────────────────────────────────────────── */
 
-    figure {
+    figure,
+    .screenshot {
       display: block;
       margin-block: 0;
     }
