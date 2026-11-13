@@ -1,6 +1,17 @@
 /* components/content-body.css */
 @layer components {
   .content-body {
+    /* Every block of the text keeps the rhythm of its paragraphs: the margin
+       css-base gives to <p> goes to the code blocks (highlighted or not, a
+       mermaid diagram included), the alerts, the lists and the tables too.
+       css-base leaves them flush, so two of them in a row, or one after a
+       shortcode line, touched. Scoped to the body, where markdown renders,
+       because an alert elsewhere (the site banner) sits flush. Before the
+       first and last child rules, which weigh the same and have to win. */
+    > :is(.alert, .highlight, ol, pre, table, ul) {
+      margin-block: var(--spacing-typography);
+    }
+
     > *:first-child {
       margin-block-start: 0;
     }
