@@ -15,6 +15,18 @@
   .main-menu {
     --modal-max-width: 60ch;
 
+    /* Item description: the core prints a menu entry's `text` as a <p> after
+       its link. It reads as a note under the title, smaller and muted. The
+       link's padding sets its text off the item edge; the description takes
+       the same inline padding to line up with it, in the panel and in the
+       header dropdown alike. */
+    .dropdown-menu li > p {
+      color: var(--color-text-muted);
+      font-size: var(--font-size-xs);
+      margin-block: 0;
+      padding-inline: var(--dropdown-item-padding-inline);
+    }
+
     /* ── Panel (below --header-expand) ────────────────────────────────
      * In this context .dropdown-menu behaves as a plain inline sub-list.
      * The .show class set by components/dialog.js controls open/closed. */
@@ -57,6 +69,10 @@
           }
         }
       }
+      /* The negative margin above pulls each item out by its link padding, so
+         the link text lines up with the panel title. A sub-item is an li of
+         the same .nav and would be pulled out a second time: it stays on its
+         parent's edge, and its own link padding brings its text in line. */
       .dropdown-menu {
         --nav-item-margin-inline: 0;
       }
