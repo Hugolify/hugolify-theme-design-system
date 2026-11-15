@@ -74,6 +74,7 @@
          the same .nav and would be pulled out a second time: it stays on its
          parent's edge, and its own link padding brings its text in line. */
       .dropdown-menu {
+        --nav-gap: var(--spacing-xs);
         --nav-item-margin-inline: 0;
       }
       .nav-item-highlighted {
