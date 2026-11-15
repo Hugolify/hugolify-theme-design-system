@@ -17,6 +17,6 @@
     --sidebarmenu-nav-link-color: var(--color-text);
     --sidebarmenu-nav-link-color-active: var(--color-brand);
     --sidebarmenu-nav-sub-font-size: var(--font-size-xs);
-    --sidebarmenu-nav-sub-indent: var(--spacing-md);
+    --sidebarmenu-nav-sub-indent: var(--spacing-xs);
   }
 }
