@@ -43,8 +43,10 @@ class Carousel {
   initDefaults() {
     // The arrow Splide injects is hidden and redrawn from a token in CSS —
     // see vendors/splide.css — so there is no arrowPath to pass here.
+    // Splide names the previous arrow label `prev`, window.i18n.carousel
+    // keeps the `previous` key of the i18n files.
     Splide.defaults = {
-      i18n: window.i18n.carousel
+      i18n: { ...window.i18n.carousel, prev: window.i18n.carousel.previous }
     };
   }
 
