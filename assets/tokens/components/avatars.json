@@ -29,8 +29,9 @@
       "$type": "fontWeight"
     },
     "overlap": {
-      "$value": "calc({avatars.size} * -.3)",
-      "$type": "dimension"
+      "$value": "max(calc({avatars.size} * -.3), calc(24px - {avatars.size}))",
+      "$type": "dimension",
+      "$description": "Linked, each avatar is a target: 24px of it stay uncovered, the minimum size of WCAG 2.2 (2.5.8), so it overlaps by 30% from 35px only. Smaller than 24px, the avatars part instead, their centres 24px apart, the spacing the criterion asks of an undersized target."
     },
     "size": {
       "$value": "30px",

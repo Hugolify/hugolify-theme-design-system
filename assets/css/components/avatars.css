@@ -14,6 +14,10 @@
  * --avatars-size, so they stay sharp on dense screens. Each avatar is ringed
  * with --avatars-color-border so the overlap reads as a cut-out: set it to the
  * background the group sits on.
+ *
+ * Linked, each avatar is a target: --avatars-overlap leaves 24px of it
+ * uncovered, the minimum size of WCAG 2.2 (2.5.8), and parts avatars smaller
+ * than that (see its token).
  */
 @layer components {
   .avatars {
