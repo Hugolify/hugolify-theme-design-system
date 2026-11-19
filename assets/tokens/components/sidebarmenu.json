@@ -70,7 +70,7 @@
         },
         "indent": {
           "$type": "dimension",
-          "$value": "{spacing.md}"
+          "$value": "{spacing.xs}"
         }
       }
     }
