@@ -7,9 +7,11 @@ module:
 # Params
 params:
 
-  # PostCSS config
+  # PostCSS config, provided by this module (mounted in assets/_jsconfig).
+  # CommonJS (.cjs) so its plugins resolve from the project's node_modules
+  # on any Hugo version: see the header of postcss.config.cjs.
   css:
-    postcss: "postcss/design-system"
+    postcss: "postcss.config.cjs"
 
   # Grid
   column: 

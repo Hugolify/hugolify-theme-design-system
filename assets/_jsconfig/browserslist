@@ -1,0 +1,35 @@
+# Browser floors of hugolify-theme-design-system
+# https://github.com/browserslist/browserslist#readme
+#
+# Hugo exposes every file of assets/_jsconfig to PostCSS as a HUGO_FILE_*
+# variable: this one is HUGO_FILE_BROWSERSLIST, and the module's
+# postcss.config.cjs points BROWSERSLIST_CONFIG at it.
+# Only autoprefixer reads this list: js.Build has no target, so JS is not
+# transpiled from it.
+#
+# BROWSERSLIST_CONFIG takes precedence over a project .browserslistrc, which is
+# then ignored. To override, ship assets/_jsconfig/browserslist in the project
+# (or in a module imported before this one): the first file found wins, like
+# any asset.
+#
+# Floors = what the CSS needs without a fallback:
+#   - native CSS nesting: Chrome 120, Firefox 117, Safari 17.2
+#   - relative colors, oklch(from …): Chrome 131, Firefox 133, Safari 18
+# Anchor positioning, invoker commands and text-wrap: pretty are progressive.
+#
+# Coverage, outside Hugo:
+#   BROWSERSLIST_CONFIG=<path to this file> npx browserslist --coverage=FR
+
+last 2 major versions
+not dead
+
+Chrome >= 131
+Edge >= 131
+Firefox >= 133
+iOS >= 18
+Safari >= 18
+
+not and_uc > 0
+not and_qq > 0
+not kaios > 0
+not op_mini all
