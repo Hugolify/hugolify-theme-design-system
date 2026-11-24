@@ -97,13 +97,6 @@
       --btn-color-text: var(--color-brand);
     }
 
-    &.hero-cover-darken {
-      & .btn + .btn {
-        --btn-color-text: var(--color-white);
-        --btn-color-border: var(--color-white);
-      }
-    }
-
     @media (--tablet) {
       width: calc(50% - (var(--gap) * 0.5));
 
@@ -206,13 +199,19 @@
 
   /* ── Hero cover darken ─────────────────────────────────────── */
 
+  /* A darkened ground (gradient or dimmed cover) needs light text, so it
+     does not read --hero-color-text and its siblings: they colour the plain
+     hero, and a fallback on them would never apply since component-tokens
+     sets them on :root. Overrides, unset by default:
+     --hero-darken-color-text (white), -color-link and -title-color (follow
+     the text), -surtitle-color-text (gray-300). */
   .hero-with-darken,
   .hero:has(.hero-cover-darken) {
-    --color-heading: var(--color-white);
-    --color-link: var(--color-white);
-    --color-text: var(--color-white);
+    --color-heading: var(--hero-darken-title-color, var(--color-text));
+    --color-link: var(--hero-darken-color-link, var(--color-text));
+    --color-text: var(--hero-darken-color-text, var(--color-white));
     --btn-color-text: var(--color-white);
-    --surtitle-color-text: var(--color-gray-300);
+    --surtitle-color-text: var(--hero-darken-surtitle-color-text, var(--color-gray-300));
 
     .hero-content {
       .btn {
