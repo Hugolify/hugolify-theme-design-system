@@ -39,18 +39,39 @@
     margin-block: var(--hero-margin-block);
     position: relative;
 
+    /* The row and a spacer share the one cell of a grid: the spacer holds the
+       hero's height (--hero-height within --hero-min-height and
+       --hero-max-height, keywords such as auto and none included), the row
+       stretches over it and grows past it when its content needs more. Set
+       on the row itself, the height let a long hero (a person's card on a
+       phone) spill out of it, above and below. */
     .container {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
       padding-inline: var(--hero-container-padding-inline, var(--gutter));
       position: relative;
+
+      &::before {
+        content: '';
+        grid-area: 1 / 1;
+        height: var(--hero-height);
+        max-height: var(--hero-max-height);
+        min-height: var(--hero-min-height);
+      }
     }
 
     .row {
       align-items: center;
-      height: var(--hero-height);
+      grid-area: 1 / 1;
       justify-content: center;
-      max-height: var(--hero-max-height);
-      min-height: var(--hero-min-height);
       padding-block: var(--hero-padding-block);
+    }
+
+    /* The back link (.hero-content .back) is pinned to the top corner, out
+       of the flow: the row keeps room for it, or a hero whose content fills
+       its height (on phones mostly) slides the title under the link. */
+    &:has(.back) .row {
+      padding-block-start: max(var(--hero-padding-block), calc(var(--gutter) + 1lh + var(--hero-gap)));
     }
   }
 
